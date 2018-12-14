@@ -17,7 +17,7 @@ var partialUpdatesAllowed = false;
 
 // This implements an analog watch face
 // Original design by Austen Harbour
-class AnalogView extends WatchUi.WatchFace
+class MnmlstView extends WatchUi.WatchFace
 {
     var font;
     var isAwake;
@@ -310,7 +310,7 @@ class AnalogView extends WatchUi.WatchFace
     }
 }
 
-class AnalogDelegate extends WatchUi.WatchFaceDelegate {
+class MnmlstDelegate extends WatchUi.WatchFaceDelegate {
     // The onPowerBudgetExceeded callback is called by the system if the
     // onPartialUpdate method exceeds the allowed power budget. If this occurs,
     // the system will stop invoking onPartialUpdate each second, so we set the

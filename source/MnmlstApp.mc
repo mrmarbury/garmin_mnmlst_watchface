@@ -9,7 +9,7 @@ using Toybox.Time;
 using Toybox.Communications;
 
 // This is the primary entry point of the application.
-class MNMLST extends Application.AppBase
+class Mnmlst extends Application.AppBase
 {
     var temperature = null;
 
@@ -25,9 +25,9 @@ class MNMLST extends Application.AppBase
     // This method runs each time the main application starts.
     function getInitialView() {
         if( Toybox.WatchUi has :WatchFaceDelegate ) {
-            return [new AnalogView(), new AnalogDelegate()];
+            return [new MnmlstView(), new MnmlstDelegate()];
         } else {
-            return [new AnalogView()];
+            return [new MnmlstView()];
         }
     }
 }
