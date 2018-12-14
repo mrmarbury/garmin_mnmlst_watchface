@@ -30,9 +30,4 @@ class MNMLST extends Application.AppBase
             return [new AnalogView()];
         }
     }
-
-    // This method runs when a goal is triggered and the goal view is started.
-    function getGoalView(goal) {
-        return [new AnalogGoalView(goal)];
-    }
 }

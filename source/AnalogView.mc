@@ -64,7 +64,8 @@ class AnalogView extends WatchUi.WatchFace
                     Graphics.COLOR_LT_GRAY,
                     Graphics.COLOR_BLACK,
                     Graphics.COLOR_WHITE,
-                    Graphics.COLOR_ORANGE
+                    Graphics.COLOR_ORANGE,
+                    Graphics.COLOR_GREEN
                 ]
             });
 
@@ -132,6 +133,23 @@ class AnalogView extends WatchUi.WatchFace
             dc.drawLine(sX, sY, eX, eY);
         }
     }
+    
+    function drawBattery(targetDc, width, height) {
+    	var battery = (System.getSystemStats().battery + 0.5).toNumber();
+		
+		var battLeft = width / 4;
+		var battRight = battLeft * 3;
+		var battRange = battRight - battLeft;
+		var battRangeSteps = battRange / 10;
+		var battBaseHeight = 4*height/6;
+		
+		for(var i = battLeft; i <= battRight; i += battRangeSteps) {
+			targetDc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_WHITE);
+			targetDc.drawLine(i, battBaseHeight, i, battBaseHeight + 10);
+			targetDc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_GREEN);
+			targetDc.fillCircle(battLeft + battRangeSteps * (battery / 10), battBaseHeight + 5, 5);
+		}
+    }
 
     // Handle the update event
     function onUpdate(dc) {
@@ -175,7 +193,9 @@ class AnalogView extends WatchUi.WatchFace
         if (null != dndIcon && System.getDeviceSettings().doNotDisturb) {
             targetDc.drawBitmap( width * 0.75, height / 2 - 15, dndIcon);
         }
-
+            
+		drawBattery(targetDc, width, height);
+        
         //Use white to draw the hour and minute hands
         targetDc.setColor(Graphics.COLOR_ORANGE, Graphics.COLOR_TRANSPARENT);
 
@@ -213,23 +233,6 @@ class AnalogView extends WatchUi.WatchFace
         // Output the offscreen buffers to the main display if required.
         drawBackground(dc);
 
-        // Draw the battery percentage directly to the main screen.
-        var dataString = (System.getSystemStats().battery + 0.5).toNumber().toString() + "%";
-
-        // Also draw the background process data if it is available.
-        var backgroundData = Application.getApp().temperature;
-        if(backgroundData != null) {
-            dataString += " - " + backgroundData;
-        }
-        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(width / 2, 3*height/4, Graphics.FONT_TINY, dataString, Graphics.TEXT_JUSTIFY_CENTER);
-
-        if( partialUpdatesAllowed ) {
-            // If this device supports partial updates and they are currently
-            // allowed run the onPartialUpdate method to draw the second hand.
-            onPartialUpdate( dc );
-        }
-
         fullScreenRefresh = false;
     }
 
@@ -240,28 +243,6 @@ class AnalogView extends WatchUi.WatchFace
 
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
         dc.drawText(x, y, Graphics.FONT_SMALL, dateStr, Graphics.TEXT_JUSTIFY_CENTER);
-    }
-
-    // Handle the partial update event
-    function onPartialUpdate( dc ) {
-        // If we're not doing a full screen refresh we need to re-draw the background
-        // before drawing the updated second hand position. Note this will only re-draw
-        // the background in the area specified by the previously computed clipping region.
-        if(!fullScreenRefresh) {
-            drawBackground(dc);
-        }
-
-        var clockTime = System.getClockTime();
-        var secondHand = (clockTime.sec / 60.0) * Math.PI * 2;
-        var secondHandPoints = generateHandCoordinates(screenCenterPoint, secondHand, 60, 20, 2);
-
-        // Update the cliping rectangle to the new location of the second hand.
-        curClip = getBoundingBox( secondHandPoints );
-        var bboxWidth = curClip[1][0] - curClip[0][0] + 1;
-        var bboxHeight = curClip[1][1] - curClip[0][1] + 1;
-        dc.setClip(curClip[0][0], curClip[0][1], bboxWidth, bboxHeight);
-
-        
     }
 
     // Compute a bounding box from the passed in points
