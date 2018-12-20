@@ -12,6 +12,7 @@ using Toybox.Time;
 using Toybox.Time.Gregorian;
 using Toybox.WatchUi;
 using Toybox.Application;
+using Toybox.ActivityMonitor;
 
 var partialUpdatesAllowed = false;
 
@@ -28,6 +29,7 @@ class MnmlstView extends WatchUi.WatchFace
     var curClip;
     var screenCenterPoint;
     var fullScreenRefresh;
+    var bt_connected = true;
 
     // Initialize variables for this view
     function initialize() {
@@ -43,14 +45,6 @@ class MnmlstView extends WatchUi.WatchFace
         // Load the custom font we use for drawing the 3, 6, 9, and 12 on the watchface.
         font = WatchUi.loadResource(Rez.Fonts.id_font_black_diamond);
 
-        // If this device supports the Do Not Disturb feature,
-        // load the associated Icon into memory.
-        if (System.getDeviceSettings() has :doNotDisturb) {
-            dndIcon = WatchUi.loadResource(Rez.Drawables.DoNotDisturbIcon);
-        } else {
-            dndIcon = null;
-        }
-
         // If this device supports BufferedBitmap, allocate the buffers we use for drawing
         if(Toybox.Graphics has :BufferedBitmap) {
             // Allocate a full screen size buffer with a palette of only 4 colors to draw
@@ -65,7 +59,8 @@ class MnmlstView extends WatchUi.WatchFace
                     Graphics.COLOR_BLACK,
                     Graphics.COLOR_WHITE,
                     Graphics.COLOR_ORANGE,
-                    Graphics.COLOR_GREEN
+                    Graphics.COLOR_GREEN,
+                    Graphics.COLOR_RED
                 ]
             });
 
@@ -99,6 +94,24 @@ class MnmlstView extends WatchUi.WatchFace
 
         // Transform the coordinates
         for (var i = 0; i < 4; i += 1) {
+            var x = (coords[i][0] * cos) - (coords[i][1] * sin) + 0.5;
+            var y = (coords[i][0] * sin) + (coords[i][1] * cos) + 0.5;
+
+            result[i] = [centerPoint[0] + x, centerPoint[1] + y];
+        }
+
+        return result;
+    }
+    
+    function generateHourCoordinates(centerPoint, angle, handLength, tailLength, width) {
+        // Map out the coordinates of the watch hand
+        var coords = [[-(width / 2), -handLength], [width / 2, -handLength], [0, tailLength]];
+        var result = new [3];
+        var cos = Math.cos(angle);
+        var sin = Math.sin(angle);
+
+        // Transform the coordinates
+        for (var i = 0; i < 3; i += 1) {
             var x = (coords[i][0] * cos) - (coords[i][1] * sin) + 0.5;
             var y = (coords[i][0] * sin) + (coords[i][1] * cos) + 0.5;
 
@@ -150,7 +163,72 @@ class MnmlstView extends WatchUi.WatchFace
 			targetDc.fillCircle(battLeft + battRangeSteps * (battery / 10), battBaseHeight + 5, 5);
 		}
     }
+    
+    function drawString(myString, dc, posX, posY, color) {
+    	dc.setColor(color, Graphics.COLOR_TRANSPARENT);
+        dc.drawText(posX, posY, Graphics.FONT_SMALL, myString, Graphics.TEXT_JUSTIFY_CENTER);
+    }
+    
+    function drawNotificationCount(dc, posX, posY) {
+    	var notificationCount = System.DeviceSettings.notificationCount;
 
+    	if (notificationCount != null && notificationCount > 0) {
+    		dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+        	dc.drawText(posX, posY, Graphics.FONT_SMALL, notificationCount, Graphics.TEXT_JUSTIFY_CENTER);
+   		}
+    }
+    
+    function drawHourHand(targetDc) {
+    	var hourHandAngle;
+    	var width = targetDc.getWidth();
+    	var clockTime = System.getClockTime();
+    	
+        //We have BT?
+        var deviceSettings = System.getDeviceSettings();
+        bt_connected = deviceSettings.phoneConnected;
+        var colorHourHand = null;
+        var hourTail = width-140;
+        
+        
+        if (bt_connected) {
+        	colorHourHand = Graphics.COLOR_ORANGE;
+        } else {
+        	colorHourHand = Graphics.COLOR_LT_GRAY;
+        }
+        
+        //Use white to draw the hour and minute hands
+        targetDc.setColor(colorHourHand, Graphics.COLOR_TRANSPARENT);
+
+        // Draw the hour hand.
+        hourHandAngle = (((clockTime.hour % 12) * 60)  + clockTime.min);
+        hourHandAngle = hourHandAngle / (12 * 60.0);
+        hourHandAngle = hourHandAngle * Math.PI * 2;
+
+        targetDc.fillPolygon(generateHourCoordinates(screenCenterPoint, hourHandAngle, width, -hourTail, 160));
+    }
+    
+    function drawArbor(targetDc) {
+    	var width = targetDc.getWidth();
+    	var height = targetDc.getHeight();
+    	var arborColor = Graphics.COLOR_LT_GRAY;
+    	var moveBarLevel = ActivityMonitor.Info.moveBarLevel;
+    	
+    	if (moveBarLevel == null) {
+    		moveBarLevel = 0;
+    	}
+    	
+    	if (moveBarLevel > ActivityMonitor.MOVE_BAR_LEVEL_MIN) {
+    		arborColor = Graphics.COLOR_RED;
+    	}
+    	
+    	// Draw the arbor in the center of the screen.
+        targetDc.setColor(arborColor, Graphics.COLOR_BLACK);
+        targetDc.fillCircle(width / 2, height / 2, 7);
+        targetDc.setColor(Graphics.COLOR_BLACK,Graphics.COLOR_BLACK);
+        targetDc.drawCircle(width / 2, height / 2, 7);
+    
+    }
+    
     // Handle the update event
     function onUpdate(dc) {
         var width;
@@ -158,7 +236,6 @@ class MnmlstView extends WatchUi.WatchFace
         var screenWidth = dc.getWidth();
         var clockTime = System.getClockTime();
         var minuteHandAngle;
-        var hourHandAngle;
         var targetDc = null;
         var hourTail;
 
@@ -177,7 +254,6 @@ class MnmlstView extends WatchUi.WatchFace
 
         width = targetDc.getWidth();
         height = targetDc.getHeight();
-        hourTail = width-140;
 
         // Fill the entire background with Black.
         targetDc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_WHITE);
@@ -188,35 +264,21 @@ class MnmlstView extends WatchUi.WatchFace
         drawHashMarks(targetDc, 12, 6, 15);
         targetDc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_LT_GRAY);
         drawHashMarks(targetDc, 31, 30, 5);
-
-        // Draw the do-not-disturb icon if we support it and the setting is enabled
-        if (null != dndIcon && System.getDeviceSettings().doNotDisturb) {
-            targetDc.drawBitmap( width * 0.75, height / 2 - 15, dndIcon);
-        }
-            
-		drawBattery(targetDc, width, height);
         
-        //Use white to draw the hour and minute hands
-        targetDc.setColor(Graphics.COLOR_ORANGE, Graphics.COLOR_TRANSPARENT);
+		var countX = width / 2;
+		var countY = height / 5;
+		drawNotificationCount(targetDc, countX , countY); 	
 
-        // Draw the hour hand.
-        hourHandAngle = ((clockTime.hour % 12) * 60);
-        hourHandAngle = hourHandAngle / (12 * 60.0);
-        hourHandAngle = hourHandAngle * Math.PI * 2;
-
-        targetDc.fillPolygon(generateHandCoordinates(screenCenterPoint, hourHandAngle, width, -hourTail, 6));
-
-        targetDc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        // Draw the minute hand.
+		drawBattery(targetDc, width, height);
+        drawHourHand(targetDc);
+        
+		targetDc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+        //drow minute hand
         minuteHandAngle = (clockTime.min / 60.0) * Math.PI * 2;
         targetDc.fillPolygon(generateHandCoordinates(screenCenterPoint, minuteHandAngle, width, 15, 2));
-
-        // Draw the arbor in the center of the screen.
-        targetDc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_BLACK);
-        targetDc.fillCircle(width / 2, height / 2, 7);
-        targetDc.setColor(Graphics.COLOR_BLACK,Graphics.COLOR_BLACK);
-        targetDc.drawCircle(width / 2, height / 2, 7);
-
+		
+		drawArbor(targetDc);
+        
         // If we have an offscreen buffer that we are using for the date string,
         // Draw the date into it. If we do not, the date will get drawn every update
         // after blanking the second hand.
@@ -234,6 +296,13 @@ class MnmlstView extends WatchUi.WatchFace
         drawBackground(dc);
 
         fullScreenRefresh = false;
+    }
+    
+    function onPartialUpdate(dc) {
+
+    	drawHourHand(dc);
+    	drawArbor(dc);
+
     }
 
     // Draw the date string into the provided buffer at the specified location
@@ -322,3 +391,4 @@ class MnmlstDelegate extends WatchUi.WatchFaceDelegate {
         partialUpdatesAllowed = false;
     }
 }
+
