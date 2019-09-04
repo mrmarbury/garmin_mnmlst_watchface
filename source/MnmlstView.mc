@@ -26,10 +26,12 @@ class MnmlstView extends WatchUi.WatchFace
     var dndIcon;
     var offscreenBuffer;
     var dateBuffer;
+    var notificationBuffer;
     var curClip;
     var screenCenterPoint;
     var fullScreenRefresh;
     var bt_connected = true;
+    var msgCountMultiplier = 5;
 
     // Initialize variables for this view
     function initialize() {
@@ -60,7 +62,8 @@ class MnmlstView extends WatchUi.WatchFace
                     Graphics.COLOR_WHITE,
                     Graphics.COLOR_ORANGE,
                     Graphics.COLOR_GREEN,
-                    Graphics.COLOR_RED
+                    Graphics.COLOR_RED,
+                    Graphics.COLOR_BLUE
                 ]
             });
 
@@ -69,6 +72,10 @@ class MnmlstView extends WatchUi.WatchFace
             // color buffer is needed because anti-aliased fonts cannot be drawn into
             // a buffer with a reduced color palette
             dateBuffer = new Graphics.BufferedBitmap({
+                :width=>dc.getWidth(),
+                :height=>Graphics.getFontHeight(Graphics.FONT_MEDIUM)
+            });
+            notificationBuffer = new Graphics.BufferedBitmap({
                 :width=>dc.getWidth(),
                 :height=>Graphics.getFontHeight(Graphics.FONT_MEDIUM)
             });
@@ -159,8 +166,12 @@ class MnmlstView extends WatchUi.WatchFace
 		for(var i = battLeft; i <= battRight; i += battRangeSteps) {
 			targetDc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_WHITE);
 			targetDc.drawLine(i, battBaseHeight, i, battBaseHeight + 10);
-			targetDc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_GREEN);
-			targetDc.fillCircle(battLeft + battRangeSteps * (battery / 10), battBaseHeight + 5, 5);
+			if( System.getSystemStats().charging == true ) {
+				targetDc.setColor(Graphics.COLOR_BLUE, Graphics.COLOR_BLUE);
+			} else {
+			    targetDc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_GREEN);
+			}
+			targetDc.fillCircle(battLeft + battRangeSteps * (battery / 10.0), battBaseHeight + 5, 5);
 		}
     }
     
@@ -170,11 +181,10 @@ class MnmlstView extends WatchUi.WatchFace
     }
     
     function drawNotificationCount(dc, posX, posY) {
-    	var notificationCount = System.DeviceSettings.notificationCount;
-
+    	var notificationCount = System.getDeviceSettings().notificationCount;
+		
     	if (notificationCount != null && notificationCount > 0) {
-    		dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        	dc.drawText(posX, posY, Graphics.FONT_SMALL, notificationCount, Graphics.TEXT_JUSTIFY_CENTER);
+    		drawString(notificationCount, dc, posX, posY, Graphics.COLOR_WHITE);
    		}
     }
     
@@ -211,7 +221,7 @@ class MnmlstView extends WatchUi.WatchFace
     	var width = targetDc.getWidth();
     	var height = targetDc.getHeight();
     	var arborColor = Graphics.COLOR_LT_GRAY;
-    	var moveBarLevel = ActivityMonitor.Info.moveBarLevel;
+    	var moveBarLevel = ActivityMonitor.getInfo().moveBarLevel;
     	
     	if (moveBarLevel == null) {
     		moveBarLevel = 0;
@@ -264,10 +274,6 @@ class MnmlstView extends WatchUi.WatchFace
         drawHashMarks(targetDc, 12, 6, 15);
         targetDc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_LT_GRAY);
         drawHashMarks(targetDc, 31, 30, 5);
-        
-		var countX = width / 2;
-		var countY = height / 5;
-		drawNotificationCount(targetDc, countX , countY); 	
 
 		drawBattery(targetDc, width, height);
         drawHourHand(targetDc);
@@ -284,25 +290,24 @@ class MnmlstView extends WatchUi.WatchFace
         // after blanking the second hand.
         if( null != dateBuffer ) {
             var dateDc = dateBuffer.getDc();
-
+            
             //Draw the background image buffer into the date buffer to set the background
             dateDc.drawBitmap(0, -(height / 4), offscreenBuffer);
-
+            
             //Draw the date string into the buffer.
-            drawDateString( dateDc, width / 2, 0 );
+            drawDateString(dateDc, width / 2, 0 );
+        }
+        
+        if( null != notificationBuffer ) {
+        	var notificationDc = notificationBuffer.getDc();
+        	notificationDc.drawBitmap(0, -(height / 6) * msgCountMultiplier, offscreenBuffer);      
+        	drawNotificationCount(notificationDc, width / 2, 0); 
         }
 
         // Output the offscreen buffers to the main display if required.
         drawBackground(dc);
 
         fullScreenRefresh = false;
-    }
-    
-    function onPartialUpdate(dc) {
-
-    	drawHourHand(dc);
-    	drawArbor(dc);
-
     }
 
     // Draw the date string into the provided buffer at the specified location
@@ -362,6 +367,12 @@ class MnmlstView extends WatchUi.WatchFace
         } else {
             // Otherwise, draw it from scratch.
             drawDateString( dc, width / 2, height / 4 );
+        }
+        
+        if( null != notificationBuffer ) {
+            dc.drawBitmap(0, (height / 6) * msgCountMultiplier, notificationBuffer);
+        } else {
+            drawNotificationCount( dc, width / 2, (height / 6) * msgCountMultiplier );
         }
     }
 
