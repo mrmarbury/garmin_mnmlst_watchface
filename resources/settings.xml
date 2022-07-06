@@ -1,0 +1,28 @@
+<resources>
+
+    <properties>
+        <property id="PROP_COLOR" type="number">1</property>
+    </properties>
+
+    <strings>
+        <string id="AppName">MNMLST</string>
+        <string id="ColorSetting">Color Setting</string>
+        <string id="Dark">Dark</string>
+        <string id="Light">Light</string>
+    </strings>
+
+    <settings>
+        <setting propertyKey="@Properties.PROP_COLOR" title="@Strings.ColorSetting">
+            <settingConfig id="colorScheme" type="list">
+                <listEntry value="0">@Strings.Dark</listEntry>
+                <listEntry value="1">@Strings.Light</listEntry>
+            </settingConfig>
+            <defaults>
+                <entry>
+                    <default id="colorScheme">0</default>
+                </entry>
+            </defaults>
+        </setting>
+    </settings>
+
+</resources> 

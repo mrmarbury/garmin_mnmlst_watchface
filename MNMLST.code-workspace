@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"extensions": {
+		"recommendations": [
+			"garmin.monkey-c",
+			"markw65.prettier-extension-monkeyc",
+			"esbenp.prettier-vscode",
+			"usernamehw.errorlens"
+		]
+	},
+	"settings": {
+		"files.autoSave": "afterDelay",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true
+	},
+}
