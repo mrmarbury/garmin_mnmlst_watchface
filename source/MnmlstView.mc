@@ -14,8 +14,6 @@ using Toybox.WatchUi;
 using Toybox.Application;
 using Toybox.ActivityMonitor;
 
-using MnmlstApp.Colors.DarkColors;
-
 var partialUpdatesAllowed = false;
 
 // This implements an analog watch face
@@ -186,12 +184,17 @@ class MnmlstView extends WatchUi.WatchFace {
     var battRange = battRight - battLeft;
     var battRangeSteps = battRange / 10;
     var battBaseHeight = (4 * height) / 6;
+    var stats = System.getSystemStats();
 
     for (var i = battLeft; i <= battRight; i += battRangeSteps) {
       targetDc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_WHITE);
       targetDc.drawLine(i, battBaseHeight, i, battBaseHeight + 10);
-      if (System.getSystemStats().charging == true) {
+      if (stats.charging == true) {
         targetDc.setColor(Graphics.COLOR_BLUE, Graphics.COLOR_BLUE);
+      } else if (stats.battery <= 10) {
+        targetDc.setColor(Graphics.COLOR_RED, Graphics.COLOR_RED);
+      } else if (stats.battery <= 20) {
+        targetDc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_YELLOW);
       } else {
         targetDc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_GREEN);
       }
@@ -231,7 +234,7 @@ class MnmlstView extends WatchUi.WatchFace {
     var deviceSettings = System.getDeviceSettings();
     bt_connected = deviceSettings.phoneConnected;
     var colorHourHand = null;
-    var hourModifier = 140;
+    var hourModifier;
 
     if (width == 280) {
       hourModifier = 170;
@@ -239,6 +242,10 @@ class MnmlstView extends WatchUi.WatchFace {
       hourModifier = 160;
     } else if (width == 218) {
       hourModifier = 135;
+    } else if (width == 416) {
+      hourModifier = 260;
+    } else {
+      hourModifier = 140;
     }
 
     var hourTail = width - hourModifier;
