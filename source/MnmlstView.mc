@@ -33,13 +33,14 @@ class MnmlstView extends WatchUi.WatchFace {
   var msgCountMultiplier = 4.6;
   var watchfaceColors;
 
+  var minuteHandColor = Graphics.COLOR_WHITE;
+
   // Initialize variables for this view
   function initialize() {
     WatchFace.initialize();
     screenShape = System.getDeviceSettings().screenShape;
     fullScreenRefresh = true;
     partialUpdatesAllowed = Toybox.WatchUi.WatchFace has :onPartialUpdate;
-    watchfaceColors = MnmlstApp.Colors.DarkColors;
   }
 
   // Configure the layout of the watchface for this device
@@ -323,7 +324,7 @@ class MnmlstView extends WatchUi.WatchFace {
     drawBattery(targetDc, width, height);
     drawHourHand(targetDc);
 
-    targetDc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+    targetDc.setColor(minuteHandColor, Graphics.COLOR_TRANSPARENT);
     //drow minute hand
     minuteHandAngle = (clockTime.min / 60.0) * Math.PI * 2;
     targetDc.fillPolygon(
@@ -444,6 +445,14 @@ class MnmlstView extends WatchUi.WatchFace {
   // Set the isAwake flag to let onUpdate know it should render the second hand.
   function onExitSleep() {
     isAwake = true;
+  }
+
+  function onSettingsChanged() {
+    var colorScheme = getProperty("colorSetting");
+    if ("Light" == colorScheme) {
+      minuteHandColor = MnmlstApp.Colors.LightColors.COLOR_MINUTE_HAND;
+    }
+    WatchUi.requestUpdate();
   }
 }
 
