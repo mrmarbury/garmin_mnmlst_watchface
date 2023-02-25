@@ -234,19 +234,7 @@ class MnmlstView extends WatchUi.WatchFace {
     var deviceSettings = System.getDeviceSettings();
     bt_connected = deviceSettings.phoneConnected;
     var colorHourHand = null;
-    var hourModifier;
-
-    if (width == 280) {
-      hourModifier = 170;
-    } else if (width == 260) {
-      hourModifier = 160;
-    } else if (width == 218) {
-      hourModifier = 135;
-    } else if (width == 416) {
-      hourModifier = 260;
-    } else {
-      hourModifier = 140;
-    }
+    var hourModifier = width / 1.714;
 
     var hourTail = width - hourModifier;
 
