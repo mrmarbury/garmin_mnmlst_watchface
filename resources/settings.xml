@@ -7,21 +7,18 @@
 
     <strings>
         <string id="AppName">MNMLST</string>
+        <string id="ColorSettingTitle">Color Setting</string>
+        <string id="ColorSettingPrompt">Set Watch Color</string>
+        <string id="Dark">Dark</string>
+        <string id="Light">Light</string>
     </strings>
 
     <settings>
-        <setting propertyKey="@Properties.colorSetting" title="@String.ColorSetting">
-            <setting title="@Strings.ColorSetting" type="number">
-                <settingConfig id="colorScheme" type="list">
-                    <listEntry value="0">@Strings.Dark</listEntry>
-                    <listEntry value="1">@Strings.Light</listEntry>
-                </settingConfig>
-            </setting>
-            <defaults>
-                <entry>
-                    <default id="colorScheme">0</default>
-                </entry>
-            </defaults>
+        <setting propertyKey="@Properties.PROP_COLOR" title="@Strings.ColorSettingTitle" prompt="@Strings.ColorSettingPrompt">
+            <settingConfig type="list">
+                <listEntry value="0">@Strings.Dark</listEntry>
+                <listEntry value="1">@Strings.Light</listEntry>
+            </settingConfig>
         </setting>
     </settings>
 
