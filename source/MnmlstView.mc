@@ -153,7 +153,6 @@ class MnmlstView extends WatchUi.WatchFace {
   // Draws the clock tick marks around the outside edges of the screen.
   function drawHashMarks(dc, one, two, length) {
     var width = dc.getWidth();
-    var height = dc.getHeight();
 
     var sX, sY;
     var eX, eY;
@@ -234,6 +233,10 @@ class MnmlstView extends WatchUi.WatchFace {
     var deviceSettings = System.getDeviceSettings();
     bt_connected = deviceSettings.phoneConnected;
     var colorHourHand = null;
+    // Used to align the hour hand triangle according to
+    // the screen size. Works for most supported watches
+    // with Epix types being somewhat of an exception.
+    // The hour hand is a bit narrow but it's still fine.
     var hourModifier = width / 1.714;
 
     var hourTail = width - hourModifier;
@@ -288,11 +291,9 @@ class MnmlstView extends WatchUi.WatchFace {
   function onUpdate(dc) {
     var width;
     var height;
-    var screenWidth = dc.getWidth();
     var clockTime = System.getClockTime();
     var minuteHandAngle;
     var targetDc = null;
-    var hourTail;
 
     // We always want to refresh the full screen when we get a regular onUpdate call.
     fullScreenRefresh = true;
@@ -324,7 +325,7 @@ class MnmlstView extends WatchUi.WatchFace {
     drawHourHand(targetDc);
 
     targetDc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-    //drow minute hand
+    //draw minute hand
     minuteHandAngle = (clockTime.min / 60.0) * Math.PI * 2;
     targetDc.fillPolygon(
       generateHandCoordinates(screenCenterPoint, minuteHandAngle, width, 15, 2)
