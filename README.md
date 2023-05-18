@@ -9,7 +9,3 @@ This is my version of the Pebble watch face MNMLST that was originally developed
 - Battery bar that shows the state through a green dot
 - Day of the month
 - Move notice through red center dot
-
-## Still to Come
-
-- Step goal fills minute hand blue
