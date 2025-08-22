@@ -17,6 +17,5 @@
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
-		"monkeyC.javaPath": "/opt/homebrew/Cellar/openjdk/20.0.1"
 	},
 }

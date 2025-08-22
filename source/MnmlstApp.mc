@@ -6,12 +6,9 @@
 
 using Toybox.Application;
 using Toybox.Time;
-using Toybox.Communications;
 
 // This is the primary entry point of the application.
 class Mnmlst extends Application.AppBase {
-  var temperature = null;
-
   function initialize() {
     AppBase.initialize();
   }

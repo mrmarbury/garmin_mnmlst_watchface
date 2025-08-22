@@ -19,10 +19,8 @@ var partialUpdatesAllowed = false;
 // This implements an analog watch face
 // Original design by Austen Harbour
 class MnmlstView extends WatchUi.WatchFace {
-  var font;
   var isAwake;
   var screenShape;
-  var dndIcon;
   var offscreenBuffer;
   var dateBuffer;
   var notificationBuffer;
@@ -31,7 +29,6 @@ class MnmlstView extends WatchUi.WatchFace {
   var fullScreenRefresh;
   var bt_connected = true;
   var msgCountMultiplier = 4.6;
-  var watchfaceColors;
 
   // Initialize variables for this view
   function initialize() {
@@ -39,14 +36,10 @@ class MnmlstView extends WatchUi.WatchFace {
     screenShape = System.getDeviceSettings().screenShape;
     fullScreenRefresh = true;
     partialUpdatesAllowed = Toybox.WatchUi.WatchFace has :onPartialUpdate;
-    watchfaceColors = MnmlstApp.Colors.DarkColors;
   }
 
   // Configure the layout of the watchface for this device
   function onLayout(dc) {
-    // Load the custom font we use for drawing the 3, 6, 9, and 12 on the watchface.
-    font = WatchUi.loadResource(Rez.Fonts.id_font_black_diamond);
-
     // If this device supports BufferedBitmap, allocate the buffers we use for drawing
     if (Toybox.Graphics has :createBufferedBitmap) {
       // Allocate a full screen size buffer with a palette of only 4 colors to draw
