@@ -43,6 +43,32 @@ function runAllTests(logger) {
         if (renderTest.testSleepModeHandling(logger)) { passedTests++; } else { failedTests++; }
         totalTests++;
         
+        // Run responsive layout tests
+        var responsiveTest = new ResponsiveLayoutTest();
+        if (responsiveTest.testCalculateScaleFactor(logger)) { passedTests++; } else { failedTests++; }
+        totalTests++;
+        
+        if (responsiveTest.testLayoutConfigurationScaling(logger)) { passedTests++; } else { failedTests++; }
+        totalTests++;
+        
+        if (responsiveTest.testBatteryPositioning(logger)) { passedTests++; } else { failedTests++; }
+        totalTests++;
+        
+        if (responsiveTest.testHashMarkScaling(logger)) { passedTests++; } else { failedTests++; }
+        totalTests++;
+        
+        if (responsiveTest.testNotificationPositioning(logger)) { passedTests++; } else { failedTests++; }
+        totalTests++;
+        
+        if (responsiveTest.testDatePositioning(logger)) { passedTests++; } else { failedTests++; }
+        totalTests++;
+        
+        if (responsiveTest.testScalingConsistency(logger)) { passedTests++; } else { failedTests++; }
+        totalTests++;
+        
+        if (responsiveTest.testScreenSizeRanges(logger)) { passedTests++; } else { failedTests++; }
+        totalTests++;
+        
     } catch (ex) {
         logger.debug("Error running tests: " + ex.getErrorMessage());
         failedTests++;

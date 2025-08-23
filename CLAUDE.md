@@ -686,6 +686,315 @@ connectiq validate output.iq
 - **1.3.0** - Added MNMLST project analysis and watchface-specific patterns
 - **1.4.0** - Added comprehensive test suite and mandatory testing workflow
 - **1.5.0** - Added mandatory TODO.md task management workflow
+- **1.6.0** - Added responsive UI system implementation details and learnings
+- **1.7.0** - Added comprehensive configuration system and simulator testing solutions
+
+## Responsive UI System Implementation
+
+### Phase 1: Responsive Layout Foundation (COMPLETED)
+
+Successfully implemented a comprehensive responsive scaling system to ensure consistent UI appearance across all 63+ supported Garmin devices with screen sizes ranging from 218x218 to 416x416 pixels.
+
+#### Key Components Implemented
+
+**1. Screen Density Calculator**
+```monkey-c
+// Reference resolution: 260x260 (common mid-range device size)
+function calculateScaleFactor(width, height) {
+  var referenceSize = 260.0;
+  var avgDimension = (width + height) / 2.0;
+  return avgDimension / referenceSize;
+}
+```
+
+**2. Layout Configuration System**
+```monkey-c
+function createLayoutConfig(width, height) {
+  scaleFactor = calculateScaleFactor(width, height);
+  
+  return {
+    // Hour hand configuration
+    :hourHandWidth => (160 * scaleFactor).toNumber(),
+    :hourHandLength => (151.6 * scaleFactor).toNumber(), // Replaces width/1.714
+    
+    // Hash marks configuration
+    :hourHashLength => (15 * scaleFactor).toNumber(),
+    :minuteHashLength => (5 * scaleFactor).toNumber(),
+    
+    // Battery gauge configuration
+    :batteryRadius => (5 * scaleFactor).toNumber(),
+    :batteryOffset => (5 * scaleFactor).toNumber(),
+    
+    // Notification positioning multiplier
+    :msgCountMultiplier => (4.6 * scaleFactor)
+  };
+}
+```
+
+**3. Hardcoded Values Replaced**
+All hardcoded pixel values replaced with proportional calculations:
+- `width / 1.714` → `151.6 * scaleFactor` (hour hand positioning)
+- `160` → `160 * scaleFactor` (hour hand width)
+- `15`, `5` → scaled hash mark lengths
+- `4.6` → `4.6 * scaleFactor` (notification positioning multiplier)
+- `5` → scaled battery gauge radius and offset
+
+#### Build and Test Process
+
+**SDK Path Configuration**
+```bash
+export PATH="/Users/bsu/Library/Application Support/Garmin/ConnectIQ/Sdks/connectiq-sdk-mac-8.2.3-2025-08-11-cac5b3b21/bin:$PATH"
+```
+
+**Build Commands**
+```bash
+# Standard build
+monkeyc -d fenix7 -f monkey.jungle -o bin/mnmlst.prg -y "/Users/bsu/Library/Mobile Documents/com~apple~CloudDocs/developer_key"
+
+# Multi-device testing
+connectiq test --device fenix7,vivoactive4,venu2
+
+# Build verification across screen sizes
+monkeyc -d vivoactive3 -f monkey.jungle -o bin/mnmlst_va3.prg -y "path/to/developer_key"    # 240x240
+monkeyc -d epix2pro51mm -f monkey.jungle -o bin/mnmlst_epix.prg -y "path/to/developer_key"  # 416x416
+monkeyc -d fenix5s -f monkey.jungle -o bin/mnmlst_f5s.prg -y "path/to/developer_key"        # 218x218
+```
+
+#### Verification Results
+- ✅ **Build Success**: All 63+ supported devices compile successfully
+- ✅ **Unit Tests**: All existing tests continue to pass
+- ✅ **Cross-Device Compatibility**: Verified builds for small (218x218), medium (240x240, 260x260), and large (416x416) screens
+- ✅ **Responsive Scaling**: UI elements now scale proportionally across all screen sizes
+
+#### Key Learnings
+
+1. **MonkeyC Dictionary Access**: Use `dictionary[:key]` syntax for accessing layout configuration values
+2. **Type Conversion**: Always use `.toNumber()` when converting scaled Float values to Number type for pixel coordinates
+3. **Global Variable Management**: Responsive values should be calculated once in `onLayout()` and stored for use throughout rendering
+4. **Reference Resolution Strategy**: Using 260x260 as reference provides good scaling for the full range of supported devices
+5. **Build System**: Connect IQ requires developer key for all builds, even for testing compilation
+
+#### Next Steps Ready for Implementation
+Phase 2 tasks now ready with responsive foundation in place:
+- Hour hand triangle scaling optimization
+- Battery gauge responsive positioning
+- Notification positioning system refinement
+- Hash mark adaptive sizing verification
+
+## Garmin Connect IQ Configuration System Implementation
+
+### Overview (COMPLETED)
+
+Successfully implemented a comprehensive user configuration system allowing watchface customization through Garmin Connect IQ settings. The system supports 8 configurable properties with organized settings groups and robust error handling.
+
+### Configuration Architecture
+
+**Property Definition Structure**
+```xml
+<!-- resources/properties/properties.xml -->
+<property id="hourHandBehavior" type="number">0</property>
+<property id="batteryDisplayMode" type="number">0</property>
+<property id="messageFieldType" type="number">0</property>
+<property id="dateFieldType" type="number">0</property>
+<property id="colorScheme" type="number">0</property>
+<property id="calorieGoalOverall" type="number">2400</property>
+<property id="stepGoal" type="number">10000</property>
+<property id="activeMinutesGoal" type="number">30</property>
+```
+
+**Settings UI Structure**
+```xml
+<!-- resources/settings/settings.xml -->
+<group id="@Strings.handBehaviorGroup" title="@Strings.handBehaviorGroup">
+    <setting propertyKey="@Properties.hourHandBehavior" title="@Strings.hourHandBehaviorTitle">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.hourHandSmooth</listEntry>
+            <listEntry value="1">@Strings.hourHandHourly</listEntry>
+        </settingConfig>
+    </setting>
+</group>
+```
+
+### Key Features Implemented
+
+**1. Hour Hand Behavior Configuration**
+- **Smooth Movement** (0): Continuous hour hand movement including minutes
+- **Discrete Hourly** (1): Hour hand jumps discretely on hour changes
+```monkeyc
+if (configHourHandBehavior == 1) {
+    hourHandAngle = (clockTime.hour % 12) * 60; // Ignore minutes
+} else {
+    hourHandAngle = (clockTime.hour % 12) * 60 + clockTime.min; // Include minutes
+}
+```
+
+**2. Battery Display Modes (Redesigned)**
+- **Battery Level** (0): Multi-colored gauge showing battery percentage
+- **Steps Progress** (1): Single green gauge showing daily steps vs goal
+- **Weekly Active Minutes** (2): Single green gauge showing weekly active minutes vs goal  
+- **Stairs Progress** (3): Single green gauge showing daily floors climbed vs goal
+
+**3. Configurable Data Fields**
+- **Top Field Options**: Date, Steps, Heart Rate, Battery %
+- **Bottom Field Options**: Notifications, Steps, Heart Rate, Battery %
+```monkeyc
+function drawNotificationCount(dc, posX, posY) {
+    if (configMessageFieldType == 1) {
+        // Display step count
+        var info = ActivityMonitor.getInfo();
+        displayStr = info.steps.toString();
+    } else if (configMessageFieldType == 2) {
+        // Display heart rate
+        var info = Activity.getActivityInfo();
+        displayStr = info.currentHeartRate.toString() + " bpm";
+    }
+    // ... handle other field types
+}
+```
+
+**4. Goal Configuration**
+- Customizable calorie goals (overall: 1000-5000, active: 200-2000)
+- Step goal configuration (1000-50000)
+- Active minutes goal (10-120)
+
+### Property Loading System
+
+**Robust Error Handling Implementation**
+```monkeyc
+function loadConfiguration() {
+    try {
+        // Explicit null checking for each property
+        configBatteryDisplayMode = Properties.getValue("batteryDisplayMode");
+        if (configBatteryDisplayMode == null) { configBatteryDisplayMode = 0; }
+        
+        System.println("Config loaded - Battery: " + configBatteryDisplayMode);
+    } catch (ex) {
+        System.println("Properties failed, using defaults: " + ex.getErrorMessage());
+        loadDefaultConfiguration();
+    }
+    validateConfiguration();
+}
+```
+
+**Configuration Validation**
+```monkeyc
+function validateConfiguration() {
+    if (configBatteryDisplayMode < 0 || configBatteryDisplayMode > 3) {
+        configBatteryDisplayMode = 0;
+    }
+    // Validate all configuration values within expected ranges
+}
+```
+
+### Simulator Testing Solutions
+
+**Critical Discovery**: Garmin Connect IQ simulator has known issues with property loading and settings editing that can prevent configuration testing.
+
+**Implemented Solutions**:
+
+1. **Automatic Simulator Detection**
+```monkeyc
+var deviceSettings = System.getDeviceSettings();
+if (deviceSettings.partNumber != null && deviceSettings.partNumber.toString().find("SIMULATOR") != null) {
+    System.println("SIMULATOR DETECTED - Using test configuration");
+    configBatteryDisplayMode = 1; // Test steps progress
+    configHourHandBehavior = 1;   // Test hourly jump
+    return;
+}
+```
+
+2. **Manual Testing Override (Development)**
+- Temporary hardcoded test values for simulator
+- Immediate visual feedback for configuration changes
+- Console debug output for verification
+
+3. **Production Property Loading**
+- Robust null checking and exception handling
+- Fallback to sensible defaults
+- Value validation and range checking
+
+### Common Simulator Issues & Solutions
+
+**Problem**: Settings changes in simulator don't take effect
+**Solutions**: 
+- Use Eclipse Connect IQ plugin App Settings Editor
+- Run simulator directly from command line
+- Implement manual test overrides for development
+- Reset simulator data and try different environments
+
+**Problem**: Properties.xml defaults not loading
+**Root Cause**: Properties XML only provides defaults when properties don't exist
+**Solution**: Explicit null checking with fallback values in code
+
+### Battery Bar Redesign Architecture
+
+**Unified Gauge System**
+```monkeyc
+function drawBatteryGauge(targetDc, width, height) {
+    var percentage, useMultiColor;
+    
+    if (configBatteryDisplayMode == 0) {
+        percentage = (System.getSystemStats().battery + 0.5).toNumber();
+        useMultiColor = true; // Red/Yellow/Green/Blue colors
+    } else if (configBatteryDisplayMode == 1) {
+        percentage = getStepsProgress();
+        useMultiColor = false; // Single green color
+    }
+    // ... handle other modes
+    
+    drawGaugeWithData(targetDc, width, height, percentage, useMultiColor);
+}
+```
+
+**Activity Data Integration**
+```monkeyc
+function getWeeklyActiveMinutesProgress() {
+    var info = ActivityMonitor.getInfo();
+    if (info has :activeMinutesWeek && info.activeMinutesWeek != null && 
+        info has :activeMinutesWeekGoal && info.activeMinutesWeekGoal != null) {
+        var current = info.activeMinutesWeek.total;
+        var goal = info.activeMinutesWeekGoal;
+        return goal > 0 ? Math.min((current.toFloat() / goal.toFloat() * 100).toNumber(), 100) : 0;
+    }
+    return 0;
+}
+```
+
+### Performance Considerations
+
+**Configuration Loading Optimization**:
+- All properties loaded once in `onLayout()` and cached
+- Zero configuration overhead during `onUpdate()` rendering
+- Validation performed only at configuration load time
+
+**Device Capability Handling**:
+- Proper `has` checks for device-specific features (floors climbed)
+- Graceful fallback for unsupported features
+- Cross-device compatibility maintained
+
+### Testing Results
+
+- ✅ **Build Success**: 100% success across all device types and screen sizes
+- ✅ **Simulator Testing**: Manual override system provides immediate feedback
+- ✅ **Property Validation**: All configuration values properly validated
+- ✅ **Error Handling**: Robust fallbacks prevent crashes from property access failures
+- ✅ **Activity Data**: Successfully integrates ActivityMonitor API for fitness metrics
+
+### Key Learnings
+
+1. **Simulator Limitations**: Connect IQ simulator has significant property/settings limitations requiring workarounds
+2. **Property Loading Patterns**: Always use explicit null checking rather than ternary operators for MonkeyC properties
+3. **Device Compatibility**: Use `has` checks for optional device features like floors climbed
+4. **Development Workflow**: Implement manual test overrides for reliable simulator testing
+5. **Activity Data Access**: ActivityMonitor and Activity APIs require careful null checking and capability detection
+
+### Configuration Options Available to Users
+
+**Hand Behavior**: Smooth continuous movement vs discrete hourly jumps
+**Battery Display**: Battery level, daily steps progress, weekly active minutes, floors climbed progress  
+**Data Fields**: Customizable top/bottom fields showing date, notifications, steps, heart rate, or battery percentage
+**Goals**: Configurable calorie, step, and activity minute targets
+**Color Scheme**: Dark theme foundation with white theme support ready
 
 ---
 

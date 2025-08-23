@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<resources>
+    <properties>
+        <!-- Hour hand behavior configuration -->
+        <property id="hourHandBehavior" type="number">0</property> <!-- 0=smooth, 1=hourly_jump -->
+        
+        <!-- Battery display configuration -->
+        <property id="batteryDisplayMode" type="number">0</property> <!-- 0=gauge, 1=percentage, 2=goals -->
+        
+        <!-- Data field configuration -->
+        <property id="messageFieldType" type="number">0</property> <!-- 0=notifications, 1=steps, 2=heart_rate, 3=battery_percent -->
+        <property id="dateFieldType" type="number">0</property> <!-- 0=date, 1=steps, 2=heart_rate, 3=battery_percent -->
+        
+        <!-- Color scheme configuration -->
+        <property id="colorScheme" type="number">0</property> <!-- 0=dark, 1=white -->
+        
+        <!-- Goal configuration -->
+        <property id="calorieGoalOverall" type="number">2400</property>
+        <property id="calorieGoalActive" type="number">750</property>
+        
+        <!-- Step and activity goals -->
+        <property id="stepGoal" type="number">10000</property>
+        <property id="activeMinutesGoal" type="number">30</property>
+    </properties>
+</resources>

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<resources>
+    <strings>
+        <!-- Application Name -->
+        <string id="AppName">MNMLST</string>
+        
+        <!-- Settings Groups -->
+        <string id="handBehaviorGroup">Hand Behavior</string>
+        <string id="displayGroup">Display Settings</string>
+        <string id="dataFieldsGroup">Data Fields</string>
+        <string id="goalsGroup">Goals &amp; Targets</string>
+        
+        <!-- Hour Hand Behavior Settings -->
+        <string id="hourHandBehaviorTitle">Hour Hand Movement</string>
+        <string id="hourHandSmooth">Smooth (Continuous)</string>
+        <string id="hourHandHourly">Discrete (Jump Hourly)</string>
+        
+        <!-- Battery Display Settings -->
+        <string id="batteryDisplayTitle">Battery Display</string>
+        <string id="batteryLevel">Battery Level</string>
+        <string id="stepsProgress">Steps Progress</string>
+        <string id="weeklyActiveMinutes">Weekly Active Minutes</string>
+        <string id="stairsProgress">Stairs Progress</string>
+        
+        <!-- Color Scheme Settings -->
+        <string id="colorSchemeTitle">Color Scheme</string>
+        <string id="colorSchemeDark">Dark Theme</string>
+        <string id="colorSchemeWhite">White Theme</string>
+        
+        <!-- Data Field Settings -->
+        <string id="messageFieldTitle">Bottom Field</string>
+        <string id="dateFieldTitle">Top Field</string>
+        
+        <!-- Data Field Options -->
+        <string id="fieldDate">Date</string>
+        <string id="fieldNotifications">Notifications</string>
+        <string id="fieldSteps">Steps</string>
+        <string id="fieldHeartRate">Heart Rate</string>
+        <string id="fieldBatteryPercent">Battery %</string>
+        
+        <!-- Goal Settings -->
+        <string id="calorieGoalOverallTitle">Overall Calorie Goal</string>
+        <string id="calorieGoalActiveTitle">Active Calorie Goal</string>
+        <string id="stepGoalTitle">Daily Step Goal</string>
+        <string id="activeMinutesGoalTitle">Active Minutes Goal</string>
+    </strings>
+</resources>
