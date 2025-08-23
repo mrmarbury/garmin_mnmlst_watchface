@@ -18,5 +18,11 @@
         <property id="calorieGoalOverall" type="number">2400</property>
         <property id="calorieGoalActive" type="number">750</property>
         
+        <!-- UI Element Visibility configuration -->
+        <property id="showTopField" type="number">1</property> <!-- 1=show, 0=hide -->
+        <property id="showMiddleGauge" type="number">1</property> <!-- 1=show, 0=hide -->
+        <property id="showBottomField" type="number">1</property> <!-- 1=show, 0=hide -->
+        <property id="showMinuteHand" type="number">1</property> <!-- 1=show, 0=hide -->
+        
     </properties>
 </resources>

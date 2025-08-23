@@ -5,10 +5,10 @@
  - [X] refactor code:
    - [x] remove unused code
  - [X] Support all round watches and round watches only. Exclude everything square, not supporting analog watch faces and the Instinct line
- - [] Make UI elements look the same across watches
+ - [x] Make UI elements look the same across watches
    - the thing that I have in mind here is that depending on the screen and screen size the hour triangle, the battery gauge and the numbers look slightly different and are something also shifted. 
    - I have already put custom code for some watches in the code but there might be an automatic way to position and resize all elements depending on the screen.
-   - HYPERTHINK about the possible solution, then implement it, write and execute tests for the new code and review the code.
+   - think about the possible solution, then implement it, write and execute tests for the new code and review the code.
    - [X] Phase 1: Create Responsive Layout Foundation
      - [X] Add screen density calculator - Calculate scale factor based on screen size vs reference resolution (260x260)
      - [X] Create layout configuration class - Centralize all positioning and sizing calculations
@@ -39,6 +39,6 @@
    - [X] message count -> plain values like steps, hr, battery percentage, etc
    - [X] date -> plain values like steps, hr, battery percentage, etc
  - [X] Add white color scheme option (background white, orange hour, black minutes, black arbor, everything else that's white is now black)
- - [] bump version to next major version
+ - [X] bump version to next major version
 
 ## Bugs

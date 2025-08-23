@@ -1,0 +1,1052 @@
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc"; @line = 6; @symbol_usingdef<0> = [Toybox,6,6,12]; @symbol_usingdef<1> = [Test,6,13,17]; ]
+using Toybox.Test;
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc"; @line = 7; @symbol_usingdef<0> = [Toybox,7,6,12]; @symbol_usingdef<1> = [Graphics,7,13,21]; ]
+using Toybox.Graphics;
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc"; @line = 8; @symbol_usingdef<0> = [Toybox,8,6,12]; @symbol_usingdef<1> = [System,8,13,19]; ]
+using Toybox.System;
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc"; @line = 9; @symbol_usingdef<0> = [Toybox,9,6,12]; @symbol_usingdef<1> = [ActivityMonitor,9,13,28]; ]
+using Toybox.ActivityMonitor;
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc"; @line = 10; @symbol_usingdef<0> = [Toybox,10,6,12]; @symbol_usingdef<1> = [Lang,10,13,17]; ]
+using Toybox.Lang;
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc"; @line = 14; test = true; @symbol_functiondef = [testCalorieDataFields,14,9,30]; @symbol_param<0> = [logger,14,31,37]; ]
+function testCalorieDataFields(logger) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_14_39_52_0_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 15 4 ]
+    %tmp.1 = lgetv %logger;
+    symbol [ logger %tmp.1 15 4 10 ];
+    symbol [ debug %tmp.2 15 11 16 ];
+    %tmp.2 = getv function %tmp.1 :debug;
+    %tmp.3 = "Testing calorie data field functionality";
+    invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 17 4 ]
+    [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_14_39_52_0_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_14_39_52_0_stop" ]
+    %view.1 = local;
+    symbol [ view %view.1 17 8 12 ];
+    symbol [ MnmlstView %tmp.7 17 19 29 ];
+    %tmp.7 = getv ? :MnmlstView;
+    %tmp.4 = newc %tmp.7 ();
+    lputv %view.1 %tmp.4;
+    symbol [ view %view.1 17 8 12 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 18 4 ]
+    %tmp.8 = lgetv %view.1;
+    symbol [ view %tmp.8 18 4 8 ];
+    symbol [ initialize %tmp.9 18 9 19 ];
+    %tmp.9 = getv function %tmp.8 :initialize;
+    invoke %tmp.8 %tmp.9();
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 20 4 ]
+    [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_14_39_52_0_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_14_39_52_0_stop" ]
+    %success.2 = local;
+    symbol [ success %success.2 20 8 15 ];
+    %tmp.10 = true;
+    lputv %success.2 %tmp.10;
+    symbol [ success %success.2 20 8 15 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 23 4 ]
+    %tmp.11 = lgetv %view.1;
+    symbol [ view %tmp.11 23 4 8 ];
+    %tmp.12 = 4;
+    symbol [ configMessageFieldType ? 23 9 31 ];
+    putv %tmp.11 :configMessageFieldType %tmp.12;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 24 4 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_24_4_27_4_if_stmt:
+    %tmp.13 = lgetv %view.1;
+    symbol [ view %tmp.13 24 8 12 ];
+    symbol [ configMessageFieldType %tmp.14 24 13 35 ];
+    %tmp.14 = getv %tmp.13 :configMessageFieldType;
+    %tmp.15 = 4;
+    %tmp.16 = ne %tmp.14 %tmp.15;
+    bf %tmp.16 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_24_4_27_4_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_24_4_27_4_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_24_42_27_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 25 8 ]
+    %tmp.17 = lgetv %logger;
+    symbol [ logger %tmp.17 25 8 14 ];
+    symbol [ error %tmp.18 25 15 20 ];
+    %tmp.18 = getv function %tmp.17 :error;
+    %tmp.19 = "Calories message field type not set correctly";
+    invoke %tmp.17 %tmp.18(%tmp.19);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 26 8 ]
+    %tmp.20 = false;
+    lputv %success.2 %tmp.20;
+    symbol [ success %success.2 26 8 15 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_24_42_27_4_stop:
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_24_4_27_4_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_24_4_27_4_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 30 4 ]
+    %tmp.21 = lgetv %view.1;
+    symbol [ view %tmp.21 30 4 8 ];
+    %tmp.22 = 5;
+    symbol [ configMessageFieldType ? 30 9 31 ];
+    putv %tmp.21 :configMessageFieldType %tmp.22;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 31 4 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_31_4_34_4_if_stmt:
+    %tmp.23 = lgetv %view.1;
+    symbol [ view %tmp.23 31 8 12 ];
+    symbol [ configMessageFieldType %tmp.24 31 13 35 ];
+    %tmp.24 = getv %tmp.23 :configMessageFieldType;
+    %tmp.25 = 5;
+    %tmp.26 = ne %tmp.24 %tmp.25;
+    bf %tmp.26 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_31_4_34_4_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_31_4_34_4_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_31_42_34_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 32 8 ]
+    %tmp.27 = lgetv %logger;
+    symbol [ logger %tmp.27 32 8 14 ];
+    symbol [ error %tmp.28 32 15 20 ];
+    %tmp.28 = getv function %tmp.27 :error;
+    %tmp.29 = "Active calories message field type not set correctly";
+    invoke %tmp.27 %tmp.28(%tmp.29);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 33 8 ]
+    %tmp.30 = false;
+    lputv %success.2 %tmp.30;
+    symbol [ success %success.2 33 8 15 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_31_42_34_4_stop:
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_31_4_34_4_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_31_4_34_4_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 37 4 ]
+    %tmp.31 = lgetv %view.1;
+    symbol [ view %tmp.31 37 4 8 ];
+    %tmp.32 = 4;
+    symbol [ configDateFieldType ? 37 9 28 ];
+    putv %tmp.31 :configDateFieldType %tmp.32;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 38 4 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_38_4_41_4_if_stmt:
+    %tmp.33 = lgetv %view.1;
+    symbol [ view %tmp.33 38 8 12 ];
+    symbol [ configDateFieldType %tmp.34 38 13 32 ];
+    %tmp.34 = getv %tmp.33 :configDateFieldType;
+    %tmp.35 = 4;
+    %tmp.36 = ne %tmp.34 %tmp.35;
+    bf %tmp.36 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_38_4_41_4_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_38_4_41_4_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_38_39_41_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 39 8 ]
+    %tmp.37 = lgetv %logger;
+    symbol [ logger %tmp.37 39 8 14 ];
+    symbol [ error %tmp.38 39 15 20 ];
+    %tmp.38 = getv function %tmp.37 :error;
+    %tmp.39 = "Calories date field type not set correctly";
+    invoke %tmp.37 %tmp.38(%tmp.39);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 40 8 ]
+    %tmp.40 = false;
+    lputv %success.2 %tmp.40;
+    symbol [ success %success.2 40 8 15 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_38_39_41_4_stop:
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_38_4_41_4_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_38_4_41_4_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 44 4 ]
+    %tmp.41 = lgetv %view.1;
+    symbol [ view %tmp.41 44 4 8 ];
+    %tmp.42 = 5;
+    symbol [ configDateFieldType ? 44 9 28 ];
+    putv %tmp.41 :configDateFieldType %tmp.42;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 45 4 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_45_4_48_4_if_stmt:
+    %tmp.43 = lgetv %view.1;
+    symbol [ view %tmp.43 45 8 12 ];
+    symbol [ configDateFieldType %tmp.44 45 13 32 ];
+    %tmp.44 = getv %tmp.43 :configDateFieldType;
+    %tmp.45 = 5;
+    %tmp.46 = ne %tmp.44 %tmp.45;
+    bf %tmp.46 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_45_4_48_4_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_45_4_48_4_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_45_39_48_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 46 8 ]
+    %tmp.47 = lgetv %logger;
+    symbol [ logger %tmp.47 46 8 14 ];
+    symbol [ error %tmp.48 46 15 20 ];
+    %tmp.48 = getv function %tmp.47 :error;
+    %tmp.49 = "Active calories date field type not set correctly";
+    invoke %tmp.47 %tmp.48(%tmp.49);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 47 8 ]
+    %tmp.50 = false;
+    lputv %success.2 %tmp.50;
+    symbol [ success %success.2 47 8 15 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_45_39_48_4_stop:
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_45_4_48_4_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_45_4_48_4_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 50 4 ]
+    %tmp.51 = lgetv %logger;
+    symbol [ logger %tmp.51 50 4 10 ];
+    symbol [ debug %tmp.52 50 11 16 ];
+    %tmp.52 = getv function %tmp.51 :debug;
+    %tmp.53 = "Calorie data fields test ";
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_50_48_50_69_begin:
+    %tmp.54 = lgetv %success.2;
+    symbol [ success %tmp.54 50 48 55 ];
+    bf %tmp.54 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_50_48_50_69_false;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_50_48_50_69_true:
+    %tmp.55 = "passed";
+    push %tmp.55;
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_50_48_50_69_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_50_48_50_69_false:
+    %tmp.56 = "failed";
+    push %tmp.56;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_50_48_50_69_end:
+    %tmp.57 = phi [%tmp.54 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_50_48_50_69_begin] [%tmp.55 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_50_48_50_69_true] [%tmp.56 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_50_48_50_69_false] [%tmp.57 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_50_48_50_69_end];
+    %tmp.58 = add %tmp.53 %tmp.57;
+    invoke %tmp.51 %tmp.52(%tmp.58);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 51 4 ]
+    %tmp.59 = lgetv %success.2;
+    symbol [ success %tmp.59 51 11 18 ];
+    ret %tmp.59;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_14_39_52_0_stop:
+}
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc"; @line = 56; test = true; @symbol_functiondef = [testCalorieGaugeModes,56,9,30]; @symbol_param<0> = [logger,56,31,37]; ]
+function testCalorieGaugeModes(logger) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_56_39_80_0_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 57 4 ]
+    %tmp.1 = lgetv %logger;
+    symbol [ logger %tmp.1 57 4 10 ];
+    symbol [ debug %tmp.2 57 11 16 ];
+    %tmp.2 = getv function %tmp.1 :debug;
+    %tmp.3 = "Testing calorie gauge mode functionality";
+    invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 59 4 ]
+    [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_56_39_80_0_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_56_39_80_0_stop" ]
+    %view.1 = local;
+    symbol [ view %view.1 59 8 12 ];
+    symbol [ MnmlstView %tmp.7 59 19 29 ];
+    %tmp.7 = getv ? :MnmlstView;
+    %tmp.4 = newc %tmp.7 ();
+    lputv %view.1 %tmp.4;
+    symbol [ view %view.1 59 8 12 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 60 4 ]
+    %tmp.8 = lgetv %view.1;
+    symbol [ view %tmp.8 60 4 8 ];
+    symbol [ initialize %tmp.9 60 9 19 ];
+    %tmp.9 = getv function %tmp.8 :initialize;
+    invoke %tmp.8 %tmp.9();
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 62 4 ]
+    [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_56_39_80_0_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_56_39_80_0_stop" ]
+    %success.2 = local;
+    symbol [ success %success.2 62 8 15 ];
+    %tmp.10 = true;
+    lputv %success.2 %tmp.10;
+    symbol [ success %success.2 62 8 15 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 65 4 ]
+    %tmp.11 = lgetv %view.1;
+    symbol [ view %tmp.11 65 4 8 ];
+    %tmp.12 = 4;
+    symbol [ configBatteryDisplayMode ? 65 9 33 ];
+    putv %tmp.11 :configBatteryDisplayMode %tmp.12;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 66 4 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_66_4_69_4_if_stmt:
+    %tmp.13 = lgetv %view.1;
+    symbol [ view %tmp.13 66 8 12 ];
+    symbol [ configBatteryDisplayMode %tmp.14 66 13 37 ];
+    %tmp.14 = getv %tmp.13 :configBatteryDisplayMode;
+    %tmp.15 = 4;
+    %tmp.16 = ne %tmp.14 %tmp.15;
+    bf %tmp.16 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_66_4_69_4_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_66_4_69_4_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_66_44_69_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 67 8 ]
+    %tmp.17 = lgetv %logger;
+    symbol [ logger %tmp.17 67 8 14 ];
+    symbol [ error %tmp.18 67 15 20 ];
+    %tmp.18 = getv function %tmp.17 :error;
+    %tmp.19 = "Calories gauge mode not set correctly";
+    invoke %tmp.17 %tmp.18(%tmp.19);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 68 8 ]
+    %tmp.20 = false;
+    lputv %success.2 %tmp.20;
+    symbol [ success %success.2 68 8 15 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_66_44_69_4_stop:
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_66_4_69_4_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_66_4_69_4_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 72 4 ]
+    %tmp.21 = lgetv %view.1;
+    symbol [ view %tmp.21 72 4 8 ];
+    %tmp.22 = 5;
+    symbol [ configBatteryDisplayMode ? 72 9 33 ];
+    putv %tmp.21 :configBatteryDisplayMode %tmp.22;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 73 4 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_73_4_76_4_if_stmt:
+    %tmp.23 = lgetv %view.1;
+    symbol [ view %tmp.23 73 8 12 ];
+    symbol [ configBatteryDisplayMode %tmp.24 73 13 37 ];
+    %tmp.24 = getv %tmp.23 :configBatteryDisplayMode;
+    %tmp.25 = 5;
+    %tmp.26 = ne %tmp.24 %tmp.25;
+    bf %tmp.26 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_73_4_76_4_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_73_4_76_4_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_73_44_76_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 74 8 ]
+    %tmp.27 = lgetv %logger;
+    symbol [ logger %tmp.27 74 8 14 ];
+    symbol [ error %tmp.28 74 15 20 ];
+    %tmp.28 = getv function %tmp.27 :error;
+    %tmp.29 = "Active calories gauge mode not set correctly";
+    invoke %tmp.27 %tmp.28(%tmp.29);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 75 8 ]
+    %tmp.30 = false;
+    lputv %success.2 %tmp.30;
+    symbol [ success %success.2 75 8 15 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_73_44_76_4_stop:
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_73_4_76_4_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_73_4_76_4_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 78 4 ]
+    %tmp.31 = lgetv %logger;
+    symbol [ logger %tmp.31 78 4 10 ];
+    symbol [ debug %tmp.32 78 11 16 ];
+    %tmp.32 = getv function %tmp.31 :debug;
+    %tmp.33 = "Calorie gauge modes test ";
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_78_48_78_69_begin:
+    %tmp.34 = lgetv %success.2;
+    symbol [ success %tmp.34 78 48 55 ];
+    bf %tmp.34 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_78_48_78_69_false;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_78_48_78_69_true:
+    %tmp.35 = "passed";
+    push %tmp.35;
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_78_48_78_69_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_78_48_78_69_false:
+    %tmp.36 = "failed";
+    push %tmp.36;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_78_48_78_69_end:
+    %tmp.37 = phi [%tmp.34 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_78_48_78_69_begin] [%tmp.35 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_78_48_78_69_true] [%tmp.36 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_78_48_78_69_false] [%tmp.37 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_78_48_78_69_end];
+    %tmp.38 = add %tmp.33 %tmp.37;
+    invoke %tmp.31 %tmp.32(%tmp.38);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 79 4 ]
+    %tmp.39 = lgetv %success.2;
+    symbol [ success %tmp.39 79 11 18 ];
+    ret %tmp.39;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_56_39_80_0_stop:
+}
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc"; @line = 84; test = true; @symbol_functiondef = [testCalorieProgressCalculations,84,9,40]; @symbol_param<0> = [logger,84,41,47]; ]
+function testCalorieProgressCalculations(logger) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_84_49_120_0_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 85 4 ]
+    %tmp.1 = lgetv %logger;
+    symbol [ logger %tmp.1 85 4 10 ];
+    symbol [ debug %tmp.2 85 11 16 ];
+    %tmp.2 = getv function %tmp.1 :debug;
+    %tmp.3 = "Testing calorie progress calculation functions";
+    invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 87 4 ]
+    [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_84_49_120_0_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_84_49_120_0_stop" ]
+    %view.1 = local;
+    symbol [ view %view.1 87 8 12 ];
+    symbol [ MnmlstView %tmp.7 87 19 29 ];
+    %tmp.7 = getv ? :MnmlstView;
+    %tmp.4 = newc %tmp.7 ();
+    lputv %view.1 %tmp.4;
+    symbol [ view %view.1 87 8 12 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 88 4 ]
+    %tmp.8 = lgetv %view.1;
+    symbol [ view %tmp.8 88 4 8 ];
+    symbol [ initialize %tmp.9 88 9 19 ];
+    %tmp.9 = getv function %tmp.8 :initialize;
+    invoke %tmp.8 %tmp.9();
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 91 4 ]
+    %tmp.10 = lgetv %view.1;
+    symbol [ view %tmp.10 91 4 8 ];
+    %tmp.11 = 2400;
+    symbol [ configCalorieGoalOverall ? 91 9 33 ];
+    putv %tmp.10 :configCalorieGoalOverall %tmp.11;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 92 4 ]
+    %tmp.12 = lgetv %view.1;
+    symbol [ view %tmp.12 92 4 8 ];
+    %tmp.13 = 750;
+    symbol [ configCalorieGoalActive ? 92 9 32 ];
+    putv %tmp.12 :configCalorieGoalActive %tmp.13;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 94 4 ]
+    [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_84_49_120_0_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_84_49_120_0_stop" ]
+    %success.2 = local;
+    symbol [ success %success.2 94 8 15 ];
+    %tmp.14 = true;
+    lputv %success.2 %tmp.14;
+    symbol [ success %success.2 94 8 15 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 96 4 ]
+    try @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_96_4_105_4_beginTry @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_96_4_105_4_endTry @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_96_4_105_4_catch @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_96_4_105_4_finally;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_96_4_105_4_beginTry:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_96_8_102_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 97 8 ]
+    [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_96_8_102_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_96_8_102_4_stop" ]
+    %caloriesProgress.3 = local;
+    symbol [ caloriesProgress %caloriesProgress.3 97 12 28 ];
+    %tmp.15 = lgetv %view.1;
+    symbol [ view %tmp.15 97 31 35 ];
+    symbol [ getCaloriesProgress %tmp.16 97 36 55 ];
+    %tmp.16 = getv function %tmp.15 :getCaloriesProgress;
+    %tmp.17 = invoke %tmp.15 %tmp.16();
+    lputv %caloriesProgress.3 %tmp.17;
+    symbol [ caloriesProgress %caloriesProgress.3 97 12 28 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 98 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_98_8_101_8_if_stmt:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_98_12_98_55_begin:
+    %tmp.18 = lgetv %caloriesProgress.3;
+    symbol [ caloriesProgress %tmp.18 98 12 28 ];
+    %tmp.19 = 0;
+    %tmp.20 = lt %tmp.18 %tmp.19;
+    bt %tmp.20 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_98_8_101_8_if_true;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_98_36_98_55_false:
+    %tmp.21 = lgetv %caloriesProgress.3;
+    symbol [ caloriesProgress %tmp.21 98 36 52 ];
+    %tmp.22 = 100;
+    %tmp.23 = gt %tmp.21 %tmp.22;
+    push %tmp.23;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_98_36_98_55_end:
+    %tmp.24 = phi [%tmp.20 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_98_12_98_55_begin] [%tmp.23 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_98_36_98_55_false] [%tmp.24 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_98_36_98_55_end];
+    bf %tmp.24 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_98_8_101_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_98_8_101_8_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_98_60_101_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 99 12 ]
+    %tmp.25 = lgetv %logger;
+    symbol [ logger %tmp.25 99 12 18 ];
+    symbol [ error %tmp.26 99 19 24 ];
+    %tmp.26 = getv function %tmp.25 :error;
+    %tmp.27 = "Calories progress out of range: ";
+    %tmp.28 = lgetv %caloriesProgress.3;
+    symbol [ caloriesProgress %tmp.28 99 62 78 ];
+    %tmp.29 = add %tmp.27 %tmp.28;
+    invoke %tmp.25 %tmp.26(%tmp.29);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 100 12 ]
+    %tmp.30 = false;
+    lputv %success.2 %tmp.30;
+    symbol [ success %success.2 100 12 19 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_98_60_101_8_stop:
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_98_8_101_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_98_8_101_8_if_end:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_96_8_102_4_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_96_4_105_4_endTry:
+    jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_96_4_105_4_finally;
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_96_4_105_4_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_96_4_105_4_catch:
+    %tmp.31 = exception;
+    push %tmp.31;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 102 6 ]
+    [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_96_4_105_4_catch" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_102_6_105_4_end" ]
+    %ex.4 = local;
+    symbol [ ex %ex.4 102 13 15 ];
+    %tmp.32 = dup %tmp.31;
+    lputv %ex.4 %tmp.32;
+    symbol [ ex %ex.4 102 13 15 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_102_17_105_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 103 8 ]
+    %tmp.33 = lgetv %logger;
+    symbol [ logger %tmp.33 103 8 14 ];
+    symbol [ error %tmp.34 103 15 20 ];
+    %tmp.34 = getv function %tmp.33 :error;
+    %tmp.35 = "Exception in getCaloriesProgress: ";
+    %tmp.36 = lgetv %ex.4;
+    symbol [ ex %tmp.36 103 60 62 ];
+    symbol [ getErrorMessage %tmp.37 103 63 78 ];
+    %tmp.37 = getv function %tmp.36 :getErrorMessage;
+    %tmp.38 = invoke %tmp.36 %tmp.37();
+    %tmp.39 = add %tmp.35 %tmp.38;
+    invoke %tmp.33 %tmp.34(%tmp.39);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 104 8 ]
+    %tmp.40 = false;
+    lputv %success.2 %tmp.40;
+    symbol [ success %success.2 104 8 15 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_102_17_105_4_stop:
+    jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_96_4_105_4_finally;
+    pop;
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_96_4_105_4_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_102_6_105_4_end:
+    try @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_96_4_105_4_catch @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_102_6_105_4_end @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_102_6_105_4_end @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_96_4_105_4_finally;
+    jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_96_4_105_4_finally;
+    throw %tmp.31;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_96_4_105_4_finally:
+    jsrret;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_96_4_105_4_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 107 4 ]
+    try @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_107_4_116_4_beginTry @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_107_4_116_4_endTry @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_107_4_116_4_catch @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_107_4_116_4_finally;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_107_4_116_4_beginTry:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_107_8_113_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 108 8 ]
+    [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_107_8_113_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_107_8_113_4_stop" ]
+    %activeCaloriesProgress.5 = local;
+    symbol [ activeCaloriesProgress %activeCaloriesProgress.5 108 12 34 ];
+    %tmp.41 = lgetv %view.1;
+    symbol [ view %tmp.41 108 37 41 ];
+    symbol [ getActiveCaloriesProgress %tmp.42 108 42 67 ];
+    %tmp.42 = getv function %tmp.41 :getActiveCaloriesProgress;
+    %tmp.43 = invoke %tmp.41 %tmp.42();
+    lputv %activeCaloriesProgress.5 %tmp.43;
+    symbol [ activeCaloriesProgress %activeCaloriesProgress.5 108 12 34 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 109 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_109_8_112_8_if_stmt:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_109_12_109_67_begin:
+    %tmp.44 = lgetv %activeCaloriesProgress.5;
+    symbol [ activeCaloriesProgress %tmp.44 109 12 34 ];
+    %tmp.45 = 0;
+    %tmp.46 = lt %tmp.44 %tmp.45;
+    bt %tmp.46 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_109_8_112_8_if_true;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_109_42_109_67_false:
+    %tmp.47 = lgetv %activeCaloriesProgress.5;
+    symbol [ activeCaloriesProgress %tmp.47 109 42 64 ];
+    %tmp.48 = 100;
+    %tmp.49 = gt %tmp.47 %tmp.48;
+    push %tmp.49;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_109_42_109_67_end:
+    %tmp.50 = phi [%tmp.46 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_109_12_109_67_begin] [%tmp.49 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_109_42_109_67_false] [%tmp.50 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_109_42_109_67_end];
+    bf %tmp.50 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_109_8_112_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_109_8_112_8_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_109_72_112_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 110 12 ]
+    %tmp.51 = lgetv %logger;
+    symbol [ logger %tmp.51 110 12 18 ];
+    symbol [ error %tmp.52 110 19 24 ];
+    %tmp.52 = getv function %tmp.51 :error;
+    %tmp.53 = "Active calories progress out of range: ";
+    %tmp.54 = lgetv %activeCaloriesProgress.5;
+    symbol [ activeCaloriesProgress %tmp.54 110 69 91 ];
+    %tmp.55 = add %tmp.53 %tmp.54;
+    invoke %tmp.51 %tmp.52(%tmp.55);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 111 12 ]
+    %tmp.56 = false;
+    lputv %success.2 %tmp.56;
+    symbol [ success %success.2 111 12 19 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_109_72_112_8_stop:
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_109_8_112_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_109_8_112_8_if_end:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_107_8_113_4_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_107_4_116_4_endTry:
+    jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_107_4_116_4_finally;
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_107_4_116_4_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_107_4_116_4_catch:
+    %tmp.57 = exception;
+    push %tmp.57;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 113 6 ]
+    [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_107_4_116_4_catch" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_113_6_116_4_end" ]
+    %ex.6 = local;
+    symbol [ ex %ex.6 113 13 15 ];
+    %tmp.58 = dup %tmp.57;
+    lputv %ex.6 %tmp.58;
+    symbol [ ex %ex.6 113 13 15 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_113_17_116_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 114 8 ]
+    %tmp.59 = lgetv %logger;
+    symbol [ logger %tmp.59 114 8 14 ];
+    symbol [ error %tmp.60 114 15 20 ];
+    %tmp.60 = getv function %tmp.59 :error;
+    %tmp.61 = "Exception in getActiveCaloriesProgress: ";
+    %tmp.62 = lgetv %ex.6;
+    symbol [ ex %tmp.62 114 66 68 ];
+    symbol [ getErrorMessage %tmp.63 114 69 84 ];
+    %tmp.63 = getv function %tmp.62 :getErrorMessage;
+    %tmp.64 = invoke %tmp.62 %tmp.63();
+    %tmp.65 = add %tmp.61 %tmp.64;
+    invoke %tmp.59 %tmp.60(%tmp.65);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 115 8 ]
+    %tmp.66 = false;
+    lputv %success.2 %tmp.66;
+    symbol [ success %success.2 115 8 15 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_113_17_116_4_stop:
+    jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_107_4_116_4_finally;
+    pop;
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_107_4_116_4_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_113_6_116_4_end:
+    try @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_107_4_116_4_catch @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_113_6_116_4_end @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_113_6_116_4_end @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_107_4_116_4_finally;
+    jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_107_4_116_4_finally;
+    throw %tmp.57;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_107_4_116_4_finally:
+    jsrret;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_107_4_116_4_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 118 4 ]
+    %tmp.67 = lgetv %logger;
+    symbol [ logger %tmp.67 118 4 10 ];
+    symbol [ debug %tmp.68 118 11 16 ];
+    %tmp.68 = getv function %tmp.67 :debug;
+    %tmp.69 = "Calorie progress calculations test ";
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_118_58_118_79_begin:
+    %tmp.70 = lgetv %success.2;
+    symbol [ success %tmp.70 118 58 65 ];
+    bf %tmp.70 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_118_58_118_79_false;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_118_58_118_79_true:
+    %tmp.71 = "passed";
+    push %tmp.71;
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_118_58_118_79_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_118_58_118_79_false:
+    %tmp.72 = "failed";
+    push %tmp.72;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_118_58_118_79_end:
+    %tmp.73 = phi [%tmp.70 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_118_58_118_79_begin] [%tmp.71 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_118_58_118_79_true] [%tmp.72 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_118_58_118_79_false] [%tmp.73 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_118_58_118_79_end];
+    %tmp.74 = add %tmp.69 %tmp.73;
+    invoke %tmp.67 %tmp.68(%tmp.74);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 119 4 ]
+    %tmp.75 = lgetv %success.2;
+    symbol [ success %tmp.75 119 11 18 ];
+    ret %tmp.75;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_84_49_120_0_stop:
+}
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc"; @line = 124; test = true; @symbol_functiondef = [testCalorieConfigurationValidation,124,9,43]; @symbol_param<0> = [logger,124,44,50]; ]
+function testCalorieConfigurationValidation(logger) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_124_52_178_0_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 125 4 ]
+    %tmp.1 = lgetv %logger;
+    symbol [ logger %tmp.1 125 4 10 ];
+    symbol [ debug %tmp.2 125 11 16 ];
+    %tmp.2 = getv function %tmp.1 :debug;
+    %tmp.3 = "Testing configuration validation with new calorie field ranges";
+    invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 127 4 ]
+    [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_124_52_178_0_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_124_52_178_0_stop" ]
+    %view.1 = local;
+    symbol [ view %view.1 127 8 12 ];
+    symbol [ MnmlstView %tmp.7 127 19 29 ];
+    %tmp.7 = getv ? :MnmlstView;
+    %tmp.4 = newc %tmp.7 ();
+    lputv %view.1 %tmp.4;
+    symbol [ view %view.1 127 8 12 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 128 4 ]
+    %tmp.8 = lgetv %view.1;
+    symbol [ view %tmp.8 128 4 8 ];
+    symbol [ initialize %tmp.9 128 9 19 ];
+    %tmp.9 = getv function %tmp.8 :initialize;
+    invoke %tmp.8 %tmp.9();
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 130 4 ]
+    [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_124_52_178_0_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_124_52_178_0_stop" ]
+    %success.2 = local;
+    symbol [ success %success.2 130 8 15 ];
+    %tmp.10 = true;
+    lputv %success.2 %tmp.10;
+    symbol [ success %success.2 130 8 15 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 133 4 ]
+    %tmp.11 = lgetv %view.1;
+    symbol [ view %tmp.11 133 4 8 ];
+    %tmp.12 = 10;
+    symbol [ configMessageFieldType ? 133 9 31 ];
+    putv %tmp.11 :configMessageFieldType %tmp.12;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 134 4 ]
+    %tmp.13 = lgetv %view.1;
+    symbol [ view %tmp.13 134 4 8 ];
+    symbol [ validateConfiguration %tmp.14 134 9 30 ];
+    %tmp.14 = getv function %tmp.13 :validateConfiguration;
+    invoke %tmp.13 %tmp.14();
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 135 4 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_135_4_138_4_if_stmt:
+    %tmp.15 = lgetv %view.1;
+    symbol [ view %tmp.15 135 8 12 ];
+    symbol [ configMessageFieldType %tmp.16 135 13 35 ];
+    %tmp.16 = getv %tmp.15 :configMessageFieldType;
+    %tmp.17 = 0;
+    %tmp.18 = ne %tmp.16 %tmp.17;
+    bf %tmp.18 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_135_4_138_4_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_135_4_138_4_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_135_42_138_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 136 8 ]
+    %tmp.19 = lgetv %logger;
+    symbol [ logger %tmp.19 136 8 14 ];
+    symbol [ error %tmp.20 136 15 20 ];
+    %tmp.20 = getv function %tmp.19 :error;
+    %tmp.21 = "Invalid message field type not corrected to 0";
+    invoke %tmp.19 %tmp.20(%tmp.21);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 137 8 ]
+    %tmp.22 = false;
+    lputv %success.2 %tmp.22;
+    symbol [ success %success.2 137 8 15 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_135_42_138_4_stop:
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_135_4_138_4_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_135_4_138_4_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 140 4 ]
+    %tmp.23 = lgetv %view.1;
+    symbol [ view %tmp.23 140 4 8 ];
+    %tmp.24 = -1;
+    symbol [ configDateFieldType ? 140 9 28 ];
+    putv %tmp.23 :configDateFieldType %tmp.24;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 141 4 ]
+    %tmp.25 = lgetv %view.1;
+    symbol [ view %tmp.25 141 4 8 ];
+    symbol [ validateConfiguration %tmp.26 141 9 30 ];
+    %tmp.26 = getv function %tmp.25 :validateConfiguration;
+    invoke %tmp.25 %tmp.26();
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 142 4 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_142_4_145_4_if_stmt:
+    %tmp.27 = lgetv %view.1;
+    symbol [ view %tmp.27 142 8 12 ];
+    symbol [ configDateFieldType %tmp.28 142 13 32 ];
+    %tmp.28 = getv %tmp.27 :configDateFieldType;
+    %tmp.29 = 0;
+    %tmp.30 = ne %tmp.28 %tmp.29;
+    bf %tmp.30 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_142_4_145_4_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_142_4_145_4_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_142_39_145_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 143 8 ]
+    %tmp.31 = lgetv %logger;
+    symbol [ logger %tmp.31 143 8 14 ];
+    symbol [ error %tmp.32 143 15 20 ];
+    %tmp.32 = getv function %tmp.31 :error;
+    %tmp.33 = "Invalid date field type not corrected to 0";
+    invoke %tmp.31 %tmp.32(%tmp.33);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 144 8 ]
+    %tmp.34 = false;
+    lputv %success.2 %tmp.34;
+    symbol [ success %success.2 144 8 15 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_142_39_145_4_stop:
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_142_4_145_4_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_142_4_145_4_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 147 4 ]
+    %tmp.35 = lgetv %view.1;
+    symbol [ view %tmp.35 147 4 8 ];
+    %tmp.36 = 10;
+    symbol [ configBatteryDisplayMode ? 147 9 33 ];
+    putv %tmp.35 :configBatteryDisplayMode %tmp.36;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 148 4 ]
+    %tmp.37 = lgetv %view.1;
+    symbol [ view %tmp.37 148 4 8 ];
+    symbol [ validateConfiguration %tmp.38 148 9 30 ];
+    %tmp.38 = getv function %tmp.37 :validateConfiguration;
+    invoke %tmp.37 %tmp.38();
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 149 4 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_149_4_152_4_if_stmt:
+    %tmp.39 = lgetv %view.1;
+    symbol [ view %tmp.39 149 8 12 ];
+    symbol [ configBatteryDisplayMode %tmp.40 149 13 37 ];
+    %tmp.40 = getv %tmp.39 :configBatteryDisplayMode;
+    %tmp.41 = 0;
+    %tmp.42 = ne %tmp.40 %tmp.41;
+    bf %tmp.42 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_149_4_152_4_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_149_4_152_4_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_149_44_152_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 150 8 ]
+    %tmp.43 = lgetv %logger;
+    symbol [ logger %tmp.43 150 8 14 ];
+    symbol [ error %tmp.44 150 15 20 ];
+    %tmp.44 = getv function %tmp.43 :error;
+    %tmp.45 = "Invalid battery display mode not corrected to 0";
+    invoke %tmp.43 %tmp.44(%tmp.45);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 151 8 ]
+    %tmp.46 = false;
+    lputv %success.2 %tmp.46;
+    symbol [ success %success.2 151 8 15 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_149_44_152_4_stop:
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_149_4_152_4_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_149_4_152_4_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 155 4 ]
+    %tmp.47 = lgetv %view.1;
+    symbol [ view %tmp.47 155 4 8 ];
+    %tmp.48 = 5;
+    symbol [ configMessageFieldType ? 155 9 31 ];
+    putv %tmp.47 :configMessageFieldType %tmp.48;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 156 4 ]
+    %tmp.49 = lgetv %view.1;
+    symbol [ view %tmp.49 156 4 8 ];
+    symbol [ validateConfiguration %tmp.50 156 9 30 ];
+    %tmp.50 = getv function %tmp.49 :validateConfiguration;
+    invoke %tmp.49 %tmp.50();
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 157 4 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_157_4_160_4_if_stmt:
+    %tmp.51 = lgetv %view.1;
+    symbol [ view %tmp.51 157 8 12 ];
+    symbol [ configMessageFieldType %tmp.52 157 13 35 ];
+    %tmp.52 = getv %tmp.51 :configMessageFieldType;
+    %tmp.53 = 5;
+    %tmp.54 = ne %tmp.52 %tmp.53;
+    bf %tmp.54 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_157_4_160_4_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_157_4_160_4_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_157_42_160_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 158 8 ]
+    %tmp.55 = lgetv %logger;
+    symbol [ logger %tmp.55 158 8 14 ];
+    symbol [ error %tmp.56 158 15 20 ];
+    %tmp.56 = getv function %tmp.55 :error;
+    %tmp.57 = "Valid message field type was incorrectly changed";
+    invoke %tmp.55 %tmp.56(%tmp.57);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 159 8 ]
+    %tmp.58 = false;
+    lputv %success.2 %tmp.58;
+    symbol [ success %success.2 159 8 15 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_157_42_160_4_stop:
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_157_4_160_4_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_157_4_160_4_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 162 4 ]
+    %tmp.59 = lgetv %view.1;
+    symbol [ view %tmp.59 162 4 8 ];
+    %tmp.60 = 4;
+    symbol [ configDateFieldType ? 162 9 28 ];
+    putv %tmp.59 :configDateFieldType %tmp.60;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 163 4 ]
+    %tmp.61 = lgetv %view.1;
+    symbol [ view %tmp.61 163 4 8 ];
+    symbol [ validateConfiguration %tmp.62 163 9 30 ];
+    %tmp.62 = getv function %tmp.61 :validateConfiguration;
+    invoke %tmp.61 %tmp.62();
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 164 4 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_164_4_167_4_if_stmt:
+    %tmp.63 = lgetv %view.1;
+    symbol [ view %tmp.63 164 8 12 ];
+    symbol [ configDateFieldType %tmp.64 164 13 32 ];
+    %tmp.64 = getv %tmp.63 :configDateFieldType;
+    %tmp.65 = 4;
+    %tmp.66 = ne %tmp.64 %tmp.65;
+    bf %tmp.66 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_164_4_167_4_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_164_4_167_4_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_164_39_167_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 165 8 ]
+    %tmp.67 = lgetv %logger;
+    symbol [ logger %tmp.67 165 8 14 ];
+    symbol [ error %tmp.68 165 15 20 ];
+    %tmp.68 = getv function %tmp.67 :error;
+    %tmp.69 = "Valid date field type was incorrectly changed";
+    invoke %tmp.67 %tmp.68(%tmp.69);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 166 8 ]
+    %tmp.70 = false;
+    lputv %success.2 %tmp.70;
+    symbol [ success %success.2 166 8 15 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_164_39_167_4_stop:
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_164_4_167_4_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_164_4_167_4_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 169 4 ]
+    %tmp.71 = lgetv %view.1;
+    symbol [ view %tmp.71 169 4 8 ];
+    %tmp.72 = 5;
+    symbol [ configBatteryDisplayMode ? 169 9 33 ];
+    putv %tmp.71 :configBatteryDisplayMode %tmp.72;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 170 4 ]
+    %tmp.73 = lgetv %view.1;
+    symbol [ view %tmp.73 170 4 8 ];
+    symbol [ validateConfiguration %tmp.74 170 9 30 ];
+    %tmp.74 = getv function %tmp.73 :validateConfiguration;
+    invoke %tmp.73 %tmp.74();
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 171 4 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_171_4_174_4_if_stmt:
+    %tmp.75 = lgetv %view.1;
+    symbol [ view %tmp.75 171 8 12 ];
+    symbol [ configBatteryDisplayMode %tmp.76 171 13 37 ];
+    %tmp.76 = getv %tmp.75 :configBatteryDisplayMode;
+    %tmp.77 = 5;
+    %tmp.78 = ne %tmp.76 %tmp.77;
+    bf %tmp.78 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_171_4_174_4_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_171_4_174_4_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_171_44_174_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 172 8 ]
+    %tmp.79 = lgetv %logger;
+    symbol [ logger %tmp.79 172 8 14 ];
+    symbol [ error %tmp.80 172 15 20 ];
+    %tmp.80 = getv function %tmp.79 :error;
+    %tmp.81 = "Valid battery display mode was incorrectly changed";
+    invoke %tmp.79 %tmp.80(%tmp.81);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 173 8 ]
+    %tmp.82 = false;
+    lputv %success.2 %tmp.82;
+    symbol [ success %success.2 173 8 15 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_171_44_174_4_stop:
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_171_4_174_4_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_171_4_174_4_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 176 4 ]
+    %tmp.83 = lgetv %logger;
+    symbol [ logger %tmp.83 176 4 10 ];
+    symbol [ debug %tmp.84 176 11 16 ];
+    %tmp.84 = getv function %tmp.83 :debug;
+    %tmp.85 = "Calorie configuration validation test ";
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_176_61_176_82_begin:
+    %tmp.86 = lgetv %success.2;
+    symbol [ success %tmp.86 176 61 68 ];
+    bf %tmp.86 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_176_61_176_82_false;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_176_61_176_82_true:
+    %tmp.87 = "passed";
+    push %tmp.87;
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_176_61_176_82_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_176_61_176_82_false:
+    %tmp.88 = "failed";
+    push %tmp.88;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_176_61_176_82_end:
+    %tmp.89 = phi [%tmp.86 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_176_61_176_82_begin] [%tmp.87 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_176_61_176_82_true] [%tmp.88 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_176_61_176_82_false] [%tmp.89 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_176_61_176_82_end];
+    %tmp.90 = add %tmp.85 %tmp.89;
+    invoke %tmp.83 %tmp.84(%tmp.90);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 177 4 ]
+    %tmp.91 = lgetv %success.2;
+    symbol [ success %tmp.91 177 11 18 ];
+    ret %tmp.91;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_124_52_178_0_stop:
+}
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc"; @line = 182; test = true; @symbol_functiondef = [testCalorieGoalIntegration,182,9,35]; @symbol_param<0> = [logger,182,36,42]; ]
+function testCalorieGoalIntegration(logger) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_182_44_221_0_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 183 4 ]
+    %tmp.1 = lgetv %logger;
+    symbol [ logger %tmp.1 183 4 10 ];
+    symbol [ debug %tmp.2 183 11 16 ];
+    %tmp.2 = getv function %tmp.1 :debug;
+    %tmp.3 = "Testing calorie goal integration with settings";
+    invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 185 4 ]
+    [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_182_44_221_0_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_182_44_221_0_stop" ]
+    %view.1 = local;
+    symbol [ view %view.1 185 8 12 ];
+    symbol [ MnmlstView %tmp.7 185 19 29 ];
+    %tmp.7 = getv ? :MnmlstView;
+    %tmp.4 = newc %tmp.7 ();
+    lputv %view.1 %tmp.4;
+    symbol [ view %view.1 185 8 12 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 186 4 ]
+    %tmp.8 = lgetv %view.1;
+    symbol [ view %tmp.8 186 4 8 ];
+    symbol [ initialize %tmp.9 186 9 19 ];
+    %tmp.9 = getv function %tmp.8 :initialize;
+    invoke %tmp.8 %tmp.9();
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 188 4 ]
+    [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_182_44_221_0_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_182_44_221_0_stop" ]
+    %success.2 = local;
+    symbol [ success %success.2 188 8 15 ];
+    %tmp.10 = true;
+    lputv %success.2 %tmp.10;
+    symbol [ success %success.2 188 8 15 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 191 4 ]
+    %tmp.11 = lgetv %view.1;
+    symbol [ view %tmp.11 191 4 8 ];
+    %tmp.12 = 3000;
+    symbol [ configCalorieGoalOverall ? 191 9 33 ];
+    putv %tmp.11 :configCalorieGoalOverall %tmp.12;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 192 4 ]
+    %tmp.13 = lgetv %view.1;
+    symbol [ view %tmp.13 192 4 8 ];
+    %tmp.14 = 900;
+    symbol [ configCalorieGoalActive ? 192 9 32 ];
+    putv %tmp.13 :configCalorieGoalActive %tmp.14;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 194 4 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_194_4_197_4_if_stmt:
+    %tmp.15 = lgetv %view.1;
+    symbol [ view %tmp.15 194 8 12 ];
+    symbol [ configCalorieGoalOverall %tmp.16 194 13 37 ];
+    %tmp.16 = getv %tmp.15 :configCalorieGoalOverall;
+    %tmp.17 = 3000;
+    %tmp.18 = ne %tmp.16 %tmp.17;
+    bf %tmp.18 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_194_4_197_4_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_194_4_197_4_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_194_47_197_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 195 8 ]
+    %tmp.19 = lgetv %logger;
+    symbol [ logger %tmp.19 195 8 14 ];
+    symbol [ error %tmp.20 195 15 20 ];
+    %tmp.20 = getv function %tmp.19 :error;
+    %tmp.21 = "Overall calorie goal not stored correctly";
+    invoke %tmp.19 %tmp.20(%tmp.21);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 196 8 ]
+    %tmp.22 = false;
+    lputv %success.2 %tmp.22;
+    symbol [ success %success.2 196 8 15 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_194_47_197_4_stop:
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_194_4_197_4_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_194_4_197_4_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 199 4 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_199_4_202_4_if_stmt:
+    %tmp.23 = lgetv %view.1;
+    symbol [ view %tmp.23 199 8 12 ];
+    symbol [ configCalorieGoalActive %tmp.24 199 13 36 ];
+    %tmp.24 = getv %tmp.23 :configCalorieGoalActive;
+    %tmp.25 = 900;
+    %tmp.26 = ne %tmp.24 %tmp.25;
+    bf %tmp.26 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_199_4_202_4_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_199_4_202_4_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_199_45_202_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 200 8 ]
+    %tmp.27 = lgetv %logger;
+    symbol [ logger %tmp.27 200 8 14 ];
+    symbol [ error %tmp.28 200 15 20 ];
+    %tmp.28 = getv function %tmp.27 :error;
+    %tmp.29 = "Active calorie goal not stored correctly";
+    invoke %tmp.27 %tmp.28(%tmp.29);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 201 8 ]
+    %tmp.30 = false;
+    lputv %success.2 %tmp.30;
+    symbol [ success %success.2 201 8 15 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_199_45_202_4_stop:
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_199_4_202_4_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_199_4_202_4_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 205 4 ]
+    %tmp.31 = lgetv %view.1;
+    symbol [ view %tmp.31 205 4 8 ];
+    %tmp.32 = 500;
+    symbol [ configCalorieGoalOverall ? 205 9 33 ];
+    putv %tmp.31 :configCalorieGoalOverall %tmp.32;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 206 4 ]
+    %tmp.33 = lgetv %view.1;
+    symbol [ view %tmp.33 206 4 8 ];
+    symbol [ validateConfiguration %tmp.34 206 9 30 ];
+    %tmp.34 = getv function %tmp.33 :validateConfiguration;
+    invoke %tmp.33 %tmp.34();
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 207 4 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_207_4_210_4_if_stmt:
+    %tmp.35 = lgetv %view.1;
+    symbol [ view %tmp.35 207 8 12 ];
+    symbol [ configCalorieGoalOverall %tmp.36 207 13 37 ];
+    %tmp.36 = getv %tmp.35 :configCalorieGoalOverall;
+    %tmp.37 = 1000;
+    %tmp.38 = lt %tmp.36 %tmp.37;
+    bf %tmp.38 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_207_4_210_4_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_207_4_210_4_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_207_46_210_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 208 8 ]
+    %tmp.39 = lgetv %logger;
+    symbol [ logger %tmp.39 208 8 14 ];
+    symbol [ error %tmp.40 208 15 20 ];
+    %tmp.40 = getv function %tmp.39 :error;
+    %tmp.41 = "Overall calorie goal validation should enforce minimum 1000";
+    invoke %tmp.39 %tmp.40(%tmp.41);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 209 8 ]
+    %tmp.42 = false;
+    lputv %success.2 %tmp.42;
+    symbol [ success %success.2 209 8 15 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_207_46_210_4_stop:
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_207_4_210_4_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_207_4_210_4_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 212 4 ]
+    %tmp.43 = lgetv %view.1;
+    symbol [ view %tmp.43 212 4 8 ];
+    %tmp.44 = 50;
+    symbol [ configCalorieGoalActive ? 212 9 32 ];
+    putv %tmp.43 :configCalorieGoalActive %tmp.44;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 213 4 ]
+    %tmp.45 = lgetv %view.1;
+    symbol [ view %tmp.45 213 4 8 ];
+    symbol [ validateConfiguration %tmp.46 213 9 30 ];
+    %tmp.46 = getv function %tmp.45 :validateConfiguration;
+    invoke %tmp.45 %tmp.46();
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 214 4 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_214_4_217_4_if_stmt:
+    %tmp.47 = lgetv %view.1;
+    symbol [ view %tmp.47 214 8 12 ];
+    symbol [ configCalorieGoalActive %tmp.48 214 13 36 ];
+    %tmp.48 = getv %tmp.47 :configCalorieGoalActive;
+    %tmp.49 = 200;
+    %tmp.50 = lt %tmp.48 %tmp.49;
+    bf %tmp.50 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_214_4_217_4_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_214_4_217_4_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_214_44_217_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 215 8 ]
+    %tmp.51 = lgetv %logger;
+    symbol [ logger %tmp.51 215 8 14 ];
+    symbol [ error %tmp.52 215 15 20 ];
+    %tmp.52 = getv function %tmp.51 :error;
+    %tmp.53 = "Active calorie goal validation should enforce minimum 200";
+    invoke %tmp.51 %tmp.52(%tmp.53);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 216 8 ]
+    %tmp.54 = false;
+    lputv %success.2 %tmp.54;
+    symbol [ success %success.2 216 8 15 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_214_44_217_4_stop:
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_214_4_217_4_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_214_4_217_4_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 219 4 ]
+    %tmp.55 = lgetv %logger;
+    symbol [ logger %tmp.55 219 4 10 ];
+    symbol [ debug %tmp.56 219 11 16 ];
+    %tmp.56 = getv function %tmp.55 :debug;
+    %tmp.57 = "Calorie goal integration test ";
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_219_53_219_74_begin:
+    %tmp.58 = lgetv %success.2;
+    symbol [ success %tmp.58 219 53 60 ];
+    bf %tmp.58 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_219_53_219_74_false;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_219_53_219_74_true:
+    %tmp.59 = "passed";
+    push %tmp.59;
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_219_53_219_74_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_219_53_219_74_false:
+    %tmp.60 = "failed";
+    push %tmp.60;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_219_53_219_74_end:
+    %tmp.61 = phi [%tmp.58 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_219_53_219_74_begin] [%tmp.59 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_219_53_219_74_true] [%tmp.60 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_219_53_219_74_false] [%tmp.61 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_219_53_219_74_end];
+    %tmp.62 = add %tmp.57 %tmp.61;
+    invoke %tmp.55 %tmp.56(%tmp.62);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc" 220 4 ]
+    %tmp.63 = lgetv %success.2;
+    symbol [ success %tmp.63 220 11 18 ];
+    ret %tmp.63;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CalorieIntegrationTest_mc_182_44_221_0_stop:
+}
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CalorieIntegrationTest.mc"; @line = 6; ]
+<init> {
+}

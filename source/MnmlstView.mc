@@ -45,6 +45,12 @@ class MnmlstView extends WatchUi.WatchFace {
   var configColorScheme;
   var configCalorieGoalOverall;
   var configCalorieGoalActive;
+  
+  // UI Element Visibility properties
+  var showTopField;
+  var showMiddleGauge;
+  var showBottomField;
+  var showMinuteHand;
 
   // Initialize variables for this view
   function initialize() {
@@ -114,13 +120,18 @@ class MnmlstView extends WatchUi.WatchFace {
       var deviceSettings = System.getDeviceSettings();
       if (deviceSettings.partNumber != null && deviceSettings.partNumber.toString().find("SIMULATOR") != null) {
         System.println("SIMULATOR DETECTED - Using test configuration");
-        configBatteryDisplayMode = 1; // Test steps progress
+        configBatteryDisplayMode = 4; // Test calories progress
         configHourHandBehavior = 1;   // Test hourly jump
-        configMessageFieldType = 1;   // Test steps in message field
-        configDateFieldType = 2;      // Test heart rate in date field
-        configColorScheme = 0;        // Test dark theme
+        configMessageFieldType = 4;   // Test calories in message field
+        configDateFieldType = 5;      // Test active calories in date field
+        configColorScheme = 1;        // Test white theme
         configCalorieGoalOverall = 2400;
         configCalorieGoalActive = 750;
+        // Test visibility settings
+        showTopField = 1;
+        showMiddleGauge = 0;      // Test hidden gauge
+        showBottomField = 1;
+        showMinuteHand = 1;
         System.println("Test config - Battery: " + configBatteryDisplayMode + ", Hand: " + configHourHandBehavior);
         return;
       }
@@ -148,6 +159,19 @@ class MnmlstView extends WatchUi.WatchFace {
       configCalorieGoalActive = Properties.getValue("calorieGoalActive");
       if (configCalorieGoalActive == null) { configCalorieGoalActive = 750; }
       
+      // Load visibility properties
+      showTopField = Properties.getValue("showTopField");
+      if (showTopField == null) { showTopField = 1; }
+      
+      showMiddleGauge = Properties.getValue("showMiddleGauge");
+      if (showMiddleGauge == null) { showMiddleGauge = 1; }
+      
+      showBottomField = Properties.getValue("showBottomField");
+      if (showBottomField == null) { showBottomField = 1; }
+      
+      showMinuteHand = Properties.getValue("showMinuteHand");
+      if (showMinuteHand == null) { showMinuteHand = 1; }
+      
       
       System.println("Config loaded - Battery: " + configBatteryDisplayMode + ", Hand: " + configHourHandBehavior);
       
@@ -170,21 +194,26 @@ class MnmlstView extends WatchUi.WatchFace {
     configColorScheme = 0;
     configCalorieGoalOverall = 2400;
     configCalorieGoalActive = 750;
+    // Default visibility - all elements shown
+    showTopField = 1;
+    showMiddleGauge = 1;
+    showBottomField = 1;
+    showMinuteHand = 1;
     System.println("Default configuration loaded");
   }
 
   // Validate configuration values are within expected ranges
   function validateConfiguration() {
-    if (configBatteryDisplayMode < 0 || configBatteryDisplayMode > 3) {
+    if (configBatteryDisplayMode < 0 || configBatteryDisplayMode > 5) {
       configBatteryDisplayMode = 0;
     }
     if (configHourHandBehavior < 0 || configHourHandBehavior > 1) {
       configHourHandBehavior = 0;
     }
-    if (configMessageFieldType < 0 || configMessageFieldType > 3) {
+    if (configMessageFieldType < 0 || configMessageFieldType > 5) {
       configMessageFieldType = 0;
     }
-    if (configDateFieldType < 0 || configDateFieldType > 3) {
+    if (configDateFieldType < 0 || configDateFieldType > 5) {
       configDateFieldType = 0;
     }
     if (configColorScheme < 0 || configColorScheme > 1) {
@@ -196,6 +225,11 @@ class MnmlstView extends WatchUi.WatchFace {
     if (configCalorieGoalActive < 200 || configCalorieGoalActive > 2000) {
       configCalorieGoalActive = 750;
     }
+    // Visibility properties validation (1=show, 0=hide)
+    if (showTopField < 0 || showTopField > 1) { showTopField = 1; }
+    if (showMiddleGauge < 0 || showMiddleGauge > 1) { showMiddleGauge = 1; }
+    if (showBottomField < 0 || showBottomField > 1) { showBottomField = 1; }
+    if (showMinuteHand < 0 || showMinuteHand > 1) { showMinuteHand = 1; }
   }
 
   // Configure the layout of the watchface for this device
@@ -356,9 +390,17 @@ class MnmlstView extends WatchUi.WatchFace {
       // Weekly active minutes - single green
       percentage = getWeeklyActiveMinutesProgress();
       useMultiColor = false;
-    } else {
-      // Stairs progress - single green (mode 3)
+    } else if (configBatteryDisplayMode == 3) {
+      // Stairs progress - single green
       percentage = getStairsProgress();
+      useMultiColor = false;
+    } else if (configBatteryDisplayMode == 4) {
+      // Calories progress - single green
+      percentage = getCaloriesProgress();
+      useMultiColor = false;
+    } else {
+      // Active calories progress - single green (mode 5)
+      percentage = getActiveCaloriesProgress();
       useMultiColor = false;
     }
 
@@ -441,6 +483,24 @@ class MnmlstView extends WatchUi.WatchFace {
         var progress = (current.toFloat() / goal.toFloat() * 100).toNumber();
         return progress > 100 ? 100 : progress;
       }
+    }
+    return 0;
+  }
+
+  function getCaloriesProgress() {
+    var info = ActivityMonitor.getInfo();
+    if (info has :calories && info.calories != null && configCalorieGoalOverall > 0) {
+      var progress = (info.calories.toFloat() / configCalorieGoalOverall.toFloat() * 100).toNumber();
+      return progress > 100 ? 100 : progress;
+    }
+    return 0;
+  }
+
+  function getActiveCaloriesProgress() {
+    var info = ActivityMonitor.getInfo();
+    if (info has :caloriesActive && info.caloriesActive != null && configCalorieGoalActive > 0) {
+      var progress = (info.caloriesActive.toFloat() / configCalorieGoalActive.toFloat() * 100).toNumber();
+      return progress > 100 ? 100 : progress;
     }
     return 0;
   }
@@ -537,6 +597,20 @@ class MnmlstView extends WatchUi.WatchFace {
       var battery = (System.getSystemStats().battery + 0.5).toNumber();
       displayValue = battery;
       displayStr = battery.toString();
+    } else if (configMessageFieldType == 4) {
+      // Calories
+      var info = ActivityMonitor.getInfo();
+      if (info has :calories && info.calories != null) {
+        displayValue = info.calories;
+        displayStr = displayValue.toString();
+      }
+    } else if (configMessageFieldType == 5) {
+      // Active Calories
+      var info = ActivityMonitor.getInfo();
+      if (info has :caloriesActive && info.caloriesActive != null) {
+        displayValue = info.caloriesActive;
+        displayStr = displayValue.toString();
+      }
     } else {
       // Default: Notifications (0)
       var notificationCount = System.getDeviceSettings().notificationCount;
@@ -649,18 +723,22 @@ class MnmlstView extends WatchUi.WatchFace {
     targetDc.setColor(minuteHashColor, minuteHashColor);
     drawHashMarks(targetDc, 31, 30, layoutConfig[:minuteHashLength]);
 
-    drawBattery(targetDc, width, height);
+    if (showMiddleGauge == 1) {
+      drawBattery(targetDc, width, height);
+    }
     drawHourHand(targetDc);
 
-    targetDc.setColor(getMinuteHandColor(), Graphics.COLOR_TRANSPARENT);
-    //draw minute hand
-    minuteHandAngle = (clockTime.min / 60.0) * Math.PI * 2;
-    var minuteHandLength = width * layoutConfig[:minuteHandLengthRatio];
-    targetDc.fillPolygon(
-      generateHandCoordinates(screenCenterPoint, minuteHandAngle, minuteHandLength, layoutConfig[:minuteTailLength], layoutConfig[:minuteHandWidth])
-    );
+    if (showMinuteHand == 1) {
+      targetDc.setColor(getMinuteHandColor(), Graphics.COLOR_TRANSPARENT);
+      //draw minute hand
+      minuteHandAngle = (clockTime.min / 60.0) * Math.PI * 2;
+      var minuteHandLength = width * layoutConfig[:minuteHandLengthRatio];
+      targetDc.fillPolygon(
+        generateHandCoordinates(screenCenterPoint, minuteHandAngle, minuteHandLength, layoutConfig[:minuteTailLength], layoutConfig[:minuteHandWidth])
+      );
 
-    drawArbor(targetDc);
+      drawArbor(targetDc);
+    }
 
     // If we have an offscreen buffer that we are using for the date string,
     // Draw the date into it. If we do not, the date will get drawn every update
@@ -672,7 +750,9 @@ class MnmlstView extends WatchUi.WatchFace {
       dateDc.drawBitmap(0, -(height * layoutConfig[:dateOffsetRatio]), offscreenBuffer);
 
       //Draw the date string into the buffer.
-      drawDateString(dateDc, width / 2, 0);
+      if (showTopField == 1) {
+        drawDateString(dateDc, width / 2, 0);
+      }
     }
 
     if (null != notificationBuffer) {
@@ -682,7 +762,9 @@ class MnmlstView extends WatchUi.WatchFace {
         -(height * layoutConfig[:notificationOffsetRatio]),
         offscreenBuffer
       );
-      drawNotificationCount(notificationDc, width / 2, 0);
+      if (showBottomField == 1) {
+        drawNotificationCount(notificationDc, width / 2, 0);
+      }
     }
 
     // Output the offscreen buffers to the main display if required.
@@ -711,6 +793,18 @@ class MnmlstView extends WatchUi.WatchFace {
       // Battery Percentage
       var battery = (System.getSystemStats().battery + 0.5).toNumber();
       displayStr = battery.toString();
+    } else if (configDateFieldType == 4) {
+      // Calories
+      var info = ActivityMonitor.getInfo();
+      if (info has :calories && info.calories != null) {
+        displayStr = info.calories.toString();
+      }
+    } else if (configDateFieldType == 5) {
+      // Active Calories
+      var info = ActivityMonitor.getInfo();
+      if (info has :caloriesActive && info.caloriesActive != null) {
+        displayStr = info.caloriesActive.toString();
+      }
     } else {
       // Default: Date (0)
       var info = Gregorian.info(Time.now(), Time.FORMAT_LONG);
@@ -771,18 +865,22 @@ class MnmlstView extends WatchUi.WatchFace {
     }
 
     // Draw the date
-    if (null != dateBuffer) {
-      // If the date is saved in a Buffered Bitmap, just copy it from there.
-      dc.drawBitmap(0, height * layoutConfig[:dateOffsetRatio], dateBuffer);
-    } else {
-      // Otherwise, draw it from scratch.
-      drawDateString(dc, width / 2, height * layoutConfig[:dateOffsetRatio]);
+    if (showTopField == 1) {
+      if (null != dateBuffer) {
+        // If the date is saved in a Buffered Bitmap, just copy it from there.
+        dc.drawBitmap(0, height * layoutConfig[:dateOffsetRatio], dateBuffer);
+      } else {
+        // Otherwise, draw it from scratch.
+        drawDateString(dc, width / 2, height * layoutConfig[:dateOffsetRatio]);
+      }
     }
 
-    if (null != notificationBuffer) {
-      dc.drawBitmap(0, height * layoutConfig[:notificationOffsetRatio], notificationBuffer);
-    } else {
-      drawNotificationCount(dc, width / 2, height * layoutConfig[:notificationOffsetRatio]);
+    if (showBottomField == 1) {
+      if (null != notificationBuffer) {
+        dc.drawBitmap(0, height * layoutConfig[:notificationOffsetRatio], notificationBuffer);
+      } else {
+        drawNotificationCount(dc, width / 2, height * layoutConfig[:notificationOffsetRatio]);
+      }
     }
   }
 

@@ -28,6 +28,8 @@
                 <listEntry value="1">@Strings.fieldSteps</listEntry>
                 <listEntry value="2">@Strings.fieldHeartRate</listEntry>
                 <listEntry value="3">@Strings.fieldBatteryPercent</listEntry>
+                <listEntry value="4">@Strings.fieldCalories</listEntry>
+                <listEntry value="5">@Strings.fieldActiveCalories</listEntry>
             </settingConfig>
         </setting>
         
@@ -37,6 +39,8 @@
                 <listEntry value="1">@Strings.stepsProgress</listEntry>
                 <listEntry value="2">@Strings.weeklyActiveMinutes</listEntry>
                 <listEntry value="3">@Strings.stairsProgress</listEntry>
+                <listEntry value="4">@Strings.caloriesProgress</listEntry>
+                <listEntry value="5">@Strings.activeCaloriesProgress</listEntry>
             </settingConfig>
         </setting>
         
@@ -46,6 +50,8 @@
                 <listEntry value="1">@Strings.fieldSteps</listEntry>
                 <listEntry value="2">@Strings.fieldHeartRate</listEntry>
                 <listEntry value="3">@Strings.fieldBatteryPercent</listEntry>
+                <listEntry value="4">@Strings.fieldCalories</listEntry>
+                <listEntry value="5">@Strings.fieldActiveCalories</listEntry>
             </settingConfig>
         </setting>
     </group>
@@ -60,5 +66,36 @@
             <settingConfig min="200" max="2000" type="numeric"/>
         </setting>
         
+    </group>
+
+    <!-- Visibility Settings -->
+    <group id="@Strings.visibilityGroup" title="@Strings.visibilityGroup">
+        <setting propertyKey="@Properties.showTopField" title="@Strings.showTopFieldTitle">
+            <settingConfig type="list">
+                <listEntry value="1">@Strings.optionShow</listEntry>
+                <listEntry value="0">@Strings.optionHide</listEntry>
+            </settingConfig>
+        </setting>
+        
+        <setting propertyKey="@Properties.showMiddleGauge" title="@Strings.showMiddleGaugeTitle">
+            <settingConfig type="list">
+                <listEntry value="1">@Strings.optionShow</listEntry>
+                <listEntry value="0">@Strings.optionHide</listEntry>
+            </settingConfig>
+        </setting>
+        
+        <setting propertyKey="@Properties.showBottomField" title="@Strings.showBottomFieldTitle">
+            <settingConfig type="list">
+                <listEntry value="1">@Strings.optionShow</listEntry>
+                <listEntry value="0">@Strings.optionHide</listEntry>
+            </settingConfig>
+        </setting>
+        
+        <setting propertyKey="@Properties.showMinuteHand" title="@Strings.showMinuteHandTitle">
+            <settingConfig type="list">
+                <listEntry value="1">@Strings.optionShow</listEntry>
+                <listEntry value="0">@Strings.optionHide</listEntry>
+            </settingConfig>
+        </setting>
     </group>
 </settings> 

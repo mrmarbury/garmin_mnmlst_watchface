@@ -17,8 +17,11 @@ module Rez {
     module Strings {
         (:initialized) var fieldBatteryPercent as ResourceId;
         (:initialized) var calorieGoalOverallTitle as ResourceId;
+        (:initialized) var showTopFieldTitle as ResourceId;
         (:initialized) var fieldNotifications as ResourceId;
+        (:initialized) var optionShow as ResourceId;
         (:initialized) var middleGaugeTitle as ResourceId;
+        (:initialized) var optionHide as ResourceId;
         (:initialized) var AppName as ResourceId;
         (:initialized) var hourHandSmooth as ResourceId;
         (:initialized) var colorSchemeDark as ResourceId;
@@ -28,18 +31,26 @@ module Rez {
         (:initialized) var dateFieldTitle as ResourceId;
         (:initialized) var messageFieldTitle as ResourceId;
         (:initialized) var batteryLevel as ResourceId;
+        (:initialized) var showBottomFieldTitle as ResourceId;
+        (:initialized) var fieldActiveCalories as ResourceId;
         (:initialized) var dataFieldsGroup as ResourceId;
         (:initialized) var batteryDisplayTitle as ResourceId;
         (:initialized) var displayGroup as ResourceId;
         (:initialized) var stairsProgress as ResourceId;
         (:initialized) var fieldDate as ResourceId;
+        (:initialized) var visibilityGroup as ResourceId;
+        (:initialized) var fieldCalories as ResourceId;
         (:initialized) var hourHandHourly as ResourceId;
         (:initialized) var calorieGoalActiveTitle as ResourceId;
         (:initialized) var fieldHeartRate as ResourceId;
+        (:initialized) var caloriesProgress as ResourceId;
+        (:initialized) var showMiddleGaugeTitle as ResourceId;
         (:initialized) var handBehaviorGroup as ResourceId;
+        (:initialized) var activeCaloriesProgress as ResourceId;
         (:initialized) var colorSchemeWhite as ResourceId;
         (:initialized) var fieldSteps as ResourceId;
         (:initialized) var hourHandBehaviorTitle as ResourceId;
         (:initialized) var colorSchemeTitle as ResourceId;
+        (:initialized) var showMinuteHandTitle as ResourceId;
     } // Strings
 } // Rez

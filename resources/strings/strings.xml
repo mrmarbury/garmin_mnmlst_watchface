@@ -21,6 +21,8 @@
         <string id="stepsProgress">Steps Progress</string>
         <string id="weeklyActiveMinutes">Weekly Active Minutes</string>
         <string id="stairsProgress">Stairs Progress</string>
+        <string id="caloriesProgress">Calories Progress</string>
+        <string id="activeCaloriesProgress">Active Calories Progress</string>
         
         <!-- Color Scheme Settings -->
         <string id="colorSchemeTitle">Color Scheme</string>
@@ -38,9 +40,20 @@
         <string id="fieldSteps">Steps</string>
         <string id="fieldHeartRate">Heart Rate</string>
         <string id="fieldBatteryPercent">Battery %</string>
+        <string id="fieldCalories">Calories</string>
+        <string id="fieldActiveCalories">Active Calories</string>
         
         <!-- Goal Settings -->
         <string id="calorieGoalOverallTitle">Overall Calorie Goal</string>
         <string id="calorieGoalActiveTitle">Active Calorie Goal</string>
+        
+        <!-- Visibility Settings -->
+        <string id="visibilityGroup">Visibility Settings</string>
+        <string id="showTopFieldTitle">Show Top Field</string>
+        <string id="showMiddleGaugeTitle">Show Middle Gauge</string>
+        <string id="showBottomFieldTitle">Show Bottom Field</string>
+        <string id="showMinuteHandTitle">Show Minute Hand &amp; Arbor</string>
+        <string id="optionShow">Show</string>
+        <string id="optionHide">Hide</string>
     </strings>
 </resources>
