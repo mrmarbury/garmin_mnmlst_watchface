@@ -1,0 +1,78 @@
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstApp.mc"; @line = 7; @symbol_usingdef<0> = [Toybox,7,6,12]; @symbol_usingdef<1> = [Application,7,13,24]; ]
+using Toybox.Application;
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstApp.mc"; @line = 8; @symbol_usingdef<0> = [Toybox,8,6,12]; @symbol_usingdef<1> = [Time,8,13,17]; ]
+using Toybox.Time;
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstApp.mc"; @line = 11; @symbol_classdef = [Mnmlst,11,6,12]; @symbol_extends<0> = [Application,11,21,32]; @symbol_extends<1> = [AppBase,11,33,40]; ]
+class Mnmlst extends Application.AppBase {
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstApp.mc"; @line = 11; ]
+    <init> {
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstApp.mc"; @line = 11; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstApp.mc"; @line = 12; @symbol_functiondef = [initialize,12,11,21]; ]
+    function initialize() as Void {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_source_MnmlstApp_mc_12_24_14_2_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstApp.mc" 13 4 ]
+        symbol [ AppBase %tmp.2 13 4 11 ];
+        %tmp.2 = getv ? :AppBase;
+        symbol [ initialize %tmp.3 13 12 22 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_source_MnmlstApp_mc_12_24_14_2_stop:
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstApp.mc"; @line = 16; @symbol_functiondef = [onStart,16,11,18]; @symbol_param<0> = [state,16,19,24]; ]
+    function onStart(state) {
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstApp.mc"; @line = 18; @symbol_functiondef = [onStop,18,11,17]; @symbol_param<0> = [state,18,18,23]; ]
+    function onStop(state) {
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstApp.mc"; @line = 20; @symbol_functiondef = [getInitialView,20,11,25]; ]
+    function getInitialView() {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_source_MnmlstApp_mc_20_28_26_2_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstApp.mc" 21 4 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_source_MnmlstApp_mc_21_4_25_4_if_stmt:
+        symbol [ Toybox %tmp.2 21 8 14 ];
+        %tmp.2 = getv ? :Toybox;
+        symbol [ WatchUi %tmp.3 21 15 22 ];
+        %tmp.3 = getv %tmp.2 :WatchUi;
+        %tmp.5 = const :WatchFaceDelegate;
+        symbol [ WatchFaceDelegate %tmp.5 21 28 45 const ];
+        %tmp.6 = canhazplz %tmp.3 %tmp.5;
+        bf %tmp.6 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_source_MnmlstApp_mc_21_4_25_4_if_else_false;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_source_MnmlstApp_mc_21_4_25_4_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_source_MnmlstApp_mc_21_47_23_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstApp.mc" 22 6 ]
+        %tmp.7 = newa 2;
+        symbol [ MnmlstView %tmp.11 22 18 28 ];
+        %tmp.11 = getv ? :MnmlstView;
+        %tmp.8 = newc %tmp.11 ();
+        %tmp.12 = dup %tmp.7;
+        %tmp.13 = aputv %tmp.12 0 %tmp.8;
+        symbol [ MnmlstDelegate %tmp.17 22 36 50 ];
+        %tmp.17 = getv ? :MnmlstDelegate;
+        %tmp.14 = newc %tmp.17 ();
+        %tmp.18 = dup %tmp.13;
+        %tmp.19 = aputv %tmp.18 1 %tmp.14;
+        ret %tmp.19;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_source_MnmlstApp_mc_21_47_23_4_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_source_MnmlstApp_mc_21_4_25_4_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_source_MnmlstApp_mc_21_4_25_4_if_else_false:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_source_MnmlstApp_mc_23_11_25_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstApp.mc" 24 6 ]
+        %tmp.20 = newa 1;
+        symbol [ MnmlstView %tmp.24 24 18 28 ];
+        %tmp.24 = getv ? :MnmlstView;
+        %tmp.21 = newc %tmp.24 ();
+        %tmp.25 = dup %tmp.20;
+        %tmp.26 = aputv %tmp.25 0 %tmp.21;
+        ret %tmp.26;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_source_MnmlstApp_mc_23_11_25_4_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_source_MnmlstApp_mc_21_4_25_4_if_end:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_source_MnmlstApp_mc_20_28_26_2_stop:
+    }
+}
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstApp.mc"; @line = 7; ]
+<init> {
+}

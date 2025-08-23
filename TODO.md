@@ -38,7 +38,7 @@
    - [X] battery bar -> "goals" like steps, active minutes, and so on
    - [X] message count -> plain values like steps, hr, battery percentage, etc
    - [X] date -> plain values like steps, hr, battery percentage, etc
- - [] Add white color scheme option (background white, orange hour, black minutes, black arbor, everything else that's white is now black)
+ - [X] Add white color scheme option (background white, orange hour, black minutes, black arbor, everything else that's white is now black)
  - [] bump version to next major version
 
 ## Bugs

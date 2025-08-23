@@ -1,0 +1,706 @@
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc"; @line = 7; @symbol_usingdef<0> = [Toybox,7,6,12]; @symbol_usingdef<1> = [Test,7,13,17]; ]
+using Toybox.Test;
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc"; @line = 11; test = true; @symbol_functiondef = [runAllTests,11,9,20]; @symbol_param<0> = [logger,11,21,27]; ]
+function runAllTests(logger) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_11_29_83_0_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 12 4 ]
+    %tmp.1 = lgetv %logger;
+    symbol [ logger %tmp.1 12 4 10 ];
+    symbol [ debug %tmp.2 12 11 16 ];
+    %tmp.2 = getv function %tmp.1 :debug;
+    %tmp.3 = "Starting MNMLST Watchface Test Suite";
+    invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 14 4 ]
+    [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_11_29_83_0_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_11_29_83_0_stop" ]
+    %totalTests.1 = local;
+    symbol [ totalTests %totalTests.1 14 8 18 ];
+    %tmp.4 = 0;
+    lputv %totalTests.1 %tmp.4;
+    symbol [ totalTests %totalTests.1 14 8 18 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 15 4 ]
+    [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_11_29_83_0_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_11_29_83_0_stop" ]
+    %passedTests.2 = local;
+    symbol [ passedTests %passedTests.2 15 8 19 ];
+    %tmp.5 = 0;
+    lputv %passedTests.2 %tmp.5;
+    symbol [ passedTests %passedTests.2 15 8 19 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 16 4 ]
+    [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_11_29_83_0_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_11_29_83_0_stop" ]
+    %failedTests.3 = local;
+    symbol [ failedTests %failedTests.3 16 8 19 ];
+    %tmp.6 = 0;
+    lputv %failedTests.3 %tmp.6;
+    symbol [ failedTests %failedTests.3 16 8 19 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 19 4 ]
+    %tmp.7 = lgetv %logger;
+    symbol [ logger %tmp.7 19 4 10 ];
+    symbol [ debug %tmp.8 19 11 16 ];
+    %tmp.8 = getv function %tmp.7 :debug;
+    %tmp.9 = "=== Running All Tests ===";
+    invoke %tmp.7 %tmp.8(%tmp.9);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 21 4 ]
+    try @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_21_4_75_4_beginTry @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_21_4_75_4_endTry @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_21_4_75_4_catch @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_21_4_75_4_finally;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_21_4_75_4_beginTry:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_21_8_72_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 22 8 ]
+    [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_21_8_72_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_21_8_72_4_stop" ]
+    %appTest.4 = local;
+    symbol [ appTest %appTest.4 22 12 19 ];
+    symbol [ MnmlstAppTest %tmp.13 22 26 39 ];
+    %tmp.13 = getv ? :MnmlstAppTest;
+    %tmp.10 = newc %tmp.13 ();
+    lputv %appTest.4 %tmp.10;
+    symbol [ appTest %appTest.4 22 12 19 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 23 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_23_8_23_85_if_stmt:
+    %tmp.14 = lgetv %appTest.4;
+    symbol [ appTest %tmp.14 23 12 19 ];
+    symbol [ testInitialize %tmp.15 23 20 34 ];
+    %tmp.15 = getv function %tmp.14 :testInitialize;
+    %tmp.16 = lgetv %logger;
+    symbol [ logger %tmp.16 23 35 41 ];
+    %tmp.17 = invoke %tmp.14 %tmp.15(%tmp.16);
+    bf %tmp.17 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_23_8_23_85_if_else_false;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_23_8_23_85_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_23_44_23_61_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 23 46 ]
+    %tmp.20 = lgetv %passedTests.2;
+    symbol [ passedTests %tmp.20 23 46 57 ];
+    %tmp.21 = add %tmp.20 1;
+    lputv %passedTests.2 %tmp.21;
+    symbol [ passedTests %passedTests.2 23 46 57 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_23_44_23_61_stop:
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_23_8_23_85_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_23_8_23_85_if_else_false:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_23_68_23_85_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 23 70 ]
+    %tmp.24 = lgetv %failedTests.3;
+    symbol [ failedTests %tmp.24 23 70 81 ];
+    %tmp.25 = add %tmp.24 1;
+    lputv %failedTests.3 %tmp.25;
+    symbol [ failedTests %failedTests.3 23 70 81 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_23_68_23_85_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_23_8_23_85_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 24 8 ]
+    %tmp.28 = lgetv %totalTests.1;
+    symbol [ totalTests %tmp.28 24 8 18 ];
+    %tmp.29 = add %tmp.28 1;
+    lputv %totalTests.1 %tmp.29;
+    symbol [ totalTests %totalTests.1 24 8 18 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 26 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_26_8_26_89_if_stmt:
+    %tmp.30 = lgetv %appTest.4;
+    symbol [ appTest %tmp.30 26 12 19 ];
+    symbol [ testGetInitialView %tmp.31 26 20 38 ];
+    %tmp.31 = getv function %tmp.30 :testGetInitialView;
+    %tmp.32 = lgetv %logger;
+    symbol [ logger %tmp.32 26 39 45 ];
+    %tmp.33 = invoke %tmp.30 %tmp.31(%tmp.32);
+    bf %tmp.33 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_26_8_26_89_if_else_false;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_26_8_26_89_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_26_48_26_65_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 26 50 ]
+    %tmp.36 = lgetv %passedTests.2;
+    symbol [ passedTests %tmp.36 26 50 61 ];
+    %tmp.37 = add %tmp.36 1;
+    lputv %passedTests.2 %tmp.37;
+    symbol [ passedTests %passedTests.2 26 50 61 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_26_48_26_65_stop:
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_26_8_26_89_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_26_8_26_89_if_else_false:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_26_72_26_89_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 26 74 ]
+    %tmp.40 = lgetv %failedTests.3;
+    symbol [ failedTests %tmp.40 26 74 85 ];
+    %tmp.41 = add %tmp.40 1;
+    lputv %failedTests.3 %tmp.41;
+    symbol [ failedTests %failedTests.3 26 74 85 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_26_72_26_89_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_26_8_26_89_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 27 8 ]
+    %tmp.44 = lgetv %totalTests.1;
+    symbol [ totalTests %tmp.44 27 8 18 ];
+    %tmp.45 = add %tmp.44 1;
+    lputv %totalTests.1 %tmp.45;
+    symbol [ totalTests %totalTests.1 27 8 18 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 29 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_29_8_29_87_if_stmt:
+    %tmp.46 = lgetv %appTest.4;
+    symbol [ appTest %tmp.46 29 12 19 ];
+    symbol [ testAppLifecycle %tmp.47 29 20 36 ];
+    %tmp.47 = getv function %tmp.46 :testAppLifecycle;
+    %tmp.48 = lgetv %logger;
+    symbol [ logger %tmp.48 29 37 43 ];
+    %tmp.49 = invoke %tmp.46 %tmp.47(%tmp.48);
+    bf %tmp.49 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_29_8_29_87_if_else_false;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_29_8_29_87_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_29_46_29_63_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 29 48 ]
+    %tmp.52 = lgetv %passedTests.2;
+    symbol [ passedTests %tmp.52 29 48 59 ];
+    %tmp.53 = add %tmp.52 1;
+    lputv %passedTests.2 %tmp.53;
+    symbol [ passedTests %passedTests.2 29 48 59 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_29_46_29_63_stop:
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_29_8_29_87_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_29_8_29_87_if_else_false:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_29_70_29_87_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 29 72 ]
+    %tmp.56 = lgetv %failedTests.3;
+    symbol [ failedTests %tmp.56 29 72 83 ];
+    %tmp.57 = add %tmp.56 1;
+    lputv %failedTests.3 %tmp.57;
+    symbol [ failedTests %failedTests.3 29 72 83 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_29_70_29_87_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_29_8_29_87_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 30 8 ]
+    %tmp.60 = lgetv %totalTests.1;
+    symbol [ totalTests %tmp.60 30 8 18 ];
+    %tmp.61 = add %tmp.60 1;
+    lputv %totalTests.1 %tmp.61;
+    symbol [ totalTests %totalTests.1 30 8 18 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 32 8 ]
+    [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_21_8_72_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_21_8_72_4_stop" ]
+    %coordTest.5 = local;
+    symbol [ coordTest %coordTest.5 32 12 21 ];
+    symbol [ CoordinateTest %tmp.65 32 28 42 ];
+    %tmp.65 = getv ? :CoordinateTest;
+    %tmp.62 = newc %tmp.65 ();
+    lputv %coordTest.5 %tmp.62;
+    symbol [ coordTest %coordTest.5 32 12 21 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 33 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_33_8_33_100_if_stmt:
+    %tmp.66 = lgetv %coordTest.5;
+    symbol [ coordTest %tmp.66 33 12 21 ];
+    symbol [ testGenerateHandCoordinates %tmp.67 33 22 49 ];
+    %tmp.67 = getv function %tmp.66 :testGenerateHandCoordinates;
+    %tmp.68 = lgetv %logger;
+    symbol [ logger %tmp.68 33 50 56 ];
+    %tmp.69 = invoke %tmp.66 %tmp.67(%tmp.68);
+    bf %tmp.69 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_33_8_33_100_if_else_false;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_33_8_33_100_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_33_59_33_76_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 33 61 ]
+    %tmp.72 = lgetv %passedTests.2;
+    symbol [ passedTests %tmp.72 33 61 72 ];
+    %tmp.73 = add %tmp.72 1;
+    lputv %passedTests.2 %tmp.73;
+    symbol [ passedTests %passedTests.2 33 61 72 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_33_59_33_76_stop:
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_33_8_33_100_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_33_8_33_100_if_else_false:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_33_83_33_100_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 33 85 ]
+    %tmp.76 = lgetv %failedTests.3;
+    symbol [ failedTests %tmp.76 33 85 96 ];
+    %tmp.77 = add %tmp.76 1;
+    lputv %failedTests.3 %tmp.77;
+    symbol [ failedTests %failedTests.3 33 85 96 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_33_83_33_100_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_33_8_33_100_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 34 8 ]
+    %tmp.80 = lgetv %totalTests.1;
+    symbol [ totalTests %tmp.80 34 8 18 ];
+    %tmp.81 = add %tmp.80 1;
+    lputv %totalTests.1 %tmp.81;
+    symbol [ totalTests %totalTests.1 34 8 18 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 36 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_36_8_36_100_if_stmt:
+    %tmp.82 = lgetv %coordTest.5;
+    symbol [ coordTest %tmp.82 36 12 21 ];
+    symbol [ testGenerateHourCoordinates %tmp.83 36 22 49 ];
+    %tmp.83 = getv function %tmp.82 :testGenerateHourCoordinates;
+    %tmp.84 = lgetv %logger;
+    symbol [ logger %tmp.84 36 50 56 ];
+    %tmp.85 = invoke %tmp.82 %tmp.83(%tmp.84);
+    bf %tmp.85 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_36_8_36_100_if_else_false;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_36_8_36_100_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_36_59_36_76_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 36 61 ]
+    %tmp.88 = lgetv %passedTests.2;
+    symbol [ passedTests %tmp.88 36 61 72 ];
+    %tmp.89 = add %tmp.88 1;
+    lputv %passedTests.2 %tmp.89;
+    symbol [ passedTests %passedTests.2 36 61 72 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_36_59_36_76_stop:
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_36_8_36_100_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_36_8_36_100_if_else_false:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_36_83_36_100_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 36 85 ]
+    %tmp.92 = lgetv %failedTests.3;
+    symbol [ failedTests %tmp.92 36 85 96 ];
+    %tmp.93 = add %tmp.92 1;
+    lputv %failedTests.3 %tmp.93;
+    symbol [ failedTests %failedTests.3 36 85 96 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_36_83_36_100_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_36_8_36_100_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 37 8 ]
+    %tmp.96 = lgetv %totalTests.1;
+    symbol [ totalTests %tmp.96 37 8 18 ];
+    %tmp.97 = add %tmp.96 1;
+    lputv %totalTests.1 %tmp.97;
+    symbol [ totalTests %totalTests.1 37 8 18 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 39 8 ]
+    [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_21_8_72_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_21_8_72_4_stop" ]
+    %renderTest.6 = local;
+    symbol [ renderTest %renderTest.6 39 12 22 ];
+    symbol [ RenderingTest %tmp.101 39 29 42 ];
+    %tmp.101 = getv ? :RenderingTest;
+    %tmp.98 = newc %tmp.101 ();
+    lputv %renderTest.6 %tmp.98;
+    symbol [ renderTest %renderTest.6 39 12 22 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 40 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_40_8_40_101_if_stmt:
+    %tmp.102 = lgetv %renderTest.6;
+    symbol [ renderTest %tmp.102 40 12 22 ];
+    symbol [ testWatchfaceInitialization %tmp.103 40 23 50 ];
+    %tmp.103 = getv function %tmp.102 :testWatchfaceInitialization;
+    %tmp.104 = lgetv %logger;
+    symbol [ logger %tmp.104 40 51 57 ];
+    %tmp.105 = invoke %tmp.102 %tmp.103(%tmp.104);
+    bf %tmp.105 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_40_8_40_101_if_else_false;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_40_8_40_101_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_40_60_40_77_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 40 62 ]
+    %tmp.108 = lgetv %passedTests.2;
+    symbol [ passedTests %tmp.108 40 62 73 ];
+    %tmp.109 = add %tmp.108 1;
+    lputv %passedTests.2 %tmp.109;
+    symbol [ passedTests %passedTests.2 40 62 73 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_40_60_40_77_stop:
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_40_8_40_101_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_40_8_40_101_if_else_false:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_40_84_40_101_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 40 86 ]
+    %tmp.112 = lgetv %failedTests.3;
+    symbol [ failedTests %tmp.112 40 86 97 ];
+    %tmp.113 = add %tmp.112 1;
+    lputv %failedTests.3 %tmp.113;
+    symbol [ failedTests %failedTests.3 40 86 97 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_40_84_40_101_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_40_8_40_101_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 41 8 ]
+    %tmp.116 = lgetv %totalTests.1;
+    symbol [ totalTests %tmp.116 41 8 18 ];
+    %tmp.117 = add %tmp.116 1;
+    lputv %totalTests.1 %tmp.117;
+    symbol [ totalTests %totalTests.1 41 8 18 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 43 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_43_8_43_95_if_stmt:
+    %tmp.118 = lgetv %renderTest.6;
+    symbol [ renderTest %tmp.118 43 12 22 ];
+    symbol [ testSleepModeHandling %tmp.119 43 23 44 ];
+    %tmp.119 = getv function %tmp.118 :testSleepModeHandling;
+    %tmp.120 = lgetv %logger;
+    symbol [ logger %tmp.120 43 45 51 ];
+    %tmp.121 = invoke %tmp.118 %tmp.119(%tmp.120);
+    bf %tmp.121 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_43_8_43_95_if_else_false;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_43_8_43_95_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_43_54_43_71_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 43 56 ]
+    %tmp.124 = lgetv %passedTests.2;
+    symbol [ passedTests %tmp.124 43 56 67 ];
+    %tmp.125 = add %tmp.124 1;
+    lputv %passedTests.2 %tmp.125;
+    symbol [ passedTests %passedTests.2 43 56 67 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_43_54_43_71_stop:
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_43_8_43_95_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_43_8_43_95_if_else_false:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_43_78_43_95_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 43 80 ]
+    %tmp.128 = lgetv %failedTests.3;
+    symbol [ failedTests %tmp.128 43 80 91 ];
+    %tmp.129 = add %tmp.128 1;
+    lputv %failedTests.3 %tmp.129;
+    symbol [ failedTests %failedTests.3 43 80 91 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_43_78_43_95_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_43_8_43_95_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 44 8 ]
+    %tmp.132 = lgetv %totalTests.1;
+    symbol [ totalTests %tmp.132 44 8 18 ];
+    %tmp.133 = add %tmp.132 1;
+    lputv %totalTests.1 %tmp.133;
+    symbol [ totalTests %totalTests.1 44 8 18 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 47 8 ]
+    [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_21_8_72_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_21_8_72_4_stop" ]
+    %responsiveTest.7 = local;
+    symbol [ responsiveTest %responsiveTest.7 47 12 26 ];
+    symbol [ ResponsiveLayoutTest %tmp.137 47 33 53 ];
+    %tmp.137 = getv ? :ResponsiveLayoutTest;
+    %tmp.134 = newc %tmp.137 ();
+    lputv %responsiveTest.7 %tmp.134;
+    symbol [ responsiveTest %responsiveTest.7 47 12 26 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 48 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_48_8_48_102_if_stmt:
+    %tmp.138 = lgetv %responsiveTest.7;
+    symbol [ responsiveTest %tmp.138 48 12 26 ];
+    symbol [ testCalculateScaleFactor %tmp.139 48 27 51 ];
+    %tmp.139 = getv function %tmp.138 :testCalculateScaleFactor;
+    %tmp.140 = lgetv %logger;
+    symbol [ logger %tmp.140 48 52 58 ];
+    %tmp.141 = invoke %tmp.138 %tmp.139(%tmp.140);
+    bf %tmp.141 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_48_8_48_102_if_else_false;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_48_8_48_102_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_48_61_48_78_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 48 63 ]
+    %tmp.144 = lgetv %passedTests.2;
+    symbol [ passedTests %tmp.144 48 63 74 ];
+    %tmp.145 = add %tmp.144 1;
+    lputv %passedTests.2 %tmp.145;
+    symbol [ passedTests %passedTests.2 48 63 74 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_48_61_48_78_stop:
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_48_8_48_102_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_48_8_48_102_if_else_false:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_48_85_48_102_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 48 87 ]
+    %tmp.148 = lgetv %failedTests.3;
+    symbol [ failedTests %tmp.148 48 87 98 ];
+    %tmp.149 = add %tmp.148 1;
+    lputv %failedTests.3 %tmp.149;
+    symbol [ failedTests %failedTests.3 48 87 98 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_48_85_48_102_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_48_8_48_102_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 49 8 ]
+    %tmp.152 = lgetv %totalTests.1;
+    symbol [ totalTests %tmp.152 49 8 18 ];
+    %tmp.153 = add %tmp.152 1;
+    lputv %totalTests.1 %tmp.153;
+    symbol [ totalTests %totalTests.1 49 8 18 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 51 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_51_8_51_108_if_stmt:
+    %tmp.154 = lgetv %responsiveTest.7;
+    symbol [ responsiveTest %tmp.154 51 12 26 ];
+    symbol [ testLayoutConfigurationScaling %tmp.155 51 27 57 ];
+    %tmp.155 = getv function %tmp.154 :testLayoutConfigurationScaling;
+    %tmp.156 = lgetv %logger;
+    symbol [ logger %tmp.156 51 58 64 ];
+    %tmp.157 = invoke %tmp.154 %tmp.155(%tmp.156);
+    bf %tmp.157 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_51_8_51_108_if_else_false;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_51_8_51_108_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_51_67_51_84_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 51 69 ]
+    %tmp.160 = lgetv %passedTests.2;
+    symbol [ passedTests %tmp.160 51 69 80 ];
+    %tmp.161 = add %tmp.160 1;
+    lputv %passedTests.2 %tmp.161;
+    symbol [ passedTests %passedTests.2 51 69 80 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_51_67_51_84_stop:
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_51_8_51_108_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_51_8_51_108_if_else_false:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_51_91_51_108_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 51 93 ]
+    %tmp.164 = lgetv %failedTests.3;
+    symbol [ failedTests %tmp.164 51 93 104 ];
+    %tmp.165 = add %tmp.164 1;
+    lputv %failedTests.3 %tmp.165;
+    symbol [ failedTests %failedTests.3 51 93 104 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_51_91_51_108_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_51_8_51_108_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 52 8 ]
+    %tmp.168 = lgetv %totalTests.1;
+    symbol [ totalTests %tmp.168 52 8 18 ];
+    %tmp.169 = add %tmp.168 1;
+    lputv %totalTests.1 %tmp.169;
+    symbol [ totalTests %totalTests.1 52 8 18 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 54 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_54_8_54_100_if_stmt:
+    %tmp.170 = lgetv %responsiveTest.7;
+    symbol [ responsiveTest %tmp.170 54 12 26 ];
+    symbol [ testBatteryPositioning %tmp.171 54 27 49 ];
+    %tmp.171 = getv function %tmp.170 :testBatteryPositioning;
+    %tmp.172 = lgetv %logger;
+    symbol [ logger %tmp.172 54 50 56 ];
+    %tmp.173 = invoke %tmp.170 %tmp.171(%tmp.172);
+    bf %tmp.173 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_54_8_54_100_if_else_false;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_54_8_54_100_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_54_59_54_76_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 54 61 ]
+    %tmp.176 = lgetv %passedTests.2;
+    symbol [ passedTests %tmp.176 54 61 72 ];
+    %tmp.177 = add %tmp.176 1;
+    lputv %passedTests.2 %tmp.177;
+    symbol [ passedTests %passedTests.2 54 61 72 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_54_59_54_76_stop:
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_54_8_54_100_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_54_8_54_100_if_else_false:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_54_83_54_100_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 54 85 ]
+    %tmp.180 = lgetv %failedTests.3;
+    symbol [ failedTests %tmp.180 54 85 96 ];
+    %tmp.181 = add %tmp.180 1;
+    lputv %failedTests.3 %tmp.181;
+    symbol [ failedTests %failedTests.3 54 85 96 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_54_83_54_100_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_54_8_54_100_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 55 8 ]
+    %tmp.184 = lgetv %totalTests.1;
+    symbol [ totalTests %tmp.184 55 8 18 ];
+    %tmp.185 = add %tmp.184 1;
+    lputv %totalTests.1 %tmp.185;
+    symbol [ totalTests %totalTests.1 55 8 18 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 57 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_57_8_57_97_if_stmt:
+    %tmp.186 = lgetv %responsiveTest.7;
+    symbol [ responsiveTest %tmp.186 57 12 26 ];
+    symbol [ testHashMarkScaling %tmp.187 57 27 46 ];
+    %tmp.187 = getv function %tmp.186 :testHashMarkScaling;
+    %tmp.188 = lgetv %logger;
+    symbol [ logger %tmp.188 57 47 53 ];
+    %tmp.189 = invoke %tmp.186 %tmp.187(%tmp.188);
+    bf %tmp.189 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_57_8_57_97_if_else_false;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_57_8_57_97_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_57_56_57_73_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 57 58 ]
+    %tmp.192 = lgetv %passedTests.2;
+    symbol [ passedTests %tmp.192 57 58 69 ];
+    %tmp.193 = add %tmp.192 1;
+    lputv %passedTests.2 %tmp.193;
+    symbol [ passedTests %passedTests.2 57 58 69 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_57_56_57_73_stop:
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_57_8_57_97_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_57_8_57_97_if_else_false:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_57_80_57_97_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 57 82 ]
+    %tmp.196 = lgetv %failedTests.3;
+    symbol [ failedTests %tmp.196 57 82 93 ];
+    %tmp.197 = add %tmp.196 1;
+    lputv %failedTests.3 %tmp.197;
+    symbol [ failedTests %failedTests.3 57 82 93 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_57_80_57_97_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_57_8_57_97_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 58 8 ]
+    %tmp.200 = lgetv %totalTests.1;
+    symbol [ totalTests %tmp.200 58 8 18 ];
+    %tmp.201 = add %tmp.200 1;
+    lputv %totalTests.1 %tmp.201;
+    symbol [ totalTests %totalTests.1 58 8 18 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 60 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_60_8_60_105_if_stmt:
+    %tmp.202 = lgetv %responsiveTest.7;
+    symbol [ responsiveTest %tmp.202 60 12 26 ];
+    symbol [ testNotificationPositioning %tmp.203 60 27 54 ];
+    %tmp.203 = getv function %tmp.202 :testNotificationPositioning;
+    %tmp.204 = lgetv %logger;
+    symbol [ logger %tmp.204 60 55 61 ];
+    %tmp.205 = invoke %tmp.202 %tmp.203(%tmp.204);
+    bf %tmp.205 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_60_8_60_105_if_else_false;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_60_8_60_105_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_60_64_60_81_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 60 66 ]
+    %tmp.208 = lgetv %passedTests.2;
+    symbol [ passedTests %tmp.208 60 66 77 ];
+    %tmp.209 = add %tmp.208 1;
+    lputv %passedTests.2 %tmp.209;
+    symbol [ passedTests %passedTests.2 60 66 77 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_60_64_60_81_stop:
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_60_8_60_105_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_60_8_60_105_if_else_false:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_60_88_60_105_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 60 90 ]
+    %tmp.212 = lgetv %failedTests.3;
+    symbol [ failedTests %tmp.212 60 90 101 ];
+    %tmp.213 = add %tmp.212 1;
+    lputv %failedTests.3 %tmp.213;
+    symbol [ failedTests %failedTests.3 60 90 101 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_60_88_60_105_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_60_8_60_105_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 61 8 ]
+    %tmp.216 = lgetv %totalTests.1;
+    symbol [ totalTests %tmp.216 61 8 18 ];
+    %tmp.217 = add %tmp.216 1;
+    lputv %totalTests.1 %tmp.217;
+    symbol [ totalTests %totalTests.1 61 8 18 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 63 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_63_8_63_97_if_stmt:
+    %tmp.218 = lgetv %responsiveTest.7;
+    symbol [ responsiveTest %tmp.218 63 12 26 ];
+    symbol [ testDatePositioning %tmp.219 63 27 46 ];
+    %tmp.219 = getv function %tmp.218 :testDatePositioning;
+    %tmp.220 = lgetv %logger;
+    symbol [ logger %tmp.220 63 47 53 ];
+    %tmp.221 = invoke %tmp.218 %tmp.219(%tmp.220);
+    bf %tmp.221 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_63_8_63_97_if_else_false;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_63_8_63_97_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_63_56_63_73_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 63 58 ]
+    %tmp.224 = lgetv %passedTests.2;
+    symbol [ passedTests %tmp.224 63 58 69 ];
+    %tmp.225 = add %tmp.224 1;
+    lputv %passedTests.2 %tmp.225;
+    symbol [ passedTests %passedTests.2 63 58 69 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_63_56_63_73_stop:
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_63_8_63_97_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_63_8_63_97_if_else_false:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_63_80_63_97_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 63 82 ]
+    %tmp.228 = lgetv %failedTests.3;
+    symbol [ failedTests %tmp.228 63 82 93 ];
+    %tmp.229 = add %tmp.228 1;
+    lputv %failedTests.3 %tmp.229;
+    symbol [ failedTests %failedTests.3 63 82 93 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_63_80_63_97_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_63_8_63_97_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 64 8 ]
+    %tmp.232 = lgetv %totalTests.1;
+    symbol [ totalTests %tmp.232 64 8 18 ];
+    %tmp.233 = add %tmp.232 1;
+    lputv %totalTests.1 %tmp.233;
+    symbol [ totalTests %totalTests.1 64 8 18 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 66 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_66_8_66_100_if_stmt:
+    %tmp.234 = lgetv %responsiveTest.7;
+    symbol [ responsiveTest %tmp.234 66 12 26 ];
+    symbol [ testScalingConsistency %tmp.235 66 27 49 ];
+    %tmp.235 = getv function %tmp.234 :testScalingConsistency;
+    %tmp.236 = lgetv %logger;
+    symbol [ logger %tmp.236 66 50 56 ];
+    %tmp.237 = invoke %tmp.234 %tmp.235(%tmp.236);
+    bf %tmp.237 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_66_8_66_100_if_else_false;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_66_8_66_100_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_66_59_66_76_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 66 61 ]
+    %tmp.240 = lgetv %passedTests.2;
+    symbol [ passedTests %tmp.240 66 61 72 ];
+    %tmp.241 = add %tmp.240 1;
+    lputv %passedTests.2 %tmp.241;
+    symbol [ passedTests %passedTests.2 66 61 72 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_66_59_66_76_stop:
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_66_8_66_100_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_66_8_66_100_if_else_false:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_66_83_66_100_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 66 85 ]
+    %tmp.244 = lgetv %failedTests.3;
+    symbol [ failedTests %tmp.244 66 85 96 ];
+    %tmp.245 = add %tmp.244 1;
+    lputv %failedTests.3 %tmp.245;
+    symbol [ failedTests %failedTests.3 66 85 96 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_66_83_66_100_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_66_8_66_100_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 67 8 ]
+    %tmp.248 = lgetv %totalTests.1;
+    symbol [ totalTests %tmp.248 67 8 18 ];
+    %tmp.249 = add %tmp.248 1;
+    lputv %totalTests.1 %tmp.249;
+    symbol [ totalTests %totalTests.1 67 8 18 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 69 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_69_8_69_98_if_stmt:
+    %tmp.250 = lgetv %responsiveTest.7;
+    symbol [ responsiveTest %tmp.250 69 12 26 ];
+    symbol [ testScreenSizeRanges %tmp.251 69 27 47 ];
+    %tmp.251 = getv function %tmp.250 :testScreenSizeRanges;
+    %tmp.252 = lgetv %logger;
+    symbol [ logger %tmp.252 69 48 54 ];
+    %tmp.253 = invoke %tmp.250 %tmp.251(%tmp.252);
+    bf %tmp.253 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_69_8_69_98_if_else_false;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_69_8_69_98_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_69_57_69_74_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 69 59 ]
+    %tmp.256 = lgetv %passedTests.2;
+    symbol [ passedTests %tmp.256 69 59 70 ];
+    %tmp.257 = add %tmp.256 1;
+    lputv %passedTests.2 %tmp.257;
+    symbol [ passedTests %passedTests.2 69 59 70 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_69_57_69_74_stop:
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_69_8_69_98_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_69_8_69_98_if_else_false:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_69_81_69_98_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 69 83 ]
+    %tmp.260 = lgetv %failedTests.3;
+    symbol [ failedTests %tmp.260 69 83 94 ];
+    %tmp.261 = add %tmp.260 1;
+    lputv %failedTests.3 %tmp.261;
+    symbol [ failedTests %failedTests.3 69 83 94 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_69_81_69_98_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_69_8_69_98_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 70 8 ]
+    %tmp.264 = lgetv %totalTests.1;
+    symbol [ totalTests %tmp.264 70 8 18 ];
+    %tmp.265 = add %tmp.264 1;
+    lputv %totalTests.1 %tmp.265;
+    symbol [ totalTests %totalTests.1 70 8 18 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_21_8_72_4_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_21_4_75_4_endTry:
+    jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_21_4_75_4_finally;
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_21_4_75_4_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_21_4_75_4_catch:
+    %tmp.266 = exception;
+    push %tmp.266;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 72 6 ]
+    [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_21_4_75_4_catch" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_72_6_75_4_end" ]
+    %ex.8 = local;
+    symbol [ ex %ex.8 72 13 15 ];
+    %tmp.267 = dup %tmp.266;
+    lputv %ex.8 %tmp.267;
+    symbol [ ex %ex.8 72 13 15 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_72_17_75_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 73 8 ]
+    %tmp.268 = lgetv %logger;
+    symbol [ logger %tmp.268 73 8 14 ];
+    symbol [ debug %tmp.269 73 15 20 ];
+    %tmp.269 = getv function %tmp.268 :debug;
+    %tmp.270 = "Error running tests: ";
+    %tmp.271 = lgetv %ex.8;
+    symbol [ ex %tmp.271 73 47 49 ];
+    symbol [ getErrorMessage %tmp.272 73 50 65 ];
+    %tmp.272 = getv function %tmp.271 :getErrorMessage;
+    %tmp.273 = invoke %tmp.271 %tmp.272();
+    %tmp.274 = add %tmp.270 %tmp.273;
+    invoke %tmp.268 %tmp.269(%tmp.274);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 74 8 ]
+    %tmp.277 = lgetv %failedTests.3;
+    symbol [ failedTests %tmp.277 74 8 19 ];
+    %tmp.278 = add %tmp.277 1;
+    lputv %failedTests.3 %tmp.278;
+    symbol [ failedTests %failedTests.3 74 8 19 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_72_17_75_4_stop:
+    jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_21_4_75_4_finally;
+    pop;
+    goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_21_4_75_4_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_72_6_75_4_end:
+    try @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_21_4_75_4_catch @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_72_6_75_4_end @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_72_6_75_4_end @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_21_4_75_4_finally;
+    jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_21_4_75_4_finally;
+    throw %tmp.266;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_21_4_75_4_finally:
+    jsrret;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_21_4_75_4_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 78 4 ]
+    %tmp.279 = lgetv %logger;
+    symbol [ logger %tmp.279 78 4 10 ];
+    symbol [ debug %tmp.280 78 11 16 ];
+    %tmp.280 = getv function %tmp.279 :debug;
+    %tmp.281 = "Total Tests: ";
+    %tmp.282 = lgetv %totalTests.1;
+    symbol [ totalTests %tmp.282 78 35 45 ];
+    %tmp.283 = add %tmp.281 %tmp.282;
+    invoke %tmp.279 %tmp.280(%tmp.283);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 79 4 ]
+    %tmp.284 = lgetv %logger;
+    symbol [ logger %tmp.284 79 4 10 ];
+    symbol [ debug %tmp.285 79 11 16 ];
+    %tmp.285 = getv function %tmp.284 :debug;
+    %tmp.286 = "Passed: ";
+    %tmp.287 = lgetv %passedTests.2;
+    symbol [ passedTests %tmp.287 79 30 41 ];
+    %tmp.288 = add %tmp.286 %tmp.287;
+    invoke %tmp.284 %tmp.285(%tmp.288);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 80 4 ]
+    %tmp.289 = lgetv %logger;
+    symbol [ logger %tmp.289 80 4 10 ];
+    symbol [ debug %tmp.290 80 11 16 ];
+    %tmp.290 = getv function %tmp.289 :debug;
+    %tmp.291 = "Failed: ";
+    %tmp.292 = lgetv %failedTests.3;
+    symbol [ failedTests %tmp.292 80 30 41 ];
+    %tmp.293 = add %tmp.291 %tmp.292;
+    invoke %tmp.289 %tmp.290(%tmp.293);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc" 82 4 ]
+    %tmp.294 = lgetv %failedTests.3;
+    symbol [ failedTests %tmp.294 82 11 22 ];
+    %tmp.295 = 0;
+    %tmp.296 = eq %tmp.294 %tmp.295;
+    ret %tmp.296;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_TestRunner_mc_11_29_83_0_stop:
+}
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/TestRunner.mc"; @line = 7; ]
+<init> {
+}

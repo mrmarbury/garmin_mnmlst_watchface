@@ -30,6 +30,7 @@
         <!-- Data Field Settings -->
         <string id="messageFieldTitle">Bottom Field</string>
         <string id="dateFieldTitle">Top Field</string>
+        <string id="middleGaugeTitle">Middle Gauge</string>
         
         <!-- Data Field Options -->
         <string id="fieldDate">Date</string>
@@ -41,7 +42,5 @@
         <!-- Goal Settings -->
         <string id="calorieGoalOverallTitle">Overall Calorie Goal</string>
         <string id="calorieGoalActiveTitle">Active Calorie Goal</string>
-        <string id="stepGoalTitle">Daily Step Goal</string>
-        <string id="activeMinutesGoalTitle">Active Minutes Goal</string>
     </strings>
 </resources>

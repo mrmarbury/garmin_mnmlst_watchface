@@ -18,8 +18,5 @@
         <property id="calorieGoalOverall" type="number">2400</property>
         <property id="calorieGoalActive" type="number">750</property>
         
-        <!-- Step and activity goals -->
-        <property id="stepGoal" type="number">10000</property>
-        <property id="activeMinutesGoal" type="number">30</property>
     </properties>
 </resources>

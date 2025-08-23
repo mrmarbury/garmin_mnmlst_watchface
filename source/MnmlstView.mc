@@ -45,8 +45,6 @@ class MnmlstView extends WatchUi.WatchFace {
   var configColorScheme;
   var configCalorieGoalOverall;
   var configCalorieGoalActive;
-  var configStepGoal;
-  var configActiveMinutesGoal;
 
   // Initialize variables for this view
   function initialize() {
@@ -85,9 +83,9 @@ class MnmlstView extends WatchUi.WatchFace {
       :hourHashLength => (15 * scaleFactor).toNumber(),
       :minuteHashLength => (5 * scaleFactor).toNumber(),
       
-      // Battery gauge configuration
-      :batteryLeft => width * 0.25, // 25% from left edge
-      :batteryRight => width * 0.75, // 75% from left edge  
+      // Battery gauge configuration - perfectly centered
+      :batteryLeft => (width * 0.25).toNumber(), // 25% from left edge, ensure integer
+      :batteryRight => (width * 0.75).toNumber(), // 75% from left edge, ensure integer  
       :batteryHeight => height * 0.67, // 67% from top
       :batteryBarHeight => (10 * scaleFactor).toNumber(),
       
@@ -123,8 +121,6 @@ class MnmlstView extends WatchUi.WatchFace {
         configColorScheme = 0;        // Test dark theme
         configCalorieGoalOverall = 2400;
         configCalorieGoalActive = 750;
-        configStepGoal = 10000;
-        configActiveMinutesGoal = 30;
         System.println("Test config - Battery: " + configBatteryDisplayMode + ", Hand: " + configHourHandBehavior);
         return;
       }
@@ -152,11 +148,6 @@ class MnmlstView extends WatchUi.WatchFace {
       configCalorieGoalActive = Properties.getValue("calorieGoalActive");
       if (configCalorieGoalActive == null) { configCalorieGoalActive = 750; }
       
-      configStepGoal = Properties.getValue("stepGoal");
-      if (configStepGoal == null) { configStepGoal = 10000; }
-      
-      configActiveMinutesGoal = Properties.getValue("activeMinutesGoal");
-      if (configActiveMinutesGoal == null) { configActiveMinutesGoal = 30; }
       
       System.println("Config loaded - Battery: " + configBatteryDisplayMode + ", Hand: " + configHourHandBehavior);
       
@@ -179,8 +170,6 @@ class MnmlstView extends WatchUi.WatchFace {
     configColorScheme = 0;
     configCalorieGoalOverall = 2400;
     configCalorieGoalActive = 750;
-    configStepGoal = 10000;
-    configActiveMinutesGoal = 30;
     System.println("Default configuration loaded");
   }
 
@@ -201,17 +190,11 @@ class MnmlstView extends WatchUi.WatchFace {
     if (configColorScheme < 0 || configColorScheme > 1) {
       configColorScheme = 0;
     }
-    if (configStepGoal < 1000 || configStepGoal > 50000) {
-      configStepGoal = 10000;
-    }
     if (configCalorieGoalOverall < 1000 || configCalorieGoalOverall > 5000) {
       configCalorieGoalOverall = 2400;
     }
     if (configCalorieGoalActive < 200 || configCalorieGoalActive > 2000) {
       configCalorieGoalActive = 750;
-    }
-    if (configActiveMinutesGoal < 10 || configActiveMinutesGoal > 120) {
-      configActiveMinutesGoal = 30;
     }
   }
 
@@ -386,32 +369,34 @@ class MnmlstView extends WatchUi.WatchFace {
     var battLeft = layoutConfig[:batteryLeft];
     var battRight = layoutConfig[:batteryRight];
     var battRange = battRight - battLeft;
-    var battRangeSteps = battRange / 10;
+    var battRangeSteps = battRange / 10.0; // Use float for precise calculation
     var battBaseHeight = layoutConfig[:batteryHeight];
     
-    // Draw white gauge lines (same for all modes)
-    for (var i = battLeft; i <= battRight; i += battRangeSteps) {
-      targetDc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_WHITE);
-      targetDc.drawLine(i, battBaseHeight, i, battBaseHeight + layoutConfig[:batteryBarHeight]);
+    // Draw exactly 11 gauge lines (0%, 10%, 20%, ..., 100%)
+    var gaugeLineColor = getBatteryGaugeColor();
+    for (var i = 0; i <= 10; i++) {
+      var xPos = battLeft + (i * battRangeSteps);
+      targetDc.setColor(gaugeLineColor, gaugeLineColor);
+      targetDc.drawLine(xPos, battBaseHeight, xPos, battBaseHeight + layoutConfig[:batteryBarHeight]);
     }
     
     // Draw indicator dot
     var indicatorColor;
     if (useMultiColor) {
-      // Battery mode - use current color logic
+      // Battery mode - theme-aware multi-color based on percentage and charging state
       var stats = System.getSystemStats();
       if (stats.charging == true) {
-        indicatorColor = Graphics.COLOR_BLUE;
+        indicatorColor = getBlueColor();
       } else if (percentage <= 10) {
-        indicatorColor = Graphics.COLOR_RED;
+        indicatorColor = getRedColor();
       } else if (percentage <= 20) {
-        indicatorColor = Graphics.COLOR_YELLOW;
+        indicatorColor = getYellowColor();
       } else {
-        indicatorColor = Graphics.COLOR_GREEN;
+        indicatorColor = getGreenColor();
       }
     } else {
-      // All progress modes - single green color
-      indicatorColor = Graphics.COLOR_GREEN;
+      // All progress modes - theme-aware green color
+      indicatorColor = getGreenColor();
     }
     
     targetDc.setColor(indicatorColor, indicatorColor);
@@ -425,8 +410,8 @@ class MnmlstView extends WatchUi.WatchFace {
   // Data retrieval functions for different gauge modes
   function getStepsProgress() {
     var info = ActivityMonitor.getInfo();
-    if (info.steps != null && configStepGoal > 0) {
-      var progress = (info.steps.toFloat() / configStepGoal.toFloat() * 100).toNumber();
+    if (info.steps != null && info has :stepGoal && info.stepGoal != null && info.stepGoal > 0) {
+      var progress = (info.steps.toFloat() / info.stepGoal.toFloat() * 100).toNumber();
       return progress > 100 ? 100 : progress;
     }
     return 0;
@@ -460,6 +445,64 @@ class MnmlstView extends WatchUi.WatchFace {
     return 0;
   }
 
+  // Theme-aware color helper functions
+  function getBackgroundColor() {
+    return configColorScheme == 1 ? Graphics.COLOR_WHITE : Graphics.COLOR_BLACK;
+  }
+  
+  function getTextColor() {
+    return configColorScheme == 1 ? Graphics.COLOR_BLACK : Graphics.COLOR_WHITE;
+  }
+  
+  function getMinuteHandColor() {
+    return configColorScheme == 1 ? Graphics.COLOR_BLACK : Graphics.COLOR_WHITE;
+  }
+  
+  function getArborColor(moveBarLevel) {
+    if (moveBarLevel > ActivityMonitor.MOVE_BAR_LEVEL_MIN) {
+      return getRedColor(); // Theme-aware red for move bar
+    }
+    return configColorScheme == 1 ? Graphics.COLOR_BLACK : Graphics.COLOR_LT_GRAY;
+  }
+  
+  function getHourHashColor() {
+    return configColorScheme == 1 ? Graphics.COLOR_BLACK : Graphics.COLOR_WHITE;
+  }
+  
+  function getMinuteHashColor() {
+    return configColorScheme == 1 ? Graphics.COLOR_DK_GRAY : Graphics.COLOR_LT_GRAY;
+  }
+  
+  function getBatteryGaugeColor() {
+    return configColorScheme == 1 ? Graphics.COLOR_BLACK : Graphics.COLOR_WHITE;
+  }
+  
+  function getHourHandColor(bt_connected) {
+    if (bt_connected) {
+      return Graphics.COLOR_ORANGE; // Orange when connected in both themes
+    } else {
+      // When disconnected, use theme-appropriate gray
+      return configColorScheme == 1 ? Graphics.COLOR_DK_GRAY : Graphics.COLOR_LT_GRAY;
+    }
+  }
+  
+  // Theme-aware status colors for better light mode aesthetics
+  function getGreenColor() {
+    return configColorScheme == 1 ? Graphics.COLOR_DK_GREEN : Graphics.COLOR_GREEN; // Dark green in light mode
+  }
+  
+  function getRedColor() {
+    return configColorScheme == 1 ? Graphics.COLOR_DK_RED : Graphics.COLOR_RED; // Dark red in light mode
+  }
+  
+  function getYellowColor() {
+    return configColorScheme == 1 ? Graphics.COLOR_ORANGE : Graphics.COLOR_YELLOW; // Orange in light mode (better contrast than yellow)
+  }
+  
+  function getBlueColor() {
+    return configColorScheme == 1 ? Graphics.COLOR_DK_BLUE : Graphics.COLOR_BLUE; // Dark blue in light mode
+  }
+
   function drawString(myString, dc, posX, posY, color) {
     dc.setColor(color, Graphics.COLOR_TRANSPARENT);
     dc.drawText(
@@ -487,13 +530,13 @@ class MnmlstView extends WatchUi.WatchFace {
       var info = Activity.getActivityInfo();
       if (info != null && info.currentHeartRate != null) {
         displayValue = info.currentHeartRate;
-        displayStr = displayValue.toString() + " bpm";
+        displayStr = displayValue.toString();
       }
     } else if (configMessageFieldType == 3) {
       // Battery Percentage
       var battery = (System.getSystemStats().battery + 0.5).toNumber();
       displayValue = battery;
-      displayStr = battery.toString() + "%";
+      displayStr = battery.toString();
     } else {
       // Default: Notifications (0)
       var notificationCount = System.getDeviceSettings().notificationCount;
@@ -504,7 +547,7 @@ class MnmlstView extends WatchUi.WatchFace {
     }
 
     if (displayValue != null && displayStr.length() > 0) {
-      drawString(displayStr, dc, posX, posY, Graphics.COLOR_WHITE);
+      drawString(displayStr, dc, posX, posY, getTextColor());
     }
   }
 
@@ -523,13 +566,9 @@ class MnmlstView extends WatchUi.WatchFace {
 
     var hourTail = width - hourModifier;
 
-    if (bt_connected) {
-      colorHourHand = Graphics.COLOR_ORANGE;
-    } else {
-      colorHourHand = Graphics.COLOR_LT_GRAY;
-    }
+    colorHourHand = getHourHandColor(bt_connected);
 
-    //Use white to draw the hour and minute hands
+    //Use theme-aware color to draw the hour hand
     targetDc.setColor(colorHourHand, Graphics.COLOR_TRANSPARENT);
 
     // Draw the hour hand with configurable behavior
@@ -557,21 +596,19 @@ class MnmlstView extends WatchUi.WatchFace {
   function drawArbor(targetDc) {
     var width = targetDc.getWidth();
     var height = targetDc.getHeight();
-    var arborColor = Graphics.COLOR_LT_GRAY;
     var moveBarLevel = ActivityMonitor.getInfo().moveBarLevel;
 
     if (moveBarLevel == null) {
       moveBarLevel = 0;
     }
 
-    if (moveBarLevel > ActivityMonitor.MOVE_BAR_LEVEL_MIN) {
-      arborColor = Graphics.COLOR_RED;
-    }
+    var arborColor = getArborColor(moveBarLevel);
+    var backgroundColor = getBackgroundColor();
 
     // Draw the arbor in the center of the screen.
-    targetDc.setColor(arborColor, Graphics.COLOR_BLACK);
+    targetDc.setColor(arborColor, backgroundColor);
     targetDc.fillCircle(width / 2, height / 2, 7);
-    targetDc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
+    targetDc.setColor(backgroundColor, backgroundColor);
     targetDc.drawCircle(width / 2, height / 2, 7);
   }
 
@@ -599,20 +636,23 @@ class MnmlstView extends WatchUi.WatchFace {
     width = targetDc.getWidth();
     height = targetDc.getHeight();
 
-    // Fill the entire background with Black.
-    targetDc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_WHITE);
+    // Fill the entire background based on color scheme.
+    var backgroundColor = getBackgroundColor();
+    targetDc.setColor(backgroundColor, backgroundColor);
     targetDc.fillRectangle(0, 0, dc.getWidth(), dc.getHeight());
 
     // Draw Hour and Minute Ticks
-    targetDc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_WHITE);
+    var hourHashColor = getHourHashColor();
+    targetDc.setColor(hourHashColor, hourHashColor);
     drawHashMarks(targetDc, 12, 6, layoutConfig[:hourHashLength]);
-    targetDc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_LT_GRAY);
+    var minuteHashColor = getMinuteHashColor();
+    targetDc.setColor(minuteHashColor, minuteHashColor);
     drawHashMarks(targetDc, 31, 30, layoutConfig[:minuteHashLength]);
 
     drawBattery(targetDc, width, height);
     drawHourHand(targetDc);
 
-    targetDc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+    targetDc.setColor(getMinuteHandColor(), Graphics.COLOR_TRANSPARENT);
     //draw minute hand
     minuteHandAngle = (clockTime.min / 60.0) * Math.PI * 2;
     var minuteHandLength = width * layoutConfig[:minuteHandLengthRatio];
@@ -665,12 +705,12 @@ class MnmlstView extends WatchUi.WatchFace {
       // Heart Rate
       var info = Activity.getActivityInfo();
       if (info != null && info.currentHeartRate != null) {
-        displayStr = info.currentHeartRate.toString() + " bpm";
+        displayStr = info.currentHeartRate.toString();
       }
     } else if (configDateFieldType == 3) {
       // Battery Percentage
       var battery = (System.getSystemStats().battery + 0.5).toNumber();
-      displayStr = battery.toString() + "%";
+      displayStr = battery.toString();
     } else {
       // Default: Date (0)
       var info = Gregorian.info(Time.now(), Time.FORMAT_LONG);
@@ -678,7 +718,7 @@ class MnmlstView extends WatchUi.WatchFace {
     }
 
     if (displayStr.length() > 0) {
-      dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+      dc.setColor(getTextColor(), Graphics.COLOR_TRANSPARENT);
       dc.drawText(
         x,
         y,

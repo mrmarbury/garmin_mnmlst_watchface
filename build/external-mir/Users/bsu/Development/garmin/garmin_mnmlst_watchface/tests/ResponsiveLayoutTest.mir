@@ -1,0 +1,2009 @@
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc"; @line = 7; @symbol_usingdef<0> = [Toybox,7,6,12]; @symbol_usingdef<1> = [Test,7,13,17]; ]
+using Toybox.Test;
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc"; @line = 8; @symbol_usingdef<0> = [Toybox,8,6,12]; @symbol_usingdef<1> = [Math,8,13,17]; ]
+using Toybox.Math;
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc"; @line = 12; test = true; @symbol_classdef = [ResponsiveLayoutTest,12,6,26]; ]
+class ResponsiveLayoutTest {
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc"; @line = 12; ]
+    <init> {
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc"; @line = 12; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc"; @line = 15; @symbol_functiondef = [abs,15,13,16]; @symbol_param<0> = [value,15,17,22]; ]
+    function abs(value) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_15_24_17_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 16 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_16_15_16_36_begin:
+        %tmp.1 = lgetv %value;
+        symbol [ value %tmp.1 16 15 20 ];
+        %tmp.2 = 0;
+        %tmp.3 = lt %tmp.1 %tmp.2;
+        bf %tmp.3 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_16_15_16_36_false;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_16_15_16_36_true:
+        %tmp.4 = lgetv %value;
+        symbol [ value %tmp.4 16 28 33 ];
+        %tmp.5 = sub 0 %tmp.4;
+        push %tmp.5;
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_16_15_16_36_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_16_15_16_36_false:
+        %tmp.6 = lgetv %value;
+        symbol [ value %tmp.6 16 36 41 ];
+        push %tmp.6;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_16_15_16_36_end:
+        %tmp.7 = phi [%tmp.3 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_16_15_16_36_begin] [%tmp.5 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_16_15_16_36_true] [%tmp.6 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_16_15_16_36_false] [%tmp.7 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_16_15_16_36_end];
+        ret %tmp.7;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_15_24_17_4_stop:
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc"; @line = 20; test = true; @symbol_functiondef = [testCalculateScaleFactor,20,13,37]; @symbol_param<0> = [logger,20,38,44]; ]
+    function testCalculateScaleFactor(logger) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_20_46_56_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 21 8 ]
+        %tmp.1 = lgetv %logger;
+        symbol [ logger %tmp.1 21 8 14 ];
+        symbol [ debug %tmp.2 21 15 20 ];
+        %tmp.2 = getv function %tmp.1 :debug;
+        %tmp.3 = "Testing calculateScaleFactor";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 23 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_20_46_56_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_20_46_56_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 23 12 16 ];
+        symbol [ MnmlstView %tmp.7 23 23 33 ];
+        %tmp.7 = getv ? :MnmlstView;
+        %tmp.4 = newc %tmp.7 ();
+        lputv %view.1 %tmp.4;
+        symbol [ view %view.1 23 12 16 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 26 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_20_46_56_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_20_46_56_4_stop" ]
+        %factor260.2 = local;
+        symbol [ factor260 %factor260.2 26 12 21 ];
+        %tmp.8 = lgetv %view.1;
+        symbol [ view %tmp.8 26 24 28 ];
+        symbol [ calculateScaleFactor %tmp.9 26 29 49 ];
+        %tmp.9 = getv function %tmp.8 :calculateScaleFactor;
+        %tmp.10 = 260;
+        %tmp.11 = 260;
+        %tmp.12 = invoke %tmp.8 %tmp.9(%tmp.10, %tmp.11);
+        lputv %factor260.2 %tmp.12;
+        symbol [ factor260 %factor260.2 26 12 21 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 27 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_27_8_30_8_if_stmt:
+        %tmp.13 = self;
+        symbol [ abs %tmp.14 27 12 15 ];
+        %tmp.14 = getv function %tmp.13 :abs;
+        %tmp.15 = lgetv %factor260.2;
+        symbol [ factor260 %tmp.15 27 16 25 ];
+        %tmp.16 = 1.0;
+        %tmp.17 = sub %tmp.15 %tmp.16;
+        %tmp.18 = invoke %tmp.13 %tmp.14(%tmp.17);
+        %tmp.19 = 0.001;
+        %tmp.20 = gt %tmp.18 %tmp.19;
+        bf %tmp.20 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_27_8_30_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_27_8_30_8_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_27_42_30_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 28 12 ]
+        %tmp.21 = lgetv %logger;
+        symbol [ logger %tmp.21 28 12 18 ];
+        symbol [ debug %tmp.22 28 19 24 ];
+        %tmp.22 = getv function %tmp.21 :debug;
+        %tmp.23 = "Failed: Reference resolution should give scale factor 1.0, got ";
+        %tmp.24 = lgetv %factor260.2;
+        symbol [ factor260 %tmp.24 28 93 102 ];
+        %tmp.25 = add %tmp.23 %tmp.24;
+        invoke %tmp.21 %tmp.22(%tmp.25);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 29 12 ]
+        %tmp.26 = false;
+        ret %tmp.26;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_27_42_30_8_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_27_8_30_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_27_8_30_8_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 33 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_20_46_56_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_20_46_56_4_stop" ]
+        %factor218.3 = local;
+        symbol [ factor218 %factor218.3 33 12 21 ];
+        %tmp.27 = lgetv %view.1;
+        symbol [ view %tmp.27 33 24 28 ];
+        symbol [ calculateScaleFactor %tmp.28 33 29 49 ];
+        %tmp.28 = getv function %tmp.27 :calculateScaleFactor;
+        %tmp.29 = 218;
+        %tmp.30 = 218;
+        %tmp.31 = invoke %tmp.27 %tmp.28(%tmp.29, %tmp.30);
+        lputv %factor218.3 %tmp.31;
+        symbol [ factor218 %factor218.3 33 12 21 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 34 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_34_8_37_8_if_stmt:
+        %tmp.32 = lgetv %factor218.3;
+        symbol [ factor218 %tmp.32 34 12 21 ];
+        %tmp.33 = 1.0;
+        %tmp.34 = gte %tmp.32 %tmp.33;
+        bf %tmp.34 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_34_8_37_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_34_8_37_8_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_34_30_37_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 35 12 ]
+        %tmp.35 = lgetv %logger;
+        symbol [ logger %tmp.35 35 12 18 ];
+        symbol [ debug %tmp.36 35 19 24 ];
+        %tmp.36 = getv function %tmp.35 :debug;
+        %tmp.37 = "Failed: Smaller screen should have scale factor < 1.0, got ";
+        %tmp.38 = lgetv %factor218.3;
+        symbol [ factor218 %tmp.38 35 89 98 ];
+        %tmp.39 = add %tmp.37 %tmp.38;
+        invoke %tmp.35 %tmp.36(%tmp.39);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 36 12 ]
+        %tmp.40 = false;
+        ret %tmp.40;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_34_30_37_8_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_34_8_37_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_34_8_37_8_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 40 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_20_46_56_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_20_46_56_4_stop" ]
+        %factor416.4 = local;
+        symbol [ factor416 %factor416.4 40 12 21 ];
+        %tmp.41 = lgetv %view.1;
+        symbol [ view %tmp.41 40 24 28 ];
+        symbol [ calculateScaleFactor %tmp.42 40 29 49 ];
+        %tmp.42 = getv function %tmp.41 :calculateScaleFactor;
+        %tmp.43 = 416;
+        %tmp.44 = 416;
+        %tmp.45 = invoke %tmp.41 %tmp.42(%tmp.43, %tmp.44);
+        lputv %factor416.4 %tmp.45;
+        symbol [ factor416 %factor416.4 40 12 21 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 41 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_41_8_44_8_if_stmt:
+        %tmp.46 = lgetv %factor416.4;
+        symbol [ factor416 %tmp.46 41 12 21 ];
+        %tmp.47 = 1.0;
+        %tmp.48 = lte %tmp.46 %tmp.47;
+        bf %tmp.48 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_41_8_44_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_41_8_44_8_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_41_30_44_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 42 12 ]
+        %tmp.49 = lgetv %logger;
+        symbol [ logger %tmp.49 42 12 18 ];
+        symbol [ debug %tmp.50 42 19 24 ];
+        %tmp.50 = getv function %tmp.49 :debug;
+        %tmp.51 = "Failed: Larger screen should have scale factor > 1.0, got ";
+        %tmp.52 = lgetv %factor416.4;
+        symbol [ factor416 %tmp.52 42 88 97 ];
+        %tmp.53 = add %tmp.51 %tmp.52;
+        invoke %tmp.49 %tmp.50(%tmp.53);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 43 12 ]
+        %tmp.54 = false;
+        ret %tmp.54;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_41_30_44_8_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_41_8_44_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_41_8_44_8_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 47 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_20_46_56_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_20_46_56_4_stop" ]
+        %factor240.5 = local;
+        symbol [ factor240 %factor240.5 47 12 21 ];
+        %tmp.55 = lgetv %view.1;
+        symbol [ view %tmp.55 47 24 28 ];
+        symbol [ calculateScaleFactor %tmp.56 47 29 49 ];
+        %tmp.56 = getv function %tmp.55 :calculateScaleFactor;
+        %tmp.57 = 240;
+        %tmp.58 = 240;
+        %tmp.59 = invoke %tmp.55 %tmp.56(%tmp.57, %tmp.58);
+        lputv %factor240.5 %tmp.59;
+        symbol [ factor240 %factor240.5 47 12 21 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 48 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_20_46_56_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_20_46_56_4_stop" ]
+        %expected240.6 = local;
+        symbol [ expected240 %expected240.6 48 12 23 ];
+        %tmp.60 = 240.0;
+        %tmp.61 = 260.0;
+        %tmp.62 = div %tmp.60 %tmp.61;
+        lputv %expected240.6 %tmp.62;
+        symbol [ expected240 %expected240.6 48 12 23 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 49 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_49_8_52_8_if_stmt:
+        %tmp.63 = self;
+        symbol [ abs %tmp.64 49 12 15 ];
+        %tmp.64 = getv function %tmp.63 :abs;
+        %tmp.65 = lgetv %factor240.5;
+        symbol [ factor240 %tmp.65 49 16 25 ];
+        %tmp.66 = lgetv %expected240.6;
+        symbol [ expected240 %tmp.66 49 28 39 ];
+        %tmp.67 = sub %tmp.65 %tmp.66;
+        %tmp.68 = invoke %tmp.63 %tmp.64(%tmp.67);
+        %tmp.69 = 0.001;
+        %tmp.70 = gt %tmp.68 %tmp.69;
+        bf %tmp.70 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_49_8_52_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_49_8_52_8_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_49_50_52_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 50 12 ]
+        %tmp.71 = lgetv %logger;
+        symbol [ logger %tmp.71 50 12 18 ];
+        symbol [ debug %tmp.72 50 19 24 ];
+        %tmp.72 = getv function %tmp.71 :debug;
+        %tmp.73 = "Failed: 240x240 scale factor incorrect. Expected ";
+        %tmp.74 = lgetv %expected240.6;
+        symbol [ expected240 %tmp.74 50 79 90 ];
+        %tmp.75 = add %tmp.73 %tmp.74;
+        %tmp.76 = ", got ";
+        %tmp.77 = add %tmp.75 %tmp.76;
+        %tmp.78 = lgetv %factor240.5;
+        symbol [ factor240 %tmp.78 50 104 113 ];
+        %tmp.79 = add %tmp.77 %tmp.78;
+        invoke %tmp.71 %tmp.72(%tmp.79);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 51 12 ]
+        %tmp.80 = false;
+        ret %tmp.80;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_49_50_52_8_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_49_8_52_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_49_8_52_8_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 54 8 ]
+        %tmp.81 = lgetv %logger;
+        symbol [ logger %tmp.81 54 8 14 ];
+        symbol [ debug %tmp.82 54 15 20 ];
+        %tmp.82 = getv function %tmp.81 :debug;
+        %tmp.83 = "Passed: calculateScaleFactor works correctly";
+        invoke %tmp.81 %tmp.82(%tmp.83);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 55 8 ]
+        %tmp.84 = true;
+        ret %tmp.84;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_20_46_56_4_stop:
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc"; @line = 59; test = true; @symbol_functiondef = [testLayoutConfigurationScaling,59,13,43]; @symbol_param<0> = [logger,59,44,50]; ]
+    function testLayoutConfigurationScaling(logger) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_59_52_94_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 60 8 ]
+        %tmp.1 = lgetv %logger;
+        symbol [ logger %tmp.1 60 8 14 ];
+        symbol [ debug %tmp.2 60 15 20 ];
+        %tmp.2 = getv function %tmp.1 :debug;
+        %tmp.3 = "Testing layout configuration scaling";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 62 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_59_52_94_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_59_52_94_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 62 12 16 ];
+        symbol [ MnmlstView %tmp.7 62 23 33 ];
+        %tmp.7 = getv ? :MnmlstView;
+        %tmp.4 = newc %tmp.7 ();
+        lputv %view.1 %tmp.4;
+        symbol [ view %view.1 62 12 16 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 65 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_59_52_94_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_59_52_94_4_stop" ]
+        %smallConfig.2 = local;
+        symbol [ smallConfig %smallConfig.2 65 12 23 ];
+        %tmp.8 = lgetv %view.1;
+        symbol [ view %tmp.8 65 26 30 ];
+        symbol [ createLayoutConfig %tmp.9 65 31 49 ];
+        %tmp.9 = getv function %tmp.8 :createLayoutConfig;
+        %tmp.10 = 218;
+        %tmp.11 = 218;
+        %tmp.12 = invoke %tmp.8 %tmp.9(%tmp.10, %tmp.11);
+        lputv %smallConfig.2 %tmp.12;
+        symbol [ smallConfig %smallConfig.2 65 12 23 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 66 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_59_52_94_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_59_52_94_4_stop" ]
+        %smallScale.3 = local;
+        symbol [ smallScale %smallScale.3 66 12 22 ];
+        %tmp.13 = 218.0;
+        %tmp.14 = 260.0;
+        %tmp.15 = div %tmp.13 %tmp.14;
+        lputv %smallScale.3 %tmp.15;
+        symbol [ smallScale %smallScale.3 66 12 22 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 69 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_59_52_94_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_59_52_94_4_stop" ]
+        %expectedHourHandWidth.4 = local;
+        symbol [ expectedHourHandWidth %expectedHourHandWidth.4 69 12 33 ];
+        %tmp.16 = 160;
+        %tmp.17 = lgetv %smallScale.3;
+        symbol [ smallScale %tmp.17 69 43 53 ];
+        %tmp.18 = mul %tmp.16 %tmp.17;
+        symbol [ toNumber %tmp.19 69 55 63 ];
+        %tmp.19 = getv function %tmp.18 :toNumber;
+        %tmp.20 = invoke %tmp.18 %tmp.19();
+        lputv %expectedHourHandWidth.4 %tmp.20;
+        symbol [ expectedHourHandWidth %expectedHourHandWidth.4 69 12 33 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 70 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_70_8_73_8_if_stmt:
+        %tmp.21 = lgetv %smallConfig.2;
+        symbol [ smallConfig %tmp.21 70 12 23 ];
+        %tmp.23 = const :hourHandWidth;
+        symbol [ hourHandWidth %tmp.23 70 25 38 const ];
+        %tmp.24 = agetv %tmp.21 %tmp.23;
+        %tmp.25 = lgetv %expectedHourHandWidth.4;
+        symbol [ expectedHourHandWidth %tmp.25 70 43 64 ];
+        %tmp.26 = ne %tmp.24 %tmp.25;
+        bf %tmp.26 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_70_8_73_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_70_8_73_8_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_70_66_73_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 71 12 ]
+        %tmp.27 = lgetv %logger;
+        symbol [ logger %tmp.27 71 12 18 ];
+        symbol [ debug %tmp.28 71 19 24 ];
+        %tmp.28 = getv function %tmp.27 :debug;
+        %tmp.29 = "Failed: Hour hand width scaling incorrect for small screen";
+        invoke %tmp.27 %tmp.28(%tmp.29);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 72 12 ]
+        %tmp.30 = false;
+        ret %tmp.30;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_70_66_73_8_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_70_8_73_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_70_8_73_8_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 76 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_59_52_94_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_59_52_94_4_stop" ]
+        %largeConfig.5 = local;
+        symbol [ largeConfig %largeConfig.5 76 12 23 ];
+        %tmp.31 = lgetv %view.1;
+        symbol [ view %tmp.31 76 26 30 ];
+        symbol [ createLayoutConfig %tmp.32 76 31 49 ];
+        %tmp.32 = getv function %tmp.31 :createLayoutConfig;
+        %tmp.33 = 416;
+        %tmp.34 = 416;
+        %tmp.35 = invoke %tmp.31 %tmp.32(%tmp.33, %tmp.34);
+        lputv %largeConfig.5 %tmp.35;
+        symbol [ largeConfig %largeConfig.5 76 12 23 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 77 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_59_52_94_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_59_52_94_4_stop" ]
+        %largeScale.6 = local;
+        symbol [ largeScale %largeScale.6 77 12 22 ];
+        %tmp.36 = 416.0;
+        %tmp.37 = 260.0;
+        %tmp.38 = div %tmp.36 %tmp.37;
+        lputv %largeScale.6 %tmp.38;
+        symbol [ largeScale %largeScale.6 77 12 22 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 80 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_59_52_94_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_59_52_94_4_stop" ]
+        %expectedLargeHourHandWidth.7 = local;
+        symbol [ expectedLargeHourHandWidth %expectedLargeHourHandWidth.7 80 12 38 ];
+        %tmp.39 = 160;
+        %tmp.40 = lgetv %largeScale.6;
+        symbol [ largeScale %tmp.40 80 48 58 ];
+        %tmp.41 = mul %tmp.39 %tmp.40;
+        symbol [ toNumber %tmp.42 80 60 68 ];
+        %tmp.42 = getv function %tmp.41 :toNumber;
+        %tmp.43 = invoke %tmp.41 %tmp.42();
+        lputv %expectedLargeHourHandWidth.7 %tmp.43;
+        symbol [ expectedLargeHourHandWidth %expectedLargeHourHandWidth.7 80 12 38 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 81 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_81_8_84_8_if_stmt:
+        %tmp.44 = lgetv %largeConfig.5;
+        symbol [ largeConfig %tmp.44 81 12 23 ];
+        %tmp.46 = const :hourHandWidth;
+        symbol [ hourHandWidth %tmp.46 81 25 38 const ];
+        %tmp.47 = agetv %tmp.44 %tmp.46;
+        %tmp.48 = lgetv %expectedLargeHourHandWidth.7;
+        symbol [ expectedLargeHourHandWidth %tmp.48 81 43 69 ];
+        %tmp.49 = ne %tmp.47 %tmp.48;
+        bf %tmp.49 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_81_8_84_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_81_8_84_8_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_81_71_84_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 82 12 ]
+        %tmp.50 = lgetv %logger;
+        symbol [ logger %tmp.50 82 12 18 ];
+        symbol [ debug %tmp.51 82 19 24 ];
+        %tmp.51 = getv function %tmp.50 :debug;
+        %tmp.52 = "Failed: Hour hand width scaling incorrect for large screen";
+        invoke %tmp.50 %tmp.51(%tmp.52);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 83 12 ]
+        %tmp.53 = false;
+        ret %tmp.53;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_81_71_84_8_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_81_8_84_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_81_8_84_8_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 87 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_87_8_90_8_if_stmt:
+        %tmp.54 = lgetv %largeConfig.5;
+        symbol [ largeConfig %tmp.54 87 12 23 ];
+        %tmp.56 = const :hourHandWidth;
+        symbol [ hourHandWidth %tmp.56 87 25 38 const ];
+        %tmp.57 = agetv %tmp.54 %tmp.56;
+        %tmp.58 = lgetv %smallConfig.2;
+        symbol [ smallConfig %tmp.58 87 43 54 ];
+        %tmp.60 = const :hourHandWidth;
+        symbol [ hourHandWidth %tmp.60 87 56 69 const ];
+        %tmp.61 = agetv %tmp.58 %tmp.60;
+        %tmp.62 = lte %tmp.57 %tmp.61;
+        bf %tmp.62 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_87_8_90_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_87_8_90_8_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_87_72_90_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 88 12 ]
+        %tmp.63 = lgetv %logger;
+        symbol [ logger %tmp.63 88 12 18 ];
+        symbol [ debug %tmp.64 88 19 24 ];
+        %tmp.64 = getv function %tmp.63 :debug;
+        %tmp.65 = "Failed: Large screen should have larger hour hand width than small screen";
+        invoke %tmp.63 %tmp.64(%tmp.65);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 89 12 ]
+        %tmp.66 = false;
+        ret %tmp.66;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_87_72_90_8_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_87_8_90_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_87_8_90_8_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 92 8 ]
+        %tmp.67 = lgetv %logger;
+        symbol [ logger %tmp.67 92 8 14 ];
+        symbol [ debug %tmp.68 92 15 20 ];
+        %tmp.68 = getv function %tmp.67 :debug;
+        %tmp.69 = "Passed: Layout configuration scaling works correctly";
+        invoke %tmp.67 %tmp.68(%tmp.69);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 93 8 ]
+        %tmp.70 = true;
+        ret %tmp.70;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_59_52_94_4_stop:
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc"; @line = 97; test = true; @symbol_functiondef = [testBatteryPositioning,97,13,35]; @symbol_param<0> = [logger,97,36,42]; ]
+    function testBatteryPositioning(logger) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_97_44_141_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 98 8 ]
+        %tmp.1 = lgetv %logger;
+        symbol [ logger %tmp.1 98 8 14 ];
+        symbol [ debug %tmp.2 98 15 20 ];
+        %tmp.2 = getv function %tmp.1 :debug;
+        %tmp.3 = "Testing battery positioning calculations";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 100 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_97_44_141_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_97_44_141_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 100 12 16 ];
+        symbol [ MnmlstView %tmp.7 100 23 33 ];
+        %tmp.7 = getv ? :MnmlstView;
+        %tmp.4 = newc %tmp.7 ();
+        lputv %view.1 %tmp.4;
+        symbol [ view %view.1 100 12 16 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 103 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_97_44_141_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_97_44_141_4_stop" ]
+        %screens.2 = local;
+        symbol [ screens %screens.2 103 12 19 ];
+        %tmp.8 = newa 4;
+        %tmp.9 = newa 2;
+        %tmp.10 = 218;
+        %tmp.11 = dup %tmp.9;
+        %tmp.12 = aputv %tmp.11 0 %tmp.10;
+        %tmp.13 = 218;
+        %tmp.14 = dup %tmp.12;
+        %tmp.15 = aputv %tmp.14 1 %tmp.13;
+        %tmp.16 = dup %tmp.8;
+        %tmp.17 = aputv %tmp.16 0 %tmp.15;
+        %tmp.18 = newa 2;
+        %tmp.19 = 240;
+        %tmp.20 = dup %tmp.18;
+        %tmp.21 = aputv %tmp.20 0 %tmp.19;
+        %tmp.22 = 240;
+        %tmp.23 = dup %tmp.21;
+        %tmp.24 = aputv %tmp.23 1 %tmp.22;
+        %tmp.25 = dup %tmp.17;
+        %tmp.26 = aputv %tmp.25 1 %tmp.24;
+        %tmp.27 = newa 2;
+        %tmp.28 = 260;
+        %tmp.29 = dup %tmp.27;
+        %tmp.30 = aputv %tmp.29 0 %tmp.28;
+        %tmp.31 = 260;
+        %tmp.32 = dup %tmp.30;
+        %tmp.33 = aputv %tmp.32 1 %tmp.31;
+        %tmp.34 = dup %tmp.26;
+        %tmp.35 = aputv %tmp.34 2 %tmp.33;
+        %tmp.36 = newa 2;
+        %tmp.37 = 416;
+        %tmp.38 = dup %tmp.36;
+        %tmp.39 = aputv %tmp.38 0 %tmp.37;
+        %tmp.40 = 416;
+        %tmp.41 = dup %tmp.39;
+        %tmp.42 = aputv %tmp.41 1 %tmp.40;
+        %tmp.43 = dup %tmp.35;
+        %tmp.44 = aputv %tmp.43 3 %tmp.42;
+        lputv %screens.2 %tmp.44;
+        symbol [ screens %screens.2 103 12 19 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 110 8 ]
+        for @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_110_8_137_8_for_test @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_110_8_137_8_for_incr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_110_8_137_8_for_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_110_8_137_8_for_init:
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_110_8_137_8_for_begin" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_110_8_137_8_for_end" ]
+        %i.3 = local;
+        symbol [ i %i.3 110 17 18 ];
+        %tmp.45 = 0;
+        lputv %i.3 %tmp.45;
+        symbol [ i %i.3 110 17 18 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_110_8_137_8_for_test:
+        %tmp.46 = lgetv %i.3;
+        symbol [ i %tmp.46 110 24 25 ];
+        %tmp.47 = lgetv %screens.2;
+        symbol [ screens %tmp.47 110 28 35 ];
+        symbol [ size %tmp.48 110 36 40 ];
+        %tmp.48 = getv function %tmp.47 :size;
+        %tmp.49 = invoke %tmp.47 %tmp.48();
+        %tmp.50 = lt %tmp.46 %tmp.49;
+        bf %tmp.50 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_110_8_137_8_for_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_110_8_137_8_for_begin:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_110_49_137_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 111 12 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_110_49_137_8_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_110_49_137_8_stop" ]
+        %width.4 = local;
+        symbol [ width %width.4 111 16 21 ];
+        %tmp.51 = lgetv %screens.2;
+        symbol [ screens %tmp.51 111 24 31 ];
+        %tmp.52 = lgetv %i.3;
+        symbol [ i %tmp.52 111 32 33 ];
+        %tmp.53 = agetv %tmp.51 %tmp.52;
+        %tmp.54 = 0;
+        %tmp.55 = agetv %tmp.53 %tmp.54;
+        lputv %width.4 %tmp.55;
+        symbol [ width %width.4 111 16 21 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 112 12 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_110_49_137_8_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_110_49_137_8_stop" ]
+        %height.5 = local;
+        symbol [ height %height.5 112 16 22 ];
+        %tmp.56 = lgetv %screens.2;
+        symbol [ screens %tmp.56 112 25 32 ];
+        %tmp.57 = lgetv %i.3;
+        symbol [ i %tmp.57 112 33 34 ];
+        %tmp.58 = agetv %tmp.56 %tmp.57;
+        %tmp.59 = 1;
+        %tmp.60 = agetv %tmp.58 %tmp.59;
+        lputv %height.5 %tmp.60;
+        symbol [ height %height.5 112 16 22 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 113 12 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_110_49_137_8_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_110_49_137_8_stop" ]
+        %config.6 = local;
+        symbol [ config %config.6 113 16 22 ];
+        %tmp.61 = lgetv %view.1;
+        symbol [ view %tmp.61 113 25 29 ];
+        symbol [ createLayoutConfig %tmp.62 113 30 48 ];
+        %tmp.62 = getv function %tmp.61 :createLayoutConfig;
+        %tmp.63 = lgetv %width.4;
+        symbol [ width %tmp.63 113 49 54 ];
+        %tmp.64 = lgetv %height.5;
+        symbol [ height %tmp.64 113 56 62 ];
+        %tmp.65 = invoke %tmp.61 %tmp.62(%tmp.63, %tmp.64);
+        lputv %config.6 %tmp.65;
+        symbol [ config %config.6 113 16 22 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 116 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_116_12_119_12_if_stmt:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_116_16_116_68_begin:
+        %tmp.66 = lgetv %config.6;
+        symbol [ config %tmp.66 116 16 22 ];
+        %tmp.68 = const :batteryLeft;
+        symbol [ batteryLeft %tmp.68 116 24 35 const ];
+        %tmp.69 = agetv %tmp.66 %tmp.68;
+        %tmp.70 = 0;
+        %tmp.71 = lt %tmp.69 %tmp.70;
+        bt %tmp.71 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_116_12_119_12_if_true;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_116_44_116_68_false:
+        %tmp.72 = lgetv %config.6;
+        symbol [ config %tmp.72 116 44 50 ];
+        %tmp.74 = const :batteryLeft;
+        symbol [ batteryLeft %tmp.74 116 52 63 const ];
+        %tmp.75 = agetv %tmp.72 %tmp.74;
+        %tmp.76 = lgetv %width.4;
+        symbol [ width %tmp.76 116 68 73 ];
+        %tmp.77 = gte %tmp.75 %tmp.76;
+        push %tmp.77;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_116_44_116_68_end:
+        %tmp.78 = phi [%tmp.71 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_116_16_116_68_begin] [%tmp.77 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_116_44_116_68_false] [%tmp.78 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_116_44_116_68_end];
+        bf %tmp.78 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_116_12_119_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_116_12_119_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_116_75_119_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 117 16 ]
+        %tmp.79 = lgetv %logger;
+        symbol [ logger %tmp.79 117 16 22 ];
+        symbol [ debug %tmp.80 117 23 28 ];
+        %tmp.80 = getv function %tmp.79 :debug;
+        %tmp.81 = "Failed: batteryLeft out of bounds for ";
+        %tmp.82 = lgetv %width.4;
+        symbol [ width %tmp.82 117 72 77 ];
+        %tmp.83 = add %tmp.81 %tmp.82;
+        %tmp.84 = "x";
+        %tmp.85 = add %tmp.83 %tmp.84;
+        %tmp.86 = lgetv %height.5;
+        symbol [ height %tmp.86 117 86 92 ];
+        %tmp.87 = add %tmp.85 %tmp.86;
+        invoke %tmp.79 %tmp.80(%tmp.87);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 118 16 ]
+        %tmp.88 = false;
+        ret %tmp.88;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_116_75_119_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_116_12_119_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_116_12_119_12_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 121 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_121_12_124_12_if_stmt:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_121_16_121_89_begin:
+        %tmp.89 = lgetv %config.6;
+        symbol [ config %tmp.89 121 16 22 ];
+        %tmp.91 = const :batteryRight;
+        symbol [ batteryRight %tmp.91 121 24 36 const ];
+        %tmp.92 = agetv %tmp.89 %tmp.91;
+        %tmp.93 = lgetv %config.6;
+        symbol [ config %tmp.93 121 41 47 ];
+        %tmp.95 = const :batteryLeft;
+        symbol [ batteryLeft %tmp.95 121 49 60 const ];
+        %tmp.96 = agetv %tmp.93 %tmp.95;
+        %tmp.97 = lte %tmp.92 %tmp.96;
+        bt %tmp.97 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_121_12_124_12_if_true;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_121_65_121_89_false:
+        %tmp.98 = lgetv %config.6;
+        symbol [ config %tmp.98 121 65 71 ];
+        %tmp.100 = const :batteryRight;
+        symbol [ batteryRight %tmp.100 121 73 85 const ];
+        %tmp.101 = agetv %tmp.98 %tmp.100;
+        %tmp.102 = lgetv %width.4;
+        symbol [ width %tmp.102 121 89 94 ];
+        %tmp.103 = gt %tmp.101 %tmp.102;
+        push %tmp.103;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_121_65_121_89_end:
+        %tmp.104 = phi [%tmp.97 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_121_16_121_89_begin] [%tmp.103 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_121_65_121_89_false] [%tmp.104 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_121_65_121_89_end];
+        bf %tmp.104 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_121_12_124_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_121_12_124_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_121_96_124_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 122 16 ]
+        %tmp.105 = lgetv %logger;
+        symbol [ logger %tmp.105 122 16 22 ];
+        symbol [ debug %tmp.106 122 23 28 ];
+        %tmp.106 = getv function %tmp.105 :debug;
+        %tmp.107 = "Failed: batteryRight invalid for ";
+        %tmp.108 = lgetv %width.4;
+        symbol [ width %tmp.108 122 67 72 ];
+        %tmp.109 = add %tmp.107 %tmp.108;
+        %tmp.110 = "x";
+        %tmp.111 = add %tmp.109 %tmp.110;
+        %tmp.112 = lgetv %height.5;
+        symbol [ height %tmp.112 122 81 87 ];
+        %tmp.113 = add %tmp.111 %tmp.112;
+        invoke %tmp.105 %tmp.106(%tmp.113);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 123 16 ]
+        %tmp.114 = false;
+        ret %tmp.114;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_121_96_124_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_121_12_124_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_121_12_124_12_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 126 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_126_12_129_12_if_stmt:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_126_16_126_72_begin:
+        %tmp.115 = lgetv %config.6;
+        symbol [ config %tmp.115 126 16 22 ];
+        %tmp.117 = const :batteryHeight;
+        symbol [ batteryHeight %tmp.117 126 24 37 const ];
+        %tmp.118 = agetv %tmp.115 %tmp.117;
+        %tmp.119 = 0;
+        %tmp.120 = lt %tmp.118 %tmp.119;
+        bt %tmp.120 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_126_12_129_12_if_true;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_126_46_126_72_false:
+        %tmp.121 = lgetv %config.6;
+        symbol [ config %tmp.121 126 46 52 ];
+        %tmp.123 = const :batteryHeight;
+        symbol [ batteryHeight %tmp.123 126 54 67 const ];
+        %tmp.124 = agetv %tmp.121 %tmp.123;
+        %tmp.125 = lgetv %height.5;
+        symbol [ height %tmp.125 126 72 78 ];
+        %tmp.126 = gte %tmp.124 %tmp.125;
+        push %tmp.126;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_126_46_126_72_end:
+        %tmp.127 = phi [%tmp.120 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_126_16_126_72_begin] [%tmp.126 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_126_46_126_72_false] [%tmp.127 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_126_46_126_72_end];
+        bf %tmp.127 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_126_12_129_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_126_12_129_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_126_80_129_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 127 16 ]
+        %tmp.128 = lgetv %logger;
+        symbol [ logger %tmp.128 127 16 22 ];
+        symbol [ debug %tmp.129 127 23 28 ];
+        %tmp.129 = getv function %tmp.128 :debug;
+        %tmp.130 = "Failed: batteryHeight out of bounds for ";
+        %tmp.131 = lgetv %width.4;
+        symbol [ width %tmp.131 127 74 79 ];
+        %tmp.132 = add %tmp.130 %tmp.131;
+        %tmp.133 = "x";
+        %tmp.134 = add %tmp.132 %tmp.133;
+        %tmp.135 = lgetv %height.5;
+        symbol [ height %tmp.135 127 88 94 ];
+        %tmp.136 = add %tmp.134 %tmp.135;
+        invoke %tmp.128 %tmp.129(%tmp.136);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 128 16 ]
+        %tmp.137 = false;
+        ret %tmp.137;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_126_80_129_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_126_12_129_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_126_12_129_12_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 132 12 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_110_49_137_8_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_110_49_137_8_stop" ]
+        %expectedLeft.7 = local;
+        symbol [ expectedLeft %expectedLeft.7 132 16 28 ];
+        %tmp.138 = lgetv %width.4;
+        symbol [ width %tmp.138 132 31 36 ];
+        %tmp.139 = 0.25;
+        %tmp.140 = mul %tmp.138 %tmp.139;
+        lputv %expectedLeft.7 %tmp.140;
+        symbol [ expectedLeft %expectedLeft.7 132 16 28 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 133 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_133_12_136_12_if_stmt:
+        %tmp.141 = self;
+        symbol [ abs %tmp.142 133 16 19 ];
+        %tmp.142 = getv function %tmp.141 :abs;
+        %tmp.143 = lgetv %config.6;
+        symbol [ config %tmp.143 133 20 26 ];
+        %tmp.145 = const :batteryLeft;
+        symbol [ batteryLeft %tmp.145 133 28 39 const ];
+        %tmp.146 = agetv %tmp.143 %tmp.145;
+        %tmp.147 = lgetv %expectedLeft.7;
+        symbol [ expectedLeft %tmp.147 133 43 55 ];
+        %tmp.148 = sub %tmp.146 %tmp.147;
+        %tmp.149 = invoke %tmp.141 %tmp.142(%tmp.148);
+        %tmp.150 = 1;
+        %tmp.151 = gt %tmp.149 %tmp.150;
+        bf %tmp.151 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_133_12_136_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_133_12_136_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_133_62_136_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 134 16 ]
+        %tmp.152 = lgetv %logger;
+        symbol [ logger %tmp.152 134 16 22 ];
+        symbol [ debug %tmp.153 134 23 28 ];
+        %tmp.153 = getv function %tmp.152 :debug;
+        %tmp.154 = "Failed: Battery left position not proportional for ";
+        %tmp.155 = lgetv %width.4;
+        symbol [ width %tmp.155 134 85 90 ];
+        %tmp.156 = add %tmp.154 %tmp.155;
+        %tmp.157 = "x";
+        %tmp.158 = add %tmp.156 %tmp.157;
+        %tmp.159 = lgetv %height.5;
+        symbol [ height %tmp.159 134 99 105 ];
+        %tmp.160 = add %tmp.158 %tmp.159;
+        invoke %tmp.152 %tmp.153(%tmp.160);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 135 16 ]
+        %tmp.161 = false;
+        ret %tmp.161;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_133_62_136_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_133_12_136_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_133_12_136_12_if_end:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_110_49_137_8_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_110_8_137_8_for_incr:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 110 ]
+        %tmp.164 = lgetv %i.3;
+        symbol [ i %tmp.164 110 44 45 ];
+        %tmp.165 = add %tmp.164 1;
+        lputv %i.3 %tmp.165;
+        symbol [ i %i.3 110 44 45 ];
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_110_8_137_8_for_test;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_110_8_137_8_for_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 139 8 ]
+        %tmp.166 = lgetv %logger;
+        symbol [ logger %tmp.166 139 8 14 ];
+        symbol [ debug %tmp.167 139 15 20 ];
+        %tmp.167 = getv function %tmp.166 :debug;
+        %tmp.168 = "Passed: Battery positioning calculations work correctly";
+        invoke %tmp.166 %tmp.167(%tmp.168);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 140 8 ]
+        %tmp.169 = true;
+        ret %tmp.169;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_97_44_141_4_stop:
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc"; @line = 144; test = true; @symbol_functiondef = [testHashMarkScaling,144,13,32]; @symbol_param<0> = [logger,144,33,39]; ]
+    function testHashMarkScaling(logger) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_144_41_177_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 145 8 ]
+        %tmp.1 = lgetv %logger;
+        symbol [ logger %tmp.1 145 8 14 ];
+        symbol [ debug %tmp.2 145 15 20 ];
+        %tmp.2 = getv function %tmp.1 :debug;
+        %tmp.3 = "Testing hash mark scaling";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 147 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_144_41_177_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_144_41_177_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 147 12 16 ];
+        symbol [ MnmlstView %tmp.7 147 23 33 ];
+        %tmp.7 = getv ? :MnmlstView;
+        %tmp.4 = newc %tmp.7 ();
+        lputv %view.1 %tmp.4;
+        symbol [ view %view.1 147 12 16 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 148 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_144_41_177_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_144_41_177_4_stop" ]
+        %referenceConfig.2 = local;
+        symbol [ referenceConfig %referenceConfig.2 148 12 27 ];
+        %tmp.8 = lgetv %view.1;
+        symbol [ view %tmp.8 148 30 34 ];
+        symbol [ createLayoutConfig %tmp.9 148 35 53 ];
+        %tmp.9 = getv function %tmp.8 :createLayoutConfig;
+        %tmp.10 = 260;
+        %tmp.11 = 260;
+        %tmp.12 = invoke %tmp.8 %tmp.9(%tmp.10, %tmp.11);
+        lputv %referenceConfig.2 %tmp.12;
+        symbol [ referenceConfig %referenceConfig.2 148 12 27 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 151 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_144_41_177_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_144_41_177_4_stop" ]
+        %smallConfig.3 = local;
+        symbol [ smallConfig %smallConfig.3 151 12 23 ];
+        %tmp.13 = lgetv %view.1;
+        symbol [ view %tmp.13 151 26 30 ];
+        symbol [ createLayoutConfig %tmp.14 151 31 49 ];
+        %tmp.14 = getv function %tmp.13 :createLayoutConfig;
+        %tmp.15 = 218;
+        %tmp.16 = 218;
+        %tmp.17 = invoke %tmp.13 %tmp.14(%tmp.15, %tmp.16);
+        lputv %smallConfig.3 %tmp.17;
+        symbol [ smallConfig %smallConfig.3 151 12 23 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 152 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_144_41_177_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_144_41_177_4_stop" ]
+        %largeConfig.4 = local;
+        symbol [ largeConfig %largeConfig.4 152 12 23 ];
+        %tmp.18 = lgetv %view.1;
+        symbol [ view %tmp.18 152 26 30 ];
+        symbol [ createLayoutConfig %tmp.19 152 31 49 ];
+        %tmp.19 = getv function %tmp.18 :createLayoutConfig;
+        %tmp.20 = 416;
+        %tmp.21 = 416;
+        %tmp.22 = invoke %tmp.18 %tmp.19(%tmp.20, %tmp.21);
+        lputv %largeConfig.4 %tmp.22;
+        symbol [ largeConfig %largeConfig.4 152 12 23 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 155 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_155_8_158_8_if_stmt:
+        %tmp.23 = lgetv %smallConfig.3;
+        symbol [ smallConfig %tmp.23 155 12 23 ];
+        %tmp.25 = const :hourHashLength;
+        symbol [ hourHashLength %tmp.25 155 25 39 const ];
+        %tmp.26 = agetv %tmp.23 %tmp.25;
+        %tmp.27 = lgetv %referenceConfig.2;
+        symbol [ referenceConfig %tmp.27 155 44 59 ];
+        %tmp.29 = const :hourHashLength;
+        symbol [ hourHashLength %tmp.29 155 61 75 const ];
+        %tmp.30 = agetv %tmp.27 %tmp.29;
+        %tmp.31 = gte %tmp.26 %tmp.30;
+        bf %tmp.31 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_155_8_158_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_155_8_158_8_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_155_78_158_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 156 12 ]
+        %tmp.32 = lgetv %logger;
+        symbol [ logger %tmp.32 156 12 18 ];
+        symbol [ debug %tmp.33 156 19 24 ];
+        %tmp.33 = getv function %tmp.32 :debug;
+        %tmp.34 = "Failed: Small screen hash marks should be smaller than reference";
+        invoke %tmp.32 %tmp.33(%tmp.34);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 157 12 ]
+        %tmp.35 = false;
+        ret %tmp.35;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_155_78_158_8_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_155_8_158_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_155_8_158_8_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 160 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_160_8_163_8_if_stmt:
+        %tmp.36 = lgetv %largeConfig.4;
+        symbol [ largeConfig %tmp.36 160 12 23 ];
+        %tmp.38 = const :hourHashLength;
+        symbol [ hourHashLength %tmp.38 160 25 39 const ];
+        %tmp.39 = agetv %tmp.36 %tmp.38;
+        %tmp.40 = lgetv %referenceConfig.2;
+        symbol [ referenceConfig %tmp.40 160 44 59 ];
+        %tmp.42 = const :hourHashLength;
+        symbol [ hourHashLength %tmp.42 160 61 75 const ];
+        %tmp.43 = agetv %tmp.40 %tmp.42;
+        %tmp.44 = lte %tmp.39 %tmp.43;
+        bf %tmp.44 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_160_8_163_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_160_8_163_8_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_160_78_163_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 161 12 ]
+        %tmp.45 = lgetv %logger;
+        symbol [ logger %tmp.45 161 12 18 ];
+        symbol [ debug %tmp.46 161 19 24 ];
+        %tmp.46 = getv function %tmp.45 :debug;
+        %tmp.47 = "Failed: Large screen hash marks should be larger than reference";
+        invoke %tmp.45 %tmp.46(%tmp.47);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 162 12 ]
+        %tmp.48 = false;
+        ret %tmp.48;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_160_78_163_8_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_160_8_163_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_160_8_163_8_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 166 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_144_41_177_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_144_41_177_4_stop" ]
+        %refRatio.5 = local;
+        symbol [ refRatio %refRatio.5 166 12 20 ];
+        %tmp.49 = lgetv %referenceConfig.2;
+        symbol [ referenceConfig %tmp.49 166 23 38 ];
+        %tmp.51 = const :minuteHashLength;
+        symbol [ minuteHashLength %tmp.51 166 40 56 const ];
+        %tmp.52 = agetv %tmp.49 %tmp.51;
+        symbol [ toFloat %tmp.53 166 58 65 ];
+        %tmp.53 = getv function %tmp.52 :toFloat;
+        %tmp.54 = invoke %tmp.52 %tmp.53();
+        %tmp.55 = lgetv %referenceConfig.2;
+        symbol [ referenceConfig %tmp.55 166 70 85 ];
+        %tmp.57 = const :hourHashLength;
+        symbol [ hourHashLength %tmp.57 166 87 101 const ];
+        %tmp.58 = agetv %tmp.55 %tmp.57;
+        symbol [ toFloat %tmp.59 166 103 110 ];
+        %tmp.59 = getv function %tmp.58 :toFloat;
+        %tmp.60 = invoke %tmp.58 %tmp.59();
+        %tmp.61 = div %tmp.54 %tmp.60;
+        lputv %refRatio.5 %tmp.61;
+        symbol [ refRatio %refRatio.5 166 12 20 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 167 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_144_41_177_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_144_41_177_4_stop" ]
+        %smallRatio.6 = local;
+        symbol [ smallRatio %smallRatio.6 167 12 22 ];
+        %tmp.62 = lgetv %smallConfig.3;
+        symbol [ smallConfig %tmp.62 167 25 36 ];
+        %tmp.64 = const :minuteHashLength;
+        symbol [ minuteHashLength %tmp.64 167 38 54 const ];
+        %tmp.65 = agetv %tmp.62 %tmp.64;
+        symbol [ toFloat %tmp.66 167 56 63 ];
+        %tmp.66 = getv function %tmp.65 :toFloat;
+        %tmp.67 = invoke %tmp.65 %tmp.66();
+        %tmp.68 = lgetv %smallConfig.3;
+        symbol [ smallConfig %tmp.68 167 68 79 ];
+        %tmp.70 = const :hourHashLength;
+        symbol [ hourHashLength %tmp.70 167 81 95 const ];
+        %tmp.71 = agetv %tmp.68 %tmp.70;
+        symbol [ toFloat %tmp.72 167 97 104 ];
+        %tmp.72 = getv function %tmp.71 :toFloat;
+        %tmp.73 = invoke %tmp.71 %tmp.72();
+        %tmp.74 = div %tmp.67 %tmp.73;
+        lputv %smallRatio.6 %tmp.74;
+        symbol [ smallRatio %smallRatio.6 167 12 22 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 168 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_144_41_177_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_144_41_177_4_stop" ]
+        %largeRatio.7 = local;
+        symbol [ largeRatio %largeRatio.7 168 12 22 ];
+        %tmp.75 = lgetv %largeConfig.4;
+        symbol [ largeConfig %tmp.75 168 25 36 ];
+        %tmp.77 = const :minuteHashLength;
+        symbol [ minuteHashLength %tmp.77 168 38 54 const ];
+        %tmp.78 = agetv %tmp.75 %tmp.77;
+        symbol [ toFloat %tmp.79 168 56 63 ];
+        %tmp.79 = getv function %tmp.78 :toFloat;
+        %tmp.80 = invoke %tmp.78 %tmp.79();
+        %tmp.81 = lgetv %largeConfig.4;
+        symbol [ largeConfig %tmp.81 168 68 79 ];
+        %tmp.83 = const :hourHashLength;
+        symbol [ hourHashLength %tmp.83 168 81 95 const ];
+        %tmp.84 = agetv %tmp.81 %tmp.83;
+        symbol [ toFloat %tmp.85 168 97 104 ];
+        %tmp.85 = getv function %tmp.84 :toFloat;
+        %tmp.86 = invoke %tmp.84 %tmp.85();
+        %tmp.87 = div %tmp.80 %tmp.86;
+        lputv %largeRatio.7 %tmp.87;
+        symbol [ largeRatio %largeRatio.7 168 12 22 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 170 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_170_8_173_8_if_stmt:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_170_12_170_77_begin:
+        %tmp.88 = self;
+        symbol [ abs %tmp.89 170 12 15 ];
+        %tmp.89 = getv function %tmp.88 :abs;
+        %tmp.90 = lgetv %refRatio.5;
+        symbol [ refRatio %tmp.90 170 16 24 ];
+        %tmp.91 = lgetv %smallRatio.6;
+        symbol [ smallRatio %tmp.91 170 27 37 ];
+        %tmp.92 = sub %tmp.90 %tmp.91;
+        %tmp.93 = invoke %tmp.88 %tmp.89(%tmp.92);
+        %tmp.94 = 0.1;
+        %tmp.95 = gt %tmp.93 %tmp.94;
+        bt %tmp.95 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_170_8_173_8_if_true;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_170_48_170_77_false:
+        %tmp.96 = self;
+        symbol [ abs %tmp.97 170 48 51 ];
+        %tmp.97 = getv function %tmp.96 :abs;
+        %tmp.98 = lgetv %refRatio.5;
+        symbol [ refRatio %tmp.98 170 52 60 ];
+        %tmp.99 = lgetv %largeRatio.7;
+        symbol [ largeRatio %tmp.99 170 63 73 ];
+        %tmp.100 = sub %tmp.98 %tmp.99;
+        %tmp.101 = invoke %tmp.96 %tmp.97(%tmp.100);
+        %tmp.102 = 0.1;
+        %tmp.103 = gt %tmp.101 %tmp.102;
+        push %tmp.103;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_170_48_170_77_end:
+        %tmp.104 = phi [%tmp.95 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_170_12_170_77_begin] [%tmp.103 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_170_48_170_77_false] [%tmp.104 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_170_48_170_77_end];
+        bf %tmp.104 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_170_8_173_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_170_8_173_8_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_170_82_173_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 171 12 ]
+        %tmp.105 = lgetv %logger;
+        symbol [ logger %tmp.105 171 12 18 ];
+        symbol [ debug %tmp.106 171 19 24 ];
+        %tmp.106 = getv function %tmp.105 :debug;
+        %tmp.107 = "Failed: Hash mark ratios not consistent across screen sizes";
+        invoke %tmp.105 %tmp.106(%tmp.107);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 172 12 ]
+        %tmp.108 = false;
+        ret %tmp.108;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_170_82_173_8_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_170_8_173_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_170_8_173_8_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 175 8 ]
+        %tmp.109 = lgetv %logger;
+        symbol [ logger %tmp.109 175 8 14 ];
+        symbol [ debug %tmp.110 175 15 20 ];
+        %tmp.110 = getv function %tmp.109 :debug;
+        %tmp.111 = "Passed: Hash mark scaling works correctly";
+        invoke %tmp.109 %tmp.110(%tmp.111);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 176 8 ]
+        %tmp.112 = true;
+        ret %tmp.112;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_144_41_177_4_stop:
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc"; @line = 180; test = true; @symbol_functiondef = [testNotificationPositioning,180,13,40]; @symbol_param<0> = [logger,180,41,47]; ]
+    function testNotificationPositioning(logger) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_180_49_218_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 181 8 ]
+        %tmp.1 = lgetv %logger;
+        symbol [ logger %tmp.1 181 8 14 ];
+        symbol [ debug %tmp.2 181 15 20 ];
+        %tmp.2 = getv function %tmp.1 :debug;
+        %tmp.3 = "Testing notification positioning";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 183 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_180_49_218_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_180_49_218_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 183 12 16 ];
+        symbol [ MnmlstView %tmp.7 183 23 33 ];
+        %tmp.7 = getv ? :MnmlstView;
+        %tmp.4 = newc %tmp.7 ();
+        lputv %view.1 %tmp.4;
+        symbol [ view %view.1 183 12 16 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 186 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_180_49_218_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_180_49_218_4_stop" ]
+        %heights.2 = local;
+        symbol [ heights %heights.2 186 12 19 ];
+        %tmp.8 = newa 4;
+        %tmp.9 = 218;
+        %tmp.10 = dup %tmp.8;
+        %tmp.11 = aputv %tmp.10 0 %tmp.9;
+        %tmp.12 = 240;
+        %tmp.13 = dup %tmp.11;
+        %tmp.14 = aputv %tmp.13 1 %tmp.12;
+        %tmp.15 = 260;
+        %tmp.16 = dup %tmp.14;
+        %tmp.17 = aputv %tmp.16 2 %tmp.15;
+        %tmp.18 = 416;
+        %tmp.19 = dup %tmp.17;
+        %tmp.20 = aputv %tmp.19 3 %tmp.18;
+        lputv %heights.2 %tmp.20;
+        symbol [ heights %heights.2 186 12 19 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 188 8 ]
+        for @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_188_8_214_8_for_test @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_188_8_214_8_for_incr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_188_8_214_8_for_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_188_8_214_8_for_init:
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_188_8_214_8_for_begin" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_188_8_214_8_for_end" ]
+        %i.3 = local;
+        symbol [ i %i.3 188 17 18 ];
+        %tmp.21 = 0;
+        lputv %i.3 %tmp.21;
+        symbol [ i %i.3 188 17 18 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_188_8_214_8_for_test:
+        %tmp.22 = lgetv %i.3;
+        symbol [ i %tmp.22 188 24 25 ];
+        %tmp.23 = lgetv %heights.2;
+        symbol [ heights %tmp.23 188 28 35 ];
+        symbol [ size %tmp.24 188 36 40 ];
+        %tmp.24 = getv function %tmp.23 :size;
+        %tmp.25 = invoke %tmp.23 %tmp.24();
+        %tmp.26 = lt %tmp.22 %tmp.25;
+        bf %tmp.26 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_188_8_214_8_for_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_188_8_214_8_for_begin:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_188_49_214_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 189 12 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_188_49_214_8_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_188_49_214_8_stop" ]
+        %height.4 = local;
+        symbol [ height %height.4 189 16 22 ];
+        %tmp.27 = lgetv %heights.2;
+        symbol [ heights %tmp.27 189 25 32 ];
+        %tmp.28 = lgetv %i.3;
+        symbol [ i %tmp.28 189 33 34 ];
+        %tmp.29 = agetv %tmp.27 %tmp.28;
+        lputv %height.4 %tmp.29;
+        symbol [ height %height.4 189 16 22 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 190 12 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_188_49_214_8_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_188_49_214_8_stop" ]
+        %config.5 = local;
+        symbol [ config %config.5 190 16 22 ];
+        %tmp.30 = lgetv %view.1;
+        symbol [ view %tmp.30 190 25 29 ];
+        symbol [ createLayoutConfig %tmp.31 190 30 48 ];
+        %tmp.31 = getv function %tmp.30 :createLayoutConfig;
+        %tmp.32 = 260;
+        %tmp.33 = lgetv %height.4;
+        symbol [ height %tmp.33 190 54 60 ];
+        %tmp.34 = invoke %tmp.30 %tmp.31(%tmp.32, %tmp.33);
+        lputv %config.5 %tmp.34;
+        symbol [ config %config.5 190 16 22 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 193 12 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_188_49_214_8_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_188_49_214_8_stop" ]
+        %notificationY.6 = local;
+        symbol [ notificationY %notificationY.6 193 16 29 ];
+        %tmp.35 = lgetv %height.4;
+        symbol [ height %tmp.35 193 32 38 ];
+        %tmp.36 = lgetv %config.5;
+        symbol [ config %tmp.36 193 41 47 ];
+        %tmp.38 = const :notificationOffsetRatio;
+        symbol [ notificationOffsetRatio %tmp.38 193 49 72 const ];
+        %tmp.39 = agetv %tmp.36 %tmp.38;
+        %tmp.40 = mul %tmp.35 %tmp.39;
+        lputv %notificationY.6 %tmp.40;
+        symbol [ notificationY %notificationY.6 193 16 29 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 196 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_196_12_199_12_if_stmt:
+        %tmp.41 = lgetv %notificationY.6;
+        symbol [ notificationY %tmp.41 196 16 29 ];
+        %tmp.42 = lgetv %height.4;
+        symbol [ height %tmp.42 196 32 38 ];
+        %tmp.43 = 0.5;
+        %tmp.44 = mul %tmp.42 %tmp.43;
+        %tmp.45 = lt %tmp.41 %tmp.44;
+        bf %tmp.45 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_196_12_199_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_196_12_199_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_196_46_199_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 197 16 ]
+        %tmp.46 = lgetv %logger;
+        symbol [ logger %tmp.46 197 16 22 ];
+        symbol [ debug %tmp.47 197 23 28 ];
+        %tmp.47 = getv function %tmp.46 :debug;
+        %tmp.48 = "Failed: Notification should be in bottom half of screen for height ";
+        %tmp.49 = lgetv %height.4;
+        symbol [ height %tmp.49 197 101 107 ];
+        %tmp.50 = add %tmp.48 %tmp.49;
+        invoke %tmp.46 %tmp.47(%tmp.50);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 198 16 ]
+        %tmp.51 = false;
+        ret %tmp.51;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_196_46_199_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_196_12_199_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_196_12_199_12_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 202 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_202_12_205_12_if_stmt:
+        %tmp.52 = lgetv %notificationY.6;
+        symbol [ notificationY %tmp.52 202 16 29 ];
+        %tmp.53 = lgetv %height.4;
+        symbol [ height %tmp.53 202 32 38 ];
+        %tmp.54 = 0.9;
+        %tmp.55 = mul %tmp.53 %tmp.54;
+        %tmp.56 = gt %tmp.52 %tmp.55;
+        bf %tmp.56 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_202_12_205_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_202_12_205_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_202_46_205_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 203 16 ]
+        %tmp.57 = lgetv %logger;
+        symbol [ logger %tmp.57 203 16 22 ];
+        symbol [ debug %tmp.58 203 23 28 ];
+        %tmp.58 = getv function %tmp.57 :debug;
+        %tmp.59 = "Failed: Notification too close to bottom edge for height ";
+        %tmp.60 = lgetv %height.4;
+        symbol [ height %tmp.60 203 91 97 ];
+        %tmp.61 = add %tmp.59 %tmp.60;
+        invoke %tmp.57 %tmp.58(%tmp.61);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 204 16 ]
+        %tmp.62 = false;
+        ret %tmp.62;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_202_46_205_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_202_12_205_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_202_12_205_12_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 208 12 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_188_49_214_8_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_188_49_214_8_stop" ]
+        %expectedRatio.7 = local;
+        symbol [ expectedRatio %expectedRatio.7 208 16 29 ];
+        %tmp.63 = 0.77;
+        lputv %expectedRatio.7 %tmp.63;
+        symbol [ expectedRatio %expectedRatio.7 208 16 29 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 209 12 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_188_49_214_8_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_188_49_214_8_stop" ]
+        %actualRatio.8 = local;
+        symbol [ actualRatio %actualRatio.8 209 16 27 ];
+        %tmp.64 = lgetv %notificationY.6;
+        symbol [ notificationY %tmp.64 209 30 43 ];
+        %tmp.65 = lgetv %height.4;
+        symbol [ height %tmp.65 209 46 52 ];
+        %tmp.66 = div %tmp.64 %tmp.65;
+        lputv %actualRatio.8 %tmp.66;
+        symbol [ actualRatio %actualRatio.8 209 16 27 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 210 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_210_12_213_12_if_stmt:
+        %tmp.67 = self;
+        symbol [ abs %tmp.68 210 16 19 ];
+        %tmp.68 = getv function %tmp.67 :abs;
+        %tmp.69 = lgetv %actualRatio.8;
+        symbol [ actualRatio %tmp.69 210 20 31 ];
+        %tmp.70 = lgetv %expectedRatio.7;
+        symbol [ expectedRatio %tmp.70 210 34 47 ];
+        %tmp.71 = sub %tmp.69 %tmp.70;
+        %tmp.72 = invoke %tmp.67 %tmp.68(%tmp.71);
+        %tmp.73 = 0.05;
+        %tmp.74 = gt %tmp.72 %tmp.73;
+        bf %tmp.74 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_210_12_213_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_210_12_213_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_210_57_213_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 211 16 ]
+        %tmp.75 = lgetv %logger;
+        symbol [ logger %tmp.75 211 16 22 ];
+        symbol [ debug %tmp.76 211 23 28 ];
+        %tmp.76 = getv function %tmp.75 :debug;
+        %tmp.77 = "Failed: Notification position ratio inconsistent for height ";
+        %tmp.78 = lgetv %height.4;
+        symbol [ height %tmp.78 211 94 100 ];
+        %tmp.79 = add %tmp.77 %tmp.78;
+        invoke %tmp.75 %tmp.76(%tmp.79);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 212 16 ]
+        %tmp.80 = false;
+        ret %tmp.80;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_210_57_213_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_210_12_213_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_210_12_213_12_if_end:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_188_49_214_8_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_188_8_214_8_for_incr:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 188 ]
+        %tmp.83 = lgetv %i.3;
+        symbol [ i %tmp.83 188 44 45 ];
+        %tmp.84 = add %tmp.83 1;
+        lputv %i.3 %tmp.84;
+        symbol [ i %i.3 188 44 45 ];
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_188_8_214_8_for_test;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_188_8_214_8_for_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 216 8 ]
+        %tmp.85 = lgetv %logger;
+        symbol [ logger %tmp.85 216 8 14 ];
+        symbol [ debug %tmp.86 216 15 20 ];
+        %tmp.86 = getv function %tmp.85 :debug;
+        %tmp.87 = "Passed: Notification positioning works correctly";
+        invoke %tmp.85 %tmp.86(%tmp.87);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 217 8 ]
+        %tmp.88 = true;
+        ret %tmp.88;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_180_49_218_4_stop:
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc"; @line = 221; test = true; @symbol_functiondef = [testDatePositioning,221,13,32]; @symbol_param<0> = [logger,221,33,39]; ]
+    function testDatePositioning(logger) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_221_41_253_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 222 8 ]
+        %tmp.1 = lgetv %logger;
+        symbol [ logger %tmp.1 222 8 14 ];
+        symbol [ debug %tmp.2 222 15 20 ];
+        %tmp.2 = getv function %tmp.1 :debug;
+        %tmp.3 = "Testing date positioning";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 224 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_221_41_253_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_221_41_253_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 224 12 16 ];
+        symbol [ MnmlstView %tmp.7 224 23 33 ];
+        %tmp.7 = getv ? :MnmlstView;
+        %tmp.4 = newc %tmp.7 ();
+        lputv %view.1 %tmp.4;
+        symbol [ view %view.1 224 12 16 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 227 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_221_41_253_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_221_41_253_4_stop" ]
+        %heights.2 = local;
+        symbol [ heights %heights.2 227 12 19 ];
+        %tmp.8 = newa 4;
+        %tmp.9 = 218;
+        %tmp.10 = dup %tmp.8;
+        %tmp.11 = aputv %tmp.10 0 %tmp.9;
+        %tmp.12 = 240;
+        %tmp.13 = dup %tmp.11;
+        %tmp.14 = aputv %tmp.13 1 %tmp.12;
+        %tmp.15 = 260;
+        %tmp.16 = dup %tmp.14;
+        %tmp.17 = aputv %tmp.16 2 %tmp.15;
+        %tmp.18 = 416;
+        %tmp.19 = dup %tmp.17;
+        %tmp.20 = aputv %tmp.19 3 %tmp.18;
+        lputv %heights.2 %tmp.20;
+        symbol [ heights %heights.2 227 12 19 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 229 8 ]
+        for @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_229_8_249_8_for_test @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_229_8_249_8_for_incr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_229_8_249_8_for_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_229_8_249_8_for_init:
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_229_8_249_8_for_begin" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_229_8_249_8_for_end" ]
+        %i.3 = local;
+        symbol [ i %i.3 229 17 18 ];
+        %tmp.21 = 0;
+        lputv %i.3 %tmp.21;
+        symbol [ i %i.3 229 17 18 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_229_8_249_8_for_test:
+        %tmp.22 = lgetv %i.3;
+        symbol [ i %tmp.22 229 24 25 ];
+        %tmp.23 = lgetv %heights.2;
+        symbol [ heights %tmp.23 229 28 35 ];
+        symbol [ size %tmp.24 229 36 40 ];
+        %tmp.24 = getv function %tmp.23 :size;
+        %tmp.25 = invoke %tmp.23 %tmp.24();
+        %tmp.26 = lt %tmp.22 %tmp.25;
+        bf %tmp.26 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_229_8_249_8_for_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_229_8_249_8_for_begin:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_229_49_249_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 230 12 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_229_49_249_8_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_229_49_249_8_stop" ]
+        %height.4 = local;
+        symbol [ height %height.4 230 16 22 ];
+        %tmp.27 = lgetv %heights.2;
+        symbol [ heights %tmp.27 230 25 32 ];
+        %tmp.28 = lgetv %i.3;
+        symbol [ i %tmp.28 230 33 34 ];
+        %tmp.29 = agetv %tmp.27 %tmp.28;
+        lputv %height.4 %tmp.29;
+        symbol [ height %height.4 230 16 22 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 231 12 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_229_49_249_8_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_229_49_249_8_stop" ]
+        %config.5 = local;
+        symbol [ config %config.5 231 16 22 ];
+        %tmp.30 = lgetv %view.1;
+        symbol [ view %tmp.30 231 25 29 ];
+        symbol [ createLayoutConfig %tmp.31 231 30 48 ];
+        %tmp.31 = getv function %tmp.30 :createLayoutConfig;
+        %tmp.32 = 260;
+        %tmp.33 = lgetv %height.4;
+        symbol [ height %tmp.33 231 54 60 ];
+        %tmp.34 = invoke %tmp.30 %tmp.31(%tmp.32, %tmp.33);
+        lputv %config.5 %tmp.34;
+        symbol [ config %config.5 231 16 22 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 234 12 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_229_49_249_8_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_229_49_249_8_stop" ]
+        %dateY.6 = local;
+        symbol [ dateY %dateY.6 234 16 21 ];
+        %tmp.35 = lgetv %height.4;
+        symbol [ height %tmp.35 234 24 30 ];
+        %tmp.36 = lgetv %config.5;
+        symbol [ config %tmp.36 234 33 39 ];
+        %tmp.38 = const :dateOffsetRatio;
+        symbol [ dateOffsetRatio %tmp.38 234 41 56 const ];
+        %tmp.39 = agetv %tmp.36 %tmp.38;
+        %tmp.40 = mul %tmp.35 %tmp.39;
+        lputv %dateY.6 %tmp.40;
+        symbol [ dateY %dateY.6 234 16 21 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 237 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_237_12_240_12_if_stmt:
+        %tmp.41 = lgetv %dateY.6;
+        symbol [ dateY %tmp.41 237 16 21 ];
+        %tmp.42 = lgetv %height.4;
+        symbol [ height %tmp.42 237 24 30 ];
+        %tmp.43 = 0.5;
+        %tmp.44 = mul %tmp.42 %tmp.43;
+        %tmp.45 = gt %tmp.41 %tmp.44;
+        bf %tmp.45 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_237_12_240_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_237_12_240_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_237_38_240_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 238 16 ]
+        %tmp.46 = lgetv %logger;
+        symbol [ logger %tmp.46 238 16 22 ];
+        symbol [ debug %tmp.47 238 23 28 ];
+        %tmp.47 = getv function %tmp.46 :debug;
+        %tmp.48 = "Failed: Date should be in top half of screen for height ";
+        %tmp.49 = lgetv %height.4;
+        symbol [ height %tmp.49 238 90 96 ];
+        %tmp.50 = add %tmp.48 %tmp.49;
+        invoke %tmp.46 %tmp.47(%tmp.50);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 239 16 ]
+        %tmp.51 = false;
+        ret %tmp.51;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_237_38_240_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_237_12_240_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_237_12_240_12_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 243 12 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_229_49_249_8_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_229_49_249_8_stop" ]
+        %expectedRatio.7 = local;
+        symbol [ expectedRatio %expectedRatio.7 243 16 29 ];
+        %tmp.52 = 0.25;
+        lputv %expectedRatio.7 %tmp.52;
+        symbol [ expectedRatio %expectedRatio.7 243 16 29 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 244 12 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_229_49_249_8_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_229_49_249_8_stop" ]
+        %actualRatio.8 = local;
+        symbol [ actualRatio %actualRatio.8 244 16 27 ];
+        %tmp.53 = lgetv %dateY.6;
+        symbol [ dateY %tmp.53 244 30 35 ];
+        %tmp.54 = lgetv %height.4;
+        symbol [ height %tmp.54 244 38 44 ];
+        %tmp.55 = div %tmp.53 %tmp.54;
+        lputv %actualRatio.8 %tmp.55;
+        symbol [ actualRatio %actualRatio.8 244 16 27 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 245 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_245_12_248_12_if_stmt:
+        %tmp.56 = self;
+        symbol [ abs %tmp.57 245 16 19 ];
+        %tmp.57 = getv function %tmp.56 :abs;
+        %tmp.58 = lgetv %actualRatio.8;
+        symbol [ actualRatio %tmp.58 245 20 31 ];
+        %tmp.59 = lgetv %expectedRatio.7;
+        symbol [ expectedRatio %tmp.59 245 34 47 ];
+        %tmp.60 = sub %tmp.58 %tmp.59;
+        %tmp.61 = invoke %tmp.56 %tmp.57(%tmp.60);
+        %tmp.62 = 0.02;
+        %tmp.63 = gt %tmp.61 %tmp.62;
+        bf %tmp.63 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_245_12_248_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_245_12_248_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_245_57_248_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 246 16 ]
+        %tmp.64 = lgetv %logger;
+        symbol [ logger %tmp.64 246 16 22 ];
+        symbol [ debug %tmp.65 246 23 28 ];
+        %tmp.65 = getv function %tmp.64 :debug;
+        %tmp.66 = "Failed: Date position ratio inconsistent for height ";
+        %tmp.67 = lgetv %height.4;
+        symbol [ height %tmp.67 246 86 92 ];
+        %tmp.68 = add %tmp.66 %tmp.67;
+        %tmp.69 = ". Expected ";
+        %tmp.70 = add %tmp.68 %tmp.69;
+        %tmp.71 = lgetv %expectedRatio.7;
+        symbol [ expectedRatio %tmp.71 246 111 124 ];
+        %tmp.72 = add %tmp.70 %tmp.71;
+        %tmp.73 = ", got ";
+        %tmp.74 = add %tmp.72 %tmp.73;
+        %tmp.75 = lgetv %actualRatio.8;
+        symbol [ actualRatio %tmp.75 246 138 149 ];
+        %tmp.76 = add %tmp.74 %tmp.75;
+        invoke %tmp.64 %tmp.65(%tmp.76);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 247 16 ]
+        %tmp.77 = false;
+        ret %tmp.77;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_245_57_248_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_245_12_248_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_245_12_248_12_if_end:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_229_49_249_8_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_229_8_249_8_for_incr:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 229 ]
+        %tmp.80 = lgetv %i.3;
+        symbol [ i %tmp.80 229 44 45 ];
+        %tmp.81 = add %tmp.80 1;
+        lputv %i.3 %tmp.81;
+        symbol [ i %i.3 229 44 45 ];
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_229_8_249_8_for_test;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_229_8_249_8_for_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 251 8 ]
+        %tmp.82 = lgetv %logger;
+        symbol [ logger %tmp.82 251 8 14 ];
+        symbol [ debug %tmp.83 251 15 20 ];
+        %tmp.83 = getv function %tmp.82 :debug;
+        %tmp.84 = "Passed: Date positioning works correctly";
+        invoke %tmp.82 %tmp.83(%tmp.84);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 252 8 ]
+        %tmp.85 = true;
+        ret %tmp.85;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_221_41_253_4_stop:
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc"; @line = 256; test = true; @symbol_functiondef = [testScalingConsistency,256,13,35]; @symbol_param<0> = [logger,256,36,42]; ]
+    function testScalingConsistency(logger) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_256_44_300_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 257 8 ]
+        %tmp.1 = lgetv %logger;
+        symbol [ logger %tmp.1 257 8 14 ];
+        symbol [ debug %tmp.2 257 15 20 ];
+        %tmp.2 = getv function %tmp.1 :debug;
+        %tmp.3 = "Testing scaling consistency across elements";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 259 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_256_44_300_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_256_44_300_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 259 12 16 ];
+        symbol [ MnmlstView %tmp.7 259 23 33 ];
+        %tmp.7 = getv ? :MnmlstView;
+        %tmp.4 = newc %tmp.7 ();
+        lputv %view.1 %tmp.4;
+        symbol [ view %view.1 259 12 16 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 260 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_256_44_300_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_256_44_300_4_stop" ]
+        %config260.2 = local;
+        symbol [ config260 %config260.2 260 12 21 ];
+        %tmp.8 = lgetv %view.1;
+        symbol [ view %tmp.8 260 24 28 ];
+        symbol [ createLayoutConfig %tmp.9 260 29 47 ];
+        %tmp.9 = getv function %tmp.8 :createLayoutConfig;
+        %tmp.10 = 260;
+        %tmp.11 = 260;
+        %tmp.12 = invoke %tmp.8 %tmp.9(%tmp.10, %tmp.11);
+        lputv %config260.2 %tmp.12;
+        symbol [ config260 %config260.2 260 12 21 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 261 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_256_44_300_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_256_44_300_4_stop" ]
+        %config218.3 = local;
+        symbol [ config218 %config218.3 261 12 21 ];
+        %tmp.13 = lgetv %view.1;
+        symbol [ view %tmp.13 261 24 28 ];
+        symbol [ createLayoutConfig %tmp.14 261 29 47 ];
+        %tmp.14 = getv function %tmp.13 :createLayoutConfig;
+        %tmp.15 = 218;
+        %tmp.16 = 218;
+        %tmp.17 = invoke %tmp.13 %tmp.14(%tmp.15, %tmp.16);
+        lputv %config218.3 %tmp.17;
+        symbol [ config218 %config218.3 261 12 21 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 262 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_256_44_300_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_256_44_300_4_stop" ]
+        %config416.4 = local;
+        symbol [ config416 %config416.4 262 12 21 ];
+        %tmp.18 = lgetv %view.1;
+        symbol [ view %tmp.18 262 24 28 ];
+        symbol [ createLayoutConfig %tmp.19 262 29 47 ];
+        %tmp.19 = getv function %tmp.18 :createLayoutConfig;
+        %tmp.20 = 416;
+        %tmp.21 = 416;
+        %tmp.22 = invoke %tmp.18 %tmp.19(%tmp.20, %tmp.21);
+        lputv %config416.4 %tmp.22;
+        symbol [ config416 %config416.4 262 12 21 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 264 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_256_44_300_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_256_44_300_4_stop" ]
+        %scale218.5 = local;
+        symbol [ scale218 %scale218.5 264 12 20 ];
+        %tmp.23 = 218.0;
+        %tmp.24 = 260.0;
+        %tmp.25 = div %tmp.23 %tmp.24;
+        lputv %scale218.5 %tmp.25;
+        symbol [ scale218 %scale218.5 264 12 20 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 265 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_256_44_300_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_256_44_300_4_stop" ]
+        %scale416.6 = local;
+        symbol [ scale416 %scale416.6 265 12 20 ];
+        %tmp.26 = 416.0;
+        %tmp.27 = 260.0;
+        %tmp.28 = div %tmp.26 %tmp.27;
+        lputv %scale416.6 %tmp.28;
+        symbol [ scale416 %scale416.6 265 12 20 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 268 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_256_44_300_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_256_44_300_4_stop" ]
+        %elementsToTest.7 = local;
+        symbol [ elementsToTest %elementsToTest.7 268 12 26 ];
+        %tmp.29 = newa 6;
+        %tmp.31 = const :hourHandWidth;
+        symbol [ hourHandWidth %tmp.31 269 13 26 const ];
+        %tmp.32 = dup %tmp.29;
+        %tmp.33 = aputv %tmp.32 0 %tmp.31;
+        %tmp.35 = const :hourHashLength;
+        symbol [ hourHashLength %tmp.35 270 13 27 const ];
+        %tmp.36 = dup %tmp.33;
+        %tmp.37 = aputv %tmp.36 1 %tmp.35;
+        %tmp.39 = const :minuteHashLength;
+        symbol [ minuteHashLength %tmp.39 271 13 29 const ];
+        %tmp.40 = dup %tmp.37;
+        %tmp.41 = aputv %tmp.40 2 %tmp.39;
+        %tmp.43 = const :batteryRadius;
+        symbol [ batteryRadius %tmp.43 272 13 26 const ];
+        %tmp.44 = dup %tmp.41;
+        %tmp.45 = aputv %tmp.44 3 %tmp.43;
+        %tmp.47 = const :batteryOffset;
+        symbol [ batteryOffset %tmp.47 273 13 26 const ];
+        %tmp.48 = dup %tmp.45;
+        %tmp.49 = aputv %tmp.48 4 %tmp.47;
+        %tmp.51 = const :arborRadius;
+        symbol [ arborRadius %tmp.51 274 13 24 const ];
+        %tmp.52 = dup %tmp.49;
+        %tmp.53 = aputv %tmp.52 5 %tmp.51;
+        lputv %elementsToTest.7 %tmp.53;
+        symbol [ elementsToTest %elementsToTest.7 268 12 26 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 277 8 ]
+        for @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_277_8_296_8_for_test @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_277_8_296_8_for_incr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_277_8_296_8_for_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_277_8_296_8_for_init:
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_277_8_296_8_for_begin" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_277_8_296_8_for_end" ]
+        %i.8 = local;
+        symbol [ i %i.8 277 17 18 ];
+        %tmp.54 = 0;
+        lputv %i.8 %tmp.54;
+        symbol [ i %i.8 277 17 18 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_277_8_296_8_for_test:
+        %tmp.55 = lgetv %i.8;
+        symbol [ i %tmp.55 277 24 25 ];
+        %tmp.56 = lgetv %elementsToTest.7;
+        symbol [ elementsToTest %tmp.56 277 28 42 ];
+        symbol [ size %tmp.57 277 43 47 ];
+        %tmp.57 = getv function %tmp.56 :size;
+        %tmp.58 = invoke %tmp.56 %tmp.57();
+        %tmp.59 = lt %tmp.55 %tmp.58;
+        bf %tmp.59 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_277_8_296_8_for_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_277_8_296_8_for_begin:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_277_56_296_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 278 12 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_277_56_296_8_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_277_56_296_8_stop" ]
+        %key.9 = local;
+        symbol [ key %key.9 278 16 19 ];
+        %tmp.60 = lgetv %elementsToTest.7;
+        symbol [ elementsToTest %tmp.60 278 22 36 ];
+        %tmp.61 = lgetv %i.8;
+        symbol [ i %tmp.61 278 37 38 ];
+        %tmp.62 = agetv %tmp.60 %tmp.61;
+        lputv %key.9 %tmp.62;
+        symbol [ key %key.9 278 16 19 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 279 12 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_277_56_296_8_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_277_56_296_8_stop" ]
+        %ref.10 = local;
+        symbol [ ref %ref.10 279 16 19 ];
+        %tmp.63 = lgetv %config260.2;
+        symbol [ config260 %tmp.63 279 22 31 ];
+        %tmp.64 = lgetv %key.9;
+        symbol [ key %tmp.64 279 32 35 ];
+        %tmp.65 = agetv %tmp.63 %tmp.64;
+        lputv %ref.10 %tmp.65;
+        symbol [ ref %ref.10 279 16 19 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 280 12 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_277_56_296_8_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_277_56_296_8_stop" ]
+        %small.11 = local;
+        symbol [ small %small.11 280 16 21 ];
+        %tmp.66 = lgetv %config218.3;
+        symbol [ config218 %tmp.66 280 24 33 ];
+        %tmp.67 = lgetv %key.9;
+        symbol [ key %tmp.67 280 34 37 ];
+        %tmp.68 = agetv %tmp.66 %tmp.67;
+        lputv %small.11 %tmp.68;
+        symbol [ small %small.11 280 16 21 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 281 12 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_277_56_296_8_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_277_56_296_8_stop" ]
+        %large.12 = local;
+        symbol [ large %large.12 281 16 21 ];
+        %tmp.69 = lgetv %config416.4;
+        symbol [ config416 %tmp.69 281 24 33 ];
+        %tmp.70 = lgetv %key.9;
+        symbol [ key %tmp.70 281 34 37 ];
+        %tmp.71 = agetv %tmp.69 %tmp.70;
+        lputv %large.12 %tmp.71;
+        symbol [ large %large.12 281 16 21 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 284 12 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_277_56_296_8_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_277_56_296_8_stop" ]
+        %expectedSmall.13 = local;
+        symbol [ expectedSmall %expectedSmall.13 284 16 29 ];
+        %tmp.72 = lgetv %ref.10;
+        symbol [ ref %tmp.72 284 33 36 ];
+        %tmp.73 = lgetv %scale218.5;
+        symbol [ scale218 %tmp.73 284 39 47 ];
+        %tmp.74 = mul %tmp.72 %tmp.73;
+        symbol [ toNumber %tmp.75 284 49 57 ];
+        %tmp.75 = getv function %tmp.74 :toNumber;
+        %tmp.76 = invoke %tmp.74 %tmp.75();
+        lputv %expectedSmall.13 %tmp.76;
+        symbol [ expectedSmall %expectedSmall.13 284 16 29 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 285 12 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_277_56_296_8_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_277_56_296_8_stop" ]
+        %expectedLarge.14 = local;
+        symbol [ expectedLarge %expectedLarge.14 285 16 29 ];
+        %tmp.77 = lgetv %ref.10;
+        symbol [ ref %tmp.77 285 33 36 ];
+        %tmp.78 = lgetv %scale416.6;
+        symbol [ scale416 %tmp.78 285 39 47 ];
+        %tmp.79 = mul %tmp.77 %tmp.78;
+        symbol [ toNumber %tmp.80 285 49 57 ];
+        %tmp.80 = getv function %tmp.79 :toNumber;
+        %tmp.81 = invoke %tmp.79 %tmp.80();
+        lputv %expectedLarge.14 %tmp.81;
+        symbol [ expectedLarge %expectedLarge.14 285 16 29 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 287 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_287_12_290_12_if_stmt:
+        %tmp.82 = self;
+        symbol [ abs %tmp.83 287 16 19 ];
+        %tmp.83 = getv function %tmp.82 :abs;
+        %tmp.84 = lgetv %small.11;
+        symbol [ small %tmp.84 287 20 25 ];
+        %tmp.85 = lgetv %expectedSmall.13;
+        symbol [ expectedSmall %tmp.85 287 28 41 ];
+        %tmp.86 = sub %tmp.84 %tmp.85;
+        %tmp.87 = invoke %tmp.82 %tmp.83(%tmp.86);
+        %tmp.88 = 2;
+        %tmp.89 = gt %tmp.87 %tmp.88;
+        bf %tmp.89 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_287_12_290_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_287_12_290_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_287_48_290_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 288 16 ]
+        %tmp.90 = lgetv %logger;
+        symbol [ logger %tmp.90 288 16 22 ];
+        symbol [ debug %tmp.91 288 23 28 ];
+        %tmp.91 = getv function %tmp.90 :debug;
+        %tmp.92 = "Failed: ";
+        %tmp.93 = lgetv %key.9;
+        symbol [ key %tmp.93 288 42 45 ];
+        %tmp.94 = add %tmp.92 %tmp.93;
+        %tmp.95 = " scaling inconsistent for small screen. Expected ";
+        %tmp.96 = add %tmp.94 %tmp.95;
+        %tmp.97 = lgetv %expectedSmall.13;
+        symbol [ expectedSmall %tmp.97 288 102 115 ];
+        %tmp.98 = add %tmp.96 %tmp.97;
+        %tmp.99 = ", got ";
+        %tmp.100 = add %tmp.98 %tmp.99;
+        %tmp.101 = lgetv %small.11;
+        symbol [ small %tmp.101 288 129 134 ];
+        %tmp.102 = add %tmp.100 %tmp.101;
+        invoke %tmp.90 %tmp.91(%tmp.102);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 289 16 ]
+        %tmp.103 = false;
+        ret %tmp.103;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_287_48_290_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_287_12_290_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_287_12_290_12_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 292 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_292_12_295_12_if_stmt:
+        %tmp.104 = self;
+        symbol [ abs %tmp.105 292 16 19 ];
+        %tmp.105 = getv function %tmp.104 :abs;
+        %tmp.106 = lgetv %large.12;
+        symbol [ large %tmp.106 292 20 25 ];
+        %tmp.107 = lgetv %expectedLarge.14;
+        symbol [ expectedLarge %tmp.107 292 28 41 ];
+        %tmp.108 = sub %tmp.106 %tmp.107;
+        %tmp.109 = invoke %tmp.104 %tmp.105(%tmp.108);
+        %tmp.110 = 2;
+        %tmp.111 = gt %tmp.109 %tmp.110;
+        bf %tmp.111 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_292_12_295_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_292_12_295_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_292_48_295_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 293 16 ]
+        %tmp.112 = lgetv %logger;
+        symbol [ logger %tmp.112 293 16 22 ];
+        symbol [ debug %tmp.113 293 23 28 ];
+        %tmp.113 = getv function %tmp.112 :debug;
+        %tmp.114 = "Failed: ";
+        %tmp.115 = lgetv %key.9;
+        symbol [ key %tmp.115 293 42 45 ];
+        %tmp.116 = add %tmp.114 %tmp.115;
+        %tmp.117 = " scaling inconsistent for large screen. Expected ";
+        %tmp.118 = add %tmp.116 %tmp.117;
+        %tmp.119 = lgetv %expectedLarge.14;
+        symbol [ expectedLarge %tmp.119 293 102 115 ];
+        %tmp.120 = add %tmp.118 %tmp.119;
+        %tmp.121 = ", got ";
+        %tmp.122 = add %tmp.120 %tmp.121;
+        %tmp.123 = lgetv %large.12;
+        symbol [ large %tmp.123 293 129 134 ];
+        %tmp.124 = add %tmp.122 %tmp.123;
+        invoke %tmp.112 %tmp.113(%tmp.124);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 294 16 ]
+        %tmp.125 = false;
+        ret %tmp.125;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_292_48_295_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_292_12_295_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_292_12_295_12_if_end:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_277_56_296_8_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_277_8_296_8_for_incr:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 277 ]
+        %tmp.128 = lgetv %i.8;
+        symbol [ i %tmp.128 277 51 52 ];
+        %tmp.129 = add %tmp.128 1;
+        lputv %i.8 %tmp.129;
+        symbol [ i %i.8 277 51 52 ];
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_277_8_296_8_for_test;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_277_8_296_8_for_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 298 8 ]
+        %tmp.130 = lgetv %logger;
+        symbol [ logger %tmp.130 298 8 14 ];
+        symbol [ debug %tmp.131 298 15 20 ];
+        %tmp.131 = getv function %tmp.130 :debug;
+        %tmp.132 = "Passed: Scaling consistency maintained across all elements";
+        invoke %tmp.130 %tmp.131(%tmp.132);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 299 8 ]
+        %tmp.133 = true;
+        ret %tmp.133;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_256_44_300_4_stop:
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc"; @line = 303; test = true; @symbol_functiondef = [testScreenSizeRanges,303,13,33]; @symbol_param<0> = [logger,303,34,40]; ]
+    function testScreenSizeRanges(logger) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_303_42_347_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 304 8 ]
+        %tmp.1 = lgetv %logger;
+        symbol [ logger %tmp.1 304 8 14 ];
+        symbol [ debug %tmp.2 304 15 20 ];
+        %tmp.2 = getv function %tmp.1 :debug;
+        %tmp.3 = "Testing supported screen size ranges";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 306 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_303_42_347_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_303_42_347_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 306 12 16 ];
+        symbol [ MnmlstView %tmp.7 306 23 33 ];
+        %tmp.7 = getv ? :MnmlstView;
+        %tmp.4 = newc %tmp.7 ();
+        lputv %view.1 %tmp.4;
+        symbol [ view %view.1 306 12 16 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 309 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_303_42_347_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_303_42_347_4_stop" ]
+        %minConfig.2 = local;
+        symbol [ minConfig %minConfig.2 309 12 21 ];
+        %tmp.8 = lgetv %view.1;
+        symbol [ view %tmp.8 309 24 28 ];
+        symbol [ createLayoutConfig %tmp.9 309 29 47 ];
+        %tmp.9 = getv function %tmp.8 :createLayoutConfig;
+        %tmp.10 = 208;
+        %tmp.11 = 208;
+        %tmp.12 = invoke %tmp.8 %tmp.9(%tmp.10, %tmp.11);
+        lputv %minConfig.2 %tmp.12;
+        symbol [ minConfig %minConfig.2 309 12 21 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 312 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_303_42_347_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_303_42_347_4_stop" ]
+        %maxConfig.3 = local;
+        symbol [ maxConfig %maxConfig.3 312 12 21 ];
+        %tmp.13 = lgetv %view.1;
+        symbol [ view %tmp.13 312 24 28 ];
+        symbol [ createLayoutConfig %tmp.14 312 29 47 ];
+        %tmp.14 = getv function %tmp.13 :createLayoutConfig;
+        %tmp.15 = 450;
+        %tmp.16 = 450;
+        %tmp.17 = invoke %tmp.13 %tmp.14(%tmp.15, %tmp.16);
+        lputv %maxConfig.3 %tmp.17;
+        symbol [ maxConfig %maxConfig.3 312 12 21 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 315 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_303_42_347_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_303_42_347_4_stop" ]
+        %keysToCheck.4 = local;
+        symbol [ keysToCheck %keysToCheck.4 315 12 23 ];
+        %tmp.18 = newa 5;
+        %tmp.20 = const :hourHandWidth;
+        symbol [ hourHandWidth %tmp.20 316 13 26 const ];
+        %tmp.21 = dup %tmp.18;
+        %tmp.22 = aputv %tmp.21 0 %tmp.20;
+        %tmp.24 = const :hourHashLength;
+        symbol [ hourHashLength %tmp.24 317 13 27 const ];
+        %tmp.25 = dup %tmp.22;
+        %tmp.26 = aputv %tmp.25 1 %tmp.24;
+        %tmp.28 = const :minuteHashLength;
+        symbol [ minuteHashLength %tmp.28 318 13 29 const ];
+        %tmp.29 = dup %tmp.26;
+        %tmp.30 = aputv %tmp.29 2 %tmp.28;
+        %tmp.32 = const :batteryRadius;
+        symbol [ batteryRadius %tmp.32 319 13 26 const ];
+        %tmp.33 = dup %tmp.30;
+        %tmp.34 = aputv %tmp.33 3 %tmp.32;
+        %tmp.36 = const :batteryOffset;
+        symbol [ batteryOffset %tmp.36 320 13 26 const ];
+        %tmp.37 = dup %tmp.34;
+        %tmp.38 = aputv %tmp.37 4 %tmp.36;
+        lputv %keysToCheck.4 %tmp.38;
+        symbol [ keysToCheck %keysToCheck.4 315 12 23 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 323 8 ]
+        for @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_323_8_343_8_for_test @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_323_8_343_8_for_incr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_323_8_343_8_for_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_323_8_343_8_for_init:
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_323_8_343_8_for_begin" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_323_8_343_8_for_end" ]
+        %i.5 = local;
+        symbol [ i %i.5 323 17 18 ];
+        %tmp.39 = 0;
+        lputv %i.5 %tmp.39;
+        symbol [ i %i.5 323 17 18 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_323_8_343_8_for_test:
+        %tmp.40 = lgetv %i.5;
+        symbol [ i %tmp.40 323 24 25 ];
+        %tmp.41 = lgetv %keysToCheck.4;
+        symbol [ keysToCheck %tmp.41 323 28 39 ];
+        symbol [ size %tmp.42 323 40 44 ];
+        %tmp.42 = getv function %tmp.41 :size;
+        %tmp.43 = invoke %tmp.41 %tmp.42();
+        %tmp.44 = lt %tmp.40 %tmp.43;
+        bf %tmp.44 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_323_8_343_8_for_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_323_8_343_8_for_begin:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_323_53_343_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 324 12 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_323_53_343_8_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_323_53_343_8_stop" ]
+        %key.6 = local;
+        symbol [ key %key.6 324 16 19 ];
+        %tmp.45 = lgetv %keysToCheck.4;
+        symbol [ keysToCheck %tmp.45 324 22 33 ];
+        %tmp.46 = lgetv %i.5;
+        symbol [ i %tmp.46 324 34 35 ];
+        %tmp.47 = agetv %tmp.45 %tmp.46;
+        lputv %key.6 %tmp.47;
+        symbol [ key %key.6 324 16 19 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 327 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_327_12_330_12_if_stmt:
+        %tmp.48 = lgetv %minConfig.2;
+        symbol [ minConfig %tmp.48 327 16 25 ];
+        %tmp.49 = lgetv %key.6;
+        symbol [ key %tmp.49 327 26 29 ];
+        %tmp.50 = agetv %tmp.48 %tmp.49;
+        %tmp.51 = 1;
+        %tmp.52 = lt %tmp.50 %tmp.51;
+        bf %tmp.52 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_327_12_330_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_327_12_330_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_327_36_330_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 328 16 ]
+        %tmp.53 = lgetv %logger;
+        symbol [ logger %tmp.53 328 16 22 ];
+        symbol [ debug %tmp.54 328 23 28 ];
+        %tmp.54 = getv function %tmp.53 :debug;
+        %tmp.55 = "Failed: ";
+        %tmp.56 = lgetv %key.6;
+        symbol [ key %tmp.56 328 42 45 ];
+        %tmp.57 = add %tmp.55 %tmp.56;
+        %tmp.58 = " too small for minimum screen size: ";
+        %tmp.59 = add %tmp.57 %tmp.58;
+        %tmp.60 = lgetv %minConfig.2;
+        symbol [ minConfig %tmp.60 328 89 98 ];
+        %tmp.61 = lgetv %key.6;
+        symbol [ key %tmp.61 328 99 102 ];
+        %tmp.62 = agetv %tmp.60 %tmp.61;
+        %tmp.63 = add %tmp.59 %tmp.62;
+        invoke %tmp.53 %tmp.54(%tmp.63);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 329 16 ]
+        %tmp.64 = false;
+        ret %tmp.64;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_327_36_330_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_327_12_330_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_327_12_330_12_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 333 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_333_12_336_12_if_stmt:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_333_16_333_58_begin:
+        %tmp.65 = lgetv %key.6;
+        symbol [ key %tmp.65 333 16 19 ];
+        %tmp.67 = const :hourHandWidth;
+        symbol [ hourHandWidth %tmp.67 333 24 37 const ];
+        %tmp.68 = ne %tmp.65 %tmp.67;
+        bf %tmp.68 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_333_12_336_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_333_41_333_58_true:
+        %tmp.69 = lgetv %maxConfig.3;
+        symbol [ maxConfig %tmp.69 333 41 50 ];
+        %tmp.70 = lgetv %key.6;
+        symbol [ key %tmp.70 333 51 54 ];
+        %tmp.71 = agetv %tmp.69 %tmp.70;
+        %tmp.72 = 50;
+        %tmp.73 = gt %tmp.71 %tmp.72;
+        push %tmp.73;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_333_41_333_58_end:
+        %tmp.74 = phi [%tmp.68 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_333_16_333_58_begin] [%tmp.73 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_333_41_333_58_true] [%tmp.74 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_333_41_333_58_end];
+        bf %tmp.74 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_333_12_336_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_333_12_336_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_333_62_336_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 334 16 ]
+        %tmp.75 = lgetv %logger;
+        symbol [ logger %tmp.75 334 16 22 ];
+        symbol [ debug %tmp.76 334 23 28 ];
+        %tmp.76 = getv function %tmp.75 :debug;
+        %tmp.77 = "Failed: ";
+        %tmp.78 = lgetv %key.6;
+        symbol [ key %tmp.78 334 42 45 ];
+        %tmp.79 = add %tmp.77 %tmp.78;
+        %tmp.80 = " too large for maximum screen size: ";
+        %tmp.81 = add %tmp.79 %tmp.80;
+        %tmp.82 = lgetv %maxConfig.3;
+        symbol [ maxConfig %tmp.82 334 89 98 ];
+        %tmp.83 = lgetv %key.6;
+        symbol [ key %tmp.83 334 99 102 ];
+        %tmp.84 = agetv %tmp.82 %tmp.83;
+        %tmp.85 = add %tmp.81 %tmp.84;
+        invoke %tmp.75 %tmp.76(%tmp.85);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 335 16 ]
+        %tmp.86 = false;
+        ret %tmp.86;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_333_62_336_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_333_12_336_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_333_12_336_12_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 339 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_339_12_342_12_if_stmt:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_339_16_339_58_begin:
+        %tmp.87 = lgetv %key.6;
+        symbol [ key %tmp.87 339 16 19 ];
+        %tmp.89 = const :hourHandWidth;
+        symbol [ hourHandWidth %tmp.89 339 24 37 const ];
+        %tmp.90 = eq %tmp.87 %tmp.89;
+        bf %tmp.90 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_339_12_342_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_339_41_339_58_true:
+        %tmp.91 = lgetv %maxConfig.3;
+        symbol [ maxConfig %tmp.91 339 41 50 ];
+        %tmp.92 = lgetv %key.6;
+        symbol [ key %tmp.92 339 51 54 ];
+        %tmp.93 = agetv %tmp.91 %tmp.92;
+        %tmp.94 = 300;
+        %tmp.95 = gt %tmp.93 %tmp.94;
+        push %tmp.95;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_339_41_339_58_end:
+        %tmp.96 = phi [%tmp.90 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_339_16_339_58_begin] [%tmp.95 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_339_41_339_58_true] [%tmp.96 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_339_41_339_58_end];
+        bf %tmp.96 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_339_12_342_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_339_12_342_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_339_63_342_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 340 16 ]
+        %tmp.97 = lgetv %logger;
+        symbol [ logger %tmp.97 340 16 22 ];
+        symbol [ debug %tmp.98 340 23 28 ];
+        %tmp.98 = getv function %tmp.97 :debug;
+        %tmp.99 = "Failed: Hour hand width unreasonably large: ";
+        %tmp.100 = lgetv %maxConfig.3;
+        symbol [ maxConfig %tmp.100 340 78 87 ];
+        %tmp.101 = lgetv %key.6;
+        symbol [ key %tmp.101 340 88 91 ];
+        %tmp.102 = agetv %tmp.100 %tmp.101;
+        %tmp.103 = add %tmp.99 %tmp.102;
+        invoke %tmp.97 %tmp.98(%tmp.103);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 341 16 ]
+        %tmp.104 = false;
+        ret %tmp.104;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_339_63_342_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_339_12_342_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_339_12_342_12_if_end:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_323_53_343_8_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_323_8_343_8_for_incr:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 323 ]
+        %tmp.107 = lgetv %i.5;
+        symbol [ i %tmp.107 323 48 49 ];
+        %tmp.108 = add %tmp.107 1;
+        lputv %i.5 %tmp.108;
+        symbol [ i %i.5 323 48 49 ];
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_323_8_343_8_for_test;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_323_8_343_8_for_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 345 8 ]
+        %tmp.109 = lgetv %logger;
+        symbol [ logger %tmp.109 345 8 14 ];
+        symbol [ debug %tmp.110 345 15 20 ];
+        %tmp.110 = getv function %tmp.109 :debug;
+        %tmp.111 = "Passed: Screen size ranges handled correctly";
+        invoke %tmp.109 %tmp.110(%tmp.111);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc" 346 8 ]
+        %tmp.112 = true;
+        ret %tmp.112;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_ResponsiveLayoutTest_mc_303_42_347_4_stop:
+    }
+}
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/ResponsiveLayoutTest.mc"; @line = 7; ]
+<init> {
+}

@@ -12,15 +12,6 @@
 
     <!-- Display Settings -->
     <group id="@Strings.displayGroup" title="@Strings.displayGroup">
-        <setting propertyKey="@Properties.batteryDisplayMode" title="@Strings.batteryDisplayTitle">
-            <settingConfig type="list">
-                <listEntry value="0">@Strings.batteryLevel</listEntry>
-                <listEntry value="1">@Strings.stepsProgress</listEntry>
-                <listEntry value="2">@Strings.weeklyActiveMinutes</listEntry>
-                <listEntry value="3">@Strings.stairsProgress</listEntry>
-            </settingConfig>
-        </setting>
-        
         <setting propertyKey="@Properties.colorScheme" title="@Strings.colorSchemeTitle">
             <settingConfig type="list">
                 <listEntry value="0">@Strings.colorSchemeDark</listEntry>
@@ -31,18 +22,27 @@
 
     <!-- Data Field Settings -->
     <group id="@Strings.dataFieldsGroup" title="@Strings.dataFieldsGroup">
-        <setting propertyKey="@Properties.messageFieldType" title="@Strings.messageFieldTitle">
+        <setting propertyKey="@Properties.dateFieldType" title="@Strings.dateFieldTitle">
             <settingConfig type="list">
-                <listEntry value="0">@Strings.fieldNotifications</listEntry>
+                <listEntry value="0">@Strings.fieldDate</listEntry>
                 <listEntry value="1">@Strings.fieldSteps</listEntry>
                 <listEntry value="2">@Strings.fieldHeartRate</listEntry>
                 <listEntry value="3">@Strings.fieldBatteryPercent</listEntry>
             </settingConfig>
         </setting>
         
-        <setting propertyKey="@Properties.dateFieldType" title="@Strings.dateFieldTitle">
+        <setting propertyKey="@Properties.batteryDisplayMode" title="@Strings.middleGaugeTitle">
             <settingConfig type="list">
-                <listEntry value="0">@Strings.fieldDate</listEntry>
+                <listEntry value="0">@Strings.batteryLevel</listEntry>
+                <listEntry value="1">@Strings.stepsProgress</listEntry>
+                <listEntry value="2">@Strings.weeklyActiveMinutes</listEntry>
+                <listEntry value="3">@Strings.stairsProgress</listEntry>
+            </settingConfig>
+        </setting>
+        
+        <setting propertyKey="@Properties.messageFieldType" title="@Strings.messageFieldTitle">
+            <settingConfig type="list">
+                <listEntry value="0">@Strings.fieldNotifications</listEntry>
                 <listEntry value="1">@Strings.fieldSteps</listEntry>
                 <listEntry value="2">@Strings.fieldHeartRate</listEntry>
                 <listEntry value="3">@Strings.fieldBatteryPercent</listEntry>
@@ -60,12 +60,5 @@
             <settingConfig min="200" max="2000" type="numeric"/>
         </setting>
         
-        <setting propertyKey="@Properties.stepGoal" title="@Strings.stepGoalTitle">
-            <settingConfig min="1000" max="50000" type="numeric"/>
-        </setting>
-        
-        <setting propertyKey="@Properties.activeMinutesGoal" title="@Strings.activeMinutesGoalTitle">
-            <settingConfig min="10" max="120" type="numeric"/>
-        </setting>
     </group>
 </settings> 

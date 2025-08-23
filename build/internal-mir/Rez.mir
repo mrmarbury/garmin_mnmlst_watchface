@@ -1,0 +1,95 @@
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [Lang,1,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [WatchUi,2,13,20]; ]
+using Toybox.WatchUi;
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 3; @symbol_usingdef<0> = [Toybox,3,6,12]; @symbol_usingdef<1> = [WatchUi,3,13,20]; @symbol_usingAlias = [Ui,3,24,26]; ]
+using Toybox.WatchUi as :Ui;
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 4; @symbol_usingdef<0> = [Toybox,4,6,12]; @symbol_usingdef<1> = [Graphics,4,13,21]; ]
+using Toybox.Graphics;
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 5; @symbol_usingdef<0> = [Toybox,5,6,12]; @symbol_usingdef<1> = [Graphics,5,13,21]; @symbol_usingAlias = [Gfx,5,25,28]; ]
+using Toybox.Graphics as :Gfx;
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 7; @symbol_moduledef = [Rez,7,7,10]; ]
+module Rez {
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 7; ]
+    <init> {
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 8; @symbol_moduledef = [Drawables,8,11,20]; ]
+    module Drawables {
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 8; ]
+        <init> {
+        }
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 9; @position = 27; initialized = true; @symbol_vardef = [DoNotDisturbIcon,9,27,43]; @symbol_type<0> = [ResourceId,9,47,57]; ]
+        var DoNotDisturbIcon as ResourceId;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 10; @position = 27; initialized = true; @symbol_vardef = [LauncherIcon,10,27,39]; @symbol_type<0> = [ResourceId,10,43,53]; ]
+        var LauncherIcon as ResourceId;
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 13; @symbol_moduledef = [Fonts,13,11,16]; ]
+    module Fonts {
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 13; ]
+        <init> {
+        }
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 14; @position = 27; initialized = true; @symbol_vardef = [id_font_black_diamond,14,27,48]; @symbol_type<0> = [ResourceId,14,52,62]; ]
+        var id_font_black_diamond as ResourceId;
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 17; @symbol_moduledef = [Strings,17,11,18]; ]
+    module Strings {
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 17; ]
+        <init> {
+        }
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 18; @position = 27; initialized = true; @symbol_vardef = [fieldBatteryPercent,18,27,46]; @symbol_type<0> = [ResourceId,18,50,60]; ]
+        var fieldBatteryPercent as ResourceId;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 19; @position = 27; initialized = true; @symbol_vardef = [calorieGoalOverallTitle,19,27,50]; @symbol_type<0> = [ResourceId,19,54,64]; ]
+        var calorieGoalOverallTitle as ResourceId;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 20; @position = 27; initialized = true; @symbol_vardef = [fieldNotifications,20,27,45]; @symbol_type<0> = [ResourceId,20,49,59]; ]
+        var fieldNotifications as ResourceId;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 21; @position = 27; initialized = true; @symbol_vardef = [middleGaugeTitle,21,27,43]; @symbol_type<0> = [ResourceId,21,47,57]; ]
+        var middleGaugeTitle as ResourceId;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 22; @position = 27; initialized = true; @symbol_vardef = [AppName,22,27,34]; @symbol_type<0> = [ResourceId,22,38,48]; ]
+        var AppName as ResourceId;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 23; @position = 27; initialized = true; @symbol_vardef = [hourHandSmooth,23,27,41]; @symbol_type<0> = [ResourceId,23,45,55]; ]
+        var hourHandSmooth as ResourceId;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 24; @position = 27; initialized = true; @symbol_vardef = [colorSchemeDark,24,27,42]; @symbol_type<0> = [ResourceId,24,46,56]; ]
+        var colorSchemeDark as ResourceId;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 25; @position = 27; initialized = true; @symbol_vardef = [weeklyActiveMinutes,25,27,46]; @symbol_type<0> = [ResourceId,25,50,60]; ]
+        var weeklyActiveMinutes as ResourceId;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 26; @position = 27; initialized = true; @symbol_vardef = [stepsProgress,26,27,40]; @symbol_type<0> = [ResourceId,26,44,54]; ]
+        var stepsProgress as ResourceId;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 27; @position = 27; initialized = true; @symbol_vardef = [goalsGroup,27,27,37]; @symbol_type<0> = [ResourceId,27,41,51]; ]
+        var goalsGroup as ResourceId;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 28; @position = 27; initialized = true; @symbol_vardef = [dateFieldTitle,28,27,41]; @symbol_type<0> = [ResourceId,28,45,55]; ]
+        var dateFieldTitle as ResourceId;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 29; @position = 27; initialized = true; @symbol_vardef = [messageFieldTitle,29,27,44]; @symbol_type<0> = [ResourceId,29,48,58]; ]
+        var messageFieldTitle as ResourceId;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 30; @position = 27; initialized = true; @symbol_vardef = [batteryLevel,30,27,39]; @symbol_type<0> = [ResourceId,30,43,53]; ]
+        var batteryLevel as ResourceId;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 31; @position = 27; initialized = true; @symbol_vardef = [dataFieldsGroup,31,27,42]; @symbol_type<0> = [ResourceId,31,46,56]; ]
+        var dataFieldsGroup as ResourceId;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 32; @position = 27; initialized = true; @symbol_vardef = [batteryDisplayTitle,32,27,46]; @symbol_type<0> = [ResourceId,32,50,60]; ]
+        var batteryDisplayTitle as ResourceId;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 33; @position = 27; initialized = true; @symbol_vardef = [displayGroup,33,27,39]; @symbol_type<0> = [ResourceId,33,43,53]; ]
+        var displayGroup as ResourceId;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 34; @position = 27; initialized = true; @symbol_vardef = [stairsProgress,34,27,41]; @symbol_type<0> = [ResourceId,34,45,55]; ]
+        var stairsProgress as ResourceId;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 35; @position = 27; initialized = true; @symbol_vardef = [fieldDate,35,27,36]; @symbol_type<0> = [ResourceId,35,40,50]; ]
+        var fieldDate as ResourceId;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 36; @position = 27; initialized = true; @symbol_vardef = [hourHandHourly,36,27,41]; @symbol_type<0> = [ResourceId,36,45,55]; ]
+        var hourHandHourly as ResourceId;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 37; @position = 27; initialized = true; @symbol_vardef = [calorieGoalActiveTitle,37,27,49]; @symbol_type<0> = [ResourceId,37,53,63]; ]
+        var calorieGoalActiveTitle as ResourceId;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 38; @position = 27; initialized = true; @symbol_vardef = [fieldHeartRate,38,27,41]; @symbol_type<0> = [ResourceId,38,45,55]; ]
+        var fieldHeartRate as ResourceId;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 39; @position = 27; initialized = true; @symbol_vardef = [handBehaviorGroup,39,27,44]; @symbol_type<0> = [ResourceId,39,48,58]; ]
+        var handBehaviorGroup as ResourceId;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 40; @position = 27; initialized = true; @symbol_vardef = [colorSchemeWhite,40,27,43]; @symbol_type<0> = [ResourceId,40,47,57]; ]
+        var colorSchemeWhite as ResourceId;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 41; @position = 27; initialized = true; @symbol_vardef = [fieldSteps,41,27,37]; @symbol_type<0> = [ResourceId,41,41,51]; ]
+        var fieldSteps as ResourceId;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 42; @position = 27; initialized = true; @symbol_vardef = [hourHandBehaviorTitle,42,27,48]; @symbol_type<0> = [ResourceId,42,52,62]; ]
+        var hourHandBehaviorTitle as ResourceId;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 43; @position = 27; initialized = true; @symbol_vardef = [colorSchemeTitle,43,27,43]; @symbol_type<0> = [ResourceId,43,47,57]; ]
+        var colorSchemeTitle as ResourceId;
+    }
+}
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3225-00/source/Rez.mcgen"; @line = 1; ]
+<init> {
+}

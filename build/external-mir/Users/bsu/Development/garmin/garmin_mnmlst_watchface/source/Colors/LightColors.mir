@@ -1,0 +1,63 @@
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/Colors/LightColors.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [Graphics,1,13,21]; ]
+using Toybox.Graphics;
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/Colors/LightColors.mc"; @line = 3; @symbol_moduledef = [MnmlstApp,3,7,16]; ]
+module MnmlstApp {
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/Colors/LightColors.mc"; @line = 3; ]
+    <init> {
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/Colors/LightColors.mc"; @line = 4; @symbol_moduledef = [Colors,4,9,15]; ]
+    module Colors {
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/Colors/LightColors.mc"; @line = 4; ]
+        <init> {
+        }
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/Colors/LightColors.mc"; @line = 5; @symbol_classdef = [LightColors,5,10,21]; ]
+        class LightColors {
+            [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/Colors/LightColors.mc"; @line = 5; ]
+            <init> {
+            }
+            [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/Colors/LightColors.mc"; @line = 5; ]
+            static
+            <init> {
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/Colors/LightColors.mc" 7 8 ]
+                symbol [ Graphics %tmp.1 7 27 35 ];
+                %tmp.1 = getm $.Toybox.Graphics;
+                symbol [ COLOR_WHITE %tmp.2 7 36 47 ];
+                %tmp.2 = getv %tmp.1 :COLOR_WHITE;
+                putv self :COLOR_BACKGROUND %tmp.2;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/Colors/LightColors.mc" 8 8 ]
+                symbol [ Graphics %tmp.3 8 22 30 ];
+                %tmp.3 = getm $.Toybox.Graphics;
+                symbol [ COLOR_BLACK %tmp.4 8 31 42 ];
+                %tmp.4 = getv %tmp.3 :COLOR_BLACK;
+                putv self :COLOR_MARKS %tmp.4;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/Colors/LightColors.mc" 9 8 ]
+                symbol [ Graphics %tmp.5 9 28 36 ];
+                %tmp.5 = getm $.Toybox.Graphics;
+                symbol [ COLOR_BLACK %tmp.6 9 37 48 ];
+                %tmp.6 = getv %tmp.5 :COLOR_BLACK;
+                putv self :COLOR_MINUTE_HAND %tmp.6;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/Colors/LightColors.mc" 10 8 ]
+                symbol [ Graphics %tmp.7 10 23 31 ];
+                %tmp.7 = getm $.Toybox.Graphics;
+                symbol [ COLOR_BLACK %tmp.8 10 32 43 ];
+                %tmp.8 = getv %tmp.7 :COLOR_BLACK;
+                putv self :COLOR_DIGITS %tmp.8;
+            }
+            [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/Colors/LightColors.mc"; @line = 6; ]
+            static
+            enum {
+                [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/Colors/LightColors.mc"; @line = 7; @position = 8; @symbol_enumdec = [COLOR_BACKGROUND,7,8,24]; ]
+                COLOR_BACKGROUND = ,
+                [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/Colors/LightColors.mc"; @line = 8; @position = 8; @symbol_enumdec = [COLOR_MARKS,8,8,19]; ]
+                COLOR_MARKS = ,
+                [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/Colors/LightColors.mc"; @line = 9; @position = 8; @symbol_enumdec = [COLOR_MINUTE_HAND,9,8,25]; ]
+                COLOR_MINUTE_HAND = ,
+                [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/Colors/LightColors.mc"; @line = 10; @position = 8; @symbol_enumdec = [COLOR_DIGITS,10,8,20]; ]
+                COLOR_DIGITS = 
+            }
+        }
+    }
+}
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/Colors/LightColors.mc"; @line = 1; ]
+<init> {
+}

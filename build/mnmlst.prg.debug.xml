@@ -1,0 +1,955 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<debugInfo>
+    <manifest filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/manifest.xml"/>
+    <pcToLineNum>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/build/gen/006-B3906-00/source/Rez.mcgen" id="1" lineNum="7" parent="globals/Rez" pc="268435460" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstApp.mc" id="2" lineNum="11" parent="globals/Mnmlst" pc="268435480" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="3" lineNum="803" parent="globals/MnmlstDelegate" pc="268435492" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="4" lineNum="23" parent="globals/MnmlstView" pc="268435504" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstApp.mc" id="5" lineNum="16" parent="globals/Mnmlst" pc="268435516" symbol="onStart"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstApp.mc" id="6" lineNum="20" parent="globals/Mnmlst" pc="268435519" symbol="getInitialView"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstApp.mc" id="6" lineNum="21" parent="globals/Mnmlst" pc="268435521" symbol="getInitialView"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstApp.mc" id="6" lineNum="22" parent="globals/Mnmlst" pc="268435536" symbol="getInitialView"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstApp.mc" id="6" lineNum="24" parent="globals/Mnmlst" pc="268435586" symbol="getInitialView"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstApp.mc" id="7" lineNum="12" parent="globals/Mnmlst" pc="268435613" symbol="initialize"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstApp.mc" id="7" lineNum="13" parent="globals/Mnmlst" pc="268435615" symbol="initialize"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstApp.mc" id="8" lineNum="18" parent="globals/Mnmlst" pc="268435628" symbol="onStop"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="9" lineNum="804" parent="globals/MnmlstDelegate" pc="268435631" symbol="initialize"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="9" lineNum="805" parent="globals/MnmlstDelegate" pc="268435633" symbol="initialize"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="10" lineNum="812" parent="globals/MnmlstDelegate" pc="268435646" symbol="onPowerBudgetExceeded"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="10" lineNum="813" parent="globals/MnmlstDelegate" pc="268435648" symbol="onPowerBudgetExceeded"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="10" lineNum="814" parent="globals/MnmlstDelegate" pc="268435673" symbol="onPowerBudgetExceeded"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="10" lineNum="815" parent="globals/MnmlstDelegate" pc="268435698" symbol="onPowerBudgetExceeded"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="11" lineNum="314" parent="globals/MnmlstView" pc="268435707" symbol="drawHashMarks"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="11" lineNum="315" parent="globals/MnmlstView" pc="268435710" symbol="drawHashMarks"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="11" lineNum="319" parent="globals/MnmlstView" pc="268435719" symbol="drawHashMarks"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="11" lineNum="320" parent="globals/MnmlstView" pc="268435726" symbol="drawHashMarks"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="11" lineNum="322" parent="globals/MnmlstView" pc="268435733" symbol="drawHashMarks"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="11" lineNum="324" parent="globals/MnmlstView" pc="268435754" symbol="drawHashMarks"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="11" lineNum="325" parent="globals/MnmlstView" pc="268435776" symbol="drawHashMarks"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="11" lineNum="326" parent="globals/MnmlstView" pc="268435798" symbol="drawHashMarks"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="11" lineNum="327" parent="globals/MnmlstView" pc="268435820" symbol="drawHashMarks"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="11" lineNum="328" parent="globals/MnmlstView" pc="268435842" symbol="drawHashMarks"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="11" lineNum="329" parent="globals/MnmlstView" pc="268435860" symbol="drawHashMarks"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="11" lineNum="330" parent="globals/MnmlstView" pc="268435873" symbol="drawHashMarks"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="11" lineNum="331" parent="globals/MnmlstView" pc="268435895" symbol="drawHashMarks"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="11" lineNum="332" parent="globals/MnmlstView" pc="268435917" symbol="drawHashMarks"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="11" lineNum="333" parent="globals/MnmlstView" pc="268435939" symbol="drawHashMarks"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="11" lineNum="334" parent="globals/MnmlstView" pc="268435961" symbol="drawHashMarks"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="12" lineNum="449" parent="globals/MnmlstView" pc="268435993" symbol="getBackgroundColor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="12" lineNum="450" parent="globals/MnmlstView" pc="268435995" symbol="getBackgroundColor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="13" lineNum="596" parent="globals/MnmlstView" pc="268436016" symbol="drawArbor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="13" lineNum="597" parent="globals/MnmlstView" pc="268436019" symbol="drawArbor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="13" lineNum="598" parent="globals/MnmlstView" pc="268436028" symbol="drawArbor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="13" lineNum="599" parent="globals/MnmlstView" pc="268436037" symbol="drawArbor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="13" lineNum="601" parent="globals/MnmlstView" pc="268436054" symbol="drawArbor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="13" lineNum="602" parent="globals/MnmlstView" pc="268436060" symbol="drawArbor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="13" lineNum="605" parent="globals/MnmlstView" pc="268436066" symbol="drawArbor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="13" lineNum="606" parent="globals/MnmlstView" pc="268436078" symbol="drawArbor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="13" lineNum="609" parent="globals/MnmlstView" pc="268436086" symbol="drawArbor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="13" lineNum="610" parent="globals/MnmlstView" pc="268436100" symbol="drawArbor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="13" lineNum="611" parent="globals/MnmlstView" pc="268436122" symbol="drawArbor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="13" lineNum="612" parent="globals/MnmlstView" pc="268436136" symbol="drawArbor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="14" lineNum="453" parent="globals/MnmlstView" pc="268436159" symbol="getTextColor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="14" lineNum="454" parent="globals/MnmlstView" pc="268436161" symbol="getTextColor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="15" lineNum="468" parent="globals/MnmlstView" pc="268436182" symbol="getHourHashColor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="15" lineNum="469" parent="globals/MnmlstView" pc="268436184" symbol="getHourHashColor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="16" lineNum="59" parent="globals/MnmlstView" pc="268436205" symbol="calculateScaleFactor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="16" lineNum="60" parent="globals/MnmlstView" pc="268436208" symbol="calculateScaleFactor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="16" lineNum="61" parent="globals/MnmlstView" pc="268436215" symbol="calculateScaleFactor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="16" lineNum="62" parent="globals/MnmlstView" pc="268436228" symbol="calculateScaleFactor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="17" lineNum="285" parent="globals/MnmlstView" pc="268436234" symbol="generateHourCoordinates"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="17" lineNum="293" parent="globals/MnmlstView" pc="268436237" symbol="generateHourCoordinates"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="17" lineNum="298" parent="globals/MnmlstView" pc="268436304" symbol="generateHourCoordinates"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="17" lineNum="299" parent="globals/MnmlstView" pc="268436309" symbol="generateHourCoordinates"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="17" lineNum="300" parent="globals/MnmlstView" pc="268436325" symbol="generateHourCoordinates"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="17" lineNum="303" parent="globals/MnmlstView" pc="268436341" symbol="generateHourCoordinates"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="17" lineNum="304" parent="globals/MnmlstView" pc="268436352" symbol="generateHourCoordinates"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="17" lineNum="305" parent="globals/MnmlstView" pc="268436382" symbol="generateHourCoordinates"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="17" lineNum="307" parent="globals/MnmlstView" pc="268436412" symbol="generateHourCoordinates"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="17" lineNum="310" parent="globals/MnmlstView" pc="268436452" symbol="generateHourCoordinates"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="18" lineNum="763" parent="globals/MnmlstView" pc="268436455" symbol="drawBackground"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="18" lineNum="764" parent="globals/MnmlstView" pc="268436458" symbol="drawBackground"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="18" lineNum="765" parent="globals/MnmlstView" pc="268436467" symbol="drawBackground"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="18" lineNum="769" parent="globals/MnmlstView" pc="268436476" symbol="drawBackground"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="18" lineNum="770" parent="globals/MnmlstView" pc="268436485" symbol="drawBackground"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="18" lineNum="774" parent="globals/MnmlstView" pc="268436505" symbol="drawBackground"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="18" lineNum="776" parent="globals/MnmlstView" pc="268436514" symbol="drawBackground"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="18" lineNum="779" parent="globals/MnmlstView" pc="268436547" symbol="drawBackground"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="18" lineNum="782" parent="globals/MnmlstView" pc="268436577" symbol="drawBackground"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="18" lineNum="783" parent="globals/MnmlstView" pc="268436586" symbol="drawBackground"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="18" lineNum="785" parent="globals/MnmlstView" pc="268436619" symbol="drawBackground"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="19" lineNum="498" parent="globals/MnmlstView" pc="268436650" symbol="getYellowColor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="19" lineNum="499" parent="globals/MnmlstView" pc="268436652" symbol="getYellowColor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="20" lineNum="480" parent="globals/MnmlstView" pc="268436677" symbol="getHourHandColor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="20" lineNum="481" parent="globals/MnmlstView" pc="268436679" symbol="getHourHandColor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="20" lineNum="482" parent="globals/MnmlstView" pc="268436684" symbol="getHourHandColor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="20" lineNum="485" parent="globals/MnmlstView" pc="268436693" symbol="getHourHandColor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="21" lineNum="490" parent="globals/MnmlstView" pc="268436718" symbol="getGreenColor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="21" lineNum="491" parent="globals/MnmlstView" pc="268436720" symbol="getGreenColor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="22" lineNum="343" parent="globals/MnmlstView" pc="268436743" symbol="drawBatteryGauge"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="22" lineNum="346" parent="globals/MnmlstView" pc="268436746" symbol="drawBatteryGauge"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="22" lineNum="348" parent="globals/MnmlstView" pc="268436756" symbol="drawBatteryGauge"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="22" lineNum="349" parent="globals/MnmlstView" pc="268436768" symbol="drawBatteryGauge"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="22" lineNum="350" parent="globals/MnmlstView" pc="268436788" symbol="drawBatteryGauge"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="22" lineNum="351" parent="globals/MnmlstView" pc="268436794" symbol="drawBatteryGauge"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="22" lineNum="353" parent="globals/MnmlstView" pc="268436805" symbol="drawBatteryGauge"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="22" lineNum="354" parent="globals/MnmlstView" pc="268436813" symbol="drawBatteryGauge"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="22" lineNum="355" parent="globals/MnmlstView" pc="268436819" symbol="drawBatteryGauge"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="22" lineNum="357" parent="globals/MnmlstView" pc="268436830" symbol="drawBatteryGauge"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="22" lineNum="358" parent="globals/MnmlstView" pc="268436838" symbol="drawBatteryGauge"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="22" lineNum="361" parent="globals/MnmlstView" pc="268436844" symbol="drawBatteryGauge"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="22" lineNum="362" parent="globals/MnmlstView" pc="268436852" symbol="drawBatteryGauge"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="22" lineNum="365" parent="globals/MnmlstView" pc="268436855" symbol="drawBatteryGauge"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="23" lineNum="202" parent="globals/MnmlstView" pc="268436875" symbol="onLayout"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="23" lineNum="204" parent="globals/MnmlstView" pc="268436877" symbol="onLayout"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="23" lineNum="208" parent="globals/MnmlstView" pc="268436892" symbol="onLayout"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="23" lineNum="228" parent="globals/MnmlstView" pc="268436959" symbol="onLayout"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="23" lineNum="232" parent="globals/MnmlstView" pc="268437022" symbol="onLayout"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="23" lineNum="237" parent="globals/MnmlstView" pc="268437088" symbol="onLayout"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="23" lineNum="240" parent="globals/MnmlstView" pc="268437096" symbol="onLayout"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="23" lineNum="242" parent="globals/MnmlstView" pc="268437104" symbol="onLayout"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="23" lineNum="245" parent="globals/MnmlstView" pc="268437141" symbol="onLayout"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="23" lineNum="246" parent="globals/MnmlstView" pc="268437170" symbol="onLayout"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="23" lineNum="249" parent="globals/MnmlstView" pc="268437188" symbol="onLayout"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="24" lineNum="420" parent="globals/MnmlstView" pc="268437196" symbol="getWeeklyActiveMinutesProgress"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="24" lineNum="421" parent="globals/MnmlstView" pc="268437199" symbol="getWeeklyActiveMinutesProgress"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="24" lineNum="422" parent="globals/MnmlstView" pc="268437211" symbol="getWeeklyActiveMinutesProgress"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="24" lineNum="424" parent="globals/MnmlstView" pc="268437255" symbol="getWeeklyActiveMinutesProgress"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="24" lineNum="425" parent="globals/MnmlstView" pc="268437269" symbol="getWeeklyActiveMinutesProgress"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="24" lineNum="426" parent="globals/MnmlstView" pc="268437278" symbol="getWeeklyActiveMinutesProgress"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="24" lineNum="427" parent="globals/MnmlstView" pc="268437285" symbol="getWeeklyActiveMinutesProgress"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="24" lineNum="428" parent="globals/MnmlstView" pc="268437311" symbol="getWeeklyActiveMinutesProgress"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="24" lineNum="431" parent="globals/MnmlstView" pc="268437333" symbol="getWeeklyActiveMinutesProgress"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="25" lineNum="457" parent="globals/MnmlstView" pc="268437335" symbol="getMinuteHandColor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="25" lineNum="458" parent="globals/MnmlstView" pc="268437337" symbol="getMinuteHandColor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="26" lineNum="67" parent="globals/MnmlstView" pc="268437358" symbol="createLayoutConfig"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="26" lineNum="68" parent="globals/MnmlstView" pc="268437360" symbol="createLayoutConfig"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="26" lineNum="70" parent="globals/MnmlstView" pc="268437379" symbol="createLayoutConfig"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="110" parent="globals/MnmlstView" pc="268437715" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="114" parent="globals/MnmlstView" pc="268437718" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="115" parent="globals/MnmlstView" pc="268437730" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="116" parent="globals/MnmlstView" pc="268437769" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="117" parent="globals/MnmlstView" pc="268437787" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="118" parent="globals/MnmlstView" pc="268437796" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="119" parent="globals/MnmlstView" pc="268437805" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="120" parent="globals/MnmlstView" pc="268437814" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="121" parent="globals/MnmlstView" pc="268437823" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="122" parent="globals/MnmlstView" pc="268437831" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="123" parent="globals/MnmlstView" pc="268437841" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="124" parent="globals/MnmlstView" pc="268437851" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="125" parent="globals/MnmlstView" pc="268437887" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="130" parent="globals/MnmlstView" pc="268437894" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="131" parent="globals/MnmlstView" pc="268437918" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="131" parent="globals/MnmlstView" pc="268437927" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="133" parent="globals/MnmlstView" pc="268437938" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="134" parent="globals/MnmlstView" pc="268437962" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="134" parent="globals/MnmlstView" pc="268437971" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="136" parent="globals/MnmlstView" pc="268437982" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="137" parent="globals/MnmlstView" pc="268438006" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="137" parent="globals/MnmlstView" pc="268438015" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="139" parent="globals/MnmlstView" pc="268438026" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="140" parent="globals/MnmlstView" pc="268438050" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="140" parent="globals/MnmlstView" pc="268438059" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="142" parent="globals/MnmlstView" pc="268438070" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="143" parent="globals/MnmlstView" pc="268438094" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="143" parent="globals/MnmlstView" pc="268438103" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="145" parent="globals/MnmlstView" pc="268438114" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="146" parent="globals/MnmlstView" pc="268438138" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="146" parent="globals/MnmlstView" pc="268438147" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="148" parent="globals/MnmlstView" pc="268438160" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="149" parent="globals/MnmlstView" pc="268438184" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="149" parent="globals/MnmlstView" pc="268438193" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="152" parent="globals/MnmlstView" pc="268438206" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="154" parent="globals/MnmlstView" pc="268438248" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="156" parent="globals/MnmlstView" pc="268438252" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="157" parent="globals/MnmlstView" pc="268438278" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="27" lineNum="161" parent="globals/MnmlstView" pc="268438297" symbol="loadConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="28" lineNum="256" parent="globals/MnmlstView" pc="268438305" symbol="generateHandCoordinates"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="28" lineNum="264" parent="globals/MnmlstView" pc="268438308" symbol="generateHandCoordinates"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="28" lineNum="270" parent="globals/MnmlstView" pc="268438402" symbol="generateHandCoordinates"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="28" lineNum="271" parent="globals/MnmlstView" pc="268438407" symbol="generateHandCoordinates"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="28" lineNum="272" parent="globals/MnmlstView" pc="268438423" symbol="generateHandCoordinates"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="28" lineNum="275" parent="globals/MnmlstView" pc="268438439" symbol="generateHandCoordinates"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="28" lineNum="276" parent="globals/MnmlstView" pc="268438450" symbol="generateHandCoordinates"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="28" lineNum="277" parent="globals/MnmlstView" pc="268438480" symbol="generateHandCoordinates"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="28" lineNum="279" parent="globals/MnmlstView" pc="268438510" symbol="generateHandCoordinates"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="28" lineNum="282" parent="globals/MnmlstView" pc="268438550" symbol="generateHandCoordinates"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="29" lineNum="494" parent="globals/MnmlstView" pc="268438553" symbol="getRedColor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="29" lineNum="495" parent="globals/MnmlstView" pc="268438555" symbol="getRedColor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="30" lineNum="517" parent="globals/MnmlstView" pc="268438580" symbol="drawNotificationCount"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="30" lineNum="518" parent="globals/MnmlstView" pc="268438583" symbol="drawNotificationCount"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="30" lineNum="519" parent="globals/MnmlstView" pc="268438586" symbol="drawNotificationCount"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="30" lineNum="521" parent="globals/MnmlstView" pc="268438593" symbol="drawNotificationCount"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="30" lineNum="523" parent="globals/MnmlstView" pc="268438604" symbol="drawNotificationCount"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="30" lineNum="524" parent="globals/MnmlstView" pc="268438616" symbol="drawNotificationCount"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="30" lineNum="525" parent="globals/MnmlstView" pc="268438626" symbol="drawNotificationCount"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="30" lineNum="526" parent="globals/MnmlstView" pc="268438634" symbol="drawNotificationCount"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="30" lineNum="528" parent="globals/MnmlstView" pc="268438649" symbol="drawNotificationCount"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="30" lineNum="530" parent="globals/MnmlstView" pc="268438660" symbol="drawNotificationCount"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="30" lineNum="531" parent="globals/MnmlstView" pc="268438672" symbol="drawNotificationCount"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="30" lineNum="532" parent="globals/MnmlstView" pc="268438689" symbol="drawNotificationCount"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="30" lineNum="533" parent="globals/MnmlstView" pc="268438698" symbol="drawNotificationCount"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="30" lineNum="535" parent="globals/MnmlstView" pc="268438713" symbol="drawNotificationCount"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="30" lineNum="537" parent="globals/MnmlstView" pc="268438724" symbol="drawNotificationCount"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="30" lineNum="538" parent="globals/MnmlstView" pc="268438753" symbol="drawNotificationCount"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="30" lineNum="539" parent="globals/MnmlstView" pc="268438757" symbol="drawNotificationCount"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="30" lineNum="542" parent="globals/MnmlstView" pc="268438769" symbol="drawNotificationCount"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="30" lineNum="543" parent="globals/MnmlstView" pc="268438786" symbol="drawNotificationCount"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="30" lineNum="544" parent="globals/MnmlstView" pc="268438799" symbol="drawNotificationCount"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="30" lineNum="545" parent="globals/MnmlstView" pc="268438803" symbol="drawNotificationCount"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="30" lineNum="549" parent="globals/MnmlstView" pc="268438816" symbol="drawNotificationCount"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="30" lineNum="550" parent="globals/MnmlstView" pc="268438834" symbol="drawNotificationCount"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="31" lineNum="338" parent="globals/MnmlstView" pc="268438861" symbol="drawBattery"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="31" lineNum="340" parent="globals/MnmlstView" pc="268438863" symbol="drawBattery"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="32" lineNum="791" parent="globals/MnmlstView" pc="268438879" symbol="onEnterSleep"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="32" lineNum="792" parent="globals/MnmlstView" pc="268438881" symbol="onEnterSleep"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="32" lineNum="793" parent="globals/MnmlstView" pc="268438889" symbol="onEnterSleep"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="33" lineNum="472" parent="globals/MnmlstView" pc="268438901" symbol="getMinuteHashColor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="33" lineNum="473" parent="globals/MnmlstView" pc="268438903" symbol="getMinuteHashColor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="34" lineNum="411" parent="globals/MnmlstView" pc="268438927" symbol="getStepsProgress"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="34" lineNum="412" parent="globals/MnmlstView" pc="268438930" symbol="getStepsProgress"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="34" lineNum="413" parent="globals/MnmlstView" pc="268438942" symbol="getStepsProgress"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="34" lineNum="414" parent="globals/MnmlstView" pc="268438986" symbol="getStepsProgress"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="34" lineNum="415" parent="globals/MnmlstView" pc="268439024" symbol="getStepsProgress"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="34" lineNum="417" parent="globals/MnmlstView" pc="268439043" symbol="getStepsProgress"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="35" lineNum="554" parent="globals/MnmlstView" pc="268439045" symbol="drawHourHand"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="35" lineNum="556" parent="globals/MnmlstView" pc="268439048" symbol="drawHourHand"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="35" lineNum="557" parent="globals/MnmlstView" pc="268439057" symbol="drawHourHand"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="35" lineNum="560" parent="globals/MnmlstView" pc="268439069" symbol="drawHourHand"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="35" lineNum="561" parent="globals/MnmlstView" pc="268439081" symbol="drawHourHand"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="35" lineNum="562" parent="globals/MnmlstView" pc="268439094" symbol="drawHourHand"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="35" lineNum="565" parent="globals/MnmlstView" pc="268439097" symbol="drawHourHand"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="35" lineNum="567" parent="globals/MnmlstView" pc="268439110" symbol="drawHourHand"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="35" lineNum="569" parent="globals/MnmlstView" pc="268439117" symbol="drawHourHand"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="35" lineNum="572" parent="globals/MnmlstView" pc="268439132" symbol="drawHourHand"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="35" lineNum="575" parent="globals/MnmlstView" pc="268439146" symbol="drawHourHand"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="35" lineNum="577" parent="globals/MnmlstView" pc="268439157" symbol="drawHourHand"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="35" lineNum="580" parent="globals/MnmlstView" pc="268439174" symbol="drawHourHand"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="35" lineNum="582" parent="globals/MnmlstView" pc="268439195" symbol="drawHourHand"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="35" lineNum="583" parent="globals/MnmlstView" pc="268439205" symbol="drawHourHand"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="35" lineNum="585" parent="globals/MnmlstView" pc="268439218" symbol="drawHourHand"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="36" lineNum="368" parent="globals/MnmlstView" pc="268439261" symbol="drawGaugeWithData"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="36" lineNum="369" parent="globals/MnmlstView" pc="268439264" symbol="drawGaugeWithData"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="36" lineNum="370" parent="globals/MnmlstView" pc="268439277" symbol="drawGaugeWithData"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="36" lineNum="371" parent="globals/MnmlstView" pc="268439290" symbol="drawGaugeWithData"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="36" lineNum="372" parent="globals/MnmlstView" pc="268439297" symbol="drawGaugeWithData"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="36" lineNum="373" parent="globals/MnmlstView" pc="268439307" symbol="drawGaugeWithData"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="36" lineNum="376" parent="globals/MnmlstView" pc="268439320" symbol="drawGaugeWithData"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="36" lineNum="377" parent="globals/MnmlstView" pc="268439328" symbol="drawGaugeWithData"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="36" lineNum="378" parent="globals/MnmlstView" pc="268439339" symbol="drawGaugeWithData"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="36" lineNum="379" parent="globals/MnmlstView" pc="268439349" symbol="drawGaugeWithData"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="36" lineNum="380" parent="globals/MnmlstView" pc="268439363" symbol="drawGaugeWithData"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="36" lineNum="385" parent="globals/MnmlstView" pc="268439403" symbol="drawGaugeWithData"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="36" lineNum="387" parent="globals/MnmlstView" pc="268439408" symbol="drawGaugeWithData"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="36" lineNum="388" parent="globals/MnmlstView" pc="268439420" symbol="drawGaugeWithData"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="36" lineNum="389" parent="globals/MnmlstView" pc="268439431" symbol="drawGaugeWithData"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="36" lineNum="390" parent="globals/MnmlstView" pc="268439442" symbol="drawGaugeWithData"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="36" lineNum="391" parent="globals/MnmlstView" pc="268439450" symbol="drawGaugeWithData"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="36" lineNum="392" parent="globals/MnmlstView" pc="268439461" symbol="drawGaugeWithData"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="36" lineNum="393" parent="globals/MnmlstView" pc="268439469" symbol="drawGaugeWithData"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="36" lineNum="395" parent="globals/MnmlstView" pc="268439480" symbol="drawGaugeWithData"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="36" lineNum="399" parent="globals/MnmlstView" pc="268439491" symbol="drawGaugeWithData"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="36" lineNum="402" parent="globals/MnmlstView" pc="268439499" symbol="drawGaugeWithData"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="36" lineNum="403" parent="globals/MnmlstView" pc="268439513" symbol="drawGaugeWithData"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="37" lineNum="461" parent="globals/MnmlstView" pc="268439563" symbol="getArborColor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="37" lineNum="462" parent="globals/MnmlstView" pc="268439565" symbol="getArborColor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="37" lineNum="463" parent="globals/MnmlstView" pc="268439572" symbol="getArborColor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="37" lineNum="465" parent="globals/MnmlstView" pc="268439582" symbol="getArborColor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="38" lineNum="476" parent="globals/MnmlstView" pc="268439603" symbol="getBatteryGaugeColor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="38" lineNum="477" parent="globals/MnmlstView" pc="268439605" symbol="getBatteryGaugeColor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="39" lineNum="733" parent="globals/MnmlstView" pc="268439626" symbol="getBoundingBox"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="39" lineNum="734" parent="globals/MnmlstView" pc="268439629" symbol="getBoundingBox"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="39" lineNum="735" parent="globals/MnmlstView" pc="268439636" symbol="getBoundingBox"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="39" lineNum="737" parent="globals/MnmlstView" pc="268439643" symbol="getBoundingBox"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="39" lineNum="738" parent="globals/MnmlstView" pc="268439659" symbol="getBoundingBox"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="39" lineNum="739" parent="globals/MnmlstView" pc="268439674" symbol="getBoundingBox"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="39" lineNum="742" parent="globals/MnmlstView" pc="268439688" symbol="getBoundingBox"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="39" lineNum="743" parent="globals/MnmlstView" pc="268439705" symbol="getBoundingBox"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="39" lineNum="746" parent="globals/MnmlstView" pc="268439721" symbol="getBoundingBox"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="39" lineNum="747" parent="globals/MnmlstView" pc="268439736" symbol="getBoundingBox"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="39" lineNum="750" parent="globals/MnmlstView" pc="268439750" symbol="getBoundingBox"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="39" lineNum="751" parent="globals/MnmlstView" pc="268439767" symbol="getBoundingBox"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="39" lineNum="755" parent="globals/MnmlstView" pc="268439793" symbol="getBoundingBox"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="40" lineNum="506" parent="globals/MnmlstView" pc="268439808" symbol="drawString"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="40" lineNum="507" parent="globals/MnmlstView" pc="268439810" symbol="drawString"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="40" lineNum="508" parent="globals/MnmlstView" pc="268439824" symbol="drawString"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="41" lineNum="434" parent="globals/MnmlstView" pc="268439845" symbol="getStairsProgress"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="41" lineNum="435" parent="globals/MnmlstView" pc="268439848" symbol="getStairsProgress"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="41" lineNum="436" parent="globals/MnmlstView" pc="268439860" symbol="getStairsProgress"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="41" lineNum="438" parent="globals/MnmlstView" pc="268439904" symbol="getStairsProgress"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="41" lineNum="439" parent="globals/MnmlstView" pc="268439913" symbol="getStairsProgress"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="41" lineNum="440" parent="globals/MnmlstView" pc="268439922" symbol="getStairsProgress"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="41" lineNum="441" parent="globals/MnmlstView" pc="268439929" symbol="getStairsProgress"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="41" lineNum="442" parent="globals/MnmlstView" pc="268439955" symbol="getStairsProgress"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="41" lineNum="445" parent="globals/MnmlstView" pc="268439977" symbol="getStairsProgress"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="42" lineNum="695" parent="globals/MnmlstView" pc="268439979" symbol="drawDateString"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="42" lineNum="696" parent="globals/MnmlstView" pc="268439982" symbol="drawDateString"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="42" lineNum="698" parent="globals/MnmlstView" pc="268439989" symbol="drawDateString"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="42" lineNum="700" parent="globals/MnmlstView" pc="268440000" symbol="drawDateString"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="42" lineNum="701" parent="globals/MnmlstView" pc="268440012" symbol="drawDateString"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="42" lineNum="702" parent="globals/MnmlstView" pc="268440022" symbol="drawDateString"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="42" lineNum="704" parent="globals/MnmlstView" pc="268440042" symbol="drawDateString"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="42" lineNum="706" parent="globals/MnmlstView" pc="268440053" symbol="drawDateString"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="42" lineNum="707" parent="globals/MnmlstView" pc="268440065" symbol="drawDateString"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="42" lineNum="708" parent="globals/MnmlstView" pc="268440082" symbol="drawDateString"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="42" lineNum="710" parent="globals/MnmlstView" pc="268440103" symbol="drawDateString"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="42" lineNum="712" parent="globals/MnmlstView" pc="268440114" symbol="drawDateString"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="42" lineNum="713" parent="globals/MnmlstView" pc="268440143" symbol="drawDateString"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="42" lineNum="716" parent="globals/MnmlstView" pc="268440155" symbol="drawDateString"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="42" lineNum="717" parent="globals/MnmlstView" pc="268440181" symbol="drawDateString"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="42" lineNum="720" parent="globals/MnmlstView" pc="268440213" symbol="drawDateString"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="42" lineNum="721" parent="globals/MnmlstView" pc="268440225" symbol="drawDateString"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="42" lineNum="722" parent="globals/MnmlstView" pc="268440243" symbol="drawDateString"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="43" lineNum="798" parent="globals/MnmlstView" pc="268440267" symbol="onExitSleep"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="43" lineNum="799" parent="globals/MnmlstView" pc="268440269" symbol="onExitSleep"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="44" lineNum="502" parent="globals/MnmlstView" pc="268440278" symbol="getBlueColor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="44" lineNum="503" parent="globals/MnmlstView" pc="268440280" symbol="getBlueColor"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="45" lineNum="177" parent="globals/MnmlstView" pc="268440302" symbol="validateConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="45" lineNum="178" parent="globals/MnmlstView" pc="268440304" symbol="validateConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="45" lineNum="179" parent="globals/MnmlstView" pc="268440325" symbol="validateConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="45" lineNum="181" parent="globals/MnmlstView" pc="268440336" symbol="validateConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="45" lineNum="182" parent="globals/MnmlstView" pc="268440357" symbol="validateConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="45" lineNum="184" parent="globals/MnmlstView" pc="268440368" symbol="validateConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="45" lineNum="185" parent="globals/MnmlstView" pc="268440389" symbol="validateConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="45" lineNum="187" parent="globals/MnmlstView" pc="268440400" symbol="validateConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="45" lineNum="188" parent="globals/MnmlstView" pc="268440421" symbol="validateConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="45" lineNum="190" parent="globals/MnmlstView" pc="268440432" symbol="validateConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="45" lineNum="191" parent="globals/MnmlstView" pc="268440453" symbol="validateConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="45" lineNum="193" parent="globals/MnmlstView" pc="268440464" symbol="validateConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="45" lineNum="194" parent="globals/MnmlstView" pc="268440488" symbol="validateConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="45" lineNum="196" parent="globals/MnmlstView" pc="268440501" symbol="validateConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="45" lineNum="197" parent="globals/MnmlstView" pc="268440525" symbol="validateConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="46" lineNum="165" parent="globals/MnmlstView" pc="268440539" symbol="loadDefaultConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="46" lineNum="166" parent="globals/MnmlstView" pc="268440541" symbol="loadDefaultConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="46" lineNum="167" parent="globals/MnmlstView" pc="268440549" symbol="loadDefaultConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="46" lineNum="168" parent="globals/MnmlstView" pc="268440557" symbol="loadDefaultConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="46" lineNum="169" parent="globals/MnmlstView" pc="268440565" symbol="loadDefaultConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="46" lineNum="170" parent="globals/MnmlstView" pc="268440573" symbol="loadDefaultConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="46" lineNum="171" parent="globals/MnmlstView" pc="268440581" symbol="loadDefaultConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="46" lineNum="172" parent="globals/MnmlstView" pc="268440591" symbol="loadDefaultConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="46" lineNum="173" parent="globals/MnmlstView" pc="268440601" symbol="loadDefaultConfiguration"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="47" lineNum="50" parent="globals/MnmlstView" pc="268440620" symbol="initialize"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="47" lineNum="51" parent="globals/MnmlstView" pc="268440622" symbol="initialize"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="47" lineNum="52" parent="globals/MnmlstView" pc="268440634" symbol="initialize"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="47" lineNum="53" parent="globals/MnmlstView" pc="268440656" symbol="initialize"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="47" lineNum="54" parent="globals/MnmlstView" pc="268440664" symbol="initialize"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="616" parent="globals/MnmlstView" pc="268440687" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="619" parent="globals/MnmlstView" pc="268440690" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="621" parent="globals/MnmlstView" pc="268440702" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="624" parent="globals/MnmlstView" pc="268440705" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="626" parent="globals/MnmlstView" pc="268440713" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="627" parent="globals/MnmlstView" pc="268440722" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="628" parent="globals/MnmlstView" pc="268440730" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="631" parent="globals/MnmlstView" pc="268440738" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="633" parent="globals/MnmlstView" pc="268440754" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="636" parent="globals/MnmlstView" pc="268440758" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="637" parent="globals/MnmlstView" pc="268440767" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="640" parent="globals/MnmlstView" pc="268440776" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="641" parent="globals/MnmlstView" pc="268440784" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="642" parent="globals/MnmlstView" pc="268440798" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="645" parent="globals/MnmlstView" pc="268440824" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="646" parent="globals/MnmlstView" pc="268440832" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="647" parent="globals/MnmlstView" pc="268440846" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="648" parent="globals/MnmlstView" pc="268440872" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="649" parent="globals/MnmlstView" pc="268440880" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="650" parent="globals/MnmlstView" pc="268440894" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="652" parent="globals/MnmlstView" pc="268440920" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="653" parent="globals/MnmlstView" pc="268440935" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="655" parent="globals/MnmlstView" pc="268440946" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="657" parent="globals/MnmlstView" pc="268440964" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="658" parent="globals/MnmlstView" pc="268440987" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="659" parent="globals/MnmlstView" pc="268441003" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="663" parent="globals/MnmlstView" pc="268441052" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="668" parent="globals/MnmlstView" pc="268441063" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="669" parent="globals/MnmlstView" pc="268441072" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="672" parent="globals/MnmlstView" pc="268441085" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="675" parent="globals/MnmlstView" pc="268441117" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="678" parent="globals/MnmlstView" pc="268441137" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="679" parent="globals/MnmlstView" pc="268441146" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="680" parent="globals/MnmlstView" pc="268441159" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="685" parent="globals/MnmlstView" pc="268441191" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="689" parent="globals/MnmlstView" pc="268441211" symbol="onUpdate"/>
+        <entry filename="/Users/bsu/Development/garmin/garmin_mnmlst_watchface/source/MnmlstView.mc" id="48" lineNum="691" parent="globals/MnmlstView" pc="268441222" symbol="onUpdate"/>
+    </pcToLineNum>
+    <symbolTable>
+        <entry id="8388639" module="true" symbol="Graphics"/>
+        <entry field="true" id="76" symbol="colorSchemeDark"/>
+        <entry field="true" id="17" symbol="configCalorieGoalActive"/>
+        <entry field="true" id="62" symbol="screenCenterPoint"/>
+        <entry id="15" method="true" symbol="calculateScaleFactor"/>
+        <entry id="52" method="true" symbol="getWeeklyActiveMinutesProgress"/>
+        <entry id="37" method="true" symbol="generateHandCoordinates"/>
+        <entry id="8388632" method="true" symbol="&lt;init&gt;"/>
+        <entry field="true" id="60" symbol="offscreenBuffer"/>
+        <entry id="8390098" method="true" symbol="onPowerBudgetExceeded"/>
+        <entry field="true" id="94" symbol="stairsProgress"/>
+        <entry id="101" symbol="hourHandLengthRatio"/>
+        <entry field="true" id="68" symbol="DoNotDisturbIcon"/>
+        <entry field="true" id="14" symbol="bt_connected"/>
+        <entry id="102" symbol="hourTailRatio"/>
+        <entry field="true" id="55" symbol="layoutConfig"/>
+        <entry id="65" object="true" symbol="DefaultColors"/>
+        <entry field="true" id="16" symbol="configBatteryDisplayMode"/>
+        <entry id="8388924" module="true" symbol="Gregorian"/>
+        <entry id="66" object="true" symbol="LightColors"/>
+        <entry id="111" symbol="batteryBarHeight"/>
+        <entry field="true" id="61" symbol="scaleFactor"/>
+        <entry id="56" method="true" symbol="loadConfiguration"/>
+        <entry field="true" id="8388611" module="true" symbol="Toybox"/>
+        <entry field="true" id="21" symbol="configHourHandBehavior"/>
+        <entry id="11" object="true" symbol="MnmlstView"/>
+        <entry id="38" method="true" symbol="generateHourCoordinates"/>
+        <entry field="true" id="25" symbol="dateBuffer"/>
+        <entry id="8388649" module="true" object="true" symbol="Test"/>
+        <entry field="true" id="18" symbol="configCalorieGoalOverall"/>
+        <entry id="98" symbol="notificationOffsetRatio"/>
+        <entry id="30" method="true" symbol="drawDateString"/>
+        <entry field="true" id="71" symbol="AppName"/>
+        <entry id="31" method="true" symbol="drawGaugeWithData"/>
+        <entry id="8388633" module="true" symbol="ActivityMonitor"/>
+        <entry id="41" method="true" symbol="getBlueColor"/>
+        <entry id="3" module="true" symbol="globals/MnmlstApp/Colors"/>
+        <entry id="7" module="true" symbol="globals/Rez/Strings"/>
+        <entry id="8388772" module="true" object="true" symbol="Fonts"/>
+        <entry field="true" id="54" symbol="isAwake"/>
+        <entry field="true" id="80" symbol="dateFieldTitle"/>
+        <entry id="8388631" module="true" symbol="Activity"/>
+        <entry id="47" method="true" symbol="getMinuteHashColor"/>
+        <entry id="8388648" module="true" symbol="WatchUi"/>
+        <entry id="8390097" method="true" symbol="onPartialUpdate"/>
+        <entry id="8" object="true" symbol="Mnmlst"/>
+        <entry field="true" id="78" symbol="colorSchemeWhite"/>
+        <entry field="true" id="36" symbol="fullScreenRefresh"/>
+        <entry id="53" method="true" symbol="getYellowColor"/>
+        <entry field="true" id="8388913" symbol="stepGoal"/>
+        <entry id="8390425" module="true" symbol="Properties"/>
+        <entry id="4" module="true" symbol="globals/Rez"/>
+        <entry field="true" id="8389874" symbol="floorsClimbedGoal"/>
+        <entry id="104" symbol="minuteHandLengthRatio"/>
+        <entry id="8389124" method="true" symbol="onUpdate"/>
+        <entry id="29" method="true" symbol="drawBatteryGauge"/>
+        <entry id="32" method="true" symbol="drawHashMarks"/>
+        <entry id="109" symbol="batteryRight"/>
+        <entry field="true" id="84" symbol="fieldHeartRate"/>
+        <entry id="8388771" module="true" object="true" symbol="Drawables"/>
+        <entry field="true" id="8389067" symbol="height"/>
+        <entry id="2" module="true" symbol="globals/MnmlstApp"/>
+        <entry id="99" symbol="hourHandWidth"/>
+        <entry field="true" id="89" symbol="hourHandBehaviorTitle"/>
+        <entry field="true" id="96" symbol="weeklyActiveMinutes"/>
+        <entry field="true" id="8389869" symbol="activeMinutesWeek"/>
+        <entry field="true" id="8389066" symbol="width"/>
+        <entry id="113" symbol="batteryRadius"/>
+        <entry id="28" method="true" symbol="drawBattery"/>
+        <entry id="45" method="true" symbol="getHourHashColor"/>
+        <entry field="true" id="75" symbol="calorieGoalOverallTitle"/>
+        <entry id="8389122" method="true" symbol="onLayout"/>
+        <entry id="8389376" method="true" symbol="onEnterSleep"/>
+        <entry id="23" method="true" symbol="createLayoutConfig"/>
+        <entry field="true" id="73" symbol="batteryLevel"/>
+        <entry id="8389627" method="true" symbol="getBackgroundColor"/>
+        <entry field="true" id="72" symbol="batteryDisplayTitle"/>
+        <entry id="48" method="true" symbol="getRedColor"/>
+        <entry id="63" method="true" symbol="validateConfiguration"/>
+        <entry id="107" symbol="minuteHashLength"/>
+        <entry field="true" id="83" symbol="fieldDate"/>
+        <entry field="true" id="20" symbol="configDateFieldType"/>
+        <entry field="true" id="81" symbol="displayGroup"/>
+        <entry id="35" method="true" symbol="drawString"/>
+        <entry field="true" id="82" symbol="fieldBatteryPercent"/>
+        <entry field="true" id="87" symbol="goalsGroup"/>
+        <entry id="5" module="true" symbol="globals/Rez/Drawables"/>
+        <entry field="true" id="58" symbol="msgCountMultiplier"/>
+        <entry id="46" method="true" symbol="getMinuteHandColor"/>
+        <entry id="8390095" object="true" symbol="WatchFaceDelegate"/>
+        <entry id="27" method="true" symbol="drawBackground"/>
+        <entry field="true" id="8389871" symbol="activeMinutesWeekGoal"/>
+        <entry id="67" object="true" symbol="WhiteColors"/>
+        <entry id="33" method="true" symbol="drawHourHand"/>
+        <entry id="103" symbol="minuteHandWidth"/>
+        <entry id="8389377" method="true" symbol="onExitSleep"/>
+        <entry id="8388644" module="true" symbol="System"/>
+        <entry id="26" method="true" symbol="drawArbor"/>
+        <entry id="13" module="true" symbol="Colors"/>
+        <entry id="8388645" module="true" symbol="Time"/>
+        <entry id="8388769" module="true" object="true" symbol="Rez"/>
+        <entry id="49" method="true" symbol="getStairsProgress"/>
+        <entry field="true" id="74" symbol="calorieGoalActiveTitle"/>
+        <entry field="true" id="59" symbol="notificationBuffer"/>
+        <entry id="34" method="true" symbol="drawNotificationCount"/>
+        <entry id="10" object="true" symbol="MnmlstDelegate"/>
+        <entry field="true" id="19" symbol="configColorScheme"/>
+        <entry id="42" method="true" symbol="getBoundingBox"/>
+        <entry id="8391770" method="true" symbol="createBufferedBitmap"/>
+        <entry field="true" id="70" symbol="id_font_black_diamond"/>
+        <entry id="8388640" module="true" symbol="Lang"/>
+        <entry field="true" id="85" symbol="fieldNotifications"/>
+        <entry id="44" method="true" symbol="getHourHandColor"/>
+        <entry id="50" method="true" symbol="getStepsProgress"/>
+        <entry field="true" id="69" symbol="LauncherIcon"/>
+        <entry id="9" module="true" symbol="MnmlstApp"/>
+        <entry id="8388610" symbol="statics"/>
+        <entry field="true" id="79" symbol="dataFieldsGroup"/>
+        <entry id="110" symbol="batteryHeight"/>
+        <entry field="true" id="90" symbol="hourHandHourly"/>
+        <entry id="8389350" module="true" symbol="globals"/>
+        <entry id="40" method="true" symbol="getBatteryGaugeColor"/>
+        <entry field="true" id="86" symbol="fieldSteps"/>
+        <entry id="8388770" module="true" object="true" symbol="Strings"/>
+        <entry id="105" symbol="minuteTailLength"/>
+        <entry field="true" id="8389872" symbol="floorsClimbed"/>
+        <entry id="8388702" method="true" symbol="initialize"/>
+        <entry field="true" id="8389670" symbol="screenShape"/>
+        <entry field="true" id="24" symbol="curClip"/>
+        <entry id="8389279" method="true" symbol="onStart"/>
+        <entry field="true" id="88" symbol="handBehaviorGroup"/>
+        <entry field="true" id="22" symbol="configMessageFieldType"/>
+        <entry field="true" id="12" symbol="partialUpdatesAllowed"/>
+        <entry field="true" id="77" symbol="colorSchemeTitle"/>
+        <entry id="8388641" module="true" symbol="Math"/>
+        <entry id="106" symbol="hourHashLength"/>
+        <entry id="8389280" method="true" symbol="getInitialView"/>
+        <entry field="true" id="95" symbol="stepsProgress"/>
+        <entry id="8389281" method="true" symbol="onStop"/>
+        <entry id="97" symbol="dateOffsetRatio"/>
+        <entry id="57" method="true" symbol="loadDefaultConfiguration"/>
+        <entry id="43" method="true" symbol="getGreenColor"/>
+        <entry id="39" method="true" symbol="getArborColor"/>
+        <entry id="51" method="true" symbol="getTextColor"/>
+        <entry field="true" id="92" symbol="messageFieldTitle"/>
+        <entry id="108" symbol="batteryLeft"/>
+        <entry id="114" symbol="batteryOffset"/>
+        <entry id="100" symbol="hourHandLength"/>
+        <entry id="6" module="true" symbol="globals/Rez/Fonts"/>
+        <entry id="112" symbol="arborRadius"/>
+        <entry field="true" id="91" symbol="hourHandSmooth"/>
+        <entry id="8388635" module="true" symbol="Application"/>
+        <entry id="64" object="true" symbol="DarkColors"/>
+        <entry field="true" id="93" symbol="middleGaugeTitle"/>
+        <entry id="8389660" symbol="palette"/>
+    </symbolTable>
+    <localVars>
+        <entry arg="true" endPc="268435706" name="powerInfo" stackId="1" startPc="268435646"/>
+        <entry arg="true" endPc="268435992" name="dc" stackId="1" startPc="268435707"/>
+        <entry arg="true" endPc="268435992" name="one" stackId="2" startPc="268435707"/>
+        <entry arg="true" endPc="268435992" name="two" stackId="3" startPc="268435707"/>
+        <entry arg="true" endPc="268435992" name="length" stackId="4" startPc="268435707"/>
+        <entry endPc="268435991" name="width" stackId="5" startPc="268435710"/>
+        <entry endPc="268435991" name="sX" stackId="6" startPc="268435710"/>
+        <entry endPc="268435991" name="sY" stackId="7" startPc="268435710"/>
+        <entry endPc="268435991" name="eX" stackId="8" startPc="268435710"/>
+        <entry endPc="268435991" name="eY" stackId="9" startPc="268435710"/>
+        <entry endPc="268435991" name="outerRad" stackId="10" startPc="268435710"/>
+        <entry endPc="268435991" name="innerRad" stackId="11" startPc="268435710"/>
+        <entry endPc="268435991" name="i" stackId="12" startPc="268435754"/>
+        <entry arg="true" endPc="268436158" name="targetDc" stackId="1" startPc="268436016"/>
+        <entry endPc="268436157" name="width" stackId="2" startPc="268436019"/>
+        <entry endPc="268436157" name="height" stackId="3" startPc="268436019"/>
+        <entry endPc="268436157" name="moveBarLevel" stackId="4" startPc="268436019"/>
+        <entry endPc="268436157" name="arborColor" stackId="5" startPc="268436019"/>
+        <entry endPc="268436157" name="backgroundColor" stackId="6" startPc="268436019"/>
+        <entry arg="true" endPc="268436233" name="width" stackId="1" startPc="268436205"/>
+        <entry arg="true" endPc="268436233" name="height" stackId="2" startPc="268436205"/>
+        <entry endPc="268436233" name="referenceSize" stackId="3" startPc="268436208"/>
+        <entry endPc="268436233" name="avgDimension" stackId="4" startPc="268436208"/>
+        <entry arg="true" endPc="268436454" name="centerPoint" stackId="1" startPc="268436234"/>
+        <entry arg="true" endPc="268436454" name="angle" stackId="2" startPc="268436234"/>
+        <entry arg="true" endPc="268436454" name="handLength" stackId="3" startPc="268436234"/>
+        <entry arg="true" endPc="268436454" name="tailLength" stackId="4" startPc="268436234"/>
+        <entry arg="true" endPc="268436454" name="width" stackId="5" startPc="268436234"/>
+        <entry endPc="268436454" name="coords" stackId="6" startPc="268436237"/>
+        <entry endPc="268436454" name="result" stackId="7" startPc="268436237"/>
+        <entry endPc="268436454" name="cos" stackId="8" startPc="268436237"/>
+        <entry endPc="268436454" name="sin" stackId="9" startPc="268436237"/>
+        <entry endPc="268436451" name="i" stackId="10" startPc="268436352"/>
+        <entry endPc="268436441" name="x" stackId="11" startPc="268436352"/>
+        <entry endPc="268436441" name="y" stackId="12" startPc="268436352"/>
+        <entry arg="true" endPc="268436649" name="dc" stackId="1" startPc="268436455"/>
+        <entry endPc="268436648" name="width" stackId="2" startPc="268436458"/>
+        <entry endPc="268436648" name="height" stackId="3" startPc="268436458"/>
+        <entry arg="true" endPc="268436717" name="bt_connected" stackId="1" startPc="268436677"/>
+        <entry arg="true" endPc="268436874" name="targetDc" stackId="1" startPc="268436743"/>
+        <entry arg="true" endPc="268436874" name="width" stackId="2" startPc="268436743"/>
+        <entry arg="true" endPc="268436874" name="height" stackId="3" startPc="268436743"/>
+        <entry endPc="268436873" name="percentage" stackId="4" startPc="268436746"/>
+        <entry endPc="268436873" name="useMultiColor" stackId="5" startPc="268436746"/>
+        <entry endPc="268436790" name="stats" stackId="6" startPc="268436756"/>
+        <entry arg="true" endPc="268437195" name="dc" stackId="1" startPc="268436875"/>
+        <entry endPc="268437334" name="info" stackId="1" startPc="268437199"/>
+        <entry endPc="268437329" name="current" stackId="2" startPc="268437255"/>
+        <entry endPc="268437329" name="goal" stackId="3" startPc="268437255"/>
+        <entry endPc="268437326" name="progress" stackId="4" startPc="268437285"/>
+        <entry arg="true" endPc="268437714" name="width" stackId="1" startPc="268437358"/>
+        <entry arg="true" endPc="268437714" name="height" stackId="2" startPc="268437358"/>
+        <entry endPc="268438241" name="deviceSettings" stackId="1" startPc="268437718"/>
+        <entry endPc="268438291" name="ex" stackId="2" startPc="268438248"/>
+        <entry arg="true" endPc="268438552" name="centerPoint" stackId="1" startPc="268438305"/>
+        <entry arg="true" endPc="268438552" name="angle" stackId="2" startPc="268438305"/>
+        <entry arg="true" endPc="268438552" name="handLength" stackId="3" startPc="268438305"/>
+        <entry arg="true" endPc="268438552" name="tailLength" stackId="4" startPc="268438305"/>
+        <entry arg="true" endPc="268438552" name="width" stackId="5" startPc="268438305"/>
+        <entry endPc="268438552" name="coords" stackId="6" startPc="268438308"/>
+        <entry endPc="268438552" name="result" stackId="7" startPc="268438308"/>
+        <entry endPc="268438552" name="cos" stackId="8" startPc="268438308"/>
+        <entry endPc="268438552" name="sin" stackId="9" startPc="268438308"/>
+        <entry endPc="268438549" name="i" stackId="10" startPc="268438450"/>
+        <entry endPc="268438539" name="x" stackId="11" startPc="268438450"/>
+        <entry endPc="268438539" name="y" stackId="12" startPc="268438450"/>
+        <entry arg="true" endPc="268438860" name="dc" stackId="1" startPc="268438580"/>
+        <entry arg="true" endPc="268438860" name="posX" stackId="2" startPc="268438580"/>
+        <entry arg="true" endPc="268438860" name="posY" stackId="3" startPc="268438580"/>
+        <entry endPc="268438859" name="displayValue" stackId="4" startPc="268438583"/>
+        <entry endPc="268438859" name="displayStr" stackId="5" startPc="268438583"/>
+        <entry endPc="268438645" name="info" stackId="6" startPc="268438604"/>
+        <entry endPc="268438709" name="info" stackId="7" startPc="268438660"/>
+        <entry endPc="268438765" name="battery" stackId="8" startPc="268438724"/>
+        <entry endPc="268438815" name="notificationCount" stackId="9" startPc="268438769"/>
+        <entry arg="true" endPc="268438878" name="targetDc" stackId="1" startPc="268438861"/>
+        <entry arg="true" endPc="268438878" name="width" stackId="2" startPc="268438861"/>
+        <entry arg="true" endPc="268438878" name="height" stackId="3" startPc="268438861"/>
+        <entry endPc="268439044" name="info" stackId="1" startPc="268438930"/>
+        <entry endPc="268439039" name="progress" stackId="2" startPc="268438986"/>
+        <entry arg="true" endPc="268439260" name="targetDc" stackId="1" startPc="268439045"/>
+        <entry endPc="268439259" name="hourHandAngle" stackId="2" startPc="268439048"/>
+        <entry endPc="268439259" name="width" stackId="3" startPc="268439048"/>
+        <entry endPc="268439259" name="clockTime" stackId="4" startPc="268439048"/>
+        <entry endPc="268439259" name="deviceSettings" stackId="5" startPc="268439048"/>
+        <entry endPc="268439259" name="colorHourHand" stackId="6" startPc="268439048"/>
+        <entry endPc="268439259" name="hourModifier" stackId="7" startPc="268439048"/>
+        <entry endPc="268439259" name="hourTail" stackId="8" startPc="268439048"/>
+        <entry arg="true" endPc="268439562" name="targetDc" stackId="1" startPc="268439261"/>
+        <entry arg="true" endPc="268439562" name="width" stackId="2" startPc="268439261"/>
+        <entry arg="true" endPc="268439562" name="height" stackId="3" startPc="268439261"/>
+        <entry arg="true" endPc="268439562" name="percentage" stackId="4" startPc="268439261"/>
+        <entry arg="true" endPc="268439562" name="useMultiColor" stackId="5" startPc="268439261"/>
+        <entry endPc="268439561" name="battLeft" stackId="6" startPc="268439264"/>
+        <entry endPc="268439561" name="battRight" stackId="7" startPc="268439264"/>
+        <entry endPc="268439561" name="battRange" stackId="8" startPc="268439264"/>
+        <entry endPc="268439561" name="battRangeSteps" stackId="9" startPc="268439264"/>
+        <entry endPc="268439561" name="battBaseHeight" stackId="10" startPc="268439264"/>
+        <entry endPc="268439561" name="gaugeLineColor" stackId="11" startPc="268439264"/>
+        <entry endPc="268439402" name="i" stackId="12" startPc="268439339"/>
+        <entry endPc="268439392" name="xPos" stackId="13" startPc="268439339"/>
+        <entry endPc="268439561" name="indicatorColor" stackId="14" startPc="268439264"/>
+        <entry endPc="268439487" name="stats" stackId="15" startPc="268439408"/>
+        <entry arg="true" endPc="268439602" name="moveBarLevel" stackId="1" startPc="268439563"/>
+        <entry arg="true" endPc="268439807" name="points" stackId="1" startPc="268439626"/>
+        <entry endPc="268439807" name="min" stackId="2" startPc="268439629"/>
+        <entry endPc="268439807" name="max" stackId="3" startPc="268439629"/>
+        <entry endPc="268439792" name="i" stackId="4" startPc="268439659"/>
+        <entry arg="true" endPc="268439844" name="myString" stackId="1" startPc="268439808"/>
+        <entry arg="true" endPc="268439844" name="dc" stackId="2" startPc="268439808"/>
+        <entry arg="true" endPc="268439844" name="posX" stackId="3" startPc="268439808"/>
+        <entry arg="true" endPc="268439844" name="posY" stackId="4" startPc="268439808"/>
+        <entry arg="true" endPc="268439844" name="color" stackId="5" startPc="268439808"/>
+        <entry endPc="268439978" name="info" stackId="1" startPc="268439848"/>
+        <entry endPc="268439973" name="current" stackId="2" startPc="268439904"/>
+        <entry endPc="268439973" name="goal" stackId="3" startPc="268439904"/>
+        <entry endPc="268439970" name="progress" stackId="4" startPc="268439929"/>
+        <entry arg="true" endPc="268440266" name="dc" stackId="1" startPc="268439979"/>
+        <entry arg="true" endPc="268440266" name="x" stackId="2" startPc="268439979"/>
+        <entry arg="true" endPc="268440266" name="y" stackId="3" startPc="268439979"/>
+        <entry endPc="268440265" name="displayStr" stackId="4" startPc="268439982"/>
+        <entry endPc="268440038" name="info" stackId="5" startPc="268440000"/>
+        <entry endPc="268440099" name="info" stackId="6" startPc="268440053"/>
+        <entry endPc="268440151" name="battery" stackId="7" startPc="268440114"/>
+        <entry endPc="268440212" name="info" stackId="8" startPc="268440155"/>
+        <entry arg="true" endPc="268441230" name="dc" stackId="1" startPc="268440687"/>
+        <entry endPc="268441229" name="width" stackId="2" startPc="268440690"/>
+        <entry endPc="268441229" name="height" stackId="3" startPc="268440690"/>
+        <entry endPc="268441229" name="clockTime" stackId="4" startPc="268440690"/>
+        <entry endPc="268441229" name="minuteHandAngle" stackId="5" startPc="268440690"/>
+        <entry endPc="268441229" name="targetDc" stackId="6" startPc="268440690"/>
+        <entry endPc="268441229" name="backgroundColor" stackId="7" startPc="268440690"/>
+        <entry endPc="268441229" name="hourHashColor" stackId="8" startPc="268440690"/>
+        <entry endPc="268441229" name="minuteHashColor" stackId="9" startPc="268440690"/>
+        <entry endPc="268441229" name="minuteHandLength" stackId="10" startPc="268440690"/>
+        <entry endPc="268441133" name="dateDc" stackId="11" startPc="268441072"/>
+        <entry endPc="268441207" name="notificationDc" stackId="12" startPc="268441146"/>
+    </localVars>
+    <deviceInfo deviceVersion="90325a5ba4f163ec5ad32845d0e0beee034c6cee" partNumber="006-B3906-00"/>
+    <annotations>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="DoNotDisturbIcon"/>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="LauncherIcon"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="fieldSteps"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="colorSchemeTitle"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="goalsGroup"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="batteryLevel"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="AppName"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="batteryDisplayTitle"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="calorieGoalActiveTitle"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="messageFieldTitle"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="displayGroup"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="colorSchemeDark"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="stairsProgress"/>
+        <annotationEntry annotation="initialized" class="Fonts" module="globals/Rez" symbol="id_font_black_diamond"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="dateFieldTitle"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="fieldBatteryPercent"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="stepsProgress"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="middleGaugeTitle"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="weeklyActiveMinutes"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="hourHandBehaviorTitle"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="hourHandHourly"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="fieldHeartRate"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="hourHandSmooth"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="colorSchemeWhite"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="handBehaviorGroup"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="calorieGoalOverallTitle"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="fieldDate"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="dataFieldsGroup"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="fieldNotifications"/>
+    </annotations>
+    <dataEntryOffsetMappings>
+        <dataEntry label="globals" offset="76" parentId="" symbolId="globals" type="module"/>
+        <dataEntry label="globals/MnmlstApp" offset="161" parentId="globals" symbolId="MnmlstApp" type="module"/>
+        <dataEntry label="globals/Rez" offset="196" parentId="globals" symbolId="Rez" type="module"/>
+        <dataEntry label="globals/Mnmlst" offset="249" parentId="globals" symbolId="Mnmlst" type="class"/>
+        <dataEntry label="globals/MnmlstDelegate" offset="320" parentId="globals" symbolId="MnmlstDelegate" type="class"/>
+        <dataEntry label="globals/MnmlstView" offset="373" parentId="globals" symbolId="MnmlstView" type="class"/>
+        <dataEntry label="globals/MnmlstApp/Colors" offset="921" parentId="MnmlstApp" symbolId="Colors" type="module"/>
+        <dataEntry label="globals/Rez/Drawables" offset="983" parentId="Rez" symbolId="Drawables" type="module"/>
+        <dataEntry label="globals/Rez/Fonts" offset="1027" parentId="Rez" symbolId="Fonts" type="module"/>
+        <dataEntry label="globals/Rez/Strings" offset="1062" parentId="Rez" symbolId="Strings" type="module"/>
+        <dataEntry label="globals/MnmlstApp/Colors/DarkColors" offset="1322" parentId="Colors" symbolId="DarkColors" type="class"/>
+        <dataEntry label="globals/MnmlstApp/Colors/DefaultColors" offset="1366" parentId="Colors" symbolId="DefaultColors" type="class"/>
+        <dataEntry label="globals/MnmlstApp/Colors/WhiteColors" offset="1410" parentId="Colors" symbolId="WhiteColors" type="class"/>
+        <dataEntry label="globals/MnmlstApp/Colors/LightColors" offset="1454" parentId="Colors" symbolId="LightColors" type="class"/>
+    </dataEntryOffsetMappings>
+    <functions>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="MnmlstApp">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435479" name="&lt;init&gt;" parent="Rez" startPc="268435460">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435491" name="&lt;init&gt;" parent="Mnmlst" startPc="268435480">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435503" name="&lt;init&gt;" parent="MnmlstDelegate" startPc="268435492">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435515" name="&lt;init&gt;" parent="MnmlstView" startPc="268435504">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Colors">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Drawables">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Fonts">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Strings">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435518" name="onStart" parent="Mnmlst" startPc="268435516">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435612" name="getInitialView" parent="Mnmlst" startPc="268435519">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435627" name="initialize" parent="Mnmlst" startPc="268435613">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435630" name="onStop" parent="Mnmlst" startPc="268435628">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435645" name="initialize" parent="MnmlstDelegate" startPc="268435631">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435706" name="onPowerBudgetExceeded" parent="MnmlstDelegate" startPc="268435646">
+            <param id="powerInfo"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435992" name="drawHashMarks" parent="MnmlstView" startPc="268435707">
+            <param id="dc"/>
+            <param id="one"/>
+            <param id="two"/>
+            <param id="length"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436015" name="getBackgroundColor" parent="MnmlstView" startPc="268435993">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436158" name="drawArbor" parent="MnmlstView" startPc="268436016">
+            <param id="targetDc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436181" name="getTextColor" parent="MnmlstView" startPc="268436159">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436204" name="getHourHashColor" parent="MnmlstView" startPc="268436182">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436233" name="calculateScaleFactor" parent="MnmlstView" startPc="268436205">
+            <param id="width"/>
+            <param id="height"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436454" name="generateHourCoordinates" parent="MnmlstView" startPc="268436234">
+            <param id="centerPoint"/>
+            <param id="angle"/>
+            <param id="handLength"/>
+            <param id="tailLength"/>
+            <param id="width"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436649" name="drawBackground" parent="MnmlstView" startPc="268436455">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436676" name="getYellowColor" parent="MnmlstView" startPc="268436650">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436717" name="getHourHandColor" parent="MnmlstView" startPc="268436677">
+            <param id="bt_connected"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436742" name="getGreenColor" parent="MnmlstView" startPc="268436718">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436874" name="drawBatteryGauge" parent="MnmlstView" startPc="268436743">
+            <param id="targetDc"/>
+            <param id="width"/>
+            <param id="height"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437195" name="onLayout" parent="MnmlstView" startPc="268436875">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437334" name="getWeeklyActiveMinutesProgress" parent="MnmlstView" startPc="268437196">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437357" name="getMinuteHandColor" parent="MnmlstView" startPc="268437335">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437714" name="createLayoutConfig" parent="MnmlstView" startPc="268437358">
+            <param id="width"/>
+            <param id="height"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438304" name="loadConfiguration" parent="MnmlstView" startPc="268437715">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438552" name="generateHandCoordinates" parent="MnmlstView" startPc="268438305">
+            <param id="centerPoint"/>
+            <param id="angle"/>
+            <param id="handLength"/>
+            <param id="tailLength"/>
+            <param id="width"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438579" name="getRedColor" parent="MnmlstView" startPc="268438553">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438860" name="drawNotificationCount" parent="MnmlstView" startPc="268438580">
+            <param id="dc"/>
+            <param id="posX"/>
+            <param id="posY"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438878" name="drawBattery" parent="MnmlstView" startPc="268438861">
+            <param id="targetDc"/>
+            <param id="width"/>
+            <param id="height"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438900" name="onEnterSleep" parent="MnmlstView" startPc="268438879">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438926" name="getMinuteHashColor" parent="MnmlstView" startPc="268438901">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439044" name="getStepsProgress" parent="MnmlstView" startPc="268438927">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439260" name="drawHourHand" parent="MnmlstView" startPc="268439045">
+            <param id="targetDc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439562" name="drawGaugeWithData" parent="MnmlstView" startPc="268439261">
+            <param id="targetDc"/>
+            <param id="width"/>
+            <param id="height"/>
+            <param id="percentage"/>
+            <param id="useMultiColor"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439602" name="getArborColor" parent="MnmlstView" startPc="268439563">
+            <param id="moveBarLevel"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439625" name="getBatteryGaugeColor" parent="MnmlstView" startPc="268439603">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439807" name="getBoundingBox" parent="MnmlstView" startPc="268439626">
+            <param id="points"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439844" name="drawString" parent="MnmlstView" startPc="268439808">
+            <param id="myString"/>
+            <param id="dc"/>
+            <param id="posX"/>
+            <param id="posY"/>
+            <param id="color"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439978" name="getStairsProgress" parent="MnmlstView" startPc="268439845">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440266" name="drawDateString" parent="MnmlstView" startPc="268439979">
+            <param id="dc"/>
+            <param id="x"/>
+            <param id="y"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440277" name="onExitSleep" parent="MnmlstView" startPc="268440267">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440301" name="getBlueColor" parent="MnmlstView" startPc="268440278">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440538" name="validateConfiguration" parent="MnmlstView" startPc="268440302">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440619" name="loadDefaultConfiguration" parent="MnmlstView" startPc="268440539">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440686" name="initialize" parent="MnmlstView" startPc="268440620">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268441230" name="onUpdate" parent="MnmlstView" startPc="268440687">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="DarkColors">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="DefaultColors">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="WhiteColors">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="LightColors">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="initialize" parent="DarkColors">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="initialize" parent="DefaultColors">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="initialize" parent="WhiteColors">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="initialize" parent="LightColors">
+            <documentation/>
+        </functionEntry>
+    </functions>
+</debugInfo>

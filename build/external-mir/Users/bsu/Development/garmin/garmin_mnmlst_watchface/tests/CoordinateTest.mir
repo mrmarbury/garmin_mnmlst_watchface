@@ -1,0 +1,1469 @@
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc"; @line = 7; @symbol_usingdef<0> = [Toybox,7,6,12]; @symbol_usingdef<1> = [Test,7,13,17]; ]
+using Toybox.Test;
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc"; @line = 8; @symbol_usingdef<0> = [Toybox,8,6,12]; @symbol_usingdef<1> = [Math,8,13,17]; ]
+using Toybox.Math;
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc"; @line = 12; test = true; @symbol_classdef = [CoordinateTest,12,6,20]; ]
+class CoordinateTest {
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc"; @line = 12; ]
+    <init> {
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc"; @line = 12; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc"; @line = 15; test = true; @symbol_functiondef = [testGenerateHandCoordinates,15,13,40]; @symbol_param<0> = [logger,15,41,47]; ]
+    function testGenerateHandCoordinates(logger) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_15_49_52_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 16 8 ]
+        %tmp.1 = lgetv %logger;
+        symbol [ logger %tmp.1 16 8 14 ];
+        symbol [ debug %tmp.2 16 15 20 ];
+        %tmp.2 = getv function %tmp.1 :debug;
+        %tmp.3 = "Testing generateHandCoordinates";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 18 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_15_49_52_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_15_49_52_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 18 12 16 ];
+        symbol [ MnmlstView %tmp.7 18 23 33 ];
+        %tmp.7 = getv ? :MnmlstView;
+        %tmp.4 = newc %tmp.7 ();
+        lputv %view.1 %tmp.4;
+        symbol [ view %view.1 18 12 16 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 19 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_15_49_52_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_15_49_52_4_stop" ]
+        %centerPoint.2 = local;
+        symbol [ centerPoint %centerPoint.2 19 12 23 ];
+        %tmp.8 = newa 2;
+        %tmp.9 = 100;
+        %tmp.10 = dup %tmp.8;
+        %tmp.11 = aputv %tmp.10 0 %tmp.9;
+        %tmp.12 = 100;
+        %tmp.13 = dup %tmp.11;
+        %tmp.14 = aputv %tmp.13 1 %tmp.12;
+        lputv %centerPoint.2 %tmp.14;
+        symbol [ centerPoint %centerPoint.2 19 12 23 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 20 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_15_49_52_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_15_49_52_4_stop" ]
+        %angle.3 = local;
+        symbol [ angle %angle.3 20 12 17 ];
+        %tmp.15 = 0;
+        lputv %angle.3 %tmp.15;
+        symbol [ angle %angle.3 20 12 17 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 21 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_15_49_52_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_15_49_52_4_stop" ]
+        %handLength.4 = local;
+        symbol [ handLength %handLength.4 21 12 22 ];
+        %tmp.16 = 50;
+        lputv %handLength.4 %tmp.16;
+        symbol [ handLength %handLength.4 21 12 22 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 22 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_15_49_52_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_15_49_52_4_stop" ]
+        %tailLength.5 = local;
+        symbol [ tailLength %tailLength.5 22 12 22 ];
+        %tmp.17 = 10;
+        lputv %tailLength.5 %tmp.17;
+        symbol [ tailLength %tailLength.5 22 12 22 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 23 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_15_49_52_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_15_49_52_4_stop" ]
+        %width.6 = local;
+        symbol [ width %width.6 23 12 17 ];
+        %tmp.18 = 4;
+        lputv %width.6 %tmp.18;
+        symbol [ width %width.6 23 12 17 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 25 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_15_49_52_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_15_49_52_4_stop" ]
+        %coords.7 = local;
+        symbol [ coords %coords.7 25 12 18 ];
+        %tmp.19 = lgetv %view.1;
+        symbol [ view %tmp.19 25 21 25 ];
+        symbol [ generateHandCoordinates %tmp.20 25 26 49 ];
+        %tmp.20 = getv function %tmp.19 :generateHandCoordinates;
+        %tmp.21 = lgetv %centerPoint.2;
+        symbol [ centerPoint %tmp.21 25 50 61 ];
+        %tmp.22 = lgetv %angle.3;
+        symbol [ angle %tmp.22 25 63 68 ];
+        %tmp.23 = lgetv %handLength.4;
+        symbol [ handLength %tmp.23 25 70 80 ];
+        %tmp.24 = lgetv %tailLength.5;
+        symbol [ tailLength %tmp.24 25 82 92 ];
+        %tmp.25 = lgetv %width.6;
+        symbol [ width %tmp.25 25 94 99 ];
+        %tmp.26 = invoke %tmp.19 %tmp.20(%tmp.21, %tmp.22, %tmp.23, %tmp.24, %tmp.25);
+        lputv %coords.7 %tmp.26;
+        symbol [ coords %coords.7 25 12 18 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 28 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_28_8_31_8_if_stmt:
+        %tmp.27 = lgetv %coords.7;
+        symbol [ coords %tmp.27 28 12 18 ];
+        symbol [ size %tmp.28 28 19 23 ];
+        %tmp.28 = getv function %tmp.27 :size;
+        %tmp.29 = invoke %tmp.27 %tmp.28();
+        %tmp.30 = 4;
+        %tmp.31 = ne %tmp.29 %tmp.30;
+        bf %tmp.31 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_28_8_31_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_28_8_31_8_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_28_32_31_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 29 12 ]
+        %tmp.32 = lgetv %logger;
+        symbol [ logger %tmp.32 29 12 18 ];
+        symbol [ debug %tmp.33 29 19 24 ];
+        %tmp.33 = getv function %tmp.32 :debug;
+        %tmp.34 = "Failed: Expected 4 coordinates, got ";
+        %tmp.35 = lgetv %coords.7;
+        symbol [ coords %tmp.35 29 66 72 ];
+        symbol [ size %tmp.36 29 73 77 ];
+        %tmp.36 = getv function %tmp.35 :size;
+        %tmp.37 = invoke %tmp.35 %tmp.36();
+        %tmp.38 = add %tmp.34 %tmp.37;
+        invoke %tmp.32 %tmp.33(%tmp.38);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 30 12 ]
+        %tmp.39 = false;
+        ret %tmp.39;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_28_32_31_8_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_28_8_31_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_28_8_31_8_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 34 8 ]
+        for @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_34_8_39_8_for_test @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_34_8_39_8_for_incr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_34_8_39_8_for_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_34_8_39_8_for_init:
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_34_8_39_8_for_begin" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_34_8_39_8_for_end" ]
+        %i.8 = local;
+        symbol [ i %i.8 34 17 18 ];
+        %tmp.40 = 0;
+        lputv %i.8 %tmp.40;
+        symbol [ i %i.8 34 17 18 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_34_8_39_8_for_test:
+        %tmp.41 = lgetv %i.8;
+        symbol [ i %tmp.41 34 24 25 ];
+        %tmp.42 = lgetv %coords.7;
+        symbol [ coords %tmp.42 34 28 34 ];
+        symbol [ size %tmp.43 34 35 39 ];
+        %tmp.43 = getv function %tmp.42 :size;
+        %tmp.44 = invoke %tmp.42 %tmp.43();
+        %tmp.45 = lt %tmp.41 %tmp.44;
+        bf %tmp.45 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_34_8_39_8_for_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_34_8_39_8_for_begin:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_34_48_39_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 35 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_35_12_38_12_if_stmt:
+        %tmp.46 = lgetv %coords.7;
+        symbol [ coords %tmp.46 35 16 22 ];
+        %tmp.47 = lgetv %i.8;
+        symbol [ i %tmp.47 35 23 24 ];
+        %tmp.48 = agetv %tmp.46 %tmp.47;
+        symbol [ size %tmp.49 35 26 30 ];
+        %tmp.49 = getv function %tmp.48 :size;
+        %tmp.50 = invoke %tmp.48 %tmp.49();
+        %tmp.51 = 2;
+        %tmp.52 = ne %tmp.50 %tmp.51;
+        bf %tmp.52 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_35_12_38_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_35_12_38_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_35_39_38_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 36 16 ]
+        %tmp.53 = lgetv %logger;
+        symbol [ logger %tmp.53 36 16 22 ];
+        symbol [ debug %tmp.54 36 23 28 ];
+        %tmp.54 = getv function %tmp.53 :debug;
+        %tmp.55 = "Failed: Coordinate ";
+        %tmp.56 = lgetv %i.8;
+        symbol [ i %tmp.56 36 53 54 ];
+        %tmp.57 = add %tmp.55 %tmp.56;
+        %tmp.58 = " should have 2 elements";
+        %tmp.59 = add %tmp.57 %tmp.58;
+        invoke %tmp.53 %tmp.54(%tmp.59);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 37 16 ]
+        %tmp.60 = false;
+        ret %tmp.60;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_35_39_38_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_35_12_38_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_35_12_38_12_if_end:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_34_48_39_8_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_34_8_39_8_for_incr:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 34 ]
+        %tmp.63 = lgetv %i.8;
+        symbol [ i %tmp.63 34 43 44 ];
+        %tmp.64 = add %tmp.63 1;
+        lputv %i.8 %tmp.64;
+        symbol [ i %i.8 34 43 44 ];
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_34_8_39_8_for_test;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_34_8_39_8_for_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 43 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_15_49_52_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_15_49_52_4_stop" ]
+        %topY.9 = local;
+        symbol [ topY %topY.9 43 12 16 ];
+        %tmp.65 = lgetv %coords.7;
+        symbol [ coords %tmp.65 43 19 25 ];
+        %tmp.66 = 0;
+        %tmp.67 = agetv %tmp.65 %tmp.66;
+        %tmp.68 = 1;
+        %tmp.69 = agetv %tmp.67 %tmp.68;
+        lputv %topY.9 %tmp.69;
+        symbol [ topY %topY.9 43 12 16 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 44 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_44_8_44_56_if_stmt:
+        %tmp.70 = lgetv %coords.7;
+        symbol [ coords %tmp.70 44 12 18 ];
+        %tmp.71 = 1;
+        %tmp.72 = agetv %tmp.70 %tmp.71;
+        %tmp.73 = 1;
+        %tmp.74 = agetv %tmp.72 %tmp.73;
+        %tmp.75 = lgetv %topY.9;
+        symbol [ topY %tmp.75 44 27 31 ];
+        %tmp.76 = lt %tmp.74 %tmp.75;
+        bf %tmp.76 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_44_8_44_56_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_44_8_44_56_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_44_33_44_56_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 44 35 ]
+        %tmp.77 = lgetv %coords.7;
+        symbol [ coords %tmp.77 44 42 48 ];
+        %tmp.78 = 1;
+        %tmp.79 = agetv %tmp.77 %tmp.78;
+        %tmp.80 = 1;
+        %tmp.81 = agetv %tmp.79 %tmp.80;
+        lputv %topY.9 %tmp.81;
+        symbol [ topY %topY.9 44 35 39 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_44_33_44_56_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_44_8_44_56_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_44_8_44_56_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 45 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_45_8_48_8_if_stmt:
+        %tmp.82 = lgetv %topY.9;
+        symbol [ topY %tmp.82 45 12 16 ];
+        %tmp.83 = lgetv %centerPoint.2;
+        symbol [ centerPoint %tmp.83 45 20 31 ];
+        %tmp.84 = 1;
+        %tmp.85 = agetv %tmp.83 %tmp.84;
+        %tmp.86 = gte %tmp.82 %tmp.85;
+        bf %tmp.86 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_45_8_48_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_45_8_48_8_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_45_36_48_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 46 12 ]
+        %tmp.87 = lgetv %logger;
+        symbol [ logger %tmp.87 46 12 18 ];
+        symbol [ debug %tmp.88 46 19 24 ];
+        %tmp.88 = getv function %tmp.87 :debug;
+        %tmp.89 = "Failed: Hand should extend upward at 0 angle";
+        invoke %tmp.87 %tmp.88(%tmp.89);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 47 12 ]
+        %tmp.90 = false;
+        ret %tmp.90;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_45_36_48_8_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_45_8_48_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_45_8_48_8_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 50 8 ]
+        %tmp.91 = lgetv %logger;
+        symbol [ logger %tmp.91 50 8 14 ];
+        symbol [ debug %tmp.92 50 15 20 ];
+        %tmp.92 = getv function %tmp.91 :debug;
+        %tmp.93 = "Passed: generateHandCoordinates works correctly";
+        invoke %tmp.91 %tmp.92(%tmp.93);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 51 8 ]
+        %tmp.94 = true;
+        ret %tmp.94;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_15_49_52_4_stop:
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc"; @line = 55; test = true; @symbol_functiondef = [testGenerateHourCoordinates,55,13,40]; @symbol_param<0> = [logger,55,41,47]; ]
+    function testGenerateHourCoordinates(logger) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_55_49_99_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 56 8 ]
+        %tmp.1 = lgetv %logger;
+        symbol [ logger %tmp.1 56 8 14 ];
+        symbol [ debug %tmp.2 56 15 20 ];
+        %tmp.2 = getv function %tmp.1 :debug;
+        %tmp.3 = "Testing generateHourCoordinates";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 58 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_55_49_99_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_55_49_99_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 58 12 16 ];
+        symbol [ MnmlstView %tmp.7 58 23 33 ];
+        %tmp.7 = getv ? :MnmlstView;
+        %tmp.4 = newc %tmp.7 ();
+        lputv %view.1 %tmp.4;
+        symbol [ view %view.1 58 12 16 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 59 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_55_49_99_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_55_49_99_4_stop" ]
+        %centerPoint.2 = local;
+        symbol [ centerPoint %centerPoint.2 59 12 23 ];
+        %tmp.8 = newa 2;
+        %tmp.9 = 100;
+        %tmp.10 = dup %tmp.8;
+        %tmp.11 = aputv %tmp.10 0 %tmp.9;
+        %tmp.12 = 100;
+        %tmp.13 = dup %tmp.11;
+        %tmp.14 = aputv %tmp.13 1 %tmp.12;
+        lputv %centerPoint.2 %tmp.14;
+        symbol [ centerPoint %centerPoint.2 59 12 23 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 60 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_55_49_99_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_55_49_99_4_stop" ]
+        %angle.3 = local;
+        symbol [ angle %angle.3 60 12 17 ];
+        %tmp.15 = 0;
+        lputv %angle.3 %tmp.15;
+        symbol [ angle %angle.3 60 12 17 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 61 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_55_49_99_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_55_49_99_4_stop" ]
+        %handLength.4 = local;
+        symbol [ handLength %handLength.4 61 12 22 ];
+        %tmp.16 = 50;
+        lputv %handLength.4 %tmp.16;
+        symbol [ handLength %handLength.4 61 12 22 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 62 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_55_49_99_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_55_49_99_4_stop" ]
+        %tailLength.5 = local;
+        symbol [ tailLength %tailLength.5 62 12 22 ];
+        %tmp.17 = 10;
+        lputv %tailLength.5 %tmp.17;
+        symbol [ tailLength %tailLength.5 62 12 22 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 63 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_55_49_99_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_55_49_99_4_stop" ]
+        %width.6 = local;
+        symbol [ width %width.6 63 12 17 ];
+        %tmp.18 = 20;
+        lputv %width.6 %tmp.18;
+        symbol [ width %width.6 63 12 17 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 65 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_55_49_99_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_55_49_99_4_stop" ]
+        %coords.7 = local;
+        symbol [ coords %coords.7 65 12 18 ];
+        %tmp.19 = lgetv %view.1;
+        symbol [ view %tmp.19 65 21 25 ];
+        symbol [ generateHourCoordinates %tmp.20 65 26 49 ];
+        %tmp.20 = getv function %tmp.19 :generateHourCoordinates;
+        %tmp.21 = lgetv %centerPoint.2;
+        symbol [ centerPoint %tmp.21 65 50 61 ];
+        %tmp.22 = lgetv %angle.3;
+        symbol [ angle %tmp.22 65 63 68 ];
+        %tmp.23 = lgetv %handLength.4;
+        symbol [ handLength %tmp.23 65 70 80 ];
+        %tmp.24 = lgetv %tailLength.5;
+        symbol [ tailLength %tmp.24 65 82 92 ];
+        %tmp.25 = lgetv %width.6;
+        symbol [ width %tmp.25 65 94 99 ];
+        %tmp.26 = invoke %tmp.19 %tmp.20(%tmp.21, %tmp.22, %tmp.23, %tmp.24, %tmp.25);
+        lputv %coords.7 %tmp.26;
+        symbol [ coords %coords.7 65 12 18 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 68 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_68_8_71_8_if_stmt:
+        %tmp.27 = lgetv %coords.7;
+        symbol [ coords %tmp.27 68 12 18 ];
+        symbol [ size %tmp.28 68 19 23 ];
+        %tmp.28 = getv function %tmp.27 :size;
+        %tmp.29 = invoke %tmp.27 %tmp.28();
+        %tmp.30 = 3;
+        %tmp.31 = ne %tmp.29 %tmp.30;
+        bf %tmp.31 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_68_8_71_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_68_8_71_8_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_68_32_71_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 69 12 ]
+        %tmp.32 = lgetv %logger;
+        symbol [ logger %tmp.32 69 12 18 ];
+        symbol [ debug %tmp.33 69 19 24 ];
+        %tmp.33 = getv function %tmp.32 :debug;
+        %tmp.34 = "Failed: Expected 3 coordinates for hour hand, got ";
+        %tmp.35 = lgetv %coords.7;
+        symbol [ coords %tmp.35 69 80 86 ];
+        symbol [ size %tmp.36 69 87 91 ];
+        %tmp.36 = getv function %tmp.35 :size;
+        %tmp.37 = invoke %tmp.35 %tmp.36();
+        %tmp.38 = add %tmp.34 %tmp.37;
+        invoke %tmp.32 %tmp.33(%tmp.38);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 70 12 ]
+        %tmp.39 = false;
+        ret %tmp.39;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_68_32_71_8_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_68_8_71_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_68_8_71_8_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 74 8 ]
+        for @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_74_8_79_8_for_test @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_74_8_79_8_for_incr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_74_8_79_8_for_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_74_8_79_8_for_init:
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_74_8_79_8_for_begin" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_74_8_79_8_for_end" ]
+        %i.8 = local;
+        symbol [ i %i.8 74 17 18 ];
+        %tmp.40 = 0;
+        lputv %i.8 %tmp.40;
+        symbol [ i %i.8 74 17 18 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_74_8_79_8_for_test:
+        %tmp.41 = lgetv %i.8;
+        symbol [ i %tmp.41 74 24 25 ];
+        %tmp.42 = lgetv %coords.7;
+        symbol [ coords %tmp.42 74 28 34 ];
+        symbol [ size %tmp.43 74 35 39 ];
+        %tmp.43 = getv function %tmp.42 :size;
+        %tmp.44 = invoke %tmp.42 %tmp.43();
+        %tmp.45 = lt %tmp.41 %tmp.44;
+        bf %tmp.45 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_74_8_79_8_for_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_74_8_79_8_for_begin:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_74_48_79_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 75 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_75_12_78_12_if_stmt:
+        %tmp.46 = lgetv %coords.7;
+        symbol [ coords %tmp.46 75 16 22 ];
+        %tmp.47 = lgetv %i.8;
+        symbol [ i %tmp.47 75 23 24 ];
+        %tmp.48 = agetv %tmp.46 %tmp.47;
+        symbol [ size %tmp.49 75 26 30 ];
+        %tmp.49 = getv function %tmp.48 :size;
+        %tmp.50 = invoke %tmp.48 %tmp.49();
+        %tmp.51 = 2;
+        %tmp.52 = ne %tmp.50 %tmp.51;
+        bf %tmp.52 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_75_12_78_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_75_12_78_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_75_39_78_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 76 16 ]
+        %tmp.53 = lgetv %logger;
+        symbol [ logger %tmp.53 76 16 22 ];
+        symbol [ debug %tmp.54 76 23 28 ];
+        %tmp.54 = getv function %tmp.53 :debug;
+        %tmp.55 = "Failed: Coordinate ";
+        %tmp.56 = lgetv %i.8;
+        symbol [ i %tmp.56 76 53 54 ];
+        %tmp.57 = add %tmp.55 %tmp.56;
+        %tmp.58 = " should have 2 elements";
+        %tmp.59 = add %tmp.57 %tmp.58;
+        invoke %tmp.53 %tmp.54(%tmp.59);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 77 16 ]
+        %tmp.60 = false;
+        ret %tmp.60;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_75_39_78_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_75_12_78_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_75_12_78_12_if_end:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_74_48_79_8_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_74_8_79_8_for_incr:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 74 ]
+        %tmp.63 = lgetv %i.8;
+        symbol [ i %tmp.63 74 43 44 ];
+        %tmp.64 = add %tmp.63 1;
+        lputv %i.8 %tmp.64;
+        symbol [ i %i.8 74 43 44 ];
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_74_8_79_8_for_test;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_74_8_79_8_for_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 82 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_55_49_99_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_55_49_99_4_stop" ]
+        %topPoints.9 = local;
+        symbol [ topPoints %topPoints.9 82 12 21 ];
+        %tmp.65 = 0;
+        lputv %topPoints.9 %tmp.65;
+        symbol [ topPoints %topPoints.9 82 12 21 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 83 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_55_49_99_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_55_49_99_4_stop" ]
+        %bottomPoints.10 = local;
+        symbol [ bottomPoints %bottomPoints.10 83 12 24 ];
+        %tmp.66 = 0;
+        lputv %bottomPoints.10 %tmp.66;
+        symbol [ bottomPoints %bottomPoints.10 83 12 24 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 84 8 ]
+        for @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_84_8_90_8_for_test @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_84_8_90_8_for_incr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_84_8_90_8_for_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_84_8_90_8_for_init:
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_84_8_90_8_for_begin" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_84_8_90_8_for_end" ]
+        %i.11 = local;
+        symbol [ i %i.11 84 17 18 ];
+        %tmp.67 = 0;
+        lputv %i.11 %tmp.67;
+        symbol [ i %i.11 84 17 18 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_84_8_90_8_for_test:
+        %tmp.68 = lgetv %i.11;
+        symbol [ i %tmp.68 84 24 25 ];
+        %tmp.69 = lgetv %coords.7;
+        symbol [ coords %tmp.69 84 28 34 ];
+        symbol [ size %tmp.70 84 35 39 ];
+        %tmp.70 = getv function %tmp.69 :size;
+        %tmp.71 = invoke %tmp.69 %tmp.70();
+        %tmp.72 = lt %tmp.68 %tmp.71;
+        bf %tmp.72 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_84_8_90_8_for_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_84_8_90_8_for_begin:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_84_48_90_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 85 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_85_12_89_12_if_stmt:
+        %tmp.73 = lgetv %coords.7;
+        symbol [ coords %tmp.73 85 16 22 ];
+        %tmp.74 = lgetv %i.11;
+        symbol [ i %tmp.74 85 23 24 ];
+        %tmp.75 = agetv %tmp.73 %tmp.74;
+        %tmp.76 = 1;
+        %tmp.77 = agetv %tmp.75 %tmp.76;
+        %tmp.78 = lgetv %centerPoint.2;
+        symbol [ centerPoint %tmp.78 85 31 42 ];
+        %tmp.79 = 1;
+        %tmp.80 = agetv %tmp.78 %tmp.79;
+        %tmp.81 = lt %tmp.77 %tmp.80;
+        bf %tmp.81 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_85_12_89_12_if_false;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_85_12_89_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_85_47_87_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 86 16 ]
+        %tmp.84 = lgetv %topPoints.9;
+        symbol [ topPoints %tmp.84 86 16 25 ];
+        %tmp.85 = add %tmp.84 1;
+        lputv %topPoints.9 %tmp.85;
+        symbol [ topPoints %topPoints.9 86 16 25 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_85_47_87_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_85_12_89_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_85_12_89_12_if_false:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 87 19 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_87_19_89_12_if_stmt:
+        %tmp.86 = lgetv %coords.7;
+        symbol [ coords %tmp.86 87 23 29 ];
+        %tmp.87 = lgetv %i.11;
+        symbol [ i %tmp.87 87 30 31 ];
+        %tmp.88 = agetv %tmp.86 %tmp.87;
+        %tmp.89 = 1;
+        %tmp.90 = agetv %tmp.88 %tmp.89;
+        %tmp.91 = lgetv %centerPoint.2;
+        symbol [ centerPoint %tmp.91 87 38 49 ];
+        %tmp.92 = 1;
+        %tmp.93 = agetv %tmp.91 %tmp.92;
+        %tmp.94 = gt %tmp.90 %tmp.93;
+        bf %tmp.94 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_87_19_89_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_87_19_89_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_87_54_89_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 88 16 ]
+        %tmp.97 = lgetv %bottomPoints.10;
+        symbol [ bottomPoints %tmp.97 88 16 28 ];
+        %tmp.98 = add %tmp.97 1;
+        lputv %bottomPoints.10 %tmp.98;
+        symbol [ bottomPoints %bottomPoints.10 88 16 28 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_87_54_89_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_87_19_89_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_87_19_89_12_if_end:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_85_12_89_12_if_end:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_84_48_90_8_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_84_8_90_8_for_incr:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 84 ]
+        %tmp.101 = lgetv %i.11;
+        symbol [ i %tmp.101 84 43 44 ];
+        %tmp.102 = add %tmp.101 1;
+        lputv %i.11 %tmp.102;
+        symbol [ i %i.11 84 43 44 ];
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_84_8_90_8_for_test;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_84_8_90_8_for_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 92 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_92_8_95_8_if_stmt:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_92_12_92_46_begin:
+        %tmp.103 = lgetv %topPoints.9;
+        symbol [ topPoints %tmp.103 92 12 21 ];
+        %tmp.104 = 2;
+        %tmp.105 = ne %tmp.103 %tmp.104;
+        bt %tmp.105 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_92_8_95_8_if_true;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_92_30_92_46_false:
+        %tmp.106 = lgetv %bottomPoints.10;
+        symbol [ bottomPoints %tmp.106 92 30 42 ];
+        %tmp.107 = 1;
+        %tmp.108 = ne %tmp.106 %tmp.107;
+        push %tmp.108;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_92_30_92_46_end:
+        %tmp.109 = phi [%tmp.105 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_92_12_92_46_begin] [%tmp.108 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_92_30_92_46_false] [%tmp.109 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_92_30_92_46_end];
+        bf %tmp.109 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_92_8_95_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_92_8_95_8_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_92_49_95_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 93 12 ]
+        %tmp.110 = lgetv %logger;
+        symbol [ logger %tmp.110 93 12 18 ];
+        symbol [ debug %tmp.111 93 19 24 ];
+        %tmp.111 = getv function %tmp.110 :debug;
+        %tmp.112 = "Failed: Triangle not formed correctly at 0 angle";
+        invoke %tmp.110 %tmp.111(%tmp.112);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 94 12 ]
+        %tmp.113 = false;
+        ret %tmp.113;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_92_49_95_8_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_92_8_95_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_92_8_95_8_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 97 8 ]
+        %tmp.114 = lgetv %logger;
+        symbol [ logger %tmp.114 97 8 14 ];
+        symbol [ debug %tmp.115 97 15 20 ];
+        %tmp.115 = getv function %tmp.114 :debug;
+        %tmp.116 = "Passed: generateHourCoordinates works correctly";
+        invoke %tmp.114 %tmp.115(%tmp.116);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 98 8 ]
+        %tmp.117 = true;
+        ret %tmp.117;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_55_49_99_4_stop:
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc"; @line = 102; test = true; @symbol_functiondef = [testCoordinateRotation,102,13,35]; @symbol_param<0> = [logger,102,36,42]; ]
+    function testCoordinateRotation(logger) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_102_44_142_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 103 8 ]
+        %tmp.1 = lgetv %logger;
+        symbol [ logger %tmp.1 103 8 14 ];
+        symbol [ debug %tmp.2 103 15 20 ];
+        %tmp.2 = getv function %tmp.1 :debug;
+        %tmp.3 = "Testing coordinate rotation";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 105 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_102_44_142_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_102_44_142_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 105 12 16 ];
+        symbol [ MnmlstView %tmp.7 105 23 33 ];
+        %tmp.7 = getv ? :MnmlstView;
+        %tmp.4 = newc %tmp.7 ();
+        lputv %view.1 %tmp.4;
+        symbol [ view %view.1 105 12 16 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 106 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_102_44_142_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_102_44_142_4_stop" ]
+        %centerPoint.2 = local;
+        symbol [ centerPoint %centerPoint.2 106 12 23 ];
+        %tmp.8 = newa 2;
+        %tmp.9 = 100;
+        %tmp.10 = dup %tmp.8;
+        %tmp.11 = aputv %tmp.10 0 %tmp.9;
+        %tmp.12 = 100;
+        %tmp.13 = dup %tmp.11;
+        %tmp.14 = aputv %tmp.13 1 %tmp.12;
+        lputv %centerPoint.2 %tmp.14;
+        symbol [ centerPoint %centerPoint.2 106 12 23 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 107 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_102_44_142_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_102_44_142_4_stop" ]
+        %handLength.3 = local;
+        symbol [ handLength %handLength.3 107 12 22 ];
+        %tmp.15 = 50;
+        lputv %handLength.3 %tmp.15;
+        symbol [ handLength %handLength.3 107 12 22 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 108 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_102_44_142_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_102_44_142_4_stop" ]
+        %tailLength.4 = local;
+        symbol [ tailLength %tailLength.4 108 12 22 ];
+        %tmp.16 = 10;
+        lputv %tailLength.4 %tmp.16;
+        symbol [ tailLength %tailLength.4 108 12 22 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 109 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_102_44_142_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_102_44_142_4_stop" ]
+        %width.5 = local;
+        symbol [ width %width.5 109 12 17 ];
+        %tmp.17 = 4;
+        lputv %width.5 %tmp.17;
+        symbol [ width %width.5 109 12 17 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 112 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_102_44_142_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_102_44_142_4_stop" ]
+        %coords0.6 = local;
+        symbol [ coords0 %coords0.6 112 12 19 ];
+        %tmp.18 = lgetv %view.1;
+        symbol [ view %tmp.18 112 22 26 ];
+        symbol [ generateHandCoordinates %tmp.19 112 27 50 ];
+        %tmp.19 = getv function %tmp.18 :generateHandCoordinates;
+        %tmp.20 = lgetv %centerPoint.2;
+        symbol [ centerPoint %tmp.20 112 51 62 ];
+        %tmp.21 = 0;
+        %tmp.22 = lgetv %handLength.3;
+        symbol [ handLength %tmp.22 112 67 77 ];
+        %tmp.23 = lgetv %tailLength.4;
+        symbol [ tailLength %tmp.23 112 79 89 ];
+        %tmp.24 = lgetv %width.5;
+        symbol [ width %tmp.24 112 91 96 ];
+        %tmp.25 = invoke %tmp.18 %tmp.19(%tmp.20, %tmp.21, %tmp.22, %tmp.23, %tmp.24);
+        lputv %coords0.6 %tmp.25;
+        symbol [ coords0 %coords0.6 112 12 19 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 115 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_102_44_142_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_102_44_142_4_stop" ]
+        %coords90.7 = local;
+        symbol [ coords90 %coords90.7 115 12 20 ];
+        %tmp.26 = lgetv %view.1;
+        symbol [ view %tmp.26 115 23 27 ];
+        symbol [ generateHandCoordinates %tmp.27 115 28 51 ];
+        %tmp.27 = getv function %tmp.26 :generateHandCoordinates;
+        %tmp.28 = lgetv %centerPoint.2;
+        symbol [ centerPoint %tmp.28 115 52 63 ];
+        symbol [ Math %tmp.29 115 65 69 ];
+        %tmp.29 = getm $.Toybox.Math;
+        symbol [ PI %tmp.30 115 70 72 ];
+        %tmp.30 = getv %tmp.29 :PI;
+        %tmp.31 = 2;
+        %tmp.32 = div %tmp.30 %tmp.31;
+        %tmp.33 = lgetv %handLength.3;
+        symbol [ handLength %tmp.33 115 78 88 ];
+        %tmp.34 = lgetv %tailLength.4;
+        symbol [ tailLength %tmp.34 115 90 100 ];
+        %tmp.35 = lgetv %width.5;
+        symbol [ width %tmp.35 115 102 107 ];
+        %tmp.36 = invoke %tmp.26 %tmp.27(%tmp.28, %tmp.32, %tmp.33, %tmp.34, %tmp.35);
+        lputv %coords90.7 %tmp.36;
+        symbol [ coords90 %coords90.7 115 12 20 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 118 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_102_44_142_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_102_44_142_4_stop" ]
+        %rightMostX.8 = local;
+        symbol [ rightMostX %rightMostX.8 118 12 22 ];
+        %tmp.37 = lgetv %coords90.7;
+        symbol [ coords90 %tmp.37 118 25 33 ];
+        %tmp.38 = 0;
+        %tmp.39 = agetv %tmp.37 %tmp.38;
+        %tmp.40 = 0;
+        %tmp.41 = agetv %tmp.39 %tmp.40;
+        lputv %rightMostX.8 %tmp.41;
+        symbol [ rightMostX %rightMostX.8 118 12 22 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 119 8 ]
+        for @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_119_8_121_8_for_test @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_119_8_121_8_for_incr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_119_8_121_8_for_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_119_8_121_8_for_init:
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_119_8_121_8_for_begin" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_119_8_121_8_for_end" ]
+        %i.9 = local;
+        symbol [ i %i.9 119 17 18 ];
+        %tmp.42 = 1;
+        lputv %i.9 %tmp.42;
+        symbol [ i %i.9 119 17 18 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_119_8_121_8_for_test:
+        %tmp.43 = lgetv %i.9;
+        symbol [ i %tmp.43 119 24 25 ];
+        %tmp.44 = lgetv %coords90.7;
+        symbol [ coords90 %tmp.44 119 28 36 ];
+        symbol [ size %tmp.45 119 37 41 ];
+        %tmp.45 = getv function %tmp.44 :size;
+        %tmp.46 = invoke %tmp.44 %tmp.45();
+        %tmp.47 = lt %tmp.43 %tmp.46;
+        bf %tmp.47 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_119_8_121_8_for_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_119_8_121_8_for_begin:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_119_50_121_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 120 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_120_12_120_76_if_stmt:
+        %tmp.48 = lgetv %coords90.7;
+        symbol [ coords90 %tmp.48 120 16 24 ];
+        %tmp.49 = lgetv %i.9;
+        symbol [ i %tmp.49 120 25 26 ];
+        %tmp.50 = agetv %tmp.48 %tmp.49;
+        %tmp.51 = 0;
+        %tmp.52 = agetv %tmp.50 %tmp.51;
+        %tmp.53 = lgetv %rightMostX.8;
+        symbol [ rightMostX %tmp.53 120 33 43 ];
+        %tmp.54 = gt %tmp.52 %tmp.53;
+        bf %tmp.54 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_120_12_120_76_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_120_12_120_76_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_120_45_120_76_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 120 47 ]
+        %tmp.55 = lgetv %coords90.7;
+        symbol [ coords90 %tmp.55 120 60 68 ];
+        %tmp.56 = lgetv %i.9;
+        symbol [ i %tmp.56 120 69 70 ];
+        %tmp.57 = agetv %tmp.55 %tmp.56;
+        %tmp.58 = 0;
+        %tmp.59 = agetv %tmp.57 %tmp.58;
+        lputv %rightMostX.8 %tmp.59;
+        symbol [ rightMostX %rightMostX.8 120 47 57 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_120_45_120_76_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_120_12_120_76_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_120_12_120_76_if_end:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_119_50_121_8_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_119_8_121_8_for_incr:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 119 ]
+        %tmp.62 = lgetv %i.9;
+        symbol [ i %tmp.62 119 45 46 ];
+        %tmp.63 = add %tmp.62 1;
+        lputv %i.9 %tmp.63;
+        symbol [ i %i.9 119 45 46 ];
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_119_8_121_8_for_test;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_119_8_121_8_for_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 122 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_122_8_125_8_if_stmt:
+        %tmp.64 = lgetv %rightMostX.8;
+        symbol [ rightMostX %tmp.64 122 12 22 ];
+        %tmp.65 = lgetv %centerPoint.2;
+        symbol [ centerPoint %tmp.65 122 26 37 ];
+        %tmp.66 = 0;
+        %tmp.67 = agetv %tmp.65 %tmp.66;
+        %tmp.68 = lte %tmp.64 %tmp.67;
+        bf %tmp.68 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_122_8_125_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_122_8_125_8_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_122_42_125_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 123 12 ]
+        %tmp.69 = lgetv %logger;
+        symbol [ logger %tmp.69 123 12 18 ];
+        symbol [ debug %tmp.70 123 19 24 ];
+        %tmp.70 = getv function %tmp.69 :debug;
+        %tmp.71 = "Failed: Hand should extend right at 90 degrees";
+        invoke %tmp.69 %tmp.70(%tmp.71);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 124 12 ]
+        %tmp.72 = false;
+        ret %tmp.72;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_122_42_125_8_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_122_8_125_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_122_8_125_8_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 128 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_102_44_142_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_102_44_142_4_stop" ]
+        %coords180.10 = local;
+        symbol [ coords180 %coords180.10 128 12 21 ];
+        %tmp.73 = lgetv %view.1;
+        symbol [ view %tmp.73 128 24 28 ];
+        symbol [ generateHandCoordinates %tmp.74 128 29 52 ];
+        %tmp.74 = getv function %tmp.73 :generateHandCoordinates;
+        %tmp.75 = lgetv %centerPoint.2;
+        symbol [ centerPoint %tmp.75 128 53 64 ];
+        symbol [ Math %tmp.76 128 66 70 ];
+        %tmp.76 = getm $.Toybox.Math;
+        symbol [ PI %tmp.77 128 71 73 ];
+        %tmp.77 = getv %tmp.76 :PI;
+        %tmp.78 = lgetv %handLength.3;
+        symbol [ handLength %tmp.78 128 75 85 ];
+        %tmp.79 = lgetv %tailLength.4;
+        symbol [ tailLength %tmp.79 128 87 97 ];
+        %tmp.80 = lgetv %width.5;
+        symbol [ width %tmp.80 128 99 104 ];
+        %tmp.81 = invoke %tmp.73 %tmp.74(%tmp.75, %tmp.77, %tmp.78, %tmp.79, %tmp.80);
+        lputv %coords180.10 %tmp.81;
+        symbol [ coords180 %coords180.10 128 12 21 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 131 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_102_44_142_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_102_44_142_4_stop" ]
+        %bottomMostY.11 = local;
+        symbol [ bottomMostY %bottomMostY.11 131 12 23 ];
+        %tmp.82 = lgetv %coords180.10;
+        symbol [ coords180 %tmp.82 131 26 35 ];
+        %tmp.83 = 0;
+        %tmp.84 = agetv %tmp.82 %tmp.83;
+        %tmp.85 = 1;
+        %tmp.86 = agetv %tmp.84 %tmp.85;
+        lputv %bottomMostY.11 %tmp.86;
+        symbol [ bottomMostY %bottomMostY.11 131 12 23 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 132 8 ]
+        for @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_132_8_134_8_for_test @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_132_8_134_8_for_incr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_132_8_134_8_for_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_132_8_134_8_for_init:
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_132_8_134_8_for_begin" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_132_8_134_8_for_end" ]
+        %i.12 = local;
+        symbol [ i %i.12 132 17 18 ];
+        %tmp.87 = 1;
+        lputv %i.12 %tmp.87;
+        symbol [ i %i.12 132 17 18 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_132_8_134_8_for_test:
+        %tmp.88 = lgetv %i.12;
+        symbol [ i %tmp.88 132 24 25 ];
+        %tmp.89 = lgetv %coords180.10;
+        symbol [ coords180 %tmp.89 132 28 37 ];
+        symbol [ size %tmp.90 132 38 42 ];
+        %tmp.90 = getv function %tmp.89 :size;
+        %tmp.91 = invoke %tmp.89 %tmp.90();
+        %tmp.92 = lt %tmp.88 %tmp.91;
+        bf %tmp.92 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_132_8_134_8_for_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_132_8_134_8_for_begin:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_132_51_134_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 133 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_133_12_133_80_if_stmt:
+        %tmp.93 = lgetv %coords180.10;
+        symbol [ coords180 %tmp.93 133 16 25 ];
+        %tmp.94 = lgetv %i.12;
+        symbol [ i %tmp.94 133 26 27 ];
+        %tmp.95 = agetv %tmp.93 %tmp.94;
+        %tmp.96 = 1;
+        %tmp.97 = agetv %tmp.95 %tmp.96;
+        %tmp.98 = lgetv %bottomMostY.11;
+        symbol [ bottomMostY %tmp.98 133 34 45 ];
+        %tmp.99 = gt %tmp.97 %tmp.98;
+        bf %tmp.99 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_133_12_133_80_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_133_12_133_80_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_133_47_133_80_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 133 49 ]
+        %tmp.100 = lgetv %coords180.10;
+        symbol [ coords180 %tmp.100 133 63 72 ];
+        %tmp.101 = lgetv %i.12;
+        symbol [ i %tmp.101 133 73 74 ];
+        %tmp.102 = agetv %tmp.100 %tmp.101;
+        %tmp.103 = 1;
+        %tmp.104 = agetv %tmp.102 %tmp.103;
+        lputv %bottomMostY.11 %tmp.104;
+        symbol [ bottomMostY %bottomMostY.11 133 49 60 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_133_47_133_80_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_133_12_133_80_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_133_12_133_80_if_end:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_132_51_134_8_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_132_8_134_8_for_incr:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 132 ]
+        %tmp.107 = lgetv %i.12;
+        symbol [ i %tmp.107 132 46 47 ];
+        %tmp.108 = add %tmp.107 1;
+        lputv %i.12 %tmp.108;
+        symbol [ i %i.12 132 46 47 ];
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_132_8_134_8_for_test;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_132_8_134_8_for_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 135 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_135_8_138_8_if_stmt:
+        %tmp.109 = lgetv %bottomMostY.11;
+        symbol [ bottomMostY %tmp.109 135 12 23 ];
+        %tmp.110 = lgetv %centerPoint.2;
+        symbol [ centerPoint %tmp.110 135 27 38 ];
+        %tmp.111 = 1;
+        %tmp.112 = agetv %tmp.110 %tmp.111;
+        %tmp.113 = lte %tmp.109 %tmp.112;
+        bf %tmp.113 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_135_8_138_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_135_8_138_8_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_135_43_138_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 136 12 ]
+        %tmp.114 = lgetv %logger;
+        symbol [ logger %tmp.114 136 12 18 ];
+        symbol [ debug %tmp.115 136 19 24 ];
+        %tmp.115 = getv function %tmp.114 :debug;
+        %tmp.116 = "Failed: Hand should extend downward at 180 degrees";
+        invoke %tmp.114 %tmp.115(%tmp.116);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 137 12 ]
+        %tmp.117 = false;
+        ret %tmp.117;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_135_43_138_8_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_135_8_138_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_135_8_138_8_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 140 8 ]
+        %tmp.118 = lgetv %logger;
+        symbol [ logger %tmp.118 140 8 14 ];
+        symbol [ debug %tmp.119 140 15 20 ];
+        %tmp.119 = getv function %tmp.118 :debug;
+        %tmp.120 = "Passed: Coordinate rotation works correctly";
+        invoke %tmp.118 %tmp.119(%tmp.120);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 141 8 ]
+        %tmp.121 = true;
+        ret %tmp.121;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_102_44_142_4_stop:
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc"; @line = 145; test = true; @symbol_functiondef = [testGetBoundingBox,145,13,31]; @symbol_param<0> = [logger,145,32,38]; ]
+    function testGetBoundingBox(logger) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_145_40_187_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 146 8 ]
+        %tmp.1 = lgetv %logger;
+        symbol [ logger %tmp.1 146 8 14 ];
+        symbol [ debug %tmp.2 146 15 20 ];
+        %tmp.2 = getv function %tmp.1 :debug;
+        %tmp.3 = "Testing getBoundingBox";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 148 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_145_40_187_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_145_40_187_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 148 12 16 ];
+        symbol [ MnmlstView %tmp.7 148 23 33 ];
+        %tmp.7 = getv ? :MnmlstView;
+        %tmp.4 = newc %tmp.7 ();
+        lputv %view.1 %tmp.4;
+        symbol [ view %view.1 148 12 16 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 149 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_145_40_187_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_145_40_187_4_stop" ]
+        %points.2 = local;
+        symbol [ points %points.2 149 12 18 ];
+        %tmp.8 = newa 4;
+        %tmp.9 = newa 2;
+        %tmp.10 = 10;
+        %tmp.11 = dup %tmp.9;
+        %tmp.12 = aputv %tmp.11 0 %tmp.10;
+        %tmp.13 = 20;
+        %tmp.14 = dup %tmp.12;
+        %tmp.15 = aputv %tmp.14 1 %tmp.13;
+        %tmp.16 = dup %tmp.8;
+        %tmp.17 = aputv %tmp.16 0 %tmp.15;
+        %tmp.18 = newa 2;
+        %tmp.19 = 30;
+        %tmp.20 = dup %tmp.18;
+        %tmp.21 = aputv %tmp.20 0 %tmp.19;
+        %tmp.22 = 5;
+        %tmp.23 = dup %tmp.21;
+        %tmp.24 = aputv %tmp.23 1 %tmp.22;
+        %tmp.25 = dup %tmp.17;
+        %tmp.26 = aputv %tmp.25 1 %tmp.24;
+        %tmp.27 = newa 2;
+        %tmp.28 = 25;
+        %tmp.29 = dup %tmp.27;
+        %tmp.30 = aputv %tmp.29 0 %tmp.28;
+        %tmp.31 = 35;
+        %tmp.32 = dup %tmp.30;
+        %tmp.33 = aputv %tmp.32 1 %tmp.31;
+        %tmp.34 = dup %tmp.26;
+        %tmp.35 = aputv %tmp.34 2 %tmp.33;
+        %tmp.36 = newa 2;
+        %tmp.37 = 5;
+        %tmp.38 = dup %tmp.36;
+        %tmp.39 = aputv %tmp.38 0 %tmp.37;
+        %tmp.40 = 15;
+        %tmp.41 = dup %tmp.39;
+        %tmp.42 = aputv %tmp.41 1 %tmp.40;
+        %tmp.43 = dup %tmp.35;
+        %tmp.44 = aputv %tmp.43 3 %tmp.42;
+        lputv %points.2 %tmp.44;
+        symbol [ points %points.2 149 12 18 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 156 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_145_40_187_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_145_40_187_4_stop" ]
+        %bbox.3 = local;
+        symbol [ bbox %bbox.3 156 12 16 ];
+        %tmp.45 = lgetv %view.1;
+        symbol [ view %tmp.45 156 19 23 ];
+        symbol [ getBoundingBox %tmp.46 156 24 38 ];
+        %tmp.46 = getv function %tmp.45 :getBoundingBox;
+        %tmp.47 = lgetv %points.2;
+        symbol [ points %tmp.47 156 39 45 ];
+        %tmp.48 = invoke %tmp.45 %tmp.46(%tmp.47);
+        lputv %bbox.3 %tmp.48;
+        symbol [ bbox %bbox.3 156 12 16 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 159 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_159_8_162_8_if_stmt:
+        %tmp.49 = lgetv %bbox.3;
+        symbol [ bbox %tmp.49 159 12 16 ];
+        symbol [ size %tmp.50 159 17 21 ];
+        %tmp.50 = getv function %tmp.49 :size;
+        %tmp.51 = invoke %tmp.49 %tmp.50();
+        %tmp.52 = 2;
+        %tmp.53 = ne %tmp.51 %tmp.52;
+        bf %tmp.53 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_159_8_162_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_159_8_162_8_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_159_30_162_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 160 12 ]
+        %tmp.54 = lgetv %logger;
+        symbol [ logger %tmp.54 160 12 18 ];
+        symbol [ debug %tmp.55 160 19 24 ];
+        %tmp.55 = getv function %tmp.54 :debug;
+        %tmp.56 = "Failed: Bounding box should have 2 elements (min, max)";
+        invoke %tmp.54 %tmp.55(%tmp.56);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 161 12 ]
+        %tmp.57 = false;
+        ret %tmp.57;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_159_30_162_8_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_159_8_162_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_159_8_162_8_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 164 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_164_8_167_8_if_stmt:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_164_12_164_53_begin:
+        %tmp.58 = lgetv %bbox.3;
+        symbol [ bbox %tmp.58 164 12 16 ];
+        %tmp.59 = 0;
+        %tmp.60 = agetv %tmp.58 %tmp.59;
+        symbol [ size %tmp.61 164 20 24 ];
+        %tmp.61 = getv function %tmp.60 :size;
+        %tmp.62 = invoke %tmp.60 %tmp.61();
+        %tmp.63 = 2;
+        %tmp.64 = ne %tmp.62 %tmp.63;
+        bt %tmp.64 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_164_8_167_8_if_true;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_164_35_164_53_false:
+        %tmp.65 = lgetv %bbox.3;
+        symbol [ bbox %tmp.65 164 35 39 ];
+        %tmp.66 = 1;
+        %tmp.67 = agetv %tmp.65 %tmp.66;
+        symbol [ size %tmp.68 164 43 47 ];
+        %tmp.68 = getv function %tmp.67 :size;
+        %tmp.69 = invoke %tmp.67 %tmp.68();
+        %tmp.70 = 2;
+        %tmp.71 = ne %tmp.69 %tmp.70;
+        push %tmp.71;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_164_35_164_53_end:
+        %tmp.72 = phi [%tmp.64 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_164_12_164_53_begin] [%tmp.71 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_164_35_164_53_false] [%tmp.72 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_164_35_164_53_end];
+        bf %tmp.72 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_164_8_167_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_164_8_167_8_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_164_56_167_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 165 12 ]
+        %tmp.73 = lgetv %logger;
+        symbol [ logger %tmp.73 165 12 18 ];
+        symbol [ debug %tmp.74 165 19 24 ];
+        %tmp.74 = getv function %tmp.73 :debug;
+        %tmp.75 = "Failed: Min and max should each have 2 coordinates";
+        invoke %tmp.73 %tmp.74(%tmp.75);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 166 12 ]
+        %tmp.76 = false;
+        ret %tmp.76;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_164_56_167_8_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_164_8_167_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_164_8_167_8_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 170 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_145_40_187_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_145_40_187_4_stop" ]
+        %expectedMinX.4 = local;
+        symbol [ expectedMinX %expectedMinX.4 170 12 24 ];
+        %tmp.77 = 5;
+        lputv %expectedMinX.4 %tmp.77;
+        symbol [ expectedMinX %expectedMinX.4 170 12 24 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 171 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_145_40_187_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_145_40_187_4_stop" ]
+        %expectedMinY.5 = local;
+        symbol [ expectedMinY %expectedMinY.5 171 12 24 ];
+        %tmp.78 = 5;
+        lputv %expectedMinY.5 %tmp.78;
+        symbol [ expectedMinY %expectedMinY.5 171 12 24 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 172 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_172_8_175_8_if_stmt:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_172_12_172_56_begin:
+        %tmp.79 = lgetv %bbox.3;
+        symbol [ bbox %tmp.79 172 12 16 ];
+        %tmp.80 = 0;
+        %tmp.81 = agetv %tmp.79 %tmp.80;
+        %tmp.82 = 0;
+        %tmp.83 = agetv %tmp.81 %tmp.82;
+        %tmp.84 = lgetv %expectedMinX.4;
+        symbol [ expectedMinX %tmp.84 172 26 38 ];
+        %tmp.85 = ne %tmp.83 %tmp.84;
+        bt %tmp.85 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_172_8_175_8_if_true;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_172_42_172_56_false:
+        %tmp.86 = lgetv %bbox.3;
+        symbol [ bbox %tmp.86 172 42 46 ];
+        %tmp.87 = 0;
+        %tmp.88 = agetv %tmp.86 %tmp.87;
+        %tmp.89 = 1;
+        %tmp.90 = agetv %tmp.88 %tmp.89;
+        %tmp.91 = lgetv %expectedMinY.5;
+        symbol [ expectedMinY %tmp.91 172 56 68 ];
+        %tmp.92 = ne %tmp.90 %tmp.91;
+        push %tmp.92;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_172_42_172_56_end:
+        %tmp.93 = phi [%tmp.85 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_172_12_172_56_begin] [%tmp.92 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_172_42_172_56_false] [%tmp.93 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_172_42_172_56_end];
+        bf %tmp.93 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_172_8_175_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_172_8_175_8_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_172_70_175_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 173 12 ]
+        %tmp.94 = lgetv %logger;
+        symbol [ logger %tmp.94 173 12 18 ];
+        symbol [ debug %tmp.95 173 19 24 ];
+        %tmp.95 = getv function %tmp.94 :debug;
+        %tmp.96 = "Failed: Incorrect min values. Expected [";
+        %tmp.97 = lgetv %expectedMinX.4;
+        symbol [ expectedMinX %tmp.97 173 70 82 ];
+        %tmp.98 = add %tmp.96 %tmp.97;
+        %tmp.99 = ", ";
+        %tmp.100 = add %tmp.98 %tmp.99;
+        %tmp.101 = lgetv %expectedMinY.5;
+        symbol [ expectedMinY %tmp.101 173 92 104 ];
+        %tmp.102 = add %tmp.100 %tmp.101;
+        %tmp.103 = "], got [";
+        %tmp.104 = add %tmp.102 %tmp.103;
+        %tmp.105 = lgetv %bbox.3;
+        symbol [ bbox %tmp.105 173 120 124 ];
+        %tmp.106 = 0;
+        %tmp.107 = agetv %tmp.105 %tmp.106;
+        %tmp.108 = 0;
+        %tmp.109 = agetv %tmp.107 %tmp.108;
+        %tmp.110 = add %tmp.104 %tmp.109;
+        %tmp.111 = ", ";
+        %tmp.112 = add %tmp.110 %tmp.111;
+        %tmp.113 = lgetv %bbox.3;
+        symbol [ bbox %tmp.113 173 140 144 ];
+        %tmp.114 = 0;
+        %tmp.115 = agetv %tmp.113 %tmp.114;
+        %tmp.116 = 1;
+        %tmp.117 = agetv %tmp.115 %tmp.116;
+        %tmp.118 = add %tmp.112 %tmp.117;
+        %tmp.119 = "]";
+        %tmp.120 = add %tmp.118 %tmp.119;
+        invoke %tmp.94 %tmp.95(%tmp.120);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 174 12 ]
+        %tmp.121 = false;
+        ret %tmp.121;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_172_70_175_8_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_172_8_175_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_172_8_175_8_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 178 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_145_40_187_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_145_40_187_4_stop" ]
+        %expectedMaxX.6 = local;
+        symbol [ expectedMaxX %expectedMaxX.6 178 12 24 ];
+        %tmp.122 = 30;
+        lputv %expectedMaxX.6 %tmp.122;
+        symbol [ expectedMaxX %expectedMaxX.6 178 12 24 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 179 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_145_40_187_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_145_40_187_4_stop" ]
+        %expectedMaxY.7 = local;
+        symbol [ expectedMaxY %expectedMaxY.7 179 12 24 ];
+        %tmp.123 = 35;
+        lputv %expectedMaxY.7 %tmp.123;
+        symbol [ expectedMaxY %expectedMaxY.7 179 12 24 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 180 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_180_8_183_8_if_stmt:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_180_12_180_56_begin:
+        %tmp.124 = lgetv %bbox.3;
+        symbol [ bbox %tmp.124 180 12 16 ];
+        %tmp.125 = 1;
+        %tmp.126 = agetv %tmp.124 %tmp.125;
+        %tmp.127 = 0;
+        %tmp.128 = agetv %tmp.126 %tmp.127;
+        %tmp.129 = lgetv %expectedMaxX.6;
+        symbol [ expectedMaxX %tmp.129 180 26 38 ];
+        %tmp.130 = ne %tmp.128 %tmp.129;
+        bt %tmp.130 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_180_8_183_8_if_true;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_180_42_180_56_false:
+        %tmp.131 = lgetv %bbox.3;
+        symbol [ bbox %tmp.131 180 42 46 ];
+        %tmp.132 = 1;
+        %tmp.133 = agetv %tmp.131 %tmp.132;
+        %tmp.134 = 1;
+        %tmp.135 = agetv %tmp.133 %tmp.134;
+        %tmp.136 = lgetv %expectedMaxY.7;
+        symbol [ expectedMaxY %tmp.136 180 56 68 ];
+        %tmp.137 = ne %tmp.135 %tmp.136;
+        push %tmp.137;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_180_42_180_56_end:
+        %tmp.138 = phi [%tmp.130 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_180_12_180_56_begin] [%tmp.137 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_180_42_180_56_false] [%tmp.138 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_180_42_180_56_end];
+        bf %tmp.138 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_180_8_183_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_180_8_183_8_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_180_70_183_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 181 12 ]
+        %tmp.139 = lgetv %logger;
+        symbol [ logger %tmp.139 181 12 18 ];
+        symbol [ debug %tmp.140 181 19 24 ];
+        %tmp.140 = getv function %tmp.139 :debug;
+        %tmp.141 = "Failed: Incorrect max values. Expected [";
+        %tmp.142 = lgetv %expectedMaxX.6;
+        symbol [ expectedMaxX %tmp.142 181 70 82 ];
+        %tmp.143 = add %tmp.141 %tmp.142;
+        %tmp.144 = ", ";
+        %tmp.145 = add %tmp.143 %tmp.144;
+        %tmp.146 = lgetv %expectedMaxY.7;
+        symbol [ expectedMaxY %tmp.146 181 92 104 ];
+        %tmp.147 = add %tmp.145 %tmp.146;
+        %tmp.148 = "], got [";
+        %tmp.149 = add %tmp.147 %tmp.148;
+        %tmp.150 = lgetv %bbox.3;
+        symbol [ bbox %tmp.150 181 120 124 ];
+        %tmp.151 = 1;
+        %tmp.152 = agetv %tmp.150 %tmp.151;
+        %tmp.153 = 0;
+        %tmp.154 = agetv %tmp.152 %tmp.153;
+        %tmp.155 = add %tmp.149 %tmp.154;
+        %tmp.156 = ", ";
+        %tmp.157 = add %tmp.155 %tmp.156;
+        %tmp.158 = lgetv %bbox.3;
+        symbol [ bbox %tmp.158 181 140 144 ];
+        %tmp.159 = 1;
+        %tmp.160 = agetv %tmp.158 %tmp.159;
+        %tmp.161 = 1;
+        %tmp.162 = agetv %tmp.160 %tmp.161;
+        %tmp.163 = add %tmp.157 %tmp.162;
+        %tmp.164 = "]";
+        %tmp.165 = add %tmp.163 %tmp.164;
+        invoke %tmp.139 %tmp.140(%tmp.165);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 182 12 ]
+        %tmp.166 = false;
+        ret %tmp.166;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_180_70_183_8_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_180_8_183_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_180_8_183_8_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 185 8 ]
+        %tmp.167 = lgetv %logger;
+        symbol [ logger %tmp.167 185 8 14 ];
+        symbol [ debug %tmp.168 185 15 20 ];
+        %tmp.168 = getv function %tmp.167 :debug;
+        %tmp.169 = "Passed: getBoundingBox works correctly";
+        invoke %tmp.167 %tmp.168(%tmp.169);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 186 8 ]
+        %tmp.170 = true;
+        ret %tmp.170;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_145_40_187_4_stop:
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc"; @line = 190; test = true; @symbol_functiondef = [testEdgeCases,190,13,26]; @symbol_param<0> = [logger,190,27,33]; ]
+    function testEdgeCases(logger) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_190_35_221_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 191 8 ]
+        %tmp.1 = lgetv %logger;
+        symbol [ logger %tmp.1 191 8 14 ];
+        symbol [ debug %tmp.2 191 15 20 ];
+        %tmp.2 = getv function %tmp.1 :debug;
+        %tmp.3 = "Testing edge cases";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 193 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_190_35_221_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_190_35_221_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 193 12 16 ];
+        symbol [ MnmlstView %tmp.7 193 23 33 ];
+        %tmp.7 = getv ? :MnmlstView;
+        %tmp.4 = newc %tmp.7 ();
+        lputv %view.1 %tmp.4;
+        symbol [ view %view.1 193 12 16 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 196 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_190_35_221_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_190_35_221_4_stop" ]
+        %coords.2 = local;
+        symbol [ coords %coords.2 196 12 18 ];
+        %tmp.8 = lgetv %view.1;
+        symbol [ view %tmp.8 196 21 25 ];
+        symbol [ generateHandCoordinates %tmp.9 196 26 49 ];
+        %tmp.9 = getv function %tmp.8 :generateHandCoordinates;
+        %tmp.10 = newa 2;
+        %tmp.11 = 0;
+        %tmp.12 = dup %tmp.10;
+        %tmp.13 = aputv %tmp.12 0 %tmp.11;
+        %tmp.14 = 0;
+        %tmp.15 = dup %tmp.13;
+        %tmp.16 = aputv %tmp.15 1 %tmp.14;
+        %tmp.17 = 0;
+        %tmp.18 = 0;
+        %tmp.19 = 0;
+        %tmp.20 = 0;
+        %tmp.21 = invoke %tmp.8 %tmp.9(%tmp.16, %tmp.17, %tmp.18, %tmp.19, %tmp.20);
+        lputv %coords.2 %tmp.21;
+        symbol [ coords %coords.2 196 12 18 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 197 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_197_8_200_8_if_stmt:
+        %tmp.22 = lgetv %coords.2;
+        symbol [ coords %tmp.22 197 12 18 ];
+        symbol [ size %tmp.23 197 19 23 ];
+        %tmp.23 = getv function %tmp.22 :size;
+        %tmp.24 = invoke %tmp.22 %tmp.23();
+        %tmp.25 = 4;
+        %tmp.26 = ne %tmp.24 %tmp.25;
+        bf %tmp.26 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_197_8_200_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_197_8_200_8_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_197_32_200_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 198 12 ]
+        %tmp.27 = lgetv %logger;
+        symbol [ logger %tmp.27 198 12 18 ];
+        symbol [ debug %tmp.28 198 19 24 ];
+        %tmp.28 = getv function %tmp.27 :debug;
+        %tmp.29 = "Failed: Should handle zero dimensions";
+        invoke %tmp.27 %tmp.28(%tmp.29);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 199 12 ]
+        %tmp.30 = false;
+        ret %tmp.30;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_197_32_200_8_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_197_8_200_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_197_8_200_8_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 203 8 ]
+        try @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_203_8_209_8_beginTry @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_203_8_209_8_endTry @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_203_8_209_8_catch @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_203_8_209_8_finally;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_203_8_209_8_beginTry:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_203_12_206_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 204 12 ]
+        %tmp.31 = lgetv %view.1;
+        symbol [ view %tmp.31 204 21 25 ];
+        symbol [ generateHandCoordinates %tmp.32 204 26 49 ];
+        %tmp.32 = getv function %tmp.31 :generateHandCoordinates;
+        %tmp.33 = newa 2;
+        %tmp.34 = 100;
+        %tmp.35 = dup %tmp.33;
+        %tmp.36 = aputv %tmp.35 0 %tmp.34;
+        %tmp.37 = 100;
+        %tmp.38 = dup %tmp.36;
+        %tmp.39 = aputv %tmp.38 1 %tmp.37;
+        %tmp.40 = 0;
+        %tmp.41 = -10;
+        %tmp.42 = -5;
+        %tmp.43 = -2;
+        %tmp.44 = invoke %tmp.31 %tmp.32(%tmp.39, %tmp.40, %tmp.41, %tmp.42, %tmp.43);
+        lputv %coords.2 %tmp.44;
+        symbol [ coords %coords.2 204 12 18 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_203_12_206_8_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_203_8_209_8_endTry:
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_203_8_209_8_finally;
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_203_8_209_8_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_203_8_209_8_catch:
+        %tmp.45 = exception;
+        push %tmp.45;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 206 10 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_203_8_209_8_catch" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_206_10_209_8_end" ]
+        %ex.3 = local;
+        symbol [ ex %ex.3 206 17 19 ];
+        %tmp.46 = dup %tmp.45;
+        lputv %ex.3 %tmp.46;
+        symbol [ ex %ex.3 206 17 19 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_206_21_209_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 207 12 ]
+        %tmp.47 = lgetv %logger;
+        symbol [ logger %tmp.47 207 12 18 ];
+        symbol [ debug %tmp.48 207 19 24 ];
+        %tmp.48 = getv function %tmp.47 :debug;
+        %tmp.49 = "Failed: Should handle negative dimensions gracefully";
+        invoke %tmp.47 %tmp.48(%tmp.49);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 208 12 ]
+        pop;
+        %tmp.50 = false;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_203_8_209_8_finally;
+        ret %tmp.50;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_206_21_209_8_stop:
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_203_8_209_8_finally;
+        pop;
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_203_8_209_8_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_206_10_209_8_end:
+        try @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_203_8_209_8_catch @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_206_10_209_8_end @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_206_10_209_8_end @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_203_8_209_8_finally;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_203_8_209_8_finally;
+        throw %tmp.45;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_203_8_209_8_finally:
+        jsrret;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_203_8_209_8_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 212 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_190_35_221_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_190_35_221_4_stop" ]
+        %singlePoint.4 = local;
+        symbol [ singlePoint %singlePoint.4 212 12 23 ];
+        %tmp.51 = newa 1;
+        %tmp.52 = newa 2;
+        %tmp.53 = 10;
+        %tmp.54 = dup %tmp.52;
+        %tmp.55 = aputv %tmp.54 0 %tmp.53;
+        %tmp.56 = 20;
+        %tmp.57 = dup %tmp.55;
+        %tmp.58 = aputv %tmp.57 1 %tmp.56;
+        %tmp.59 = dup %tmp.51;
+        %tmp.60 = aputv %tmp.59 0 %tmp.58;
+        lputv %singlePoint.4 %tmp.60;
+        symbol [ singlePoint %singlePoint.4 212 12 23 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 213 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_190_35_221_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_190_35_221_4_stop" ]
+        %bbox.5 = local;
+        symbol [ bbox %bbox.5 213 12 16 ];
+        %tmp.61 = lgetv %view.1;
+        symbol [ view %tmp.61 213 19 23 ];
+        symbol [ getBoundingBox %tmp.62 213 24 38 ];
+        %tmp.62 = getv function %tmp.61 :getBoundingBox;
+        %tmp.63 = lgetv %singlePoint.4;
+        symbol [ singlePoint %tmp.63 213 39 50 ];
+        %tmp.64 = invoke %tmp.61 %tmp.62(%tmp.63);
+        lputv %bbox.5 %tmp.64;
+        symbol [ bbox %bbox.5 213 12 16 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 214 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_214_8_217_8_if_stmt:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_214_12_214_86_begin:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_214_12_214_66_begin:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_214_12_214_46_begin:
+        %tmp.65 = lgetv %bbox.5;
+        symbol [ bbox %tmp.65 214 12 16 ];
+        %tmp.66 = 0;
+        %tmp.67 = agetv %tmp.65 %tmp.66;
+        %tmp.68 = 0;
+        %tmp.69 = agetv %tmp.67 %tmp.68;
+        %tmp.70 = 10;
+        %tmp.71 = ne %tmp.69 %tmp.70;
+        bt %tmp.71 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_214_8_217_8_if_true;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_214_32_214_46_false:
+        %tmp.72 = lgetv %bbox.5;
+        symbol [ bbox %tmp.72 214 32 36 ];
+        %tmp.73 = 0;
+        %tmp.74 = agetv %tmp.72 %tmp.73;
+        %tmp.75 = 1;
+        %tmp.76 = agetv %tmp.74 %tmp.75;
+        %tmp.77 = 20;
+        %tmp.78 = ne %tmp.76 %tmp.77;
+        push %tmp.78;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_214_32_214_46_end:
+        %tmp.79 = phi [%tmp.71 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_214_12_214_46_begin] [%tmp.78 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_214_32_214_46_false] [%tmp.79 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_214_32_214_46_end];
+        bt %tmp.79 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_214_8_217_8_if_true;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_214_52_214_66_false:
+        %tmp.80 = lgetv %bbox.5;
+        symbol [ bbox %tmp.80 214 52 56 ];
+        %tmp.81 = 1;
+        %tmp.82 = agetv %tmp.80 %tmp.81;
+        %tmp.83 = 0;
+        %tmp.84 = agetv %tmp.82 %tmp.83;
+        %tmp.85 = 10;
+        %tmp.86 = ne %tmp.84 %tmp.85;
+        push %tmp.86;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_214_52_214_66_end:
+        %tmp.87 = phi [%tmp.79 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_214_12_214_66_begin] [%tmp.86 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_214_52_214_66_false] [%tmp.87 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_214_52_214_66_end];
+        bt %tmp.87 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_214_8_217_8_if_true;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_214_72_214_86_false:
+        %tmp.88 = lgetv %bbox.5;
+        symbol [ bbox %tmp.88 214 72 76 ];
+        %tmp.89 = 1;
+        %tmp.90 = agetv %tmp.88 %tmp.89;
+        %tmp.91 = 1;
+        %tmp.92 = agetv %tmp.90 %tmp.91;
+        %tmp.93 = 20;
+        %tmp.94 = ne %tmp.92 %tmp.93;
+        push %tmp.94;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_214_72_214_86_end:
+        %tmp.95 = phi [%tmp.87 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_214_12_214_86_begin] [%tmp.94 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_214_72_214_86_false] [%tmp.95 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_214_72_214_86_end];
+        bf %tmp.95 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_214_8_217_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_214_8_217_8_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_214_90_217_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 215 12 ]
+        %tmp.96 = lgetv %logger;
+        symbol [ logger %tmp.96 215 12 18 ];
+        symbol [ debug %tmp.97 215 19 24 ];
+        %tmp.97 = getv function %tmp.96 :debug;
+        %tmp.98 = "Failed: Bounding box with single point incorrect";
+        invoke %tmp.96 %tmp.97(%tmp.98);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 216 12 ]
+        %tmp.99 = false;
+        ret %tmp.99;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_214_90_217_8_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_214_8_217_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_214_8_217_8_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 219 8 ]
+        %tmp.100 = lgetv %logger;
+        symbol [ logger %tmp.100 219 8 14 ];
+        symbol [ debug %tmp.101 219 15 20 ];
+        %tmp.101 = getv function %tmp.100 :debug;
+        %tmp.102 = "Passed: Edge cases handled correctly";
+        invoke %tmp.100 %tmp.101(%tmp.102);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc" 220 8 ]
+        %tmp.103 = true;
+        ret %tmp.103;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_CoordinateTest_mc_190_35_221_4_stop:
+    }
+}
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/CoordinateTest.mc"; @line = 7; ]
+<init> {
+}

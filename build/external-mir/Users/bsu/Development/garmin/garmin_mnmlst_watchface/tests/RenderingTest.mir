@@ -1,0 +1,1845 @@
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc"; @line = 7; @symbol_usingdef<0> = [Toybox,7,6,12]; @symbol_usingdef<1> = [Test,7,13,17]; ]
+using Toybox.Test;
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc"; @line = 8; @symbol_usingdef<0> = [Toybox,8,6,12]; @symbol_usingdef<1> = [Graphics,8,13,21]; ]
+using Toybox.Graphics;
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc"; @line = 9; @symbol_usingdef<0> = [Toybox,9,6,12]; @symbol_usingdef<1> = [System,9,13,19]; ]
+using Toybox.System;
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc"; @line = 10; @symbol_usingdef<0> = [Toybox,10,6,12]; @symbol_usingdef<1> = [Time,10,13,17]; ]
+using Toybox.Time;
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc"; @line = 14; test = true; @symbol_classdef = [RenderingTest,14,6,19]; ]
+class RenderingTest {
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc"; @line = 14; ]
+    <init> {
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc"; @line = 14; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc"; @line = 17; test = true; @symbol_functiondef = [testWatchfaceInitialization,17,13,40]; @symbol_param<0> = [logger,17,41,47]; ]
+    function testWatchfaceInitialization(logger) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_17_49_36_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 18 8 ]
+        %tmp.1 = lgetv %logger;
+        symbol [ logger %tmp.1 18 8 14 ];
+        symbol [ debug %tmp.2 18 15 20 ];
+        %tmp.2 = getv function %tmp.1 :debug;
+        %tmp.3 = "Testing watchface initialization";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 20 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_17_49_36_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_17_49_36_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 20 12 16 ];
+        symbol [ MnmlstView %tmp.7 20 23 33 ];
+        %tmp.7 = getv ? :MnmlstView;
+        %tmp.4 = newc %tmp.7 ();
+        lputv %view.1 %tmp.4;
+        symbol [ view %view.1 20 12 16 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 23 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_23_8_26_8_if_stmt:
+        %tmp.8 = lgetv %view.1;
+        symbol [ view %tmp.8 23 12 16 ];
+        %tmp.9 = null;
+        %tmp.10 = eq %tmp.8 %tmp.9;
+        bf %tmp.10 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_23_8_26_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_23_8_26_8_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_23_26_26_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 24 12 ]
+        %tmp.11 = lgetv %logger;
+        symbol [ logger %tmp.11 24 12 18 ];
+        symbol [ debug %tmp.12 24 19 24 ];
+        %tmp.12 = getv function %tmp.11 :debug;
+        %tmp.13 = "Failed: Watchface view not created";
+        invoke %tmp.11 %tmp.12(%tmp.13);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 25 12 ]
+        %tmp.14 = false;
+        ret %tmp.14;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_23_26_26_8_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_23_8_26_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_23_8_26_8_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 29 8 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_29_8_32_8_if_stmt:
+        %tmp.15 = lgetv %view.1;
+        symbol [ view %tmp.15 29 12 16 ];
+        symbol [ isAwake %tmp.16 29 17 24 ];
+        %tmp.16 = getv %tmp.15 :isAwake;
+        %tmp.17 = null;
+        %tmp.18 = eq %tmp.16 %tmp.17;
+        bf %tmp.18 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_29_8_32_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_29_8_32_8_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_29_34_32_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 30 12 ]
+        %tmp.19 = lgetv %logger;
+        symbol [ logger %tmp.19 30 12 18 ];
+        symbol [ debug %tmp.20 30 19 24 ];
+        %tmp.20 = getv function %tmp.19 :debug;
+        %tmp.21 = "Failed: isAwake not initialized";
+        invoke %tmp.19 %tmp.20(%tmp.21);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 31 12 ]
+        %tmp.22 = false;
+        ret %tmp.22;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_29_34_32_8_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_29_8_32_8_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_29_8_32_8_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 34 8 ]
+        %tmp.23 = lgetv %logger;
+        symbol [ logger %tmp.23 34 8 14 ];
+        symbol [ debug %tmp.24 34 15 20 ];
+        %tmp.24 = getv function %tmp.23 :debug;
+        %tmp.25 = "Passed: Watchface initialized successfully";
+        invoke %tmp.23 %tmp.24(%tmp.25);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 35 8 ]
+        %tmp.26 = true;
+        ret %tmp.26;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_17_49_36_4_stop:
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc"; @line = 39; test = true; @symbol_functiondef = [testOnLayoutSetup,39,13,30]; @symbol_param<0> = [logger,39,31,37]; ]
+    function testOnLayoutSetup(logger) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_39_39_74_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 40 8 ]
+        %tmp.1 = lgetv %logger;
+        symbol [ logger %tmp.1 40 8 14 ];
+        symbol [ debug %tmp.2 40 15 20 ];
+        %tmp.2 = getv function %tmp.1 :debug;
+        %tmp.3 = "Testing onLayout setup";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 42 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_39_39_74_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_39_39_74_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 42 12 16 ];
+        symbol [ MnmlstView %tmp.7 42 23 33 ];
+        %tmp.7 = getv ? :MnmlstView;
+        %tmp.4 = newc %tmp.7 ();
+        lputv %view.1 %tmp.4;
+        symbol [ view %view.1 42 12 16 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 43 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_39_39_74_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_39_39_74_4_stop" ]
+        %mockDc.2 = local;
+        symbol [ mockDc %mockDc.2 43 12 18 ];
+        symbol [ MockObjects %tmp.11 43 25 36 ];
+        %tmp.11 = getv ? :MockObjects;
+        symbol [ MockDc %tmp.12 43 37 43 ];
+        %tmp.12 = getv function ? %tmp.11 :MockDc;
+        %tmp.13 = 240;
+        %tmp.14 = 240;
+        %tmp.8 = newc %tmp.12 (%tmp.13, %tmp.14);
+        lputv %mockDc.2 %tmp.8;
+        symbol [ mockDc %mockDc.2 43 12 18 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 45 8 ]
+        try @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_45_8_73_8_beginTry @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_45_8_73_8_endTry @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_45_8_73_8_catch @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_45_8_73_8_finally;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_45_8_73_8_beginTry:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_45_12_70_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 46 12 ]
+        %tmp.15 = lgetv %view.1;
+        symbol [ view %tmp.15 46 12 16 ];
+        symbol [ onLayout %tmp.16 46 17 25 ];
+        %tmp.16 = getv function %tmp.15 :onLayout;
+        %tmp.17 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.17 46 26 32 ];
+        invoke %tmp.15 %tmp.16(%tmp.17);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 49 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_49_12_52_12_if_stmt:
+        %tmp.18 = lgetv %view.1;
+        symbol [ view %tmp.18 49 16 20 ];
+        symbol [ screenCenterPoint %tmp.19 49 21 38 ];
+        %tmp.19 = getv %tmp.18 :screenCenterPoint;
+        %tmp.20 = null;
+        %tmp.21 = eq %tmp.19 %tmp.20;
+        bf %tmp.21 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_49_12_52_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_49_12_52_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_49_48_52_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 50 16 ]
+        %tmp.22 = lgetv %logger;
+        symbol [ logger %tmp.22 50 16 22 ];
+        symbol [ debug %tmp.23 50 23 28 ];
+        %tmp.23 = getv function %tmp.22 :debug;
+        %tmp.24 = "Failed: Screen center point not set";
+        invoke %tmp.22 %tmp.23(%tmp.24);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 51 16 ]
+        %tmp.25 = false;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_45_8_73_8_finally;
+        ret %tmp.25;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_49_48_52_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_49_12_52_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_49_12_52_12_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 54 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_54_12_57_12_if_stmt:
+        %tmp.26 = lgetv %view.1;
+        symbol [ view %tmp.26 54 16 20 ];
+        symbol [ screenCenterPoint %tmp.27 54 21 38 ];
+        %tmp.27 = getv %tmp.26 :screenCenterPoint;
+        symbol [ size %tmp.28 54 39 43 ];
+        %tmp.28 = getv function %tmp.27 :size;
+        %tmp.29 = invoke %tmp.27 %tmp.28();
+        %tmp.30 = 2;
+        %tmp.31 = ne %tmp.29 %tmp.30;
+        bf %tmp.31 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_54_12_57_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_54_12_57_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_54_52_57_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 55 16 ]
+        %tmp.32 = lgetv %logger;
+        symbol [ logger %tmp.32 55 16 22 ];
+        symbol [ debug %tmp.33 55 23 28 ];
+        %tmp.33 = getv function %tmp.32 :debug;
+        %tmp.34 = "Failed: Screen center point should have 2 coordinates";
+        invoke %tmp.32 %tmp.33(%tmp.34);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 56 16 ]
+        %tmp.35 = false;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_45_8_73_8_finally;
+        ret %tmp.35;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_54_52_57_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_54_12_57_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_54_12_57_12_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 60 12 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_45_12_70_8_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_45_12_70_8_stop" ]
+        %expectedCenterX.3 = local;
+        symbol [ expectedCenterX %expectedCenterX.3 60 16 31 ];
+        %tmp.36 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.36 60 34 40 ];
+        symbol [ getWidth %tmp.37 60 41 49 ];
+        %tmp.37 = getv function %tmp.36 :getWidth;
+        %tmp.38 = invoke %tmp.36 %tmp.37();
+        %tmp.39 = 2;
+        %tmp.40 = div %tmp.38 %tmp.39;
+        lputv %expectedCenterX.3 %tmp.40;
+        symbol [ expectedCenterX %expectedCenterX.3 60 16 31 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 61 12 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_45_12_70_8_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_45_12_70_8_stop" ]
+        %expectedCenterY.4 = local;
+        symbol [ expectedCenterY %expectedCenterY.4 61 16 31 ];
+        %tmp.41 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.41 61 34 40 ];
+        symbol [ getHeight %tmp.42 61 41 50 ];
+        %tmp.42 = getv function %tmp.41 :getHeight;
+        %tmp.43 = invoke %tmp.41 %tmp.42();
+        %tmp.44 = 2;
+        %tmp.45 = div %tmp.43 %tmp.44;
+        lputv %expectedCenterY.4 %tmp.45;
+        symbol [ expectedCenterY %expectedCenterY.4 61 16 31 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 63 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_63_12_66_12_if_stmt:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_63_16_63_93_begin:
+        %tmp.46 = lgetv %view.1;
+        symbol [ view %tmp.46 63 16 20 ];
+        symbol [ screenCenterPoint %tmp.47 63 21 38 ];
+        %tmp.47 = getv %tmp.46 :screenCenterPoint;
+        %tmp.48 = 0;
+        %tmp.49 = agetv %tmp.47 %tmp.48;
+        %tmp.50 = lgetv %expectedCenterX.3;
+        symbol [ expectedCenterX %tmp.50 63 45 60 ];
+        %tmp.51 = ne %tmp.49 %tmp.50;
+        bt %tmp.51 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_63_12_66_12_if_true;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_63_64_63_93_false:
+        %tmp.52 = lgetv %view.1;
+        symbol [ view %tmp.52 63 64 68 ];
+        symbol [ screenCenterPoint %tmp.53 63 69 86 ];
+        %tmp.53 = getv %tmp.52 :screenCenterPoint;
+        %tmp.54 = 1;
+        %tmp.55 = agetv %tmp.53 %tmp.54;
+        %tmp.56 = lgetv %expectedCenterY.4;
+        symbol [ expectedCenterY %tmp.56 63 93 108 ];
+        %tmp.57 = ne %tmp.55 %tmp.56;
+        push %tmp.57;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_63_64_63_93_end:
+        %tmp.58 = phi [%tmp.51 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_63_16_63_93_begin] [%tmp.57 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_63_64_63_93_false] [%tmp.58 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_63_64_63_93_end];
+        bf %tmp.58 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_63_12_66_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_63_12_66_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_63_110_66_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 64 16 ]
+        %tmp.59 = lgetv %logger;
+        symbol [ logger %tmp.59 64 16 22 ];
+        symbol [ debug %tmp.60 64 23 28 ];
+        %tmp.60 = getv function %tmp.59 :debug;
+        %tmp.61 = "Failed: Screen center point calculated incorrectly";
+        invoke %tmp.59 %tmp.60(%tmp.61);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 65 16 ]
+        %tmp.62 = false;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_45_8_73_8_finally;
+        ret %tmp.62;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_63_110_66_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_63_12_66_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_63_12_66_12_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 68 12 ]
+        %tmp.63 = lgetv %logger;
+        symbol [ logger %tmp.63 68 12 18 ];
+        symbol [ debug %tmp.64 68 19 24 ];
+        %tmp.64 = getv function %tmp.63 :debug;
+        %tmp.65 = "Passed: onLayout setup completed successfully";
+        invoke %tmp.63 %tmp.64(%tmp.65);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 69 12 ]
+        %tmp.66 = true;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_45_8_73_8_finally;
+        ret %tmp.66;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_45_12_70_8_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_45_8_73_8_endTry:
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_45_8_73_8_finally;
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_45_8_73_8_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_45_8_73_8_catch:
+        %tmp.67 = exception;
+        push %tmp.67;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 70 10 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_45_8_73_8_catch" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_70_10_73_8_end" ]
+        %ex.5 = local;
+        symbol [ ex %ex.5 70 17 19 ];
+        %tmp.68 = dup %tmp.67;
+        lputv %ex.5 %tmp.68;
+        symbol [ ex %ex.5 70 17 19 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_70_21_73_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 71 12 ]
+        %tmp.69 = lgetv %logger;
+        symbol [ logger %tmp.69 71 12 18 ];
+        symbol [ debug %tmp.70 71 19 24 ];
+        %tmp.70 = getv function %tmp.69 :debug;
+        %tmp.71 = "Failed: onLayout threw exception: ";
+        %tmp.72 = lgetv %ex.5;
+        symbol [ ex %tmp.72 71 64 66 ];
+        symbol [ getErrorMessage %tmp.73 71 67 82 ];
+        %tmp.73 = getv function %tmp.72 :getErrorMessage;
+        %tmp.74 = invoke %tmp.72 %tmp.73();
+        %tmp.75 = add %tmp.71 %tmp.74;
+        invoke %tmp.69 %tmp.70(%tmp.75);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 72 12 ]
+        pop;
+        %tmp.76 = false;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_45_8_73_8_finally;
+        ret %tmp.76;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_70_21_73_8_stop:
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_45_8_73_8_finally;
+        pop;
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_45_8_73_8_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_70_10_73_8_end:
+        try @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_45_8_73_8_catch @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_70_10_73_8_end @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_70_10_73_8_end @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_45_8_73_8_finally;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_45_8_73_8_finally;
+        throw %tmp.67;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_45_8_73_8_finally:
+        jsrret;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_45_8_73_8_end:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_39_39_74_4_stop:
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc"; @line = 77; test = true; @symbol_functiondef = [testBasicDrawing,77,13,29]; @symbol_param<0> = [logger,77,30,36]; ]
+    function testBasicDrawing(logger) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_77_38_112_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 78 8 ]
+        %tmp.1 = lgetv %logger;
+        symbol [ logger %tmp.1 78 8 14 ];
+        symbol [ debug %tmp.2 78 15 20 ];
+        %tmp.2 = getv function %tmp.1 :debug;
+        %tmp.3 = "Testing basic drawing operations";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 80 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_77_38_112_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_77_38_112_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 80 12 16 ];
+        symbol [ MnmlstView %tmp.7 80 23 33 ];
+        %tmp.7 = getv ? :MnmlstView;
+        %tmp.4 = newc %tmp.7 ();
+        lputv %view.1 %tmp.4;
+        symbol [ view %view.1 80 12 16 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 81 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_77_38_112_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_77_38_112_4_stop" ]
+        %mockDc.2 = local;
+        symbol [ mockDc %mockDc.2 81 12 18 ];
+        symbol [ MockObjects %tmp.11 81 25 36 ];
+        %tmp.11 = getv ? :MockObjects;
+        symbol [ MockDc %tmp.12 81 37 43 ];
+        %tmp.12 = getv function ? %tmp.11 :MockDc;
+        %tmp.13 = 240;
+        %tmp.14 = 240;
+        %tmp.8 = newc %tmp.12 (%tmp.13, %tmp.14);
+        lputv %mockDc.2 %tmp.8;
+        symbol [ mockDc %mockDc.2 81 12 18 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 84 8 ]
+        %tmp.15 = lgetv %view.1;
+        symbol [ view %tmp.15 84 8 12 ];
+        symbol [ onLayout %tmp.16 84 13 21 ];
+        %tmp.16 = getv function %tmp.15 :onLayout;
+        %tmp.17 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.17 84 22 28 ];
+        invoke %tmp.15 %tmp.16(%tmp.17);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 86 8 ]
+        try @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_86_8_111_8_beginTry @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_86_8_111_8_endTry @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_86_8_111_8_catch @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_86_8_111_8_finally;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_86_8_111_8_beginTry:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_86_12_108_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 88 12 ]
+        %tmp.18 = lgetv %view.1;
+        symbol [ view %tmp.18 88 12 16 ];
+        symbol [ onUpdate %tmp.19 88 17 25 ];
+        %tmp.19 = getv function %tmp.18 :onUpdate;
+        %tmp.20 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.20 88 26 32 ];
+        invoke %tmp.18 %tmp.19(%tmp.20);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 91 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_91_12_94_12_if_stmt:
+        %tmp.21 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.21 91 17 23 ];
+        symbol [ hasDrawnType %tmp.22 91 24 36 ];
+        %tmp.22 = getv function %tmp.21 :hasDrawnType;
+        %tmp.23 = "fillRectangle";
+        %tmp.24 = invoke %tmp.21 %tmp.22(%tmp.23);
+        %tmp.25 = not %tmp.24;
+        bf %tmp.25 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_91_12_94_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_91_12_94_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_91_55_94_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 92 16 ]
+        %tmp.26 = lgetv %logger;
+        symbol [ logger %tmp.26 92 16 22 ];
+        symbol [ debug %tmp.27 92 23 28 ];
+        %tmp.27 = getv function %tmp.26 :debug;
+        %tmp.28 = "Failed: Background not drawn";
+        invoke %tmp.26 %tmp.27(%tmp.28);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 93 16 ]
+        %tmp.29 = false;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_86_8_111_8_finally;
+        ret %tmp.29;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_91_55_94_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_91_12_94_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_91_12_94_12_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 96 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_96_12_99_12_if_stmt:
+        %tmp.30 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.30 96 17 23 ];
+        symbol [ hasDrawnType %tmp.31 96 24 36 ];
+        %tmp.31 = getv function %tmp.30 :hasDrawnType;
+        %tmp.32 = "fillPolygon";
+        %tmp.33 = invoke %tmp.30 %tmp.31(%tmp.32);
+        %tmp.34 = not %tmp.33;
+        bf %tmp.34 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_96_12_99_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_96_12_99_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_96_53_99_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 97 16 ]
+        %tmp.35 = lgetv %logger;
+        symbol [ logger %tmp.35 97 16 22 ];
+        symbol [ debug %tmp.36 97 23 28 ];
+        %tmp.36 = getv function %tmp.35 :debug;
+        %tmp.37 = "Failed: Watch hands not drawn";
+        invoke %tmp.35 %tmp.36(%tmp.37);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 98 16 ]
+        %tmp.38 = false;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_86_8_111_8_finally;
+        ret %tmp.38;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_96_53_99_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_96_12_99_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_96_12_99_12_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 101 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_101_12_104_12_if_stmt:
+        %tmp.39 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.39 101 17 23 ];
+        symbol [ hasDrawnType %tmp.40 101 24 36 ];
+        %tmp.40 = getv function %tmp.39 :hasDrawnType;
+        %tmp.41 = "fillCircle";
+        %tmp.42 = invoke %tmp.39 %tmp.40(%tmp.41);
+        %tmp.43 = not %tmp.42;
+        bf %tmp.43 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_101_12_104_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_101_12_104_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_101_52_104_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 102 16 ]
+        %tmp.44 = lgetv %logger;
+        symbol [ logger %tmp.44 102 16 22 ];
+        symbol [ debug %tmp.45 102 23 28 ];
+        %tmp.45 = getv function %tmp.44 :debug;
+        %tmp.46 = "Failed: Center arbor not drawn";
+        invoke %tmp.44 %tmp.45(%tmp.46);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 103 16 ]
+        %tmp.47 = false;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_86_8_111_8_finally;
+        ret %tmp.47;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_101_52_104_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_101_12_104_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_101_12_104_12_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 106 12 ]
+        %tmp.48 = lgetv %logger;
+        symbol [ logger %tmp.48 106 12 18 ];
+        symbol [ debug %tmp.49 106 19 24 ];
+        %tmp.49 = getv function %tmp.48 :debug;
+        %tmp.50 = "Passed: Basic drawing operations completed";
+        invoke %tmp.48 %tmp.49(%tmp.50);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 107 12 ]
+        %tmp.51 = true;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_86_8_111_8_finally;
+        ret %tmp.51;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_86_12_108_8_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_86_8_111_8_endTry:
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_86_8_111_8_finally;
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_86_8_111_8_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_86_8_111_8_catch:
+        %tmp.52 = exception;
+        push %tmp.52;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 108 10 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_86_8_111_8_catch" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_108_10_111_8_end" ]
+        %ex.3 = local;
+        symbol [ ex %ex.3 108 17 19 ];
+        %tmp.53 = dup %tmp.52;
+        lputv %ex.3 %tmp.53;
+        symbol [ ex %ex.3 108 17 19 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_108_21_111_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 109 12 ]
+        %tmp.54 = lgetv %logger;
+        symbol [ logger %tmp.54 109 12 18 ];
+        symbol [ debug %tmp.55 109 19 24 ];
+        %tmp.55 = getv function %tmp.54 :debug;
+        %tmp.56 = "Failed: Drawing threw exception: ";
+        %tmp.57 = lgetv %ex.3;
+        symbol [ ex %tmp.57 109 63 65 ];
+        symbol [ getErrorMessage %tmp.58 109 66 81 ];
+        %tmp.58 = getv function %tmp.57 :getErrorMessage;
+        %tmp.59 = invoke %tmp.57 %tmp.58();
+        %tmp.60 = add %tmp.56 %tmp.59;
+        invoke %tmp.54 %tmp.55(%tmp.60);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 110 12 ]
+        pop;
+        %tmp.61 = false;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_86_8_111_8_finally;
+        ret %tmp.61;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_108_21_111_8_stop:
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_86_8_111_8_finally;
+        pop;
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_86_8_111_8_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_108_10_111_8_end:
+        try @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_86_8_111_8_catch @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_108_10_111_8_end @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_108_10_111_8_end @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_86_8_111_8_finally;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_86_8_111_8_finally;
+        throw %tmp.52;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_86_8_111_8_finally:
+        jsrret;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_86_8_111_8_end:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_77_38_112_4_stop:
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc"; @line = 115; test = true; @symbol_functiondef = [testHashMarkDrawing,115,13,32]; @symbol_param<0> = [logger,115,33,39]; ]
+    function testHashMarkDrawing(logger) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_115_41_147_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 116 8 ]
+        %tmp.1 = lgetv %logger;
+        symbol [ logger %tmp.1 116 8 14 ];
+        symbol [ debug %tmp.2 116 15 20 ];
+        %tmp.2 = getv function %tmp.1 :debug;
+        %tmp.3 = "Testing hash mark drawing";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 118 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_115_41_147_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_115_41_147_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 118 12 16 ];
+        symbol [ MnmlstView %tmp.7 118 23 33 ];
+        %tmp.7 = getv ? :MnmlstView;
+        %tmp.4 = newc %tmp.7 ();
+        lputv %view.1 %tmp.4;
+        symbol [ view %view.1 118 12 16 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 119 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_115_41_147_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_115_41_147_4_stop" ]
+        %mockDc.2 = local;
+        symbol [ mockDc %mockDc.2 119 12 18 ];
+        symbol [ MockObjects %tmp.11 119 25 36 ];
+        %tmp.11 = getv ? :MockObjects;
+        symbol [ MockDc %tmp.12 119 37 43 ];
+        %tmp.12 = getv function ? %tmp.11 :MockDc;
+        %tmp.13 = 240;
+        %tmp.14 = 240;
+        %tmp.8 = newc %tmp.12 (%tmp.13, %tmp.14);
+        lputv %mockDc.2 %tmp.8;
+        symbol [ mockDc %mockDc.2 119 12 18 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 121 8 ]
+        %tmp.15 = lgetv %view.1;
+        symbol [ view %tmp.15 121 8 12 ];
+        symbol [ onLayout %tmp.16 121 13 21 ];
+        %tmp.16 = getv function %tmp.15 :onLayout;
+        %tmp.17 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.17 121 22 28 ];
+        invoke %tmp.15 %tmp.16(%tmp.17);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 122 8 ]
+        %tmp.18 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.18 122 8 14 ];
+        symbol [ reset %tmp.19 122 15 20 ];
+        %tmp.19 = getv function %tmp.18 :reset;
+        invoke %tmp.18 %tmp.19();
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 124 8 ]
+        try @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_124_8_146_8_beginTry @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_124_8_146_8_endTry @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_124_8_146_8_catch @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_124_8_146_8_finally;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_124_8_146_8_beginTry:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_124_12_143_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 126 12 ]
+        %tmp.20 = lgetv %view.1;
+        symbol [ view %tmp.20 126 12 16 ];
+        symbol [ drawHashMarks %tmp.21 126 17 30 ];
+        %tmp.21 = getv function %tmp.20 :drawHashMarks;
+        %tmp.22 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.22 126 31 37 ];
+        %tmp.23 = 12;
+        %tmp.24 = 6;
+        %tmp.25 = 15;
+        invoke %tmp.20 %tmp.21(%tmp.22, %tmp.23, %tmp.24, %tmp.25);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 129 12 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_124_12_143_8_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_124_12_143_8_stop" ]
+        %lineCount.3 = local;
+        symbol [ lineCount %lineCount.3 129 16 25 ];
+        %tmp.26 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.26 129 28 34 ];
+        symbol [ countDrawnType %tmp.27 129 35 49 ];
+        %tmp.27 = getv function %tmp.26 :countDrawnType;
+        %tmp.28 = "drawLine";
+        %tmp.29 = invoke %tmp.26 %tmp.27(%tmp.28);
+        lputv %lineCount.3 %tmp.29;
+        symbol [ lineCount %lineCount.3 129 16 25 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 130 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_130_12_133_12_if_stmt:
+        %tmp.30 = lgetv %lineCount.3;
+        symbol [ lineCount %tmp.30 130 16 25 ];
+        %tmp.31 = 0;
+        %tmp.32 = eq %tmp.30 %tmp.31;
+        bf %tmp.32 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_130_12_133_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_130_12_133_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_130_32_133_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 131 16 ]
+        %tmp.33 = lgetv %logger;
+        symbol [ logger %tmp.33 131 16 22 ];
+        symbol [ debug %tmp.34 131 23 28 ];
+        %tmp.34 = getv function %tmp.33 :debug;
+        %tmp.35 = "Failed: No hash marks drawn";
+        invoke %tmp.33 %tmp.34(%tmp.35);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 132 16 ]
+        %tmp.36 = false;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_124_8_146_8_finally;
+        ret %tmp.36;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_130_32_133_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_130_12_133_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_130_12_133_12_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 136 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_136_12_139_12_if_stmt:
+        %tmp.37 = lgetv %lineCount.3;
+        symbol [ lineCount %tmp.37 136 16 25 ];
+        %tmp.38 = 24;
+        %tmp.39 = ne %tmp.37 %tmp.38;
+        bf %tmp.39 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_136_12_139_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_136_12_139_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_136_33_139_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 137 16 ]
+        %tmp.40 = lgetv %logger;
+        symbol [ logger %tmp.40 137 16 22 ];
+        symbol [ debug %tmp.41 137 23 28 ];
+        %tmp.41 = getv function %tmp.40 :debug;
+        %tmp.42 = "Failed: Expected 24 hash marks, got ";
+        %tmp.43 = lgetv %lineCount.3;
+        symbol [ lineCount %tmp.43 137 70 79 ];
+        %tmp.44 = add %tmp.42 %tmp.43;
+        invoke %tmp.40 %tmp.41(%tmp.44);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 138 16 ]
+        %tmp.45 = false;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_124_8_146_8_finally;
+        ret %tmp.45;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_136_33_139_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_136_12_139_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_136_12_139_12_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 141 12 ]
+        %tmp.46 = lgetv %logger;
+        symbol [ logger %tmp.46 141 12 18 ];
+        symbol [ debug %tmp.47 141 19 24 ];
+        %tmp.47 = getv function %tmp.46 :debug;
+        %tmp.48 = "Passed: Hash marks drawn correctly";
+        invoke %tmp.46 %tmp.47(%tmp.48);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 142 12 ]
+        %tmp.49 = true;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_124_8_146_8_finally;
+        ret %tmp.49;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_124_12_143_8_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_124_8_146_8_endTry:
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_124_8_146_8_finally;
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_124_8_146_8_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_124_8_146_8_catch:
+        %tmp.50 = exception;
+        push %tmp.50;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 143 10 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_124_8_146_8_catch" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_143_10_146_8_end" ]
+        %ex.4 = local;
+        symbol [ ex %ex.4 143 17 19 ];
+        %tmp.51 = dup %tmp.50;
+        lputv %ex.4 %tmp.51;
+        symbol [ ex %ex.4 143 17 19 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_143_21_146_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 144 12 ]
+        %tmp.52 = lgetv %logger;
+        symbol [ logger %tmp.52 144 12 18 ];
+        symbol [ debug %tmp.53 144 19 24 ];
+        %tmp.53 = getv function %tmp.52 :debug;
+        %tmp.54 = "Failed: Hash mark drawing threw exception: ";
+        %tmp.55 = lgetv %ex.4;
+        symbol [ ex %tmp.55 144 73 75 ];
+        symbol [ getErrorMessage %tmp.56 144 76 91 ];
+        %tmp.56 = getv function %tmp.55 :getErrorMessage;
+        %tmp.57 = invoke %tmp.55 %tmp.56();
+        %tmp.58 = add %tmp.54 %tmp.57;
+        invoke %tmp.52 %tmp.53(%tmp.58);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 145 12 ]
+        pop;
+        %tmp.59 = false;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_124_8_146_8_finally;
+        ret %tmp.59;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_143_21_146_8_stop:
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_124_8_146_8_finally;
+        pop;
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_124_8_146_8_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_143_10_146_8_end:
+        try @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_124_8_146_8_catch @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_143_10_146_8_end @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_143_10_146_8_end @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_124_8_146_8_finally;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_124_8_146_8_finally;
+        throw %tmp.50;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_124_8_146_8_finally:
+        jsrret;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_124_8_146_8_end:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_115_41_147_4_stop:
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc"; @line = 150; test = true; @symbol_functiondef = [testBatteryIndicator,150,13,33]; @symbol_param<0> = [logger,150,34,40]; ]
+    function testBatteryIndicator(logger) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_150_42_182_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 151 8 ]
+        %tmp.1 = lgetv %logger;
+        symbol [ logger %tmp.1 151 8 14 ];
+        symbol [ debug %tmp.2 151 15 20 ];
+        %tmp.2 = getv function %tmp.1 :debug;
+        %tmp.3 = "Testing battery indicator drawing";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 153 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_150_42_182_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_150_42_182_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 153 12 16 ];
+        symbol [ MnmlstView %tmp.7 153 23 33 ];
+        %tmp.7 = getv ? :MnmlstView;
+        %tmp.4 = newc %tmp.7 ();
+        lputv %view.1 %tmp.4;
+        symbol [ view %view.1 153 12 16 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 154 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_150_42_182_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_150_42_182_4_stop" ]
+        %mockDc.2 = local;
+        symbol [ mockDc %mockDc.2 154 12 18 ];
+        symbol [ MockObjects %tmp.11 154 25 36 ];
+        %tmp.11 = getv ? :MockObjects;
+        symbol [ MockDc %tmp.12 154 37 43 ];
+        %tmp.12 = getv function ? %tmp.11 :MockDc;
+        %tmp.13 = 240;
+        %tmp.14 = 240;
+        %tmp.8 = newc %tmp.12 (%tmp.13, %tmp.14);
+        lputv %mockDc.2 %tmp.8;
+        symbol [ mockDc %mockDc.2 154 12 18 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 156 8 ]
+        %tmp.15 = lgetv %view.1;
+        symbol [ view %tmp.15 156 8 12 ];
+        symbol [ onLayout %tmp.16 156 13 21 ];
+        %tmp.16 = getv function %tmp.15 :onLayout;
+        %tmp.17 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.17 156 22 28 ];
+        invoke %tmp.15 %tmp.16(%tmp.17);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 157 8 ]
+        %tmp.18 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.18 157 8 14 ];
+        symbol [ reset %tmp.19 157 15 20 ];
+        %tmp.19 = getv function %tmp.18 :reset;
+        invoke %tmp.18 %tmp.19();
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 159 8 ]
+        try @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_159_8_181_8_beginTry @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_159_8_181_8_endTry @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_159_8_181_8_catch @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_159_8_181_8_finally;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_159_8_181_8_beginTry:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_159_12_178_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 160 12 ]
+        %tmp.20 = lgetv %view.1;
+        symbol [ view %tmp.20 160 12 16 ];
+        symbol [ drawBattery %tmp.21 160 17 28 ];
+        %tmp.21 = getv function %tmp.20 :drawBattery;
+        %tmp.22 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.22 160 29 35 ];
+        %tmp.23 = 240;
+        %tmp.24 = 240;
+        invoke %tmp.20 %tmp.21(%tmp.22, %tmp.23, %tmp.24);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 163 12 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_159_12_178_8_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_159_12_178_8_stop" ]
+        %lineCount.3 = local;
+        symbol [ lineCount %lineCount.3 163 16 25 ];
+        %tmp.25 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.25 163 28 34 ];
+        symbol [ countDrawnType %tmp.26 163 35 49 ];
+        %tmp.26 = getv function %tmp.25 :countDrawnType;
+        %tmp.27 = "drawLine";
+        %tmp.28 = invoke %tmp.25 %tmp.26(%tmp.27);
+        lputv %lineCount.3 %tmp.28;
+        symbol [ lineCount %lineCount.3 163 16 25 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 164 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_164_12_167_12_if_stmt:
+        %tmp.29 = lgetv %lineCount.3;
+        symbol [ lineCount %tmp.29 164 16 25 ];
+        %tmp.30 = 0;
+        %tmp.31 = eq %tmp.29 %tmp.30;
+        bf %tmp.31 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_164_12_167_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_164_12_167_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_164_32_167_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 165 16 ]
+        %tmp.32 = lgetv %logger;
+        symbol [ logger %tmp.32 165 16 22 ];
+        symbol [ debug %tmp.33 165 23 28 ];
+        %tmp.33 = getv function %tmp.32 :debug;
+        %tmp.34 = "Failed: No battery scale lines drawn";
+        invoke %tmp.32 %tmp.33(%tmp.34);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 166 16 ]
+        %tmp.35 = false;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_159_8_181_8_finally;
+        ret %tmp.35;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_164_32_167_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_164_12_167_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_164_12_167_12_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 170 12 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_159_12_178_8_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_159_12_178_8_stop" ]
+        %circleCount.4 = local;
+        symbol [ circleCount %circleCount.4 170 16 27 ];
+        %tmp.36 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.36 170 30 36 ];
+        symbol [ countDrawnType %tmp.37 170 37 51 ];
+        %tmp.37 = getv function %tmp.36 :countDrawnType;
+        %tmp.38 = "fillCircle";
+        %tmp.39 = invoke %tmp.36 %tmp.37(%tmp.38);
+        lputv %circleCount.4 %tmp.39;
+        symbol [ circleCount %circleCount.4 170 16 27 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 171 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_171_12_174_12_if_stmt:
+        %tmp.40 = lgetv %circleCount.4;
+        symbol [ circleCount %tmp.40 171 16 27 ];
+        %tmp.41 = 0;
+        %tmp.42 = eq %tmp.40 %tmp.41;
+        bf %tmp.42 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_171_12_174_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_171_12_174_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_171_34_174_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 172 16 ]
+        %tmp.43 = lgetv %logger;
+        symbol [ logger %tmp.43 172 16 22 ];
+        symbol [ debug %tmp.44 172 23 28 ];
+        %tmp.44 = getv function %tmp.43 :debug;
+        %tmp.45 = "Failed: No battery level indicator drawn";
+        invoke %tmp.43 %tmp.44(%tmp.45);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 173 16 ]
+        %tmp.46 = false;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_159_8_181_8_finally;
+        ret %tmp.46;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_171_34_174_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_171_12_174_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_171_12_174_12_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 176 12 ]
+        %tmp.47 = lgetv %logger;
+        symbol [ logger %tmp.47 176 12 18 ];
+        symbol [ debug %tmp.48 176 19 24 ];
+        %tmp.48 = getv function %tmp.47 :debug;
+        %tmp.49 = "Passed: Battery indicator drawn correctly";
+        invoke %tmp.47 %tmp.48(%tmp.49);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 177 12 ]
+        %tmp.50 = true;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_159_8_181_8_finally;
+        ret %tmp.50;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_159_12_178_8_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_159_8_181_8_endTry:
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_159_8_181_8_finally;
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_159_8_181_8_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_159_8_181_8_catch:
+        %tmp.51 = exception;
+        push %tmp.51;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 178 10 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_159_8_181_8_catch" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_178_10_181_8_end" ]
+        %ex.5 = local;
+        symbol [ ex %ex.5 178 17 19 ];
+        %tmp.52 = dup %tmp.51;
+        lputv %ex.5 %tmp.52;
+        symbol [ ex %ex.5 178 17 19 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_178_21_181_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 179 12 ]
+        %tmp.53 = lgetv %logger;
+        symbol [ logger %tmp.53 179 12 18 ];
+        symbol [ debug %tmp.54 179 19 24 ];
+        %tmp.54 = getv function %tmp.53 :debug;
+        %tmp.55 = "Failed: Battery indicator drawing threw exception: ";
+        %tmp.56 = lgetv %ex.5;
+        symbol [ ex %tmp.56 179 81 83 ];
+        symbol [ getErrorMessage %tmp.57 179 84 99 ];
+        %tmp.57 = getv function %tmp.56 :getErrorMessage;
+        %tmp.58 = invoke %tmp.56 %tmp.57();
+        %tmp.59 = add %tmp.55 %tmp.58;
+        invoke %tmp.53 %tmp.54(%tmp.59);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 180 12 ]
+        pop;
+        %tmp.60 = false;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_159_8_181_8_finally;
+        ret %tmp.60;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_178_21_181_8_stop:
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_159_8_181_8_finally;
+        pop;
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_159_8_181_8_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_178_10_181_8_end:
+        try @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_159_8_181_8_catch @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_178_10_181_8_end @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_178_10_181_8_end @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_159_8_181_8_finally;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_159_8_181_8_finally;
+        throw %tmp.51;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_159_8_181_8_finally:
+        jsrret;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_159_8_181_8_end:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_150_42_182_4_stop:
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc"; @line = 185; test = true; @symbol_functiondef = [testHourHandDrawing,185,13,32]; @symbol_param<0> = [logger,185,33,39]; ]
+    function testHourHandDrawing(logger) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_185_41_216_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 186 8 ]
+        %tmp.1 = lgetv %logger;
+        symbol [ logger %tmp.1 186 8 14 ];
+        symbol [ debug %tmp.2 186 15 20 ];
+        %tmp.2 = getv function %tmp.1 :debug;
+        %tmp.3 = "Testing hour hand drawing";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 188 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_185_41_216_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_185_41_216_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 188 12 16 ];
+        symbol [ MnmlstView %tmp.7 188 23 33 ];
+        %tmp.7 = getv ? :MnmlstView;
+        %tmp.4 = newc %tmp.7 ();
+        lputv %view.1 %tmp.4;
+        symbol [ view %view.1 188 12 16 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 189 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_185_41_216_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_185_41_216_4_stop" ]
+        %mockDc.2 = local;
+        symbol [ mockDc %mockDc.2 189 12 18 ];
+        symbol [ MockObjects %tmp.11 189 25 36 ];
+        %tmp.11 = getv ? :MockObjects;
+        symbol [ MockDc %tmp.12 189 37 43 ];
+        %tmp.12 = getv function ? %tmp.11 :MockDc;
+        %tmp.13 = 240;
+        %tmp.14 = 240;
+        %tmp.8 = newc %tmp.12 (%tmp.13, %tmp.14);
+        lputv %mockDc.2 %tmp.8;
+        symbol [ mockDc %mockDc.2 189 12 18 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 191 8 ]
+        %tmp.15 = lgetv %view.1;
+        symbol [ view %tmp.15 191 8 12 ];
+        symbol [ onLayout %tmp.16 191 13 21 ];
+        %tmp.16 = getv function %tmp.15 :onLayout;
+        %tmp.17 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.17 191 22 28 ];
+        invoke %tmp.15 %tmp.16(%tmp.17);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 192 8 ]
+        %tmp.18 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.18 192 8 14 ];
+        symbol [ reset %tmp.19 192 15 20 ];
+        %tmp.19 = getv function %tmp.18 :reset;
+        invoke %tmp.18 %tmp.19();
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 194 8 ]
+        try @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_194_8_215_8_beginTry @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_194_8_215_8_endTry @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_194_8_215_8_catch @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_194_8_215_8_finally;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_194_8_215_8_beginTry:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_194_12_212_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 195 12 ]
+        %tmp.20 = lgetv %view.1;
+        symbol [ view %tmp.20 195 12 16 ];
+        symbol [ drawHourHand %tmp.21 195 17 29 ];
+        %tmp.21 = getv function %tmp.20 :drawHourHand;
+        %tmp.22 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.22 195 30 36 ];
+        invoke %tmp.20 %tmp.21(%tmp.22);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 198 12 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_194_12_212_8_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_194_12_212_8_stop" ]
+        %polygonCount.3 = local;
+        symbol [ polygonCount %polygonCount.3 198 16 28 ];
+        %tmp.23 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.23 198 31 37 ];
+        symbol [ countDrawnType %tmp.24 198 38 52 ];
+        %tmp.24 = getv function %tmp.23 :countDrawnType;
+        %tmp.25 = "fillPolygon";
+        %tmp.26 = invoke %tmp.23 %tmp.24(%tmp.25);
+        lputv %polygonCount.3 %tmp.26;
+        symbol [ polygonCount %polygonCount.3 198 16 28 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 199 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_199_12_202_12_if_stmt:
+        %tmp.27 = lgetv %polygonCount.3;
+        symbol [ polygonCount %tmp.27 199 16 28 ];
+        %tmp.28 = 0;
+        %tmp.29 = eq %tmp.27 %tmp.28;
+        bf %tmp.29 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_199_12_202_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_199_12_202_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_199_35_202_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 200 16 ]
+        %tmp.30 = lgetv %logger;
+        symbol [ logger %tmp.30 200 16 22 ];
+        symbol [ debug %tmp.31 200 23 28 ];
+        %tmp.31 = getv function %tmp.30 :debug;
+        %tmp.32 = "Failed: Hour hand polygon not drawn";
+        invoke %tmp.30 %tmp.31(%tmp.32);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 201 16 ]
+        %tmp.33 = false;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_194_8_215_8_finally;
+        ret %tmp.33;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_199_35_202_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_199_12_202_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_199_12_202_12_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 205 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_205_12_208_12_if_stmt:
+        %tmp.34 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.34 205 17 23 ];
+        symbol [ hasDrawnType %tmp.35 205 24 36 ];
+        %tmp.35 = getv function %tmp.34 :hasDrawnType;
+        %tmp.36 = "setColor";
+        %tmp.37 = invoke %tmp.34 %tmp.35(%tmp.36);
+        %tmp.38 = not %tmp.37;
+        bf %tmp.38 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_205_12_208_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_205_12_208_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_205_50_208_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 206 16 ]
+        %tmp.39 = lgetv %logger;
+        symbol [ logger %tmp.39 206 16 22 ];
+        symbol [ debug %tmp.40 206 23 28 ];
+        %tmp.40 = getv function %tmp.39 :debug;
+        %tmp.41 = "Failed: Hour hand color not set";
+        invoke %tmp.39 %tmp.40(%tmp.41);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 207 16 ]
+        %tmp.42 = false;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_194_8_215_8_finally;
+        ret %tmp.42;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_205_50_208_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_205_12_208_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_205_12_208_12_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 210 12 ]
+        %tmp.43 = lgetv %logger;
+        symbol [ logger %tmp.43 210 12 18 ];
+        symbol [ debug %tmp.44 210 19 24 ];
+        %tmp.44 = getv function %tmp.43 :debug;
+        %tmp.45 = "Passed: Hour hand drawn correctly";
+        invoke %tmp.43 %tmp.44(%tmp.45);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 211 12 ]
+        %tmp.46 = true;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_194_8_215_8_finally;
+        ret %tmp.46;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_194_12_212_8_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_194_8_215_8_endTry:
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_194_8_215_8_finally;
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_194_8_215_8_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_194_8_215_8_catch:
+        %tmp.47 = exception;
+        push %tmp.47;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 212 10 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_194_8_215_8_catch" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_212_10_215_8_end" ]
+        %ex.4 = local;
+        symbol [ ex %ex.4 212 17 19 ];
+        %tmp.48 = dup %tmp.47;
+        lputv %ex.4 %tmp.48;
+        symbol [ ex %ex.4 212 17 19 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_212_21_215_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 213 12 ]
+        %tmp.49 = lgetv %logger;
+        symbol [ logger %tmp.49 213 12 18 ];
+        symbol [ debug %tmp.50 213 19 24 ];
+        %tmp.50 = getv function %tmp.49 :debug;
+        %tmp.51 = "Failed: Hour hand drawing threw exception: ";
+        %tmp.52 = lgetv %ex.4;
+        symbol [ ex %tmp.52 213 73 75 ];
+        symbol [ getErrorMessage %tmp.53 213 76 91 ];
+        %tmp.53 = getv function %tmp.52 :getErrorMessage;
+        %tmp.54 = invoke %tmp.52 %tmp.53();
+        %tmp.55 = add %tmp.51 %tmp.54;
+        invoke %tmp.49 %tmp.50(%tmp.55);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 214 12 ]
+        pop;
+        %tmp.56 = false;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_194_8_215_8_finally;
+        ret %tmp.56;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_212_21_215_8_stop:
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_194_8_215_8_finally;
+        pop;
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_194_8_215_8_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_212_10_215_8_end:
+        try @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_194_8_215_8_catch @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_212_10_215_8_end @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_212_10_215_8_end @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_194_8_215_8_finally;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_194_8_215_8_finally;
+        throw %tmp.47;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_194_8_215_8_finally:
+        jsrret;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_194_8_215_8_end:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_185_41_216_4_stop:
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc"; @line = 219; test = true; @symbol_functiondef = [testArborDrawing,219,13,29]; @symbol_param<0> = [logger,219,30,36]; ]
+    function testArborDrawing(logger) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_219_38_251_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 220 8 ]
+        %tmp.1 = lgetv %logger;
+        symbol [ logger %tmp.1 220 8 14 ];
+        symbol [ debug %tmp.2 220 15 20 ];
+        %tmp.2 = getv function %tmp.1 :debug;
+        %tmp.3 = "Testing arbor (center dot) drawing";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 222 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_219_38_251_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_219_38_251_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 222 12 16 ];
+        symbol [ MnmlstView %tmp.7 222 23 33 ];
+        %tmp.7 = getv ? :MnmlstView;
+        %tmp.4 = newc %tmp.7 ();
+        lputv %view.1 %tmp.4;
+        symbol [ view %view.1 222 12 16 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 223 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_219_38_251_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_219_38_251_4_stop" ]
+        %mockDc.2 = local;
+        symbol [ mockDc %mockDc.2 223 12 18 ];
+        symbol [ MockObjects %tmp.11 223 25 36 ];
+        %tmp.11 = getv ? :MockObjects;
+        symbol [ MockDc %tmp.12 223 37 43 ];
+        %tmp.12 = getv function ? %tmp.11 :MockDc;
+        %tmp.13 = 240;
+        %tmp.14 = 240;
+        %tmp.8 = newc %tmp.12 (%tmp.13, %tmp.14);
+        lputv %mockDc.2 %tmp.8;
+        symbol [ mockDc %mockDc.2 223 12 18 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 225 8 ]
+        %tmp.15 = lgetv %view.1;
+        symbol [ view %tmp.15 225 8 12 ];
+        symbol [ onLayout %tmp.16 225 13 21 ];
+        %tmp.16 = getv function %tmp.15 :onLayout;
+        %tmp.17 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.17 225 22 28 ];
+        invoke %tmp.15 %tmp.16(%tmp.17);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 226 8 ]
+        %tmp.18 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.18 226 8 14 ];
+        symbol [ reset %tmp.19 226 15 20 ];
+        %tmp.19 = getv function %tmp.18 :reset;
+        invoke %tmp.18 %tmp.19();
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 228 8 ]
+        try @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_228_8_250_8_beginTry @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_228_8_250_8_endTry @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_228_8_250_8_catch @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_228_8_250_8_finally;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_228_8_250_8_beginTry:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_228_12_247_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 229 12 ]
+        %tmp.20 = lgetv %view.1;
+        symbol [ view %tmp.20 229 12 16 ];
+        symbol [ drawArbor %tmp.21 229 17 26 ];
+        %tmp.21 = getv function %tmp.20 :drawArbor;
+        %tmp.22 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.22 229 27 33 ];
+        invoke %tmp.20 %tmp.21(%tmp.22);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 232 12 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_228_12_247_8_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_228_12_247_8_stop" ]
+        %fillCircleCount.3 = local;
+        symbol [ fillCircleCount %fillCircleCount.3 232 16 31 ];
+        %tmp.23 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.23 232 34 40 ];
+        symbol [ countDrawnType %tmp.24 232 41 55 ];
+        %tmp.24 = getv function %tmp.23 :countDrawnType;
+        %tmp.25 = "fillCircle";
+        %tmp.26 = invoke %tmp.23 %tmp.24(%tmp.25);
+        lputv %fillCircleCount.3 %tmp.26;
+        symbol [ fillCircleCount %fillCircleCount.3 232 16 31 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 233 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_233_12_236_12_if_stmt:
+        %tmp.27 = lgetv %fillCircleCount.3;
+        symbol [ fillCircleCount %tmp.27 233 16 31 ];
+        %tmp.28 = 0;
+        %tmp.29 = eq %tmp.27 %tmp.28;
+        bf %tmp.29 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_233_12_236_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_233_12_236_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_233_38_236_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 234 16 ]
+        %tmp.30 = lgetv %logger;
+        symbol [ logger %tmp.30 234 16 22 ];
+        symbol [ debug %tmp.31 234 23 28 ];
+        %tmp.31 = getv function %tmp.30 :debug;
+        %tmp.32 = "Failed: Arbor fill circle not drawn";
+        invoke %tmp.30 %tmp.31(%tmp.32);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 235 16 ]
+        %tmp.33 = false;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_228_8_250_8_finally;
+        ret %tmp.33;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_233_38_236_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_233_12_236_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_233_12_236_12_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 239 12 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_228_12_247_8_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_228_12_247_8_stop" ]
+        %drawCircleCount.4 = local;
+        symbol [ drawCircleCount %drawCircleCount.4 239 16 31 ];
+        %tmp.34 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.34 239 34 40 ];
+        symbol [ countDrawnType %tmp.35 239 41 55 ];
+        %tmp.35 = getv function %tmp.34 :countDrawnType;
+        %tmp.36 = "drawCircle";
+        %tmp.37 = invoke %tmp.34 %tmp.35(%tmp.36);
+        lputv %drawCircleCount.4 %tmp.37;
+        symbol [ drawCircleCount %drawCircleCount.4 239 16 31 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 240 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_240_12_243_12_if_stmt:
+        %tmp.38 = lgetv %drawCircleCount.4;
+        symbol [ drawCircleCount %tmp.38 240 16 31 ];
+        %tmp.39 = 0;
+        %tmp.40 = eq %tmp.38 %tmp.39;
+        bf %tmp.40 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_240_12_243_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_240_12_243_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_240_38_243_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 241 16 ]
+        %tmp.41 = lgetv %logger;
+        symbol [ logger %tmp.41 241 16 22 ];
+        symbol [ debug %tmp.42 241 23 28 ];
+        %tmp.42 = getv function %tmp.41 :debug;
+        %tmp.43 = "Failed: Arbor outline circle not drawn";
+        invoke %tmp.41 %tmp.42(%tmp.43);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 242 16 ]
+        %tmp.44 = false;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_228_8_250_8_finally;
+        ret %tmp.44;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_240_38_243_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_240_12_243_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_240_12_243_12_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 245 12 ]
+        %tmp.45 = lgetv %logger;
+        symbol [ logger %tmp.45 245 12 18 ];
+        symbol [ debug %tmp.46 245 19 24 ];
+        %tmp.46 = getv function %tmp.45 :debug;
+        %tmp.47 = "Passed: Arbor drawn correctly";
+        invoke %tmp.45 %tmp.46(%tmp.47);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 246 12 ]
+        %tmp.48 = true;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_228_8_250_8_finally;
+        ret %tmp.48;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_228_12_247_8_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_228_8_250_8_endTry:
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_228_8_250_8_finally;
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_228_8_250_8_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_228_8_250_8_catch:
+        %tmp.49 = exception;
+        push %tmp.49;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 247 10 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_228_8_250_8_catch" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_247_10_250_8_end" ]
+        %ex.5 = local;
+        symbol [ ex %ex.5 247 17 19 ];
+        %tmp.50 = dup %tmp.49;
+        lputv %ex.5 %tmp.50;
+        symbol [ ex %ex.5 247 17 19 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_247_21_250_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 248 12 ]
+        %tmp.51 = lgetv %logger;
+        symbol [ logger %tmp.51 248 12 18 ];
+        symbol [ debug %tmp.52 248 19 24 ];
+        %tmp.52 = getv function %tmp.51 :debug;
+        %tmp.53 = "Failed: Arbor drawing threw exception: ";
+        %tmp.54 = lgetv %ex.5;
+        symbol [ ex %tmp.54 248 69 71 ];
+        symbol [ getErrorMessage %tmp.55 248 72 87 ];
+        %tmp.55 = getv function %tmp.54 :getErrorMessage;
+        %tmp.56 = invoke %tmp.54 %tmp.55();
+        %tmp.57 = add %tmp.53 %tmp.56;
+        invoke %tmp.51 %tmp.52(%tmp.57);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 249 12 ]
+        pop;
+        %tmp.58 = false;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_228_8_250_8_finally;
+        ret %tmp.58;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_247_21_250_8_stop:
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_228_8_250_8_finally;
+        pop;
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_228_8_250_8_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_247_10_250_8_end:
+        try @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_228_8_250_8_catch @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_247_10_250_8_end @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_247_10_250_8_end @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_228_8_250_8_finally;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_228_8_250_8_finally;
+        throw %tmp.49;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_228_8_250_8_finally:
+        jsrret;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_228_8_250_8_end:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_219_38_251_4_stop:
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc"; @line = 254; test = true; @symbol_functiondef = [testDateStringDrawing,254,13,34]; @symbol_param<0> = [logger,254,35,41]; ]
+    function testDateStringDrawing(logger) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_254_43_286_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 255 8 ]
+        %tmp.1 = lgetv %logger;
+        symbol [ logger %tmp.1 255 8 14 ];
+        symbol [ debug %tmp.2 255 15 20 ];
+        %tmp.2 = getv function %tmp.1 :debug;
+        %tmp.3 = "Testing date string drawing";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 257 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_254_43_286_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_254_43_286_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 257 12 16 ];
+        symbol [ MnmlstView %tmp.7 257 23 33 ];
+        %tmp.7 = getv ? :MnmlstView;
+        %tmp.4 = newc %tmp.7 ();
+        lputv %view.1 %tmp.4;
+        symbol [ view %view.1 257 12 16 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 258 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_254_43_286_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_254_43_286_4_stop" ]
+        %mockDc.2 = local;
+        symbol [ mockDc %mockDc.2 258 12 18 ];
+        symbol [ MockObjects %tmp.11 258 25 36 ];
+        %tmp.11 = getv ? :MockObjects;
+        symbol [ MockDc %tmp.12 258 37 43 ];
+        %tmp.12 = getv function ? %tmp.11 :MockDc;
+        %tmp.13 = 240;
+        %tmp.14 = 240;
+        %tmp.8 = newc %tmp.12 (%tmp.13, %tmp.14);
+        lputv %mockDc.2 %tmp.8;
+        symbol [ mockDc %mockDc.2 258 12 18 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 260 8 ]
+        %tmp.15 = lgetv %view.1;
+        symbol [ view %tmp.15 260 8 12 ];
+        symbol [ onLayout %tmp.16 260 13 21 ];
+        %tmp.16 = getv function %tmp.15 :onLayout;
+        %tmp.17 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.17 260 22 28 ];
+        invoke %tmp.15 %tmp.16(%tmp.17);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 261 8 ]
+        %tmp.18 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.18 261 8 14 ];
+        symbol [ reset %tmp.19 261 15 20 ];
+        %tmp.19 = getv function %tmp.18 :reset;
+        invoke %tmp.18 %tmp.19();
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 263 8 ]
+        try @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_263_8_285_8_beginTry @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_263_8_285_8_endTry @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_263_8_285_8_catch @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_263_8_285_8_finally;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_263_8_285_8_beginTry:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_263_12_282_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 264 12 ]
+        %tmp.20 = lgetv %view.1;
+        symbol [ view %tmp.20 264 12 16 ];
+        symbol [ drawDateString %tmp.21 264 17 31 ];
+        %tmp.21 = getv function %tmp.20 :drawDateString;
+        %tmp.22 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.22 264 32 38 ];
+        %tmp.23 = 120;
+        %tmp.24 = 60;
+        invoke %tmp.20 %tmp.21(%tmp.22, %tmp.23, %tmp.24);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 267 12 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_263_12_282_8_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_263_12_282_8_stop" ]
+        %textCount.3 = local;
+        symbol [ textCount %textCount.3 267 16 25 ];
+        %tmp.25 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.25 267 28 34 ];
+        symbol [ countDrawnType %tmp.26 267 35 49 ];
+        %tmp.26 = getv function %tmp.25 :countDrawnType;
+        %tmp.27 = "drawText";
+        %tmp.28 = invoke %tmp.25 %tmp.26(%tmp.27);
+        lputv %textCount.3 %tmp.28;
+        symbol [ textCount %textCount.3 267 16 25 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 268 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_268_12_271_12_if_stmt:
+        %tmp.29 = lgetv %textCount.3;
+        symbol [ textCount %tmp.29 268 16 25 ];
+        %tmp.30 = 0;
+        %tmp.31 = eq %tmp.29 %tmp.30;
+        bf %tmp.31 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_268_12_271_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_268_12_271_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_268_32_271_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 269 16 ]
+        %tmp.32 = lgetv %logger;
+        symbol [ logger %tmp.32 269 16 22 ];
+        symbol [ debug %tmp.33 269 23 28 ];
+        %tmp.33 = getv function %tmp.32 :debug;
+        %tmp.34 = "Failed: Date text not drawn";
+        invoke %tmp.32 %tmp.33(%tmp.34);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 270 16 ]
+        %tmp.35 = false;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_263_8_285_8_finally;
+        ret %tmp.35;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_268_32_271_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_268_12_271_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_268_12_271_12_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 274 12 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_263_12_282_8_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_263_12_282_8_stop" ]
+        %lastText.4 = local;
+        symbol [ lastText %lastText.4 274 16 24 ];
+        %tmp.36 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.36 274 27 33 ];
+        symbol [ getLastDrawnOfType %tmp.37 274 34 52 ];
+        %tmp.37 = getv function %tmp.36 :getLastDrawnOfType;
+        %tmp.38 = "drawText";
+        %tmp.39 = invoke %tmp.36 %tmp.37(%tmp.38);
+        lputv %lastText.4 %tmp.39;
+        symbol [ lastText %lastText.4 274 16 24 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 275 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_275_12_278_12_if_stmt:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_275_16_275_75_begin:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_275_16_275_52_begin:
+        %tmp.40 = lgetv %lastText.4;
+        symbol [ lastText %tmp.40 275 16 24 ];
+        %tmp.41 = null;
+        %tmp.42 = eq %tmp.40 %tmp.41;
+        bt %tmp.42 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_275_12_278_12_if_true;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_275_36_275_52_false:
+        %tmp.43 = lgetv %lastText.4;
+        symbol [ lastText %tmp.43 275 36 44 ];
+        %tmp.44 = as %tmp.43 { (!Null) };
+        %tmp.46 = const :x;
+        symbol [ x %tmp.46 275 46 47 const ];
+        %tmp.47 = agetv %tmp.44 %tmp.46;
+        %tmp.48 = 120;
+        %tmp.49 = ne %tmp.47 %tmp.48;
+        push %tmp.49;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_275_36_275_52_end:
+        %tmp.50 = phi [%tmp.42 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_275_16_275_52_begin] [%tmp.49 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_275_36_275_52_false] [%tmp.50 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_275_36_275_52_end];
+        bt %tmp.50 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_275_12_278_12_if_true;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_275_59_275_75_false:
+        %tmp.51 = lgetv %lastText.4;
+        symbol [ lastText %tmp.51 275 59 67 ];
+        %tmp.52 = as %tmp.51 { (!Null) };
+        %tmp.54 = const :y;
+        symbol [ y %tmp.54 275 69 70 const ];
+        %tmp.55 = agetv %tmp.52 %tmp.54;
+        %tmp.56 = 60;
+        %tmp.57 = ne %tmp.55 %tmp.56;
+        push %tmp.57;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_275_59_275_75_end:
+        %tmp.58 = phi [%tmp.50 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_275_16_275_75_begin] [%tmp.57 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_275_59_275_75_false] [%tmp.58 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_275_59_275_75_end];
+        bf %tmp.58 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_275_12_278_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_275_12_278_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_275_79_278_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 276 16 ]
+        %tmp.59 = lgetv %logger;
+        symbol [ logger %tmp.59 276 16 22 ];
+        symbol [ debug %tmp.60 276 23 28 ];
+        %tmp.60 = getv function %tmp.59 :debug;
+        %tmp.61 = "Failed: Date text not drawn at expected position";
+        invoke %tmp.59 %tmp.60(%tmp.61);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 277 16 ]
+        %tmp.62 = false;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_263_8_285_8_finally;
+        ret %tmp.62;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_275_79_278_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_275_12_278_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_275_12_278_12_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 280 12 ]
+        %tmp.63 = lgetv %logger;
+        symbol [ logger %tmp.63 280 12 18 ];
+        symbol [ debug %tmp.64 280 19 24 ];
+        %tmp.64 = getv function %tmp.63 :debug;
+        %tmp.65 = "Passed: Date string drawn correctly";
+        invoke %tmp.63 %tmp.64(%tmp.65);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 281 12 ]
+        %tmp.66 = true;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_263_8_285_8_finally;
+        ret %tmp.66;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_263_12_282_8_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_263_8_285_8_endTry:
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_263_8_285_8_finally;
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_263_8_285_8_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_263_8_285_8_catch:
+        %tmp.67 = exception;
+        push %tmp.67;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 282 10 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_263_8_285_8_catch" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_282_10_285_8_end" ]
+        %ex.5 = local;
+        symbol [ ex %ex.5 282 17 19 ];
+        %tmp.68 = dup %tmp.67;
+        lputv %ex.5 %tmp.68;
+        symbol [ ex %ex.5 282 17 19 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_282_21_285_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 283 12 ]
+        %tmp.69 = lgetv %logger;
+        symbol [ logger %tmp.69 283 12 18 ];
+        symbol [ debug %tmp.70 283 19 24 ];
+        %tmp.70 = getv function %tmp.69 :debug;
+        %tmp.71 = "Failed: Date string drawing threw exception: ";
+        %tmp.72 = lgetv %ex.5;
+        symbol [ ex %tmp.72 283 75 77 ];
+        symbol [ getErrorMessage %tmp.73 283 78 93 ];
+        %tmp.73 = getv function %tmp.72 :getErrorMessage;
+        %tmp.74 = invoke %tmp.72 %tmp.73();
+        %tmp.75 = add %tmp.71 %tmp.74;
+        invoke %tmp.69 %tmp.70(%tmp.75);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 284 12 ]
+        pop;
+        %tmp.76 = false;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_263_8_285_8_finally;
+        ret %tmp.76;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_282_21_285_8_stop:
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_263_8_285_8_finally;
+        pop;
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_263_8_285_8_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_282_10_285_8_end:
+        try @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_263_8_285_8_catch @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_282_10_285_8_end @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_282_10_285_8_end @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_263_8_285_8_finally;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_263_8_285_8_finally;
+        throw %tmp.67;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_263_8_285_8_finally:
+        jsrret;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_263_8_285_8_end:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_254_43_286_4_stop:
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc"; @line = 289; test = true; @symbol_functiondef = [testFullWatchfaceRender,289,13,36]; @symbol_param<0> = [logger,289,37,43]; ]
+    function testFullWatchfaceRender(logger) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_289_45_321_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 290 8 ]
+        %tmp.1 = lgetv %logger;
+        symbol [ logger %tmp.1 290 8 14 ];
+        symbol [ debug %tmp.2 290 15 20 ];
+        %tmp.2 = getv function %tmp.1 :debug;
+        %tmp.3 = "Testing full watchface rendering";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 292 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_289_45_321_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_289_45_321_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 292 12 16 ];
+        symbol [ MnmlstView %tmp.7 292 23 33 ];
+        %tmp.7 = getv ? :MnmlstView;
+        %tmp.4 = newc %tmp.7 ();
+        lputv %view.1 %tmp.4;
+        symbol [ view %view.1 292 12 16 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 293 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_289_45_321_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_289_45_321_4_stop" ]
+        %mockDc.2 = local;
+        symbol [ mockDc %mockDc.2 293 12 18 ];
+        symbol [ MockObjects %tmp.11 293 25 36 ];
+        %tmp.11 = getv ? :MockObjects;
+        symbol [ MockDc %tmp.12 293 37 43 ];
+        %tmp.12 = getv function ? %tmp.11 :MockDc;
+        %tmp.13 = 240;
+        %tmp.14 = 240;
+        %tmp.8 = newc %tmp.12 (%tmp.13, %tmp.14);
+        lputv %mockDc.2 %tmp.8;
+        symbol [ mockDc %mockDc.2 293 12 18 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 295 8 ]
+        %tmp.15 = lgetv %view.1;
+        symbol [ view %tmp.15 295 8 12 ];
+        symbol [ onLayout %tmp.16 295 13 21 ];
+        %tmp.16 = getv function %tmp.15 :onLayout;
+        %tmp.17 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.17 295 22 28 ];
+        invoke %tmp.15 %tmp.16(%tmp.17);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 296 8 ]
+        %tmp.18 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.18 296 8 14 ];
+        symbol [ reset %tmp.19 296 15 20 ];
+        %tmp.19 = getv function %tmp.18 :reset;
+        invoke %tmp.18 %tmp.19();
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 298 8 ]
+        try @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_298_8_320_8_beginTry @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_298_8_320_8_endTry @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_298_8_320_8_catch @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_298_8_320_8_finally;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_298_8_320_8_beginTry:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_298_12_317_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 299 12 ]
+        %tmp.20 = lgetv %view.1;
+        symbol [ view %tmp.20 299 12 16 ];
+        symbol [ onUpdate %tmp.21 299 17 25 ];
+        %tmp.21 = getv function %tmp.20 :onUpdate;
+        %tmp.22 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.22 299 26 32 ];
+        invoke %tmp.20 %tmp.21(%tmp.22);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 302 12 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_298_12_317_8_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_298_12_317_8_stop" ]
+        %elementsDrawn.3 = local;
+        symbol [ elementsDrawn %elementsDrawn.3 302 16 29 ];
+        %tmp.23 = 0;
+        lputv %elementsDrawn.3 %tmp.23;
+        symbol [ elementsDrawn %elementsDrawn.3 302 16 29 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 304 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_304_12_304_73_if_stmt:
+        %tmp.24 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.24 304 16 22 ];
+        symbol [ hasDrawnType %tmp.25 304 23 35 ];
+        %tmp.25 = getv function %tmp.24 :hasDrawnType;
+        %tmp.26 = "fillRectangle";
+        %tmp.27 = invoke %tmp.24 %tmp.25(%tmp.26);
+        bf %tmp.27 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_304_12_304_73_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_304_12_304_73_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_304_54_304_73_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 304 56 ]
+        %tmp.30 = lgetv %elementsDrawn.3;
+        symbol [ elementsDrawn %tmp.30 304 56 69 ];
+        %tmp.31 = add %tmp.30 1;
+        lputv %elementsDrawn.3 %tmp.31;
+        symbol [ elementsDrawn %elementsDrawn.3 304 56 69 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_304_54_304_73_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_304_12_304_73_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_304_12_304_73_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 305 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_305_12_305_68_if_stmt:
+        %tmp.32 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.32 305 16 22 ];
+        symbol [ hasDrawnType %tmp.33 305 23 35 ];
+        %tmp.33 = getv function %tmp.32 :hasDrawnType;
+        %tmp.34 = "drawLine";
+        %tmp.35 = invoke %tmp.32 %tmp.33(%tmp.34);
+        bf %tmp.35 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_305_12_305_68_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_305_12_305_68_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_305_49_305_68_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 305 51 ]
+        %tmp.38 = lgetv %elementsDrawn.3;
+        symbol [ elementsDrawn %tmp.38 305 51 64 ];
+        %tmp.39 = add %tmp.38 1;
+        lputv %elementsDrawn.3 %tmp.39;
+        symbol [ elementsDrawn %elementsDrawn.3 305 51 64 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_305_49_305_68_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_305_12_305_68_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_305_12_305_68_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 306 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_306_12_306_71_if_stmt:
+        %tmp.40 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.40 306 16 22 ];
+        symbol [ hasDrawnType %tmp.41 306 23 35 ];
+        %tmp.41 = getv function %tmp.40 :hasDrawnType;
+        %tmp.42 = "fillPolygon";
+        %tmp.43 = invoke %tmp.40 %tmp.41(%tmp.42);
+        bf %tmp.43 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_306_12_306_71_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_306_12_306_71_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_306_52_306_71_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 306 54 ]
+        %tmp.46 = lgetv %elementsDrawn.3;
+        symbol [ elementsDrawn %tmp.46 306 54 67 ];
+        %tmp.47 = add %tmp.46 1;
+        lputv %elementsDrawn.3 %tmp.47;
+        symbol [ elementsDrawn %elementsDrawn.3 306 54 67 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_306_52_306_71_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_306_12_306_71_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_306_12_306_71_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 307 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_307_12_307_70_if_stmt:
+        %tmp.48 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.48 307 16 22 ];
+        symbol [ hasDrawnType %tmp.49 307 23 35 ];
+        %tmp.49 = getv function %tmp.48 :hasDrawnType;
+        %tmp.50 = "fillCircle";
+        %tmp.51 = invoke %tmp.48 %tmp.49(%tmp.50);
+        bf %tmp.51 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_307_12_307_70_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_307_12_307_70_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_307_51_307_70_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 307 53 ]
+        %tmp.54 = lgetv %elementsDrawn.3;
+        symbol [ elementsDrawn %tmp.54 307 53 66 ];
+        %tmp.55 = add %tmp.54 1;
+        lputv %elementsDrawn.3 %tmp.55;
+        symbol [ elementsDrawn %elementsDrawn.3 307 53 66 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_307_51_307_70_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_307_12_307_70_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_307_12_307_70_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 308 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_308_12_308_68_if_stmt:
+        %tmp.56 = lgetv %mockDc.2;
+        symbol [ mockDc %tmp.56 308 16 22 ];
+        symbol [ hasDrawnType %tmp.57 308 23 35 ];
+        %tmp.57 = getv function %tmp.56 :hasDrawnType;
+        %tmp.58 = "drawText";
+        %tmp.59 = invoke %tmp.56 %tmp.57(%tmp.58);
+        bf %tmp.59 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_308_12_308_68_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_308_12_308_68_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_308_49_308_68_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 308 51 ]
+        %tmp.62 = lgetv %elementsDrawn.3;
+        symbol [ elementsDrawn %tmp.62 308 51 64 ];
+        %tmp.63 = add %tmp.62 1;
+        lputv %elementsDrawn.3 %tmp.63;
+        symbol [ elementsDrawn %elementsDrawn.3 308 51 64 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_308_49_308_68_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_308_12_308_68_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_308_12_308_68_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 310 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_310_12_313_12_if_stmt:
+        %tmp.64 = lgetv %elementsDrawn.3;
+        symbol [ elementsDrawn %tmp.64 310 16 29 ];
+        %tmp.65 = 4;
+        %tmp.66 = lt %tmp.64 %tmp.65;
+        bf %tmp.66 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_310_12_313_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_310_12_313_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_310_35_313_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 311 16 ]
+        %tmp.67 = lgetv %logger;
+        symbol [ logger %tmp.67 311 16 22 ];
+        symbol [ debug %tmp.68 311 23 28 ];
+        %tmp.68 = getv function %tmp.67 :debug;
+        %tmp.69 = "Failed: Not all major elements drawn. Count: ";
+        %tmp.70 = lgetv %elementsDrawn.3;
+        symbol [ elementsDrawn %tmp.70 311 79 92 ];
+        %tmp.71 = add %tmp.69 %tmp.70;
+        invoke %tmp.67 %tmp.68(%tmp.71);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 312 16 ]
+        %tmp.72 = false;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_298_8_320_8_finally;
+        ret %tmp.72;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_310_35_313_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_310_12_313_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_310_12_313_12_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 315 12 ]
+        %tmp.73 = lgetv %logger;
+        symbol [ logger %tmp.73 315 12 18 ];
+        symbol [ debug %tmp.74 315 19 24 ];
+        %tmp.74 = getv function %tmp.73 :debug;
+        %tmp.75 = "Passed: Full watchface rendered with ";
+        %tmp.76 = lgetv %elementsDrawn.3;
+        symbol [ elementsDrawn %tmp.76 315 67 80 ];
+        %tmp.77 = add %tmp.75 %tmp.76;
+        %tmp.78 = " element types";
+        %tmp.79 = add %tmp.77 %tmp.78;
+        invoke %tmp.73 %tmp.74(%tmp.79);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 316 12 ]
+        %tmp.80 = true;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_298_8_320_8_finally;
+        ret %tmp.80;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_298_12_317_8_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_298_8_320_8_endTry:
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_298_8_320_8_finally;
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_298_8_320_8_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_298_8_320_8_catch:
+        %tmp.81 = exception;
+        push %tmp.81;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 317 10 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_298_8_320_8_catch" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_317_10_320_8_end" ]
+        %ex.4 = local;
+        symbol [ ex %ex.4 317 17 19 ];
+        %tmp.82 = dup %tmp.81;
+        lputv %ex.4 %tmp.82;
+        symbol [ ex %ex.4 317 17 19 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_317_21_320_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 318 12 ]
+        %tmp.83 = lgetv %logger;
+        symbol [ logger %tmp.83 318 12 18 ];
+        symbol [ debug %tmp.84 318 19 24 ];
+        %tmp.84 = getv function %tmp.83 :debug;
+        %tmp.85 = "Failed: Full watchface rendering threw exception: ";
+        %tmp.86 = lgetv %ex.4;
+        symbol [ ex %tmp.86 318 80 82 ];
+        symbol [ getErrorMessage %tmp.87 318 83 98 ];
+        %tmp.87 = getv function %tmp.86 :getErrorMessage;
+        %tmp.88 = invoke %tmp.86 %tmp.87();
+        %tmp.89 = add %tmp.85 %tmp.88;
+        invoke %tmp.83 %tmp.84(%tmp.89);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 319 12 ]
+        pop;
+        %tmp.90 = false;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_298_8_320_8_finally;
+        ret %tmp.90;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_317_21_320_8_stop:
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_298_8_320_8_finally;
+        pop;
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_298_8_320_8_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_317_10_320_8_end:
+        try @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_298_8_320_8_catch @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_317_10_320_8_end @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_317_10_320_8_end @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_298_8_320_8_finally;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_298_8_320_8_finally;
+        throw %tmp.81;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_298_8_320_8_finally:
+        jsrret;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_298_8_320_8_end:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_289_45_321_4_stop:
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc"; @line = 324; test = true; @symbol_functiondef = [testSleepModeHandling,324,13,34]; @symbol_param<0> = [logger,324,35,41]; ]
+    function testSleepModeHandling(logger) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_324_43_350_4_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 325 8 ]
+        %tmp.1 = lgetv %logger;
+        symbol [ logger %tmp.1 325 8 14 ];
+        symbol [ debug %tmp.2 325 15 20 ];
+        %tmp.2 = getv function %tmp.1 :debug;
+        %tmp.3 = "Testing sleep mode handling";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 327 8 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_324_43_350_4_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_324_43_350_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 327 12 16 ];
+        symbol [ MnmlstView %tmp.7 327 23 33 ];
+        %tmp.7 = getv ? :MnmlstView;
+        %tmp.4 = newc %tmp.7 ();
+        lputv %view.1 %tmp.4;
+        symbol [ view %view.1 327 12 16 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 329 8 ]
+        try @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_329_8_349_8_beginTry @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_329_8_349_8_endTry @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_329_8_349_8_catch @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_329_8_349_8_finally;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_329_8_349_8_beginTry:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_329_12_346_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 331 12 ]
+        %tmp.8 = lgetv %view.1;
+        symbol [ view %tmp.8 331 12 16 ];
+        symbol [ onEnterSleep %tmp.9 331 17 29 ];
+        %tmp.9 = getv function %tmp.8 :onEnterSleep;
+        invoke %tmp.8 %tmp.9();
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 332 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_332_12_335_12_if_stmt:
+        %tmp.10 = lgetv %view.1;
+        symbol [ view %tmp.10 332 16 20 ];
+        symbol [ isAwake %tmp.11 332 21 28 ];
+        %tmp.11 = getv %tmp.10 :isAwake;
+        %tmp.12 = false;
+        %tmp.13 = ne %tmp.11 %tmp.12;
+        bf %tmp.13 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_332_12_335_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_332_12_335_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_332_39_335_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 333 16 ]
+        %tmp.14 = lgetv %logger;
+        symbol [ logger %tmp.14 333 16 22 ];
+        symbol [ debug %tmp.15 333 23 28 ];
+        %tmp.15 = getv function %tmp.14 :debug;
+        %tmp.16 = "Failed: isAwake should be false after onEnterSleep";
+        invoke %tmp.14 %tmp.15(%tmp.16);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 334 16 ]
+        %tmp.17 = false;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_329_8_349_8_finally;
+        ret %tmp.17;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_332_39_335_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_332_12_335_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_332_12_335_12_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 338 12 ]
+        %tmp.18 = lgetv %view.1;
+        symbol [ view %tmp.18 338 12 16 ];
+        symbol [ onExitSleep %tmp.19 338 17 28 ];
+        %tmp.19 = getv function %tmp.18 :onExitSleep;
+        invoke %tmp.18 %tmp.19();
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 339 12 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_339_12_342_12_if_stmt:
+        %tmp.20 = lgetv %view.1;
+        symbol [ view %tmp.20 339 16 20 ];
+        symbol [ isAwake %tmp.21 339 21 28 ];
+        %tmp.21 = getv %tmp.20 :isAwake;
+        %tmp.22 = true;
+        %tmp.23 = ne %tmp.21 %tmp.22;
+        bf %tmp.23 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_339_12_342_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_339_12_342_12_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_339_38_342_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 340 16 ]
+        %tmp.24 = lgetv %logger;
+        symbol [ logger %tmp.24 340 16 22 ];
+        symbol [ debug %tmp.25 340 23 28 ];
+        %tmp.25 = getv function %tmp.24 :debug;
+        %tmp.26 = "Failed: isAwake should be true after onExitSleep";
+        invoke %tmp.24 %tmp.25(%tmp.26);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 341 16 ]
+        %tmp.27 = false;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_329_8_349_8_finally;
+        ret %tmp.27;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_339_38_342_12_stop:
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_339_12_342_12_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_339_12_342_12_if_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 344 12 ]
+        %tmp.28 = lgetv %logger;
+        symbol [ logger %tmp.28 344 12 18 ];
+        symbol [ debug %tmp.29 344 19 24 ];
+        %tmp.29 = getv function %tmp.28 :debug;
+        %tmp.30 = "Passed: Sleep mode handled correctly";
+        invoke %tmp.28 %tmp.29(%tmp.30);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 345 12 ]
+        %tmp.31 = true;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_329_8_349_8_finally;
+        ret %tmp.31;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_329_12_346_8_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_329_8_349_8_endTry:
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_329_8_349_8_finally;
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_329_8_349_8_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_329_8_349_8_catch:
+        %tmp.32 = exception;
+        push %tmp.32;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 346 10 ]
+        [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_329_8_349_8_catch" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_346_10_349_8_end" ]
+        %ex.2 = local;
+        symbol [ ex %ex.2 346 17 19 ];
+        %tmp.33 = dup %tmp.32;
+        lputv %ex.2 %tmp.33;
+        symbol [ ex %ex.2 346 17 19 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_346_21_349_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 347 12 ]
+        %tmp.34 = lgetv %logger;
+        symbol [ logger %tmp.34 347 12 18 ];
+        symbol [ debug %tmp.35 347 19 24 ];
+        %tmp.35 = getv function %tmp.34 :debug;
+        %tmp.36 = "Failed: Sleep mode handling threw exception: ";
+        %tmp.37 = lgetv %ex.2;
+        symbol [ ex %tmp.37 347 75 77 ];
+        symbol [ getErrorMessage %tmp.38 347 78 93 ];
+        %tmp.38 = getv function %tmp.37 :getErrorMessage;
+        %tmp.39 = invoke %tmp.37 %tmp.38();
+        %tmp.40 = add %tmp.36 %tmp.39;
+        invoke %tmp.34 %tmp.35(%tmp.40);
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc" 348 12 ]
+        pop;
+        %tmp.41 = false;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_329_8_349_8_finally;
+        ret %tmp.41;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_346_21_349_8_stop:
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_329_8_349_8_finally;
+        pop;
+        goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_329_8_349_8_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_346_10_349_8_end:
+        try @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_329_8_349_8_catch @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_346_10_349_8_end @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_346_10_349_8_end @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_329_8_349_8_finally;
+        jsr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_329_8_349_8_finally;
+        throw %tmp.32;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_329_8_349_8_finally:
+        jsrret;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_329_8_349_8_end:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_RenderingTest_mc_324_43_350_4_stop:
+    }
+}
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/RenderingTest.mc"; @line = 7; ]
+<init> {
+}

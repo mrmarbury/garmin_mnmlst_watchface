@@ -1,0 +1,808 @@
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 7; @symbol_usingdef<0> = [Toybox,7,6,12]; @symbol_usingdef<1> = [Test,7,13,17]; ]
+using Toybox.Test;
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 8; @symbol_usingdef<0> = [Toybox,8,6,12]; @symbol_usingdef<1> = [Graphics,8,13,21]; ]
+using Toybox.Graphics;
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 9; @symbol_usingdef<0> = [Toybox,9,6,12]; @symbol_usingdef<1> = [Lang,9,13,17]; ]
+using Toybox.Lang;
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 13; test = true; @symbol_classdef = [MockObjects,13,6,17]; ]
+class MockObjects {
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 13; ]
+    <init> {
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 13; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 17; test = true; @symbol_classdef = [MockDc,17,10,16]; ]
+    class MockDc {
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 17; ]
+        <init> {
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 20 12 ]
+            %tmp.1 = newa 0;
+            putv self :drawnElements %tmp.1;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 21 12 ]
+            symbol [ Graphics %tmp.2 21 27 35 ];
+            %tmp.2 = getm $.Toybox.Graphics;
+            symbol [ COLOR_WHITE %tmp.3 21 36 47 ];
+            %tmp.3 = getv %tmp.2 :COLOR_WHITE;
+            putv self :currentColor %tmp.3;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 22 12 ]
+            symbol [ Graphics %tmp.4 22 30 38 ];
+            %tmp.4 = getm $.Toybox.Graphics;
+            symbol [ COLOR_BLACK %tmp.5 22 39 50 ];
+            %tmp.5 = getv %tmp.4 :COLOR_BLACK;
+            putv self :backgroundColor %tmp.5;
+        }
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 17; ]
+        static
+        <init> {
+        }
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 18; @position = 12; @symbol_vardef = [width,18,12,17]; ]
+        var width = 240;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 19; @position = 12; @symbol_vardef = [height,19,12,18]; ]
+        var height = 240;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 20; @position = 12; @symbol_vardef = [drawnElements,20,12,25]; ]
+        var drawnElements;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 21; @position = 12; @symbol_vardef = [currentColor,21,12,24]; ]
+        var currentColor;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 22; @position = 12; @symbol_vardef = [backgroundColor,22,12,27]; ]
+        var backgroundColor;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 24; @symbol_functiondef = [initialize,24,17,27]; @symbol_param<0> = [w,24,28,29]; @symbol_param<1> = [h,24,31,32]; ]
+        function initialize(w, h) as Void {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_24_34_28_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 25 12 ]
+            %tmp.1 = lgetv %w;
+            symbol [ w %tmp.1 25 20 21 ];
+            symbol [ width ? 25 12 17 ];
+            putv self :width %tmp.1;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 26 12 ]
+            %tmp.2 = lgetv %h;
+            symbol [ h %tmp.2 26 21 22 ];
+            symbol [ height ? 26 12 18 ];
+            putv self :height %tmp.2;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 27 12 ]
+            %tmp.3 = newa 0;
+            symbol [ drawnElements ? 27 12 25 ];
+            putv self :drawnElements %tmp.3;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_24_34_28_8_stop:
+        }
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 30; @symbol_functiondef = [getWidth,30,17,25]; ]
+        function getWidth() {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_30_28_32_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 31 12 ]
+            symbol [ width %tmp.2 31 19 24 ];
+            %tmp.2 = getv ? :width;
+            ret %tmp.2;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_30_28_32_8_stop:
+        }
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 34; @symbol_functiondef = [getHeight,34,17,26]; ]
+        function getHeight() {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_34_29_36_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 35 12 ]
+            symbol [ height %tmp.2 35 19 25 ];
+            %tmp.2 = getv ? :height;
+            ret %tmp.2;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_34_29_36_8_stop:
+        }
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 38; @symbol_functiondef = [setColor,38,17,25]; @symbol_param<0> = [foreground,38,26,36]; @symbol_param<1> = [background,38,38,48]; ]
+        function setColor(foreground, background) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_38_50_46_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 39 12 ]
+            %tmp.1 = lgetv %foreground;
+            symbol [ foreground %tmp.1 39 27 37 ];
+            symbol [ currentColor ? 39 12 24 ];
+            putv self :currentColor %tmp.1;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 40 12 ]
+            %tmp.2 = lgetv %background;
+            symbol [ background %tmp.2 40 30 40 ];
+            symbol [ backgroundColor ? 40 12 27 ];
+            putv self :backgroundColor %tmp.2;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 41 12 ]
+            symbol [ drawnElements %tmp.4 41 12 25 ];
+            %tmp.4 = getv ? :drawnElements;
+            symbol [ add %tmp.5 41 26 29 ];
+            %tmp.5 = getv function %tmp.4 :add;
+            %tmp.6 = newd 3;
+            %tmp.8 = const :type;
+            symbol [ type %tmp.8 42 17 21 const ];
+            %tmp.9 = "setColor";
+            %tmp.10 = dup %tmp.6;
+            %tmp.11 = aputv %tmp.10 %tmp.8 %tmp.9;
+            %tmp.13 = const :foreground;
+            symbol [ foreground %tmp.13 43 17 27 const ];
+            %tmp.14 = lgetv %foreground;
+            symbol [ foreground %tmp.14 43 31 41 ];
+            %tmp.15 = dup %tmp.11;
+            %tmp.16 = aputv %tmp.15 %tmp.13 %tmp.14;
+            %tmp.18 = const :background;
+            symbol [ background %tmp.18 44 17 27 const ];
+            %tmp.19 = lgetv %background;
+            symbol [ background %tmp.19 44 31 41 ];
+            %tmp.20 = dup %tmp.16;
+            %tmp.21 = aputv %tmp.20 %tmp.18 %tmp.19;
+            invoke %tmp.4 %tmp.5(%tmp.21);
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_38_50_46_8_stop:
+        }
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 48; @symbol_functiondef = [fillRectangle,48,17,30]; @symbol_param<0> = [x,48,31,32]; @symbol_param<1> = [y,48,34,35]; @symbol_param<2> = [width,48,37,42]; @symbol_param<3> = [height,48,44,50]; ]
+        function fillRectangle(x, y, width, height) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_48_52_57_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 49 12 ]
+            symbol [ drawnElements %tmp.2 49 12 25 ];
+            %tmp.2 = getv ? :drawnElements;
+            symbol [ add %tmp.3 49 26 29 ];
+            %tmp.3 = getv function %tmp.2 :add;
+            %tmp.4 = newd 6;
+            %tmp.6 = const :type;
+            symbol [ type %tmp.6 50 17 21 const ];
+            %tmp.7 = "fillRectangle";
+            %tmp.8 = dup %tmp.4;
+            %tmp.9 = aputv %tmp.8 %tmp.6 %tmp.7;
+            %tmp.11 = const :x;
+            symbol [ x %tmp.11 51 17 18 const ];
+            %tmp.12 = lgetv %x;
+            symbol [ x %tmp.12 51 22 23 ];
+            %tmp.13 = dup %tmp.9;
+            %tmp.14 = aputv %tmp.13 %tmp.11 %tmp.12;
+            %tmp.16 = const :y;
+            symbol [ y %tmp.16 52 17 18 const ];
+            %tmp.17 = lgetv %y;
+            symbol [ y %tmp.17 52 22 23 ];
+            %tmp.18 = dup %tmp.14;
+            %tmp.19 = aputv %tmp.18 %tmp.16 %tmp.17;
+            %tmp.21 = const :width;
+            symbol [ width %tmp.21 53 17 22 const ];
+            %tmp.22 = lgetv %width;
+            symbol [ width %tmp.22 53 26 31 ];
+            %tmp.23 = dup %tmp.19;
+            %tmp.24 = aputv %tmp.23 %tmp.21 %tmp.22;
+            %tmp.26 = const :height;
+            symbol [ height %tmp.26 54 17 23 const ];
+            %tmp.27 = lgetv %height;
+            symbol [ height %tmp.27 54 27 33 ];
+            %tmp.28 = dup %tmp.24;
+            %tmp.29 = aputv %tmp.28 %tmp.26 %tmp.27;
+            %tmp.31 = const :color;
+            symbol [ color %tmp.31 55 17 22 const ];
+            symbol [ currentColor %tmp.33 55 26 38 ];
+            %tmp.33 = getv ? :currentColor;
+            %tmp.34 = dup %tmp.29;
+            %tmp.35 = aputv %tmp.34 %tmp.31 %tmp.33;
+            invoke %tmp.2 %tmp.3(%tmp.35);
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_48_52_57_8_stop:
+        }
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 59; @symbol_functiondef = [fillPolygon,59,17,28]; @symbol_param<0> = [coordinates,59,29,40]; ]
+        function fillPolygon(coordinates) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_59_42_65_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 60 12 ]
+            symbol [ drawnElements %tmp.2 60 12 25 ];
+            %tmp.2 = getv ? :drawnElements;
+            symbol [ add %tmp.3 60 26 29 ];
+            %tmp.3 = getv function %tmp.2 :add;
+            %tmp.4 = newd 3;
+            %tmp.6 = const :type;
+            symbol [ type %tmp.6 61 17 21 const ];
+            %tmp.7 = "fillPolygon";
+            %tmp.8 = dup %tmp.4;
+            %tmp.9 = aputv %tmp.8 %tmp.6 %tmp.7;
+            %tmp.11 = const :coordinates;
+            symbol [ coordinates %tmp.11 62 17 28 const ];
+            %tmp.12 = lgetv %coordinates;
+            symbol [ coordinates %tmp.12 62 32 43 ];
+            %tmp.13 = dup %tmp.9;
+            %tmp.14 = aputv %tmp.13 %tmp.11 %tmp.12;
+            %tmp.16 = const :color;
+            symbol [ color %tmp.16 63 17 22 const ];
+            symbol [ currentColor %tmp.18 63 26 38 ];
+            %tmp.18 = getv ? :currentColor;
+            %tmp.19 = dup %tmp.14;
+            %tmp.20 = aputv %tmp.19 %tmp.16 %tmp.18;
+            invoke %tmp.2 %tmp.3(%tmp.20);
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_59_42_65_8_stop:
+        }
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 67; @symbol_functiondef = [fillCircle,67,17,27]; @symbol_param<0> = [x,67,28,29]; @symbol_param<1> = [y,67,31,32]; @symbol_param<2> = [radius,67,34,40]; ]
+        function fillCircle(x, y, radius) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_67_42_75_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 68 12 ]
+            symbol [ drawnElements %tmp.2 68 12 25 ];
+            %tmp.2 = getv ? :drawnElements;
+            symbol [ add %tmp.3 68 26 29 ];
+            %tmp.3 = getv function %tmp.2 :add;
+            %tmp.4 = newd 5;
+            %tmp.6 = const :type;
+            symbol [ type %tmp.6 69 17 21 const ];
+            %tmp.7 = "fillCircle";
+            %tmp.8 = dup %tmp.4;
+            %tmp.9 = aputv %tmp.8 %tmp.6 %tmp.7;
+            %tmp.11 = const :x;
+            symbol [ x %tmp.11 70 17 18 const ];
+            %tmp.12 = lgetv %x;
+            symbol [ x %tmp.12 70 22 23 ];
+            %tmp.13 = dup %tmp.9;
+            %tmp.14 = aputv %tmp.13 %tmp.11 %tmp.12;
+            %tmp.16 = const :y;
+            symbol [ y %tmp.16 71 17 18 const ];
+            %tmp.17 = lgetv %y;
+            symbol [ y %tmp.17 71 22 23 ];
+            %tmp.18 = dup %tmp.14;
+            %tmp.19 = aputv %tmp.18 %tmp.16 %tmp.17;
+            %tmp.21 = const :radius;
+            symbol [ radius %tmp.21 72 17 23 const ];
+            %tmp.22 = lgetv %radius;
+            symbol [ radius %tmp.22 72 27 33 ];
+            %tmp.23 = dup %tmp.19;
+            %tmp.24 = aputv %tmp.23 %tmp.21 %tmp.22;
+            %tmp.26 = const :color;
+            symbol [ color %tmp.26 73 17 22 const ];
+            symbol [ currentColor %tmp.28 73 26 38 ];
+            %tmp.28 = getv ? :currentColor;
+            %tmp.29 = dup %tmp.24;
+            %tmp.30 = aputv %tmp.29 %tmp.26 %tmp.28;
+            invoke %tmp.2 %tmp.3(%tmp.30);
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_67_42_75_8_stop:
+        }
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 77; @symbol_functiondef = [drawCircle,77,17,27]; @symbol_param<0> = [x,77,28,29]; @symbol_param<1> = [y,77,31,32]; @symbol_param<2> = [radius,77,34,40]; ]
+        function drawCircle(x, y, radius) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_77_42_85_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 78 12 ]
+            symbol [ drawnElements %tmp.2 78 12 25 ];
+            %tmp.2 = getv ? :drawnElements;
+            symbol [ add %tmp.3 78 26 29 ];
+            %tmp.3 = getv function %tmp.2 :add;
+            %tmp.4 = newd 5;
+            %tmp.6 = const :type;
+            symbol [ type %tmp.6 79 17 21 const ];
+            %tmp.7 = "drawCircle";
+            %tmp.8 = dup %tmp.4;
+            %tmp.9 = aputv %tmp.8 %tmp.6 %tmp.7;
+            %tmp.11 = const :x;
+            symbol [ x %tmp.11 80 17 18 const ];
+            %tmp.12 = lgetv %x;
+            symbol [ x %tmp.12 80 22 23 ];
+            %tmp.13 = dup %tmp.9;
+            %tmp.14 = aputv %tmp.13 %tmp.11 %tmp.12;
+            %tmp.16 = const :y;
+            symbol [ y %tmp.16 81 17 18 const ];
+            %tmp.17 = lgetv %y;
+            symbol [ y %tmp.17 81 22 23 ];
+            %tmp.18 = dup %tmp.14;
+            %tmp.19 = aputv %tmp.18 %tmp.16 %tmp.17;
+            %tmp.21 = const :radius;
+            symbol [ radius %tmp.21 82 17 23 const ];
+            %tmp.22 = lgetv %radius;
+            symbol [ radius %tmp.22 82 27 33 ];
+            %tmp.23 = dup %tmp.19;
+            %tmp.24 = aputv %tmp.23 %tmp.21 %tmp.22;
+            %tmp.26 = const :color;
+            symbol [ color %tmp.26 83 17 22 const ];
+            symbol [ currentColor %tmp.28 83 26 38 ];
+            %tmp.28 = getv ? :currentColor;
+            %tmp.29 = dup %tmp.24;
+            %tmp.30 = aputv %tmp.29 %tmp.26 %tmp.28;
+            invoke %tmp.2 %tmp.3(%tmp.30);
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_77_42_85_8_stop:
+        }
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 87; @symbol_functiondef = [drawLine,87,17,25]; @symbol_param<0> = [x1,87,26,28]; @symbol_param<1> = [y1,87,30,32]; @symbol_param<2> = [x2,87,34,36]; @symbol_param<3> = [y2,87,38,40]; ]
+        function drawLine(x1, y1, x2, y2) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_87_42_96_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 88 12 ]
+            symbol [ drawnElements %tmp.2 88 12 25 ];
+            %tmp.2 = getv ? :drawnElements;
+            symbol [ add %tmp.3 88 26 29 ];
+            %tmp.3 = getv function %tmp.2 :add;
+            %tmp.4 = newd 6;
+            %tmp.6 = const :type;
+            symbol [ type %tmp.6 89 17 21 const ];
+            %tmp.7 = "drawLine";
+            %tmp.8 = dup %tmp.4;
+            %tmp.9 = aputv %tmp.8 %tmp.6 %tmp.7;
+            %tmp.11 = const :x1;
+            symbol [ x1 %tmp.11 90 17 19 const ];
+            %tmp.12 = lgetv %x1;
+            symbol [ x1 %tmp.12 90 23 25 ];
+            %tmp.13 = dup %tmp.9;
+            %tmp.14 = aputv %tmp.13 %tmp.11 %tmp.12;
+            %tmp.16 = const :y1;
+            symbol [ y1 %tmp.16 91 17 19 const ];
+            %tmp.17 = lgetv %y1;
+            symbol [ y1 %tmp.17 91 23 25 ];
+            %tmp.18 = dup %tmp.14;
+            %tmp.19 = aputv %tmp.18 %tmp.16 %tmp.17;
+            %tmp.21 = const :x2;
+            symbol [ x2 %tmp.21 92 17 19 const ];
+            %tmp.22 = lgetv %x2;
+            symbol [ x2 %tmp.22 92 23 25 ];
+            %tmp.23 = dup %tmp.19;
+            %tmp.24 = aputv %tmp.23 %tmp.21 %tmp.22;
+            %tmp.26 = const :y2;
+            symbol [ y2 %tmp.26 93 17 19 const ];
+            %tmp.27 = lgetv %y2;
+            symbol [ y2 %tmp.27 93 23 25 ];
+            %tmp.28 = dup %tmp.24;
+            %tmp.29 = aputv %tmp.28 %tmp.26 %tmp.27;
+            %tmp.31 = const :color;
+            symbol [ color %tmp.31 94 17 22 const ];
+            symbol [ currentColor %tmp.33 94 26 38 ];
+            %tmp.33 = getv ? :currentColor;
+            %tmp.34 = dup %tmp.29;
+            %tmp.35 = aputv %tmp.34 %tmp.31 %tmp.33;
+            invoke %tmp.2 %tmp.3(%tmp.35);
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_87_42_96_8_stop:
+        }
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 98; @symbol_functiondef = [drawText,98,17,25]; @symbol_param<0> = [x,98,26,27]; @symbol_param<1> = [y,98,29,30]; @symbol_param<2> = [font,98,32,36]; @symbol_param<3> = [text,98,38,42]; @symbol_param<4> = [justification,98,44,57]; ]
+        function drawText(x, y, font, text, justification) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_98_59_108_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 99 12 ]
+            symbol [ drawnElements %tmp.2 99 12 25 ];
+            %tmp.2 = getv ? :drawnElements;
+            symbol [ add %tmp.3 99 26 29 ];
+            %tmp.3 = getv function %tmp.2 :add;
+            %tmp.4 = newd 7;
+            %tmp.6 = const :type;
+            symbol [ type %tmp.6 100 17 21 const ];
+            %tmp.7 = "drawText";
+            %tmp.8 = dup %tmp.4;
+            %tmp.9 = aputv %tmp.8 %tmp.6 %tmp.7;
+            %tmp.11 = const :x;
+            symbol [ x %tmp.11 101 17 18 const ];
+            %tmp.12 = lgetv %x;
+            symbol [ x %tmp.12 101 22 23 ];
+            %tmp.13 = dup %tmp.9;
+            %tmp.14 = aputv %tmp.13 %tmp.11 %tmp.12;
+            %tmp.16 = const :y;
+            symbol [ y %tmp.16 102 17 18 const ];
+            %tmp.17 = lgetv %y;
+            symbol [ y %tmp.17 102 22 23 ];
+            %tmp.18 = dup %tmp.14;
+            %tmp.19 = aputv %tmp.18 %tmp.16 %tmp.17;
+            %tmp.21 = const :font;
+            symbol [ font %tmp.21 103 17 21 const ];
+            %tmp.22 = lgetv %font;
+            symbol [ font %tmp.22 103 25 29 ];
+            %tmp.23 = dup %tmp.19;
+            %tmp.24 = aputv %tmp.23 %tmp.21 %tmp.22;
+            %tmp.26 = const :text;
+            symbol [ text %tmp.26 104 17 21 const ];
+            %tmp.27 = lgetv %text;
+            symbol [ text %tmp.27 104 25 29 ];
+            %tmp.28 = dup %tmp.24;
+            %tmp.29 = aputv %tmp.28 %tmp.26 %tmp.27;
+            %tmp.31 = const :justification;
+            symbol [ justification %tmp.31 105 17 30 const ];
+            %tmp.32 = lgetv %justification;
+            symbol [ justification %tmp.32 105 34 47 ];
+            %tmp.33 = dup %tmp.29;
+            %tmp.34 = aputv %tmp.33 %tmp.31 %tmp.32;
+            %tmp.36 = const :color;
+            symbol [ color %tmp.36 106 17 22 const ];
+            symbol [ currentColor %tmp.38 106 26 38 ];
+            %tmp.38 = getv ? :currentColor;
+            %tmp.39 = dup %tmp.34;
+            %tmp.40 = aputv %tmp.39 %tmp.36 %tmp.38;
+            invoke %tmp.2 %tmp.3(%tmp.40);
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_98_59_108_8_stop:
+        }
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 110; @symbol_functiondef = [clear,110,17,22]; ]
+        function clear() {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_110_25_114_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 111 12 ]
+            symbol [ drawnElements %tmp.2 111 12 25 ];
+            %tmp.2 = getv ? :drawnElements;
+            symbol [ add %tmp.3 111 26 29 ];
+            %tmp.3 = getv function %tmp.2 :add;
+            %tmp.4 = newd 1;
+            %tmp.6 = const :type;
+            symbol [ type %tmp.6 112 17 21 const ];
+            %tmp.7 = "clear";
+            %tmp.8 = dup %tmp.4;
+            %tmp.9 = aputv %tmp.8 %tmp.6 %tmp.7;
+            invoke %tmp.2 %tmp.3(%tmp.9);
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_110_25_114_8_stop:
+        }
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 116; @symbol_functiondef = [clearClip,116,17,26]; ]
+        function clearClip() {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_116_29_120_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 117 12 ]
+            symbol [ drawnElements %tmp.2 117 12 25 ];
+            %tmp.2 = getv ? :drawnElements;
+            symbol [ add %tmp.3 117 26 29 ];
+            %tmp.3 = getv function %tmp.2 :add;
+            %tmp.4 = newd 1;
+            %tmp.6 = const :type;
+            symbol [ type %tmp.6 118 17 21 const ];
+            %tmp.7 = "clearClip";
+            %tmp.8 = dup %tmp.4;
+            %tmp.9 = aputv %tmp.8 %tmp.6 %tmp.7;
+            invoke %tmp.2 %tmp.3(%tmp.9);
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_116_29_120_8_stop:
+        }
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 122; @symbol_functiondef = [drawBitmap,122,17,27]; @symbol_param<0> = [x,122,28,29]; @symbol_param<1> = [y,122,31,32]; @symbol_param<2> = [bitmap,122,34,40]; ]
+        function drawBitmap(x, y, bitmap) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_122_42_129_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 123 12 ]
+            symbol [ drawnElements %tmp.2 123 12 25 ];
+            %tmp.2 = getv ? :drawnElements;
+            symbol [ add %tmp.3 123 26 29 ];
+            %tmp.3 = getv function %tmp.2 :add;
+            %tmp.4 = newd 4;
+            %tmp.6 = const :type;
+            symbol [ type %tmp.6 124 17 21 const ];
+            %tmp.7 = "drawBitmap";
+            %tmp.8 = dup %tmp.4;
+            %tmp.9 = aputv %tmp.8 %tmp.6 %tmp.7;
+            %tmp.11 = const :x;
+            symbol [ x %tmp.11 125 17 18 const ];
+            %tmp.12 = lgetv %x;
+            symbol [ x %tmp.12 125 22 23 ];
+            %tmp.13 = dup %tmp.9;
+            %tmp.14 = aputv %tmp.13 %tmp.11 %tmp.12;
+            %tmp.16 = const :y;
+            symbol [ y %tmp.16 126 17 18 const ];
+            %tmp.17 = lgetv %y;
+            symbol [ y %tmp.17 126 22 23 ];
+            %tmp.18 = dup %tmp.14;
+            %tmp.19 = aputv %tmp.18 %tmp.16 %tmp.17;
+            %tmp.21 = const :bitmap;
+            symbol [ bitmap %tmp.21 127 17 23 const ];
+            %tmp.22 = lgetv %bitmap;
+            symbol [ bitmap %tmp.22 127 27 33 ];
+            %tmp.23 = dup %tmp.19;
+            %tmp.24 = aputv %tmp.23 %tmp.21 %tmp.22;
+            invoke %tmp.2 %tmp.3(%tmp.24);
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_122_42_129_8_stop:
+        }
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 132; @symbol_functiondef = [hasDrawnType,132,17,29]; @symbol_param<0> = [type,132,30,34]; ]
+        function hasDrawnType(type) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_132_36_139_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 133 12 ]
+            for @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_133_12_137_12_for_test @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_133_12_137_12_for_incr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_133_12_137_12_for_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_133_12_137_12_for_init:
+            [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_133_12_137_12_for_begin" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_133_12_137_12_for_end" ]
+            %i.1 = local;
+            symbol [ i %i.1 133 21 22 ];
+            %tmp.1 = 0;
+            lputv %i.1 %tmp.1;
+            symbol [ i %i.1 133 21 22 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_133_12_137_12_for_test:
+            %tmp.2 = lgetv %i.1;
+            symbol [ i %tmp.2 133 28 29 ];
+            symbol [ drawnElements %tmp.4 133 32 45 ];
+            %tmp.4 = getv ? :drawnElements;
+            symbol [ size %tmp.5 133 46 50 ];
+            %tmp.5 = getv function %tmp.4 :size;
+            %tmp.6 = invoke %tmp.4 %tmp.5();
+            %tmp.7 = lt %tmp.2 %tmp.6;
+            bf %tmp.7 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_133_12_137_12_for_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_133_12_137_12_for_begin:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_133_59_137_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 134 16 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_134_16_136_16_if_stmt:
+            symbol [ drawnElements %tmp.9 134 20 33 ];
+            %tmp.9 = getv ? :drawnElements;
+            %tmp.10 = lgetv %i.1;
+            symbol [ i %tmp.10 134 34 35 ];
+            %tmp.11 = agetv %tmp.9 %tmp.10;
+            %tmp.13 = const :type;
+            symbol [ type %tmp.13 134 38 42 const ];
+            %tmp.14 = agetv %tmp.11 %tmp.13;
+            symbol [ equals %tmp.15 134 44 50 ];
+            %tmp.15 = getv function %tmp.14 :equals;
+            %tmp.16 = lgetv %type;
+            symbol [ type %tmp.16 134 51 55 ];
+            %tmp.17 = invoke %tmp.14 %tmp.15(%tmp.16);
+            bf %tmp.17 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_134_16_136_16_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_134_16_136_16_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_134_58_136_16_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 135 20 ]
+            %tmp.18 = true;
+            ret %tmp.18;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_134_58_136_16_stop:
+            goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_134_16_136_16_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_134_16_136_16_if_end:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_133_59_137_12_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_133_12_137_12_for_incr:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 133 ]
+            %tmp.21 = lgetv %i.1;
+            symbol [ i %tmp.21 133 54 55 ];
+            %tmp.22 = add %tmp.21 1;
+            lputv %i.1 %tmp.22;
+            symbol [ i %i.1 133 54 55 ];
+            goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_133_12_137_12_for_test;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_133_12_137_12_for_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 138 12 ]
+            %tmp.23 = false;
+            ret %tmp.23;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_132_36_139_8_stop:
+        }
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 142; @symbol_functiondef = [countDrawnType,142,17,31]; @symbol_param<0> = [type,142,32,36]; ]
+        function countDrawnType(type) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_142_38_150_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 143 12 ]
+            [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_142_38_150_8_start" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_142_38_150_8_stop" ]
+            %count.1 = local;
+            symbol [ count %count.1 143 16 21 ];
+            %tmp.1 = 0;
+            lputv %count.1 %tmp.1;
+            symbol [ count %count.1 143 16 21 ];
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 144 12 ]
+            for @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_144_12_148_12_for_test @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_144_12_148_12_for_incr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_144_12_148_12_for_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_144_12_148_12_for_init:
+            [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_144_12_148_12_for_begin" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_144_12_148_12_for_end" ]
+            %i.2 = local;
+            symbol [ i %i.2 144 21 22 ];
+            %tmp.2 = 0;
+            lputv %i.2 %tmp.2;
+            symbol [ i %i.2 144 21 22 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_144_12_148_12_for_test:
+            %tmp.3 = lgetv %i.2;
+            symbol [ i %tmp.3 144 28 29 ];
+            symbol [ drawnElements %tmp.5 144 32 45 ];
+            %tmp.5 = getv ? :drawnElements;
+            symbol [ size %tmp.6 144 46 50 ];
+            %tmp.6 = getv function %tmp.5 :size;
+            %tmp.7 = invoke %tmp.5 %tmp.6();
+            %tmp.8 = lt %tmp.3 %tmp.7;
+            bf %tmp.8 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_144_12_148_12_for_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_144_12_148_12_for_begin:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_144_59_148_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 145 16 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_145_16_147_16_if_stmt:
+            symbol [ drawnElements %tmp.10 145 20 33 ];
+            %tmp.10 = getv ? :drawnElements;
+            %tmp.11 = lgetv %i.2;
+            symbol [ i %tmp.11 145 34 35 ];
+            %tmp.12 = agetv %tmp.10 %tmp.11;
+            %tmp.14 = const :type;
+            symbol [ type %tmp.14 145 38 42 const ];
+            %tmp.15 = agetv %tmp.12 %tmp.14;
+            symbol [ equals %tmp.16 145 44 50 ];
+            %tmp.16 = getv function %tmp.15 :equals;
+            %tmp.17 = lgetv %type;
+            symbol [ type %tmp.17 145 51 55 ];
+            %tmp.18 = invoke %tmp.15 %tmp.16(%tmp.17);
+            bf %tmp.18 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_145_16_147_16_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_145_16_147_16_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_145_58_147_16_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 146 20 ]
+            %tmp.21 = lgetv %count.1;
+            symbol [ count %tmp.21 146 20 25 ];
+            %tmp.22 = add %tmp.21 1;
+            lputv %count.1 %tmp.22;
+            symbol [ count %count.1 146 20 25 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_145_58_147_16_stop:
+            goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_145_16_147_16_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_145_16_147_16_if_end:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_144_59_148_12_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_144_12_148_12_for_incr:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 144 ]
+            %tmp.25 = lgetv %i.2;
+            symbol [ i %tmp.25 144 54 55 ];
+            %tmp.26 = add %tmp.25 1;
+            lputv %i.2 %tmp.26;
+            symbol [ i %i.2 144 54 55 ];
+            goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_144_12_148_12_for_test;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_144_12_148_12_for_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 149 12 ]
+            %tmp.27 = lgetv %count.1;
+            symbol [ count %tmp.27 149 19 24 ];
+            ret %tmp.27;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_142_38_150_8_stop:
+        }
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 153; @symbol_functiondef = [getLastDrawnOfType,153,17,35]; @symbol_param<0> = [type,153,36,40]; ]
+        function getLastDrawnOfType(type) {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_153_42_160_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 154 12 ]
+            for @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_154_12_158_12_for_test @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_154_12_158_12_for_incr @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_154_12_158_12_for_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_154_12_158_12_for_init:
+            [ "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_154_12_158_12_for_begin" "_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_154_12_158_12_for_end" ]
+            %i.1 = local;
+            symbol [ i %i.1 154 21 22 ];
+            symbol [ drawnElements %tmp.2 154 25 38 ];
+            %tmp.2 = getv ? :drawnElements;
+            symbol [ size %tmp.3 154 39 43 ];
+            %tmp.3 = getv function %tmp.2 :size;
+            %tmp.4 = invoke %tmp.2 %tmp.3();
+            %tmp.5 = 1;
+            %tmp.6 = sub %tmp.4 %tmp.5;
+            lputv %i.1 %tmp.6;
+            symbol [ i %i.1 154 21 22 ];
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_154_12_158_12_for_test:
+            %tmp.7 = lgetv %i.1;
+            symbol [ i %tmp.7 154 51 52 ];
+            %tmp.8 = 0;
+            %tmp.9 = gte %tmp.7 %tmp.8;
+            bf %tmp.9 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_154_12_158_12_for_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_154_12_158_12_for_begin:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_154_64_158_12_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 155 16 ]
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_155_16_157_16_if_stmt:
+            symbol [ drawnElements %tmp.11 155 20 33 ];
+            %tmp.11 = getv ? :drawnElements;
+            %tmp.12 = lgetv %i.1;
+            symbol [ i %tmp.12 155 34 35 ];
+            %tmp.13 = agetv %tmp.11 %tmp.12;
+            %tmp.15 = const :type;
+            symbol [ type %tmp.15 155 38 42 const ];
+            %tmp.16 = agetv %tmp.13 %tmp.15;
+            symbol [ equals %tmp.17 155 44 50 ];
+            %tmp.17 = getv function %tmp.16 :equals;
+            %tmp.18 = lgetv %type;
+            symbol [ type %tmp.18 155 51 55 ];
+            %tmp.19 = invoke %tmp.16 %tmp.17(%tmp.18);
+            bf %tmp.19 @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_155_16_157_16_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_155_16_157_16_if_true:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_155_58_157_16_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 156 20 ]
+            symbol [ drawnElements %tmp.21 156 27 40 ];
+            %tmp.21 = getv ? :drawnElements;
+            %tmp.22 = lgetv %i.1;
+            symbol [ i %tmp.22 156 41 42 ];
+            %tmp.23 = agetv %tmp.21 %tmp.22;
+            ret %tmp.23;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_155_58_157_16_stop:
+            goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_155_16_157_16_if_end;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_155_16_157_16_if_end:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_154_64_158_12_stop:
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_154_12_158_12_for_incr:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 154 ]
+            %tmp.26 = lgetv %i.1;
+            symbol [ i %tmp.26 154 59 60 ];
+            %tmp.27 = sub %tmp.26 1;
+            lputv %i.1 %tmp.27;
+            symbol [ i %i.1 154 59 60 ];
+            goto @_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_154_12_158_12_for_test;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_154_12_158_12_for_end:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 159 12 ]
+            %tmp.28 = null;
+            ret %tmp.28;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_153_42_160_8_stop:
+        }
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 163; @symbol_functiondef = [reset,163,17,22]; ]
+        function reset() {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_163_25_165_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 164 12 ]
+            %tmp.1 = newa 0;
+            symbol [ drawnElements ? 164 12 25 ];
+            putv self :drawnElements %tmp.1;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_163_25_165_8_stop:
+        }
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 170; test = true; @symbol_classdef = [MockDeviceSettings,170,10,28]; ]
+    class MockDeviceSettings {
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 170; ]
+        <init> {
+        }
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 170; ]
+        static
+        <init> {
+        }
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 171; @position = 12; @symbol_vardef = [phoneConnected,171,12,26]; ]
+        var phoneConnected = true;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 172; @position = 12; @symbol_vardef = [notificationCount,172,12,29]; ]
+        var notificationCount = 0;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 173; @position = 12; @symbol_vardef = [screenShape,173,12,23]; ]
+        var screenShape = 1;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 175; @symbol_functiondef = [initialize,175,17,27]; @symbol_param<0> = [connected,175,28,37]; @symbol_param<1> = [notifications,175,39,52]; @symbol_param<2> = [shape,175,54,59]; ]
+        function initialize(connected, notifications, shape) as Void {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_175_61_179_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 176 12 ]
+            %tmp.1 = lgetv %connected;
+            symbol [ connected %tmp.1 176 29 38 ];
+            symbol [ phoneConnected ? 176 12 26 ];
+            putv self :phoneConnected %tmp.1;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 177 12 ]
+            %tmp.2 = lgetv %notifications;
+            symbol [ notifications %tmp.2 177 32 45 ];
+            symbol [ notificationCount ? 177 12 29 ];
+            putv self :notificationCount %tmp.2;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 178 12 ]
+            %tmp.3 = lgetv %shape;
+            symbol [ shape %tmp.3 178 26 31 ];
+            symbol [ screenShape ? 178 12 23 ];
+            putv self :screenShape %tmp.3;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_175_61_179_8_stop:
+        }
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 184; test = true; @symbol_classdef = [MockSystemStats,184,10,25]; ]
+    class MockSystemStats {
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 184; ]
+        <init> {
+        }
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 184; ]
+        static
+        <init> {
+        }
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 185; @position = 12; @symbol_vardef = [battery,185,12,19]; ]
+        var battery = 50.0;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 186; @position = 12; @symbol_vardef = [charging,186,12,20]; ]
+        var charging = false;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 187; @position = 12; @symbol_vardef = [usedMemory,187,12,22]; ]
+        var usedMemory = 1024;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 188; @position = 12; @symbol_vardef = [totalMemory,188,12,23]; ]
+        var totalMemory = 4096;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 190; @symbol_functiondef = [initialize,190,17,27]; @symbol_param<0> = [batteryLevel,190,28,40]; @symbol_param<1> = [isCharging,190,42,52]; ]
+        function initialize(batteryLevel, isCharging) as Void {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_190_54_193_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 191 12 ]
+            %tmp.1 = lgetv %batteryLevel;
+            symbol [ batteryLevel %tmp.1 191 22 34 ];
+            symbol [ battery ? 191 12 19 ];
+            putv self :battery %tmp.1;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 192 12 ]
+            %tmp.2 = lgetv %isCharging;
+            symbol [ isCharging %tmp.2 192 23 33 ];
+            symbol [ charging ? 192 12 20 ];
+            putv self :charging %tmp.2;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_190_54_193_8_stop:
+        }
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 198; test = true; @symbol_classdef = [MockActivityInfo,198,10,26]; ]
+    class MockActivityInfo {
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 198; ]
+        <init> {
+        }
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 198; ]
+        static
+        <init> {
+        }
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 199; @position = 12; @symbol_vardef = [moveBarLevel,199,12,24]; ]
+        var moveBarLevel = 0;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 200; @position = 12; @symbol_vardef = [steps,200,12,17]; ]
+        var steps = 5000;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 201; @position = 12; @symbol_vardef = [calories,201,12,20]; ]
+        var calories = 250;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 203; @symbol_functiondef = [initialize,203,17,27]; @symbol_param<0> = [moveLevel,203,28,37]; @symbol_param<1> = [stepCount,203,39,48]; ]
+        function initialize(moveLevel, stepCount) as Void {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_203_50_206_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 204 12 ]
+            %tmp.1 = lgetv %moveLevel;
+            symbol [ moveLevel %tmp.1 204 27 36 ];
+            symbol [ moveBarLevel ? 204 12 24 ];
+            putv self :moveBarLevel %tmp.1;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 205 12 ]
+            %tmp.2 = lgetv %stepCount;
+            symbol [ stepCount %tmp.2 205 20 29 ];
+            symbol [ steps ? 205 12 17 ];
+            putv self :steps %tmp.2;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_203_50_206_8_stop:
+        }
+    }
+    [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 211; test = true; @symbol_classdef = [MockClockTime,211,10,23]; ]
+    class MockClockTime {
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 211; ]
+        <init> {
+        }
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 211; ]
+        static
+        <init> {
+        }
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 212; @position = 12; @symbol_vardef = [hour,212,12,16]; ]
+        var hour = 12;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 213; @position = 12; @symbol_vardef = [min,213,12,15]; ]
+        var min = 30;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 214; @position = 12; @symbol_vardef = [sec,214,12,15]; ]
+        var sec = 45;
+        [ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 216; @symbol_functiondef = [initialize,216,17,27]; @symbol_param<0> = [h,216,28,29]; @symbol_param<1> = [m,216,31,32]; @symbol_param<2> = [s,216,34,35]; ]
+        function initialize(h, m, s) as Void {
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_216_37_220_8_start:
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 217 12 ]
+            %tmp.1 = lgetv %h;
+            symbol [ h %tmp.1 217 19 20 ];
+            symbol [ hour ? 217 12 16 ];
+            putv self :hour %tmp.1;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 218 12 ]
+            %tmp.2 = lgetv %m;
+            symbol [ m %tmp.2 218 18 19 ];
+            symbol [ min ? 218 12 15 ];
+            putv self :min %tmp.2;
+[ "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc" 219 12 ]
+            %tmp.3 = lgetv %s;
+            symbol [ s %tmp.3 219 18 19 ];
+            symbol [ sec ? 219 12 15 ];
+            putv self :sec %tmp.3;
+_Users_bsu_Development_garmin_garmin_mnmlst_watchface_tests_MockObjects_mc_216_37_220_8_stop:
+        }
+    }
+}
+[ @file = "/Users/bsu/Development/garmin/garmin_mnmlst_watchface/tests/MockObjects.mc"; @line = 7; ]
+<init> {
+}
