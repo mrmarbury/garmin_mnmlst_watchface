@@ -1,5 +1,6 @@
 
 .DS_Store
 .lh
-build/*
+build/
+bin/
 *.iq
