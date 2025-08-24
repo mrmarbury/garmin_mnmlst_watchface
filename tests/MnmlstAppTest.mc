@@ -12,7 +12,7 @@ using Toybox.Lang;
 class MnmlstAppTest {
 
     (:test)
-    function testInitialize(logger) {
+    function testInitialize(logger as Test.Logger) {
         logger.debug("Testing MnmlstApp initialize");
         
         var app = new Mnmlst();
@@ -28,7 +28,7 @@ class MnmlstAppTest {
     }
 
     (:test)
-    function testGetInitialView(logger) {
+    function testGetInitialView(logger as Test.Logger) {
         logger.debug("Testing MnmlstApp getInitialView");
         
         var app = new Mnmlst();
@@ -74,7 +74,7 @@ class MnmlstAppTest {
     }
 
     (:test)
-    function testAppLifecycle(logger) {
+    function testAppLifecycle(logger as Test.Logger) {
         logger.debug("Testing MnmlstApp lifecycle methods");
         
         var app = new Mnmlst();
@@ -94,6 +94,36 @@ class MnmlstAppTest {
             logger.debug("Failed: Lifecycle method threw exception: " + ex.getErrorMessage());
             return false;
         }
+    }
+
+    (:test)
+    function testSettingsReload(logger as Test.Logger) {
+        logger.debug("Testing automatic settings reload functionality");
+        
+        var app = new Mnmlst();
+        var success = true;
+        
+        try {
+            // Test that onSettingsChanged method exists and can be called
+            app.onSettingsChanged();
+            
+            // We can't easily test the actual UI update without mocking WatchUi.getCurrentView()
+            // But we can verify the method doesn't crash and completes successfully
+            logger.debug("Settings reload method executed successfully");
+            
+        } catch (ex) {
+            logger.debug("Failed: onSettingsChanged threw exception: " + ex.getErrorMessage());
+            success = false;
+        }
+        
+        // Test that the method exists by checking if we can access it
+        if (!(app has :onSettingsChanged)) {
+            logger.debug("Failed: onSettingsChanged method not found on app instance");
+            success = false;
+        }
+        
+        logger.debug(success ? "Passed: Settings reload functionality works" : "Failed: Settings reload functionality");
+        return success;
     }
 
 }

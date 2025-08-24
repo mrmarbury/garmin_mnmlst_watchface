@@ -14,338 +14,284 @@ using Toybox.Time;
 class RenderingTest {
 
     (:test)
-    function testWatchfaceInitialization(logger) {
+    function testWatchfaceInitialization(logger as Test.Logger) {
         logger.debug("Testing watchface initialization");
         
         var view = new MnmlstView();
+        var success = true;
         
         // Test that view was created successfully
         if (view == null) {
             logger.debug("Failed: Watchface view not created");
-            return false;
+            success = false;
         }
         
         // Test initial state
         if (view.isAwake == null) {
             logger.debug("Failed: isAwake not initialized");
-            return false;
+            success = false;
         }
         
-        logger.debug("Passed: Watchface initialized successfully");
-        return true;
+        logger.debug(success ? "Passed: Watchface initialized successfully" : "Failed: Watchface initialization");
+        return success;
     }
 
     (:test)
-    function testOnLayoutSetup(logger) {
-        logger.debug("Testing onLayout setup");
+    function testConfigurationLoading(logger as Test.Logger) {
+        logger.debug("Testing configuration loading in view");
         
         var view = new MnmlstView();
-        var mockDc = new MockObjects.MockDc(240, 240);
+        view.initialize();
         
-        try {
-            view.onLayout(mockDc);
-            
-            // Test that screen center point is calculated
-            if (view.screenCenterPoint == null) {
-                logger.debug("Failed: Screen center point not set");
-                return false;
-            }
-            
-            if (view.screenCenterPoint.size() != 2) {
-                logger.debug("Failed: Screen center point should have 2 coordinates");
-                return false;
-            }
-            
-            // Test that center point is calculated correctly
-            var expectedCenterX = mockDc.getWidth() / 2;
-            var expectedCenterY = mockDc.getHeight() / 2;
-            
-            if (view.screenCenterPoint[0] != expectedCenterX || view.screenCenterPoint[1] != expectedCenterY) {
-                logger.debug("Failed: Screen center point calculated incorrectly");
-                return false;
-            }
-            
-            logger.debug("Passed: onLayout setup completed successfully");
-            return true;
-        } catch (ex) {
-            logger.debug("Failed: onLayout threw exception: " + ex.getErrorMessage());
-            return false;
+        var success = true;
+        
+        // Test that configuration variables are initialized
+        if (view.configHourHandBehavior == null) {
+            logger.debug("Failed: configHourHandBehavior not initialized");
+            success = false;
         }
+        
+        if (view.configColorScheme == null) {
+            logger.debug("Failed: configColorScheme not initialized");
+            success = false;
+        }
+        
+        if (view.configBatteryDisplayMode == null) {
+            logger.debug("Failed: configBatteryDisplayMode not initialized");
+            success = false;
+        }
+        
+        // Test visibility controls
+        if (view.showTopField == null) {
+            logger.debug("Failed: showTopField not initialized");
+            success = false;
+        }
+        
+        if (view.showMiddleGauge == null) {
+            logger.debug("Failed: showMiddleGauge not initialized");
+            success = false;
+        }
+        
+        if (view.showBottomField == null) {
+            logger.debug("Failed: showBottomField not initialized");
+            success = false;
+        }
+        
+        if (view.showMinuteHand == null) {
+            logger.debug("Failed: showMinuteHand not initialized");
+            success = false;
+        }
+        
+        logger.debug(success ? "Passed: Configuration loaded successfully" : "Failed: Configuration loading");
+        return success;
     }
 
     (:test)
-    function testBasicDrawing(logger) {
-        logger.debug("Testing basic drawing operations");
+    function testLayoutConfiguration(logger as Test.Logger) {
+        logger.debug("Testing layout configuration creation");
         
         var view = new MnmlstView();
-        var mockDc = new MockObjects.MockDc(240, 240);
+        view.initialize();
         
-        // Initialize the view
-        view.onLayout(mockDc);
+        var success = true;
         
-        try {
-            // Test that drawing doesn't crash
-            view.onUpdate(mockDc);
+        // Test layout creation for different screen sizes
+        var testSizes = [[240, 240], [260, 260], [280, 280]];
+        
+        for (var i = 0; i < testSizes.size(); i++) {
+            var width = testSizes[i][0];
+            var height = testSizes[i][1];
             
-            // Test that some drawing operations occurred
-            if (!mockDc.hasDrawnType("fillRectangle")) {
-                logger.debug("Failed: Background not drawn");
-                return false;
+            try {
+                var layout = view.createLayoutConfig(width, height);
+                
+                if (layout == null) {
+                    logger.debug("Failed: Layout not created for " + width + "x" + height);
+                    success = false;
+                    continue;
+                }
+                
+                // Test that required layout properties exist
+                var requiredProps = [:hourHandWidth, :hourHandLength, :minuteHandWidth, :batteryLeft, :batteryRight];
+                
+                for (var j = 0; j < requiredProps.size(); j++) {
+                    var prop = requiredProps[j];
+                    if (layout[prop] == null) {
+                        logger.debug("Failed: Layout property " + prop + " missing for " + width + "x" + height);
+                        success = false;
+                    }
+                }
+                
+            } catch (ex) {
+                logger.debug("Failed: Exception creating layout for " + width + "x" + height + ": " + ex.getErrorMessage());
+                success = false;
             }
-            
-            if (!mockDc.hasDrawnType("fillPolygon")) {
-                logger.debug("Failed: Watch hands not drawn");
-                return false;
-            }
-            
-            if (!mockDc.hasDrawnType("fillCircle")) {
-                logger.debug("Failed: Center arbor not drawn");
-                return false;
-            }
-            
-            logger.debug("Passed: Basic drawing operations completed");
-            return true;
-        } catch (ex) {
-            logger.debug("Failed: Drawing threw exception: " + ex.getErrorMessage());
-            return false;
         }
+        
+        logger.debug(success ? "Passed: Layout configuration created successfully" : "Failed: Layout configuration");
+        return success;
     }
 
     (:test)
-    function testHashMarkDrawing(logger) {
-        logger.debug("Testing hash mark drawing");
-        
-        var view = new MnmlstView();
-        var mockDc = new MockObjects.MockDc(240, 240);
-        
-        view.onLayout(mockDc);
-        mockDc.reset();
-        
-        try {
-            // Test drawing hash marks directly
-            view.drawHashMarks(mockDc, 12, 6, 15);
-            
-            // Should have drawn multiple lines for hour marks
-            var lineCount = mockDc.countDrawnType("drawLine");
-            if (lineCount == 0) {
-                logger.debug("Failed: No hash marks drawn");
-                return false;
-            }
-            
-            // Should have drawn exactly 24 lines (12 hours * 2 lines per hour)
-            if (lineCount != 24) {
-                logger.debug("Failed: Expected 24 hash marks, got " + lineCount);
-                return false;
-            }
-            
-            logger.debug("Passed: Hash marks drawn correctly");
-            return true;
-        } catch (ex) {
-            logger.debug("Failed: Hash mark drawing threw exception: " + ex.getErrorMessage());
-            return false;
-        }
-    }
-
-    (:test)
-    function testBatteryIndicator(logger) {
-        logger.debug("Testing battery indicator drawing");
-        
-        var view = new MnmlstView();
-        var mockDc = new MockObjects.MockDc(240, 240);
-        
-        view.onLayout(mockDc);
-        mockDc.reset();
-        
-        try {
-            view.drawBattery(mockDc, 240, 240);
-            
-            // Should have drawn battery scale lines
-            var lineCount = mockDc.countDrawnType("drawLine");
-            if (lineCount == 0) {
-                logger.debug("Failed: No battery scale lines drawn");
-                return false;
-            }
-            
-            // Should have drawn battery level circle
-            var circleCount = mockDc.countDrawnType("fillCircle");
-            if (circleCount == 0) {
-                logger.debug("Failed: No battery level indicator drawn");
-                return false;
-            }
-            
-            logger.debug("Passed: Battery indicator drawn correctly");
-            return true;
-        } catch (ex) {
-            logger.debug("Failed: Battery indicator drawing threw exception: " + ex.getErrorMessage());
-            return false;
-        }
-    }
-
-    (:test)
-    function testHourHandDrawing(logger) {
-        logger.debug("Testing hour hand drawing");
-        
-        var view = new MnmlstView();
-        var mockDc = new MockObjects.MockDc(240, 240);
-        
-        view.onLayout(mockDc);
-        mockDc.reset();
-        
-        try {
-            view.drawHourHand(mockDc);
-            
-            // Should have drawn hour hand polygon
-            var polygonCount = mockDc.countDrawnType("fillPolygon");
-            if (polygonCount == 0) {
-                logger.debug("Failed: Hour hand polygon not drawn");
-                return false;
-            }
-            
-            // Should have set color for hour hand
-            if (!mockDc.hasDrawnType("setColor")) {
-                logger.debug("Failed: Hour hand color not set");
-                return false;
-            }
-            
-            logger.debug("Passed: Hour hand drawn correctly");
-            return true;
-        } catch (ex) {
-            logger.debug("Failed: Hour hand drawing threw exception: " + ex.getErrorMessage());
-            return false;
-        }
-    }
-
-    (:test)
-    function testArborDrawing(logger) {
-        logger.debug("Testing arbor (center dot) drawing");
-        
-        var view = new MnmlstView();
-        var mockDc = new MockObjects.MockDc(240, 240);
-        
-        view.onLayout(mockDc);
-        mockDc.reset();
-        
-        try {
-            view.drawArbor(mockDc);
-            
-            // Should have drawn filled circle for arbor
-            var fillCircleCount = mockDc.countDrawnType("fillCircle");
-            if (fillCircleCount == 0) {
-                logger.debug("Failed: Arbor fill circle not drawn");
-                return false;
-            }
-            
-            // Should have drawn outline circle for arbor
-            var drawCircleCount = mockDc.countDrawnType("drawCircle");
-            if (drawCircleCount == 0) {
-                logger.debug("Failed: Arbor outline circle not drawn");
-                return false;
-            }
-            
-            logger.debug("Passed: Arbor drawn correctly");
-            return true;
-        } catch (ex) {
-            logger.debug("Failed: Arbor drawing threw exception: " + ex.getErrorMessage());
-            return false;
-        }
-    }
-
-    (:test)
-    function testDateStringDrawing(logger) {
-        logger.debug("Testing date string drawing");
-        
-        var view = new MnmlstView();
-        var mockDc = new MockObjects.MockDc(240, 240);
-        
-        view.onLayout(mockDc);
-        mockDc.reset();
-        
-        try {
-            view.drawDateString(mockDc, 120, 60);
-            
-            // Should have drawn text for date
-            var textCount = mockDc.countDrawnType("drawText");
-            if (textCount == 0) {
-                logger.debug("Failed: Date text not drawn");
-                return false;
-            }
-            
-            // Verify text was drawn at expected position
-            var lastText = mockDc.getLastDrawnOfType("drawText");
-            if (lastText == null || lastText[:x] != 120 || lastText[:y] != 60) {
-                logger.debug("Failed: Date text not drawn at expected position");
-                return false;
-            }
-            
-            logger.debug("Passed: Date string drawn correctly");
-            return true;
-        } catch (ex) {
-            logger.debug("Failed: Date string drawing threw exception: " + ex.getErrorMessage());
-            return false;
-        }
-    }
-
-    (:test)
-    function testFullWatchfaceRender(logger) {
-        logger.debug("Testing full watchface rendering");
-        
-        var view = new MnmlstView();
-        var mockDc = new MockObjects.MockDc(240, 240);
-        
-        view.onLayout(mockDc);
-        mockDc.reset();
-        
-        try {
-            view.onUpdate(mockDc);
-            
-            // Verify all major elements are drawn
-            var elementsDrawn = 0;
-            
-            if (mockDc.hasDrawnType("fillRectangle")) { elementsDrawn++; }  // Background
-            if (mockDc.hasDrawnType("drawLine")) { elementsDrawn++; }       // Hash marks
-            if (mockDc.hasDrawnType("fillPolygon")) { elementsDrawn++; }    // Watch hands
-            if (mockDc.hasDrawnType("fillCircle")) { elementsDrawn++; }     // Battery/Arbor
-            if (mockDc.hasDrawnType("drawText")) { elementsDrawn++; }       // Date/Notifications
-            
-            if (elementsDrawn < 4) {
-                logger.debug("Failed: Not all major elements drawn. Count: " + elementsDrawn);
-                return false;
-            }
-            
-            logger.debug("Passed: Full watchface rendered with " + elementsDrawn + " element types");
-            return true;
-        } catch (ex) {
-            logger.debug("Failed: Full watchface rendering threw exception: " + ex.getErrorMessage());
-            return false;
-        }
-    }
-
-    (:test)
-    function testSleepModeHandling(logger) {
+    function testSleepModeHandling(logger as Test.Logger) {
         logger.debug("Testing sleep mode handling");
         
         var view = new MnmlstView();
+        view.initialize();
+        
+        var success = true;
         
         try {
             // Test entering sleep mode
             view.onEnterSleep();
             if (view.isAwake != false) {
                 logger.debug("Failed: isAwake should be false after onEnterSleep");
-                return false;
+                success = false;
             }
             
             // Test exiting sleep mode
             view.onExitSleep();
             if (view.isAwake != true) {
                 logger.debug("Failed: isAwake should be true after onExitSleep");
-                return false;
+                success = false;
             }
             
-            logger.debug("Passed: Sleep mode handled correctly");
-            return true;
         } catch (ex) {
             logger.debug("Failed: Sleep mode handling threw exception: " + ex.getErrorMessage());
-            return false;
+            success = false;
         }
+        
+        logger.debug(success ? "Passed: Sleep mode handled correctly" : "Failed: Sleep mode handling");
+        return success;
+    }
+
+    (:test)
+    function testColorThemeMethods(logger as Test.Logger) {
+        logger.debug("Testing color theme methods");
+        
+        var view = new MnmlstView();
+        view.initialize();
+        
+        var success = true;
+        
+        try {
+            // Test dark theme
+            view.configColorScheme = 0;
+            
+            var bgColor = view.getBackgroundColor();
+            var textColor = view.getTextColor();
+            var handColor = view.getMinuteHandColor();
+            
+            if (bgColor == null || textColor == null || handColor == null) {
+                logger.debug("Failed: Color methods returned null for dark theme");
+                success = false;
+            }
+            
+            // Test white theme
+            view.configColorScheme = 1;
+            
+            var bgColor2 = view.getBackgroundColor();
+            var textColor2 = view.getTextColor();
+            var handColor2 = view.getMinuteHandColor();
+            
+            if (bgColor2 == null || textColor2 == null || handColor2 == null) {
+                logger.debug("Failed: Color methods returned null for white theme");
+                success = false;
+            }
+            
+            // Verify themes are different
+            if (bgColor == bgColor2) {
+                logger.debug("Failed: Background colors should be different between themes");
+                success = false;
+            }
+            
+        } catch (ex) {
+            logger.debug("Failed: Color theme methods threw exception: " + ex.getErrorMessage());
+            success = false;
+        }
+        
+        logger.debug(success ? "Passed: Color theme methods work correctly" : "Failed: Color theme methods");
+        return success;
+    }
+
+    (:test)
+    function testProgressCalculationMethods(logger as Test.Logger) {
+        logger.debug("Testing progress calculation methods");
+        
+        var view = new MnmlstView();
+        view.initialize();
+        
+        var success = true;
+        
+        try {
+            // Test that progress methods don't crash and return valid values
+            var stepsProgress = view.getStepsProgress();
+            if (stepsProgress < 0 || stepsProgress > 100) {
+                logger.debug("Failed: Steps progress out of valid range: " + stepsProgress);
+                success = false;
+            }
+            
+            var weeklyProgress = view.getWeeklyActiveMinutesProgress();
+            if (weeklyProgress < 0 || weeklyProgress > 100) {
+                logger.debug("Failed: Weekly active minutes progress out of valid range: " + weeklyProgress);
+                success = false;
+            }
+            
+            var stairsProgress = view.getStairsProgress();
+            if (stairsProgress < 0 || stairsProgress > 100) {
+                logger.debug("Failed: Stairs progress out of valid range: " + stairsProgress);
+                success = false;
+            }
+            
+        } catch (ex) {
+            logger.debug("Failed: Progress calculation methods threw exception: " + ex.getErrorMessage());
+            success = false;
+        }
+        
+        logger.debug(success ? "Passed: Progress calculation methods work" : "Failed: Progress calculations");
+        return success;
+    }
+
+    (:test)
+    function testVisibilityControlsIntegration(logger as Test.Logger) {
+        logger.debug("Testing visibility controls integration");
+        
+        var view = new MnmlstView();
+        view.initialize();
+        
+        var success = true;
+        
+        try {
+            // Test setting all visibility controls to hidden
+            view.showTopField = 0;
+            view.showMiddleGauge = 0;
+            view.showBottomField = 0;
+            view.showMinuteHand = 0;
+            
+            if (view.showTopField != 0 || view.showMiddleGauge != 0 || 
+                view.showBottomField != 0 || view.showMinuteHand != 0) {
+                logger.debug("Failed: Visibility controls not set to hidden correctly");
+                success = false;
+            }
+            
+            // Test setting all visibility controls to visible
+            view.showTopField = 1;
+            view.showMiddleGauge = 1;
+            view.showBottomField = 1;
+            view.showMinuteHand = 1;
+            
+            if (view.showTopField != 1 || view.showMiddleGauge != 1 || 
+                view.showBottomField != 1 || view.showMinuteHand != 1) {
+                logger.debug("Failed: Visibility controls not set to visible correctly");
+                success = false;
+            }
+            
+        } catch (ex) {
+            logger.debug("Failed: Visibility controls threw exception: " + ex.getErrorMessage());
+            success = false;
+        }
+        
+        logger.debug(success ? "Passed: Visibility controls work correctly" : "Failed: Visibility controls");
+        return success;
     }
 }

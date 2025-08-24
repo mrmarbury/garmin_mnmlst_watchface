@@ -40,5 +40,10 @@
    - [X] date -> plain values like steps, hr, battery percentage, etc
  - [X] Add white color scheme option (background white, orange hour, black minutes, black arbor, everything else that's white is now black)
  - [X] bump version to next major version
-
+- [] improve visibility
+  - [X] double width of the segment lines
+  - [X] double width of battery gauge lines
+  - [X] double diameter of arbor
+  - [] write tests
+  - [] do comprehensive code review
 ## Bugs

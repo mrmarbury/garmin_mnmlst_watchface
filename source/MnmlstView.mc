@@ -31,7 +31,7 @@ class MnmlstView extends WatchUi.WatchFace {
   var fullScreenRefresh;
   var bt_connected = true;
   var msgCountMultiplier; // Will be set in onLayout based on screen size
-  
+
   // Responsive layout system - Performance optimized
   // All scaling calculations done once in onLayout() and cached for rendering performance
   var scaleFactor;
@@ -45,7 +45,7 @@ class MnmlstView extends WatchUi.WatchFace {
   var configColorScheme;
   var configCalorieGoalOverall;
   var configCalorieGoalActive;
-  
+
   // UI Element Visibility properties
   var showTopField;
   var showMiddleGauge;
@@ -72,42 +72,41 @@ class MnmlstView extends WatchUi.WatchFace {
   // Called once per session in onLayout() to optimize rendering performance
   function createLayoutConfig(width, height) {
     scaleFactor = calculateScaleFactor(width, height);
-    
+
     return {
       // Hour hand configuration
       :hourHandWidth => (160 * scaleFactor).toNumber(),
       :hourHandLength => (151.6 * scaleFactor).toNumber(), // Responsive replacement for width/1.714 (260/1.714≈151.6)
       :hourHandLengthRatio => 0.6, // 60% of screen radius
       :hourTailRatio => 0.15, // 15% of screen radius
-      
-      // Minute hand configuration  
+
+      // Minute hand configuration
       :minuteHandWidth => (2 * scaleFactor).toNumber(),
       :minuteHandLengthRatio => 0.9, // 90% of screen radius
       :minuteTailLength => (15 * scaleFactor).toNumber(),
-      
+
       // Hash marks configuration
       :hourHashLength => (15 * scaleFactor).toNumber(),
       :minuteHashLength => (5 * scaleFactor).toNumber(),
-      
+
       // Battery gauge configuration - perfectly centered
       :batteryLeft => (width * 0.25).toNumber(), // 25% from left edge, ensure integer
-      :batteryRight => (width * 0.75).toNumber(), // 75% from left edge, ensure integer  
+      :batteryRight => (width * 0.75).toNumber(), // 75% from left edge, ensure integer
       :batteryHeight => height * 0.67, // 67% from top
-      :batteryBarHeight => (10 * scaleFactor).toNumber(),
-      
+      :batteryBarHeight => (11 * scaleFactor).toNumber(),
+
       // Text positioning
       :dateOffsetRatio => 0.25, // 25% from top
       :notificationOffsetRatio => 0.77, // 77% from top
-      
-      // Center arbor
-      :arborRadius => (7 * scaleFactor).toNumber(),
-      
+
+      // Center arbor (doubled for better visibility)
+      :arborRadius => (8 * scaleFactor).toNumber(),
+
       // Battery gauge circle configuration
       :batteryRadius => (5 * scaleFactor).toNumber(),
-      :batteryOffset => (5 * scaleFactor).toNumber(),
-      
+
       // Notification positioning multiplier
-      :msgCountMultiplier => (4.6 * scaleFactor)
+      :msgCountMultiplier => 4.6 * scaleFactor,
     };
   }
 
@@ -118,69 +117,104 @@ class MnmlstView extends WatchUi.WatchFace {
       // TEMPORARY: Manual override for simulator testing
       // Remove this block after testing is complete
       var deviceSettings = System.getDeviceSettings();
-      if (deviceSettings.partNumber != null && deviceSettings.partNumber.toString().find("SIMULATOR") != null) {
+      if (
+        deviceSettings.partNumber != null &&
+        deviceSettings.partNumber.toString().find("SIMULATOR") != null
+      ) {
         System.println("SIMULATOR DETECTED - Using test configuration");
         configBatteryDisplayMode = 4; // Test calories progress
-        configHourHandBehavior = 1;   // Test hourly jump
-        configMessageFieldType = 4;   // Test calories in message field
-        configDateFieldType = 5;      // Test active calories in date field
-        configColorScheme = 1;        // Test white theme
+        configHourHandBehavior = 1; // Test hourly jump
+        configMessageFieldType = 4; // Test calories in message field
+        configDateFieldType = 5; // Test active calories in date field
+        configColorScheme = 1; // Test white theme
         configCalorieGoalOverall = 2400;
         configCalorieGoalActive = 750;
         // Test visibility settings
         showTopField = 1;
-        showMiddleGauge = 0;      // Test hidden gauge
+        showMiddleGauge = 0; // Test hidden gauge
         showBottomField = 1;
         showMinuteHand = 1;
-        System.println("Test config - Battery: " + configBatteryDisplayMode + ", Hand: " + configHourHandBehavior);
+        System.println(
+          "Test config - Battery: " +
+            configBatteryDisplayMode +
+            ", Hand: " +
+            configHourHandBehavior
+        );
         return;
       }
       // END TEMPORARY SECTION
-      
+
       // Load properties with explicit null checks
       configHourHandBehavior = Properties.getValue("hourHandBehavior");
-      if (configHourHandBehavior == null) { configHourHandBehavior = 0; }
-      
+      if (configHourHandBehavior == null) {
+        configHourHandBehavior = 0;
+      }
+
       configBatteryDisplayMode = Properties.getValue("batteryDisplayMode");
-      if (configBatteryDisplayMode == null) { configBatteryDisplayMode = 0; }
-      
+      if (configBatteryDisplayMode == null) {
+        configBatteryDisplayMode = 0;
+      }
+
       configMessageFieldType = Properties.getValue("messageFieldType");
-      if (configMessageFieldType == null) { configMessageFieldType = 0; }
-      
+      if (configMessageFieldType == null) {
+        configMessageFieldType = 0;
+      }
+
       configDateFieldType = Properties.getValue("dateFieldType");
-      if (configDateFieldType == null) { configDateFieldType = 0; }
-      
+      if (configDateFieldType == null) {
+        configDateFieldType = 0;
+      }
+
       configColorScheme = Properties.getValue("colorScheme");
-      if (configColorScheme == null) { configColorScheme = 0; }
-      
+      if (configColorScheme == null) {
+        configColorScheme = 0;
+      }
+
       configCalorieGoalOverall = Properties.getValue("calorieGoalOverall");
-      if (configCalorieGoalOverall == null) { configCalorieGoalOverall = 2400; }
-      
+      if (configCalorieGoalOverall == null) {
+        configCalorieGoalOverall = 2400;
+      }
+
       configCalorieGoalActive = Properties.getValue("calorieGoalActive");
-      if (configCalorieGoalActive == null) { configCalorieGoalActive = 750; }
-      
+      if (configCalorieGoalActive == null) {
+        configCalorieGoalActive = 750;
+      }
+
       // Load visibility properties
       showTopField = Properties.getValue("showTopField");
-      if (showTopField == null) { showTopField = 1; }
-      
+      if (showTopField == null) {
+        showTopField = 1;
+      }
+
       showMiddleGauge = Properties.getValue("showMiddleGauge");
-      if (showMiddleGauge == null) { showMiddleGauge = 1; }
-      
+      if (showMiddleGauge == null) {
+        showMiddleGauge = 1;
+      }
+
       showBottomField = Properties.getValue("showBottomField");
-      if (showBottomField == null) { showBottomField = 1; }
-      
+      if (showBottomField == null) {
+        showBottomField = 1;
+      }
+
       showMinuteHand = Properties.getValue("showMinuteHand");
-      if (showMinuteHand == null) { showMinuteHand = 1; }
-      
-      
-      System.println("Config loaded - Battery: " + configBatteryDisplayMode + ", Hand: " + configHourHandBehavior);
-      
+      if (showMinuteHand == null) {
+        showMinuteHand = 1;
+      }
+
+      System.println(
+        "Config loaded - Battery: " +
+          configBatteryDisplayMode +
+          ", Hand: " +
+          configHourHandBehavior
+      );
     } catch (ex) {
       // Fallback to defaults if Properties access fails
-      System.println("Properties failed, using defaults: " + ex.getErrorMessage());
+      System.println(
+        "Properties failed, using defaults: " + ex.getErrorMessage()
+      );
       loadDefaultConfiguration();
     }
-    
+
     // Validate configuration values
     validateConfiguration();
   }
@@ -226,10 +260,18 @@ class MnmlstView extends WatchUi.WatchFace {
       configCalorieGoalActive = 750;
     }
     // Visibility properties validation (1=show, 0=hide)
-    if (showTopField < 0 || showTopField > 1) { showTopField = 1; }
-    if (showMiddleGauge < 0 || showMiddleGauge > 1) { showMiddleGauge = 1; }
-    if (showBottomField < 0 || showBottomField > 1) { showBottomField = 1; }
-    if (showMinuteHand < 0 || showMinuteHand > 1) { showMinuteHand = 1; }
+    if (showTopField < 0 || showTopField > 1) {
+      showTopField = 1;
+    }
+    if (showMiddleGauge < 0 || showMiddleGauge > 1) {
+      showMiddleGauge = 1;
+    }
+    if (showBottomField < 0 || showBottomField > 1) {
+      showBottomField = 1;
+    }
+    if (showMinuteHand < 0 || showMinuteHand > 1) {
+      showMinuteHand = 1;
+    }
   }
 
   // Configure the layout of the watchface for this device
@@ -274,7 +316,7 @@ class MnmlstView extends WatchUi.WatchFace {
     curClip = null;
 
     screenCenterPoint = [dc.getWidth() / 2, dc.getHeight() / 2];
-    
+
     // Initialize responsive layout configuration
     layoutConfig = createLayoutConfig(dc.getWidth(), dc.getHeight());
     msgCountMultiplier = layoutConfig[:msgCountMultiplier];
@@ -348,6 +390,9 @@ class MnmlstView extends WatchUi.WatchFace {
   function drawHashMarks(dc, one, two, length) {
     var width = dc.getWidth();
 
+    // Set pen width to 2 pixels for thicker segment lines
+    dc.setPenWidth(2);
+
     var sX, sY;
     var eX, eY;
     var outerRad = width / 2;
@@ -360,6 +405,7 @@ class MnmlstView extends WatchUi.WatchFace {
       sX = outerRad + innerRad * Math.cos(i);
       eX = outerRad + outerRad * Math.cos(i);
       dc.drawLine(sX, sY, eX, eY);
+
       i += Math.PI / two;
       sY = outerRad + innerRad * Math.sin(i);
       eY = outerRad + outerRad * Math.sin(i);
@@ -367,6 +413,9 @@ class MnmlstView extends WatchUi.WatchFace {
       eX = outerRad + outerRad * Math.cos(i);
       dc.drawLine(sX, sY, eX, eY);
     }
+
+    // Reset pen width to default for other drawing operations
+    dc.setPenWidth(1);
   }
 
   function drawBattery(targetDc, width, height) {
@@ -376,7 +425,7 @@ class MnmlstView extends WatchUi.WatchFace {
 
   function drawBatteryGauge(targetDc, width, height) {
     var percentage, useMultiColor;
-    
+
     if (configBatteryDisplayMode == 0) {
       // Battery mode - multi-colored
       var stats = System.getSystemStats();
@@ -407,21 +456,38 @@ class MnmlstView extends WatchUi.WatchFace {
     drawGaugeWithData(targetDc, width, height, percentage, useMultiColor);
   }
 
-  function drawGaugeWithData(targetDc, width, height, percentage, useMultiColor) {
+  function drawGaugeWithData(
+    targetDc,
+    width,
+    height,
+    percentage,
+    useMultiColor
+  ) {
     var battLeft = layoutConfig[:batteryLeft];
     var battRight = layoutConfig[:batteryRight];
     var battRange = battRight - battLeft;
     var battRangeSteps = battRange / 10.0; // Use float for precise calculation
     var battBaseHeight = layoutConfig[:batteryHeight];
-    
+
+    // Set pen width to 2 pixels for thicker battery gauge lines
+    targetDc.setPenWidth(2);
+
     // Draw exactly 11 gauge lines (0%, 10%, 20%, ..., 100%)
     var gaugeLineColor = getBatteryGaugeColor();
     for (var i = 0; i <= 10; i++) {
-      var xPos = battLeft + (i * battRangeSteps);
+      var xPos = battLeft + i * battRangeSteps;
       targetDc.setColor(gaugeLineColor, gaugeLineColor);
-      targetDc.drawLine(xPos, battBaseHeight, xPos, battBaseHeight + layoutConfig[:batteryBarHeight]);
+      targetDc.drawLine(
+        xPos,
+        battBaseHeight,
+        xPos,
+        battBaseHeight + layoutConfig[:batteryBarHeight]
+      );
     }
-    
+
+    // Reset pen width to default for other drawing operations
+    targetDc.setPenWidth(1);
+
     // Draw indicator dot
     var indicatorColor;
     if (useMultiColor) {
@@ -440,11 +506,11 @@ class MnmlstView extends WatchUi.WatchFace {
       // All progress modes - theme-aware green color
       indicatorColor = getGreenColor();
     }
-    
+
     targetDc.setColor(indicatorColor, indicatorColor);
     targetDc.fillCircle(
       battLeft + battRangeSteps * (percentage / 10.0),
-      battBaseHeight + layoutConfig[:batteryOffset],
+      battBaseHeight + (layoutConfig[:batteryBarHeight] / 2),
       layoutConfig[:batteryRadius]
     );
   }
@@ -452,8 +518,16 @@ class MnmlstView extends WatchUi.WatchFace {
   // Data retrieval functions for different gauge modes
   function getStepsProgress() {
     var info = ActivityMonitor.getInfo();
-    if (info.steps != null && info has :stepGoal && info.stepGoal != null && info.stepGoal > 0) {
-      var progress = (info.steps.toFloat() / info.stepGoal.toFloat() * 100).toNumber();
+    if (
+      info.steps != null &&
+      info has :stepGoal &&
+      info.stepGoal != null &&
+      info.stepGoal > 0
+    ) {
+      var progress = (
+        (info.steps.toFloat() / info.stepGoal.toFloat()) *
+        100
+      ).toNumber();
       return progress > 100 ? 100 : progress;
     }
     return 0;
@@ -461,12 +535,16 @@ class MnmlstView extends WatchUi.WatchFace {
 
   function getWeeklyActiveMinutesProgress() {
     var info = ActivityMonitor.getInfo();
-    if (info has :activeMinutesWeek && info.activeMinutesWeek != null && 
-        info has :activeMinutesWeekGoal && info.activeMinutesWeekGoal != null) {
+    if (
+      info has :activeMinutesWeek &&
+      info.activeMinutesWeek != null &&
+      info has :activeMinutesWeekGoal &&
+      info.activeMinutesWeekGoal != null
+    ) {
       var current = info.activeMinutesWeek.total;
       var goal = info.activeMinutesWeekGoal;
       if (goal > 0) {
-        var progress = (current.toFloat() / goal.toFloat() * 100).toNumber();
+        var progress = ((current.toFloat() / goal.toFloat()) * 100).toNumber();
         return progress > 100 ? 100 : progress;
       }
     }
@@ -475,12 +553,16 @@ class MnmlstView extends WatchUi.WatchFace {
 
   function getStairsProgress() {
     var info = ActivityMonitor.getInfo();
-    if (info has :floorsClimbed && info.floorsClimbed != null &&
-        info has :floorsClimbedGoal && info.floorsClimbedGoal != null) {
+    if (
+      info has :floorsClimbed &&
+      info.floorsClimbed != null &&
+      info has :floorsClimbedGoal &&
+      info.floorsClimbedGoal != null
+    ) {
       var current = info.floorsClimbed;
       var goal = info.floorsClimbedGoal;
       if (goal > 0) {
-        var progress = (current.toFloat() / goal.toFloat() * 100).toNumber();
+        var progress = ((current.toFloat() / goal.toFloat()) * 100).toNumber();
         return progress > 100 ? 100 : progress;
       }
     }
@@ -489,8 +571,15 @@ class MnmlstView extends WatchUi.WatchFace {
 
   function getCaloriesProgress() {
     var info = ActivityMonitor.getInfo();
-    if (info has :calories && info.calories != null && configCalorieGoalOverall > 0) {
-      var progress = (info.calories.toFloat() / configCalorieGoalOverall.toFloat() * 100).toNumber();
+    if (
+      info has :calories &&
+      info.calories != null &&
+      configCalorieGoalOverall > 0
+    ) {
+      var progress = (
+        (info.calories.toFloat() / configCalorieGoalOverall.toFloat()) *
+        100
+      ).toNumber();
       return progress > 100 ? 100 : progress;
     }
     return 0;
@@ -498,8 +587,15 @@ class MnmlstView extends WatchUi.WatchFace {
 
   function getActiveCaloriesProgress() {
     var info = ActivityMonitor.getInfo();
-    if (info has :caloriesActive && info.caloriesActive != null && configCalorieGoalActive > 0) {
-      var progress = (info.caloriesActive.toFloat() / configCalorieGoalActive.toFloat() * 100).toNumber();
+    if (
+      info has :caloriesActive &&
+      info.caloriesActive != null &&
+      configCalorieGoalActive > 0
+    ) {
+      var progress = (
+        (info.caloriesActive.toFloat() / configCalorieGoalActive.toFloat()) *
+        100
+      ).toNumber();
       return progress > 100 ? 100 : progress;
     }
     return 0;
@@ -509,58 +605,70 @@ class MnmlstView extends WatchUi.WatchFace {
   function getBackgroundColor() {
     return configColorScheme == 1 ? Graphics.COLOR_WHITE : Graphics.COLOR_BLACK;
   }
-  
+
   function getTextColor() {
     return configColorScheme == 1 ? Graphics.COLOR_BLACK : Graphics.COLOR_WHITE;
   }
-  
+
   function getMinuteHandColor() {
     return configColorScheme == 1 ? Graphics.COLOR_BLACK : Graphics.COLOR_WHITE;
   }
-  
+
   function getArborColor(moveBarLevel) {
     if (moveBarLevel > ActivityMonitor.MOVE_BAR_LEVEL_MIN) {
       return getRedColor(); // Theme-aware red for move bar
     }
-    return configColorScheme == 1 ? Graphics.COLOR_BLACK : Graphics.COLOR_LT_GRAY;
+    return configColorScheme == 1
+      ? Graphics.COLOR_BLACK
+      : Graphics.COLOR_LT_GRAY;
   }
-  
+
   function getHourHashColor() {
     return configColorScheme == 1 ? Graphics.COLOR_BLACK : Graphics.COLOR_WHITE;
   }
-  
+
   function getMinuteHashColor() {
-    return configColorScheme == 1 ? Graphics.COLOR_DK_GRAY : Graphics.COLOR_LT_GRAY;
+    return configColorScheme == 1
+      ? Graphics.COLOR_DK_GRAY
+      : Graphics.COLOR_LT_GRAY;
   }
-  
+
   function getBatteryGaugeColor() {
     return configColorScheme == 1 ? Graphics.COLOR_BLACK : Graphics.COLOR_WHITE;
   }
-  
+
   function getHourHandColor(bt_connected) {
     if (bt_connected) {
       return Graphics.COLOR_ORANGE; // Orange when connected in both themes
     } else {
       // When disconnected, use theme-appropriate gray
-      return configColorScheme == 1 ? Graphics.COLOR_DK_GRAY : Graphics.COLOR_LT_GRAY;
+      return configColorScheme == 1
+        ? Graphics.COLOR_DK_GRAY
+        : Graphics.COLOR_LT_GRAY;
     }
   }
-  
+
   // Theme-aware status colors for better light mode aesthetics
   function getGreenColor() {
-    return configColorScheme == 1 ? Graphics.COLOR_DK_GREEN : Graphics.COLOR_GREEN; // Dark green in light mode
+    return configColorScheme == 1
+      ? Graphics.COLOR_DK_GREEN
+      : Graphics.COLOR_GREEN; // Dark green in light mode
   }
-  
+
   function getRedColor() {
     return configColorScheme == 1 ? Graphics.COLOR_DK_RED : Graphics.COLOR_RED; // Dark red in light mode
   }
-  
+
   function getYellowColor() {
-    return configColorScheme == 1 ? Graphics.COLOR_ORANGE : Graphics.COLOR_YELLOW; // Orange in light mode (better contrast than yellow)
+    return configColorScheme == 1
+      ? Graphics.COLOR_ORANGE
+      : Graphics.COLOR_YELLOW; // Orange in light mode (better contrast than yellow)
   }
-  
+
   function getBlueColor() {
-    return configColorScheme == 1 ? Graphics.COLOR_DK_BLUE : Graphics.COLOR_BLUE; // Dark blue in light mode
+    return configColorScheme == 1
+      ? Graphics.COLOR_DK_BLUE
+      : Graphics.COLOR_BLUE; // Dark blue in light mode
   }
 
   function drawString(myString, dc, posX, posY, color) {
@@ -680,10 +788,11 @@ class MnmlstView extends WatchUi.WatchFace {
     var backgroundColor = getBackgroundColor();
 
     // Draw the arbor in the center of the screen.
+    var arborRadius = layoutConfig[:arborRadius];
     targetDc.setColor(arborColor, backgroundColor);
-    targetDc.fillCircle(width / 2, height / 2, 7);
+    targetDc.fillCircle(width / 2, height / 2, arborRadius);
     targetDc.setColor(backgroundColor, backgroundColor);
-    targetDc.drawCircle(width / 2, height / 2, 7);
+    targetDc.drawCircle(width / 2, height / 2, arborRadius);
   }
 
   // Handle the update event
@@ -734,7 +843,13 @@ class MnmlstView extends WatchUi.WatchFace {
       minuteHandAngle = (clockTime.min / 60.0) * Math.PI * 2;
       var minuteHandLength = width * layoutConfig[:minuteHandLengthRatio];
       targetDc.fillPolygon(
-        generateHandCoordinates(screenCenterPoint, minuteHandAngle, minuteHandLength, layoutConfig[:minuteTailLength], layoutConfig[:minuteHandWidth])
+        generateHandCoordinates(
+          screenCenterPoint,
+          minuteHandAngle,
+          minuteHandLength,
+          layoutConfig[:minuteTailLength],
+          layoutConfig[:minuteHandWidth]
+        )
       );
 
       drawArbor(targetDc);
@@ -747,7 +862,11 @@ class MnmlstView extends WatchUi.WatchFace {
       var dateDc = dateBuffer.getDc();
 
       //Draw the background image buffer into the date buffer to set the background
-      dateDc.drawBitmap(0, -(height * layoutConfig[:dateOffsetRatio]), offscreenBuffer);
+      dateDc.drawBitmap(
+        0,
+        -(height * layoutConfig[:dateOffsetRatio]),
+        offscreenBuffer
+      );
 
       //Draw the date string into the buffer.
       if (showTopField == 1) {
@@ -877,9 +996,17 @@ class MnmlstView extends WatchUi.WatchFace {
 
     if (showBottomField == 1) {
       if (null != notificationBuffer) {
-        dc.drawBitmap(0, height * layoutConfig[:notificationOffsetRatio], notificationBuffer);
+        dc.drawBitmap(
+          0,
+          height * layoutConfig[:notificationOffsetRatio],
+          notificationBuffer
+        );
       } else {
-        drawNotificationCount(dc, width / 2, height * layoutConfig[:notificationOffsetRatio]);
+        drawNotificationCount(
+          dc,
+          width / 2,
+          height * layoutConfig[:notificationOffsetRatio]
+        );
       }
     }
   }

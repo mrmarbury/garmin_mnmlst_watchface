@@ -78,7 +78,7 @@ function testConfigurationLoading(logger) {
 
 // Test Color Theme System
 (:test)
-function testColorThemeFunctions(logger as Logger) {
+function testColorThemeFunctions(logger as Test.Logger) {
     logger.debug("Testing color theme functions");
     
     var view = new MnmlstView();
@@ -128,7 +128,7 @@ function testColorThemeFunctions(logger as Logger) {
 
 // Test Battery Gauge Positioning
 (:test)
-function testBatteryGaugeAlignment(logger as Logger) {
+function testBatteryGaugeAlignment(logger as Test.Logger) {
     logger.debug("Testing battery gauge alignment");
     
     var view = new MnmlstView();
@@ -179,7 +179,7 @@ function testBatteryGaugeAlignment(logger as Logger) {
 
 // Test Responsive Layout System
 (:test)
-function testResponsiveLayout(logger as Logger) {
+function testResponsiveLayout(logger as Test.Logger) {
     logger.debug("Testing responsive layout system");
     
     var view = new MnmlstView();
@@ -235,7 +235,7 @@ function testResponsiveLayout(logger as Logger) {
 
 // Test Data Field Switching
 (:test)
-function testDataFieldTypes(logger as Logger) {
+function testDataFieldTypes(logger as Test.Logger) {
     logger.debug("Testing data field type switching");
     
     var view = new MnmlstView();
@@ -286,7 +286,7 @@ function testDataFieldTypes(logger as Logger) {
 
 // Test Battery Display Modes
 (:test)
-function testBatteryDisplayModes(logger as Logger) {
+function testBatteryDisplayModes(logger as Test.Logger) {
     logger.debug("Testing battery display modes");
     
     var view = new MnmlstView();
@@ -317,7 +317,7 @@ function testBatteryDisplayModes(logger as Logger) {
 
 // Test Progress Calculation Functions
 (:test)
-function testProgressCalculations(logger as Logger) {
+function testProgressCalculations(logger as Test.Logger) {
     logger.debug("Testing progress calculation functions");
     
     var view = new MnmlstView();
@@ -367,7 +367,7 @@ function testProgressCalculations(logger as Logger) {
 
 // Test Hour Hand Behavior
 (:test)
-function testHourHandBehavior(logger as Logger) {
+function testHourHandBehavior(logger as Test.Logger) {
     logger.debug("Testing hour hand behavior modes");
     
     var view = new MnmlstView();
@@ -394,7 +394,7 @@ function testHourHandBehavior(logger as Logger) {
 
 // Test Configuration Validation
 (:test)
-function testConfigurationValidation(logger as Logger) {
+function testConfigurationValidation(logger as Test.Logger) {
     logger.debug("Testing configuration validation");
     
     var view = new MnmlstView();
@@ -437,7 +437,7 @@ function testConfigurationValidation(logger as Logger) {
 
 // Test Theme-Aware Status Colors
 (:test)
-function testThemeAwareColors(logger as Logger) {
+function testThemeAwareColors(logger as Test.Logger) {
     logger.debug("Testing theme-aware status colors");
     
     var view = new MnmlstView();
@@ -482,5 +482,74 @@ function testThemeAwareColors(logger as Logger) {
     }
     
     logger.debug("Theme-aware colors test " + (success ? "passed" : "failed"));
+    return success;
+}
+
+// Test UI Element Visibility Controls
+(:test)
+function testUIElementVisibility(logger as Test.Logger) {
+    logger.debug("Testing UI element visibility controls");
+    
+    var view = new MnmlstView();
+    view.initialize();
+    
+    var success = true;
+    
+    // Test that all visibility settings are properly initialized
+    if (view.showTopField == null) {
+        logger.error("showTopField not initialized");
+        success = false;
+    }
+    
+    if (view.showMiddleGauge == null) {
+        logger.error("showMiddleGauge not initialized");
+        success = false;
+    }
+    
+    if (view.showBottomField == null) {
+        logger.error("showBottomField not initialized");
+        success = false;
+    }
+    
+    if (view.showMinuteHand == null) {
+        logger.error("showMinuteHand not initialized");
+        success = false;
+    }
+    
+    // Test that visibility settings accept valid values (1 = show, 0 = hide)
+    view.showTopField = 1;
+    view.showMiddleGauge = 0;
+    view.showBottomField = 1;
+    view.showMinuteHand = 0;
+    
+    if (view.showTopField != 1) {
+        logger.error("showTopField not set to 1 correctly");
+        success = false;
+    }
+    
+    if (view.showMiddleGauge != 0) {
+        logger.error("showMiddleGauge not set to 0 correctly");
+        success = false;
+    }
+    
+    if (view.showBottomField != 1) {
+        logger.error("showBottomField not set to 1 correctly");
+        success = false;
+    }
+    
+    if (view.showMinuteHand != 0) {
+        logger.error("showMinuteHand not set to 0 correctly");
+        success = false;
+    }
+    
+    // Test default values after validation
+    view.showTopField = null;
+    view.validateConfiguration();
+    if (view.showTopField != 1) {
+        logger.error("showTopField default value should be 1 after validation");
+        success = false;
+    }
+    
+    logger.debug("UI element visibility test " + (success ? "passed" : "failed"));
     return success;
 }
