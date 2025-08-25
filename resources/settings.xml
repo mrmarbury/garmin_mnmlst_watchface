@@ -1,122 +1,127 @@
 <?xml version="1.0"?>
 <settings>
-    <!-- Hand Behavior Settings -->
-    <group id="@Strings.handBehaviorGroup" title="@Strings.handBehaviorGroup">
-        <setting propertyKey="@Properties.hourHandBehavior" title="@Strings.hourHandBehaviorTitle">
-            <settingConfig type="list">
-                <listEntry value="0">@Strings.hourHandSmooth</listEntry>
-                <listEntry value="1">@Strings.hourHandHourly</listEntry>
-            </settingConfig>
-        </setting>
-    </group>
+  <!-- Hand Behavior Settings -->
+  <group id="@Strings.handBehaviorGroup" title="@Strings.handBehaviorGroup">
+    <setting propertyKey="@Properties.hourHandBehavior" title="@Strings.hourHandBehaviorTitle">
+      <settingConfig type="list">
+        <listEntry value="0">@Strings.hourHandSmooth</listEntry>
+        <listEntry value="1">@Strings.hourHandHourly</listEntry>
+      </settingConfig>
+    </setting>
+  </group>
 
-    <!-- Display Settings -->
-    <group id="@Strings.displayGroup" title="@Strings.displayGroup">
-        <setting propertyKey="@Properties.colorScheme" title="@Strings.colorSchemeTitle">
-            <settingConfig type="list">
-                <listEntry value="0">@Strings.colorSchemeDark</listEntry>
-                <listEntry value="1">@Strings.colorSchemeWhite</listEntry>
-            </settingConfig>
-        </setting>
-        
-        <setting propertyKey="@Properties.hashMarkDisplay" title="@Strings.hashMarkDisplayTitle">
-            <settingConfig type="list">
-                <listEntry value="0">@Strings.hashMarkAll</listEntry>
-                <listEntry value="1">@Strings.hashMarkHourOnly</listEntry>
-                <listEntry value="2">@Strings.hashMarkNone</listEntry>
-            </settingConfig>
-        </setting>
-    </group>
+  <!-- Display Settings -->
+  <group id="@Strings.displayGroup" title="@Strings.displayGroup">
+    <setting propertyKey="@Properties.colorScheme" title="@Strings.colorSchemeTitle">
+      <settingConfig type="list">
+        <listEntry value="0">@Strings.colorSchemeDark</listEntry>
+        <listEntry value="1">@Strings.colorSchemeWhite</listEntry>
+      </settingConfig>
+    </setting>
 
-    <!-- Data Field Settings -->
-    <group id="@Strings.dataFieldsGroup" title="@Strings.dataFieldsGroup">
-        <setting propertyKey="@Properties.dateFieldType" title="@Strings.dateFieldTitle">
-            <settingConfig type="list">
-                <listEntry value="0">@Strings.fieldDate</listEntry>
-                <listEntry value="1">@Strings.fieldSteps</listEntry>
-                <listEntry value="2">@Strings.fieldHeartRate</listEntry>
-                <listEntry value="3">@Strings.fieldBatteryPercent</listEntry>
-                <listEntry value="4">@Strings.fieldCalories</listEntry>
-                <listEntry value="5">@Strings.fieldActiveCalories</listEntry>
-                <listEntry value="6">@Strings.fieldStressScore</listEntry>
-                <listEntry value="7">@Strings.fieldBodyBattery</listEntry>
-                <listEntry value="8">@Strings.fieldDayOfWeek</listEntry>
-                <listEntry value="9">@Strings.fieldMonth</listEntry>
-                <listEntry value="10">@Strings.fieldHour</listEntry>
-                <listEntry value="11">@Strings.fieldMinute</listEntry>
-            </settingConfig>
-        </setting>
-        
-        <setting propertyKey="@Properties.batteryDisplayMode" title="@Strings.middleGaugeTitle">
-            <settingConfig type="list">
-                <listEntry value="0">@Strings.batteryLevel</listEntry>
-                <listEntry value="1">@Strings.stepsProgress</listEntry>
-                <listEntry value="2">@Strings.weeklyActiveMinutes</listEntry>
-                <listEntry value="3">@Strings.stairsProgress</listEntry>
-                <listEntry value="4">@Strings.caloriesProgress</listEntry>
-                <listEntry value="5">@Strings.activeCaloriesProgress</listEntry>
-                <listEntry value="6">@Strings.bodyBatteryProgress</listEntry>
-            </settingConfig>
-        </setting>
-        
-        <setting propertyKey="@Properties.messageFieldType" title="@Strings.messageFieldTitle">
-            <settingConfig type="list">
-                <listEntry value="0">@Strings.fieldNotifications</listEntry>
-                <listEntry value="1">@Strings.fieldSteps</listEntry>
-                <listEntry value="2">@Strings.fieldHeartRate</listEntry>
-                <listEntry value="3">@Strings.fieldBatteryPercent</listEntry>
-                <listEntry value="4">@Strings.fieldCalories</listEntry>
-                <listEntry value="5">@Strings.fieldActiveCalories</listEntry>
-                <listEntry value="6">@Strings.fieldStressScore</listEntry>
-                <listEntry value="7">@Strings.fieldBodyBattery</listEntry>
-                <listEntry value="8">@Strings.fieldDayOfWeek</listEntry>
-                <listEntry value="9">@Strings.fieldMonth</listEntry>
-                <listEntry value="10">@Strings.fieldHour</listEntry>
-                <listEntry value="11">@Strings.fieldMinute</listEntry>
-            </settingConfig>
-        </setting>
-    </group>
+    <setting propertyKey="@Properties.hashMarkDisplay" title="@Strings.hashMarkDisplayTitle">
+      <settingConfig type="list">
+        <listEntry value="0">@Strings.hashMarkAll</listEntry>
+        <listEntry value="1">@Strings.hashMarkHourOnly</listEntry>
+        <listEntry value="2">@Strings.hashMarkNone</listEntry>
+      </settingConfig>
+    </setting>
+  </group>
 
-    <!-- Goal Settings -->
-    <group id="@Strings.goalsGroup" title="@Strings.goalsGroup">
-        <setting propertyKey="@Properties.calorieGoalOverall" title="@Strings.calorieGoalOverallTitle">
-            <settingConfig min="1000" max="5000" type="numeric"/>
-        </setting>
-        
-        <setting propertyKey="@Properties.calorieGoalActive" title="@Strings.calorieGoalActiveTitle">
-            <settingConfig min="200" max="2000" type="numeric"/>
-        </setting>
-        
-    </group>
+  <!-- Data Field Settings -->
+  <group id="@Strings.dataFieldsGroup" title="@Strings.dataFieldsGroup">
+    <setting propertyKey="@Properties.dateFieldType" title="@Strings.dateFieldTitle">
+      <settingConfig type="list">
+        <listEntry value="0">@Strings.fieldDate</listEntry>
+        <listEntry value="1">@Strings.fieldSteps</listEntry>
+        <listEntry value="2">@Strings.fieldHeartRate</listEntry>
+        <listEntry value="3">@Strings.fieldBatteryPercent</listEntry>
+        <listEntry value="4">@Strings.fieldCalories</listEntry>
+        <!--listEntry
+        value="5">@Strings.fieldActiveCalories</listEntry-->
+        <listEntry value="6">@Strings.fieldStressScore</listEntry>
+        <listEntry value="7">@Strings.fieldBodyBattery</listEntry>
+        <listEntry value="8">@Strings.fieldDayOfWeek</listEntry>
+        <listEntry value="9">@Strings.fieldMonth</listEntry>
+        <listEntry value="10">@Strings.fieldHour</listEntry>
+        <listEntry value="11">@Strings.fieldMinute</listEntry>
+      </settingConfig>
+    </setting>
 
-    <!-- Visibility Settings -->
-    <group id="@Strings.visibilityGroup" title="@Strings.visibilityGroup">
-        <setting propertyKey="@Properties.showTopField" title="@Strings.showTopFieldTitle">
-            <settingConfig type="list">
-                <listEntry value="1">@Strings.optionShow</listEntry>
-                <listEntry value="0">@Strings.optionHide</listEntry>
-            </settingConfig>
-        </setting>
-        
-        <setting propertyKey="@Properties.showMiddleGauge" title="@Strings.showMiddleGaugeTitle">
-            <settingConfig type="list">
-                <listEntry value="1">@Strings.optionShow</listEntry>
-                <listEntry value="0">@Strings.optionHide</listEntry>
-            </settingConfig>
-        </setting>
-        
-        <setting propertyKey="@Properties.showBottomField" title="@Strings.showBottomFieldTitle">
-            <settingConfig type="list">
-                <listEntry value="1">@Strings.optionShow</listEntry>
-                <listEntry value="0">@Strings.optionHide</listEntry>
-            </settingConfig>
-        </setting>
-        
-        <setting propertyKey="@Properties.showMinuteHand" title="@Strings.showMinuteHandTitle">
-            <settingConfig type="list">
-                <listEntry value="1">@Strings.optionShow</listEntry>
-                <listEntry value="0">@Strings.optionHide</listEntry>
-            </settingConfig>
-        </setting>
-    </group>
+    <setting propertyKey="@Properties.batteryDisplayMode" title="@Strings.middleGaugeTitle">
+      <settingConfig type="list">
+        <listEntry value="0">@Strings.batteryLevel</listEntry>
+        <listEntry value="1">@Strings.stepsProgress</listEntry>
+        <listEntry value="2">@Strings.weeklyActiveMinutes</listEntry>
+        <listEntry value="3">@Strings.stairsProgress</listEntry>
+        <listEntry value="4">@Strings.caloriesProgress</listEntry>
+        <!--listEntry
+        value="5">@Strings.activeCaloriesProgress</listEntry-->
+        <listEntry value="6">@Strings.bodyBatteryProgress</listEntry>
+      </settingConfig>
+    </setting>
+
+    <setting propertyKey="@Properties.messageFieldType" title="@Strings.messageFieldTitle">
+      <settingConfig type="list">
+        <listEntry value="0">@Strings.fieldNotifications</listEntry>
+        <listEntry value="1">@Strings.fieldSteps</listEntry>
+        <listEntry value="2">@Strings.fieldHeartRate</listEntry>
+        <listEntry value="3">@Strings.fieldBatteryPercent</listEntry>
+        <listEntry value="4">@Strings.fieldCalories</listEntry>
+        <!--listEntry
+        value="5">@Strings.fieldActiveCalories</listEntry-->
+        <listEntry value="6">@Strings.fieldStressScore</listEntry>
+        <listEntry value="7">@Strings.fieldBodyBattery</listEntry>
+        <listEntry value="8">@Strings.fieldDayOfWeek</listEntry>
+        <listEntry value="9">@Strings.fieldMonth</listEntry>
+        <listEntry value="10">@Strings.fieldHour</listEntry>
+        <listEntry value="11">@Strings.fieldMinute</listEntry>
+      </settingConfig>
+    </setting>
+  </group>
+
+  <!-- Visibility Settings -->
+  <group id="@Strings.visibilityGroup" title="@Strings.visibilityGroup">
+    <setting propertyKey="@Properties.showTopField" title="@Strings.showTopFieldTitle">
+      <settingConfig type="list">
+        <listEntry value="1">@Strings.optionShow</listEntry>
+        <listEntry value="0">@Strings.optionHide</listEntry>
+      </settingConfig>
+    </setting>
+
+    <setting propertyKey="@Properties.showMiddleGauge" title="@Strings.showMiddleGaugeTitle">
+      <settingConfig type="list">
+        <listEntry value="1">@Strings.optionShow</listEntry>
+        <listEntry value="0">@Strings.optionHide</listEntry>
+      </settingConfig>
+    </setting>
+
+    <setting propertyKey="@Properties.showBottomField" title="@Strings.showBottomFieldTitle">
+      <settingConfig type="list">
+        <listEntry value="1">@Strings.optionShow</listEntry>
+        <listEntry value="0">@Strings.optionHide</listEntry>
+      </settingConfig>
+    </setting>
+
+    <setting propertyKey="@Properties.showMinuteHand" title="@Strings.showMinuteHandTitle">
+      <settingConfig type="list">
+        <listEntry value="1">@Strings.optionShow</listEntry>
+        <listEntry value="0">@Strings.optionHide</listEntry>
+      </settingConfig>
+    </setting>
+  </group>
+
+  <!-- Goal Settings -->
+  <group id="@Strings.goalsGroup" title="@Strings.goalsGroup">
+    <setting propertyKey="@Properties.calorieGoalOverall" title="@Strings.calorieGoalOverallTitle">
+      <settingConfig min="1000" max="5000" type="numeric" />
+    </setting>
+
+    <!--setting
+    propertyKey="@Properties.calorieGoalActive" title="@Strings.calorieGoalActiveTitle">
+      <settingConfig min="200" max="2000" type="numeric" />
+    </setting-->
+
+  </group>
+
 </settings> 

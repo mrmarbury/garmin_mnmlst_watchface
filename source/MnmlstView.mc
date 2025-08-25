@@ -430,25 +430,29 @@ class MnmlstView extends WatchUi.WatchFace {
   }
 
   // Draws the clock tick marks around the outside edges of the screen.
+  // Antialiasing optimized version with precise positioning
   function drawHashMarks(dc, totalMarks, length) {
     var width = dc.getWidth();
 
-    // Set pen width to 2 pixels for thicker segment lines
+    // Set pen width to 2 pixels for better antialiased appearance
     dc.setPenWidth(2);
 
-    var sX, sY;
-    var eX, eY;
-    var outerRad = width / 2;
+    var outerRad = width / 2.0; // Use float for precise calculations
     var innerRad = outerRad - length;
     var angleStep = TWO_PI / totalMarks;
     
-    // Draw single line at each position
+    // Draw lines with optimized positioning for smoother antialiasing
     for (var i = 0; i < totalMarks; i++) {
       var angle = i * angleStep;
-      sX = outerRad + innerRad * Math.cos(angle);
-      sY = outerRad + innerRad * Math.sin(angle);
-      eX = outerRad + outerRad * Math.cos(angle);
-      eY = outerRad + outerRad * Math.sin(angle);
+      var cos = Math.cos(angle);
+      var sin = Math.sin(angle);
+      
+      // Calculate with floating point precision, round at final step for optimal antialiasing
+      var sX = (outerRad + innerRad * cos + 0.5).toNumber();
+      var sY = (outerRad + innerRad * sin + 0.5).toNumber(); 
+      var eX = (outerRad + outerRad * cos + 0.5).toNumber();
+      var eY = (outerRad + outerRad * sin + 0.5).toNumber();
+      
       dc.drawLine(sX, sY, eX, eY);
     }
 
@@ -457,26 +461,30 @@ class MnmlstView extends WatchUi.WatchFace {
   }
   
   // Draws minute marks that skip the hour positions (48 marks instead of 60)
+  // Antialiasing optimized version with precise positioning
   function drawMinuteHashMarks(dc, length) {
     var width = dc.getWidth();
 
-    // Set pen width to 2 pixels for thicker segment lines
+    // Set pen width to 2 pixels for better antialiased appearance
     dc.setPenWidth(2);
 
-    var sX, sY;
-    var eX, eY;
-    var outerRad = width / 2;
+    var outerRad = width / 2.0; // Use float for precise calculations
     var innerRad = outerRad - length;
-    var angleStep = TWO_PI / 60; // Still based on 60 positions
+    var angleStep = TWO_PI / 60.0; // Use float for precise angle calculation
     
     // Draw minute marks but skip hour positions (every 5th mark: 0, 5, 10, 15, ...)
     for (var i = 0; i < 60; i++) {
       if (i % 5 != 0) { // Skip positions 0, 5, 10, 15, 20... (hour positions)
         var angle = i * angleStep;
-        sX = outerRad + innerRad * Math.cos(angle);
-        sY = outerRad + innerRad * Math.sin(angle);
-        eX = outerRad + outerRad * Math.cos(angle);
-        eY = outerRad + outerRad * Math.sin(angle);
+        var cos = Math.cos(angle);
+        var sin = Math.sin(angle);
+        
+        // Calculate with floating point precision, round at final step for optimal antialiasing
+        var sX = (outerRad + innerRad * cos + 0.5).toNumber();
+        var sY = (outerRad + innerRad * sin + 0.5).toNumber();
+        var eX = (outerRad + outerRad * cos + 0.5).toNumber();
+        var eY = (outerRad + outerRad * sin + 0.5).toNumber();
+        
         dc.drawLine(sX, sY, eX, eY);
       }
     }
@@ -540,13 +548,14 @@ class MnmlstView extends WatchUi.WatchFace {
     var battRangeSteps = battRange / 10.0; // Use float for precise calculation
     var battBaseHeight = layoutConfig[:batteryHeight];
 
-    // Set pen width to 2 pixels for thicker battery gauge lines
+    // Set pen width to 2 pixels for thicker, better antialiased battery gauge lines
     targetDc.setPenWidth(2);
 
-    // Draw exactly 11 gauge lines (0%, 10%, 20%, ..., 100%)
+    // Draw exactly 11 gauge lines (0%, 10%, 20%, ..., 100%) with optimized positioning
     var gaugeLineColor = getBatteryGaugeColor();
     for (var i = 0; i <= 10; i++) {
-      var xPos = battLeft + i * battRangeSteps;
+      // Use floating point precision for better antialiasing, round at final step
+      var xPos = (battLeft + i * battRangeSteps + 0.5).toNumber();
       targetDc.setColor(gaugeLineColor, gaugeLineColor);
       targetDc.drawLine(
         xPos,
@@ -669,13 +678,18 @@ class MnmlstView extends WatchUi.WatchFace {
 
   function getActiveCaloriesProgress() {
     var info = ActivityMonitor.getInfo();
+    
+    // FIXED: Use 'calories' instead of 'caloriesActive' (which doesn't exist in API)
+    // FIXED: Use configCalorieGoalOverall since we're showing total daily calories
+    // Note: This shows total daily calories progress, as active calories
+    // are not provided directly by the Connect IQ API
     if (
-      info has :caloriesActive &&
-      info.caloriesActive != null &&
-      configCalorieGoalActive > 0
+      info has :calories &&
+      info.calories != null &&
+      configCalorieGoalOverall > 0
     ) {
       var progress = (
-        (info.caloriesActive.toFloat() / configCalorieGoalActive.toFloat()) *
+        (info.calories.toFloat() / configCalorieGoalOverall.toFloat()) *
         100
       ).toNumber();
       return progress > 100 ? 100 : progress;
@@ -683,13 +697,42 @@ class MnmlstView extends WatchUi.WatchFace {
     return 0;
   }
 
-  function getBodyBatteryProgress() {
-    var info = ActivityMonitor.getInfo();
-    if (info has :bodyBatteryStatus && info.bodyBatteryStatus != null) {
-      // Return current body battery level (0-100, no conversion needed)
-      return info.bodyBatteryStatus.toNumber();
+  function getBodyBatteryValue() {
+    // FIXED: Body Battery API has moved to SensorHistory in newer SDK versions
+    // First try the newer SensorHistory API
+    if (Toybox has :SensorHistory && 
+        Toybox.SensorHistory has :getBodyBatteryHistory) {
+      
+      try {
+        var bbIterator = Toybox.SensorHistory.getBodyBatteryHistory({
+          :period => 1  // Get most recent entry
+        });
+        
+        if (bbIterator != null) {
+          var sample = bbIterator.next();
+          if (sample != null && sample.data != null) {
+            return sample.data.toNumber();
+          }
+        }
+      } catch (ex) {
+        // Silently continue to fallback
+      }
     }
-    return 0;
+    
+    // Fallback: Try legacy ActivityMonitor approach (for older devices)
+    var info = ActivityMonitor.getInfo();
+    if (info != null) {
+      if (info has :bodyBatteryStatus && info.bodyBatteryStatus != null) {
+        return info.bodyBatteryStatus.toNumber();
+      }
+    }
+    
+    return null;
+  }
+
+  function getBodyBatteryProgress() {
+    var batteryLevel = getBodyBatteryValue();
+    return batteryLevel != null ? batteryLevel : 0;
   }
 
   // Theme-aware color helper functions
@@ -803,10 +846,10 @@ class MnmlstView extends WatchUi.WatchFace {
         displayStr = displayValue.toString();
       }
     } else if (configMessageFieldType == 5) {
-      // Active Calories
+      // Active Calories (using total calories since caloriesActive doesn't exist in API)
       var info = ActivityMonitor.getInfo();
-      if (info has :caloriesActive && info.caloriesActive != null) {
-        displayValue = info.caloriesActive;
+      if (info has :calories && info.calories != null) {
+        displayValue = info.calories;
         displayStr = displayValue.toString();
       }
     } else if (configMessageFieldType == 6) {
@@ -818,9 +861,9 @@ class MnmlstView extends WatchUi.WatchFace {
       }
     } else if (configMessageFieldType == 7) {
       // Body Battery
-      var info = ActivityMonitor.getInfo();
-      if (info has :bodyBatteryStatus && info.bodyBatteryStatus != null) {
-        displayValue = info.bodyBatteryStatus;
+      var bodyBatteryValue = getBodyBatteryValue();
+      if (bodyBatteryValue != null) {
+        displayValue = bodyBatteryValue;
         displayStr = displayValue.toString();
       }
     } else if (configMessageFieldType == 8) {
@@ -1065,10 +1108,10 @@ class MnmlstView extends WatchUi.WatchFace {
         displayStr = info.calories.toString();
       }
     } else if (configDateFieldType == 5) {
-      // Active Calories
+      // Active Calories (using total calories since caloriesActive doesn't exist in API)
       var info = ActivityMonitor.getInfo();
-      if (info has :caloriesActive && info.caloriesActive != null) {
-        displayStr = info.caloriesActive.toString();
+      if (info has :calories && info.calories != null) {
+        displayStr = info.calories.toString();
       }
     } else if (configDateFieldType == 6) {
       // Stress Score
@@ -1078,9 +1121,9 @@ class MnmlstView extends WatchUi.WatchFace {
       }
     } else if (configDateFieldType == 7) {
       // Body Battery
-      var info = ActivityMonitor.getInfo();
-      if (info has :bodyBatteryStatus && info.bodyBatteryStatus != null) {
-        displayStr = info.bodyBatteryStatus.toString();
+      var bodyBatteryValue = getBodyBatteryValue();
+      if (bodyBatteryValue != null) {
+        displayStr = bodyBatteryValue.toString();
       }
     } else if (configDateFieldType == 8) {
       // Day of Week
