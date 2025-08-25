@@ -45,6 +45,7 @@ class MnmlstView extends WatchUi.WatchFace {
   var configColorScheme;
   var configCalorieGoalOverall;
   var configCalorieGoalActive;
+  var configHashMarkDisplay;
 
   // UI Element Visibility properties
   var showTopField;
@@ -129,6 +130,7 @@ class MnmlstView extends WatchUi.WatchFace {
         configColorScheme = 1; // Test white theme
         configCalorieGoalOverall = 2400;
         configCalorieGoalActive = 750;
+        configHashMarkDisplay = 1; // Test hour-only hash marks
         // Test visibility settings
         showTopField = 1;
         showMiddleGauge = 0; // Test hidden gauge
@@ -180,6 +182,11 @@ class MnmlstView extends WatchUi.WatchFace {
         configCalorieGoalActive = 750;
       }
 
+      configHashMarkDisplay = Properties.getValue("hashMarkDisplay");
+      if (configHashMarkDisplay == null) {
+        configHashMarkDisplay = 0;
+      }
+
       // Load visibility properties
       showTopField = Properties.getValue("showTopField");
       if (showTopField == null) {
@@ -228,6 +235,7 @@ class MnmlstView extends WatchUi.WatchFace {
     configColorScheme = 0;
     configCalorieGoalOverall = 2400;
     configCalorieGoalActive = 750;
+    configHashMarkDisplay = 0;
     // Default visibility - all elements shown
     showTopField = 1;
     showMiddleGauge = 1;
@@ -258,6 +266,9 @@ class MnmlstView extends WatchUi.WatchFace {
     }
     if (configCalorieGoalActive < 200 || configCalorieGoalActive > 2000) {
       configCalorieGoalActive = 750;
+    }
+    if (configHashMarkDisplay < 0 || configHashMarkDisplay > 2) {
+      configHashMarkDisplay = 0;
     }
     // Visibility properties validation (1=show, 0=hide)
     if (showTopField < 0 || showTopField > 1) {
@@ -819,13 +830,22 @@ class MnmlstView extends WatchUi.WatchFace {
     targetDc.setColor(backgroundColor, backgroundColor);
     targetDc.fillRectangle(0, 0, dc.getWidth(), dc.getHeight());
 
-    // Draw Hour and Minute Ticks
-    var hourHashColor = getHourHashColor();
-    targetDc.setColor(hourHashColor, hourHashColor);
-    drawHashMarks(targetDc, 12, layoutConfig[:hourHashLength]);
-    var minuteHashColor = getMinuteHashColor();
-    targetDc.setColor(minuteHashColor, minuteHashColor);
-    drawHashMarks(targetDc, 60, layoutConfig[:minuteHashLength]);
+    // Draw Hash Marks based on configuration
+    if (configHashMarkDisplay == 0) {
+      // All marks - both hour and minute
+      var hourHashColor = getHourHashColor();
+      targetDc.setColor(hourHashColor, hourHashColor);
+      drawHashMarks(targetDc, 12, layoutConfig[:hourHashLength]);
+      var minuteHashColor = getMinuteHashColor();
+      targetDc.setColor(minuteHashColor, minuteHashColor);
+      drawHashMarks(targetDc, 60, layoutConfig[:minuteHashLength]);
+    } else if (configHashMarkDisplay == 1) {
+      // Hour only
+      var hourHashColor = getHourHashColor();
+      targetDc.setColor(hourHashColor, hourHashColor);
+      drawHashMarks(targetDc, 12, layoutConfig[:hourHashLength]);
+    }
+    // configHashMarkDisplay == 2: None - draw nothing
 
     if (showMiddleGauge == 1) {
       drawBattery(targetDc, width, height);

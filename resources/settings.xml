@@ -18,6 +18,14 @@
                 <listEntry value="1">@Strings.colorSchemeWhite</listEntry>
             </settingConfig>
         </setting>
+        
+        <setting propertyKey="@Properties.hashMarkDisplay" title="@Strings.hashMarkDisplayTitle">
+            <settingConfig type="list">
+                <listEntry value="0">@Strings.hashMarkAll</listEntry>
+                <listEntry value="1">@Strings.hashMarkHourOnly</listEntry>
+                <listEntry value="2">@Strings.hashMarkNone</listEntry>
+            </settingConfig>
+        </setting>
     </group>
 
     <!-- Data Field Settings -->

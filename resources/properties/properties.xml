@@ -24,5 +24,8 @@
         <property id="showBottomField" type="number">1</property> <!-- 1=show, 0=hide -->
         <property id="showMinuteHand" type="number">1</property> <!-- 1=show, 0=hide -->
         
+        <!-- Hash Mark Display configuration -->
+        <property id="hashMarkDisplay" type="number">0</property> <!-- 0=all, 1=hour_only, 2=none -->
+        
     </properties>
 </resources>

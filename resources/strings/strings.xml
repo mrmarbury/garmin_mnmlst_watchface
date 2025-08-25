@@ -29,6 +29,12 @@
         <string id="colorSchemeDark">Dark Theme</string>
         <string id="colorSchemeWhite">White Theme</string>
         
+        <!-- Hash Mark Display Settings -->
+        <string id="hashMarkDisplayTitle">Hash Marks</string>
+        <string id="hashMarkAll">All Marks</string>
+        <string id="hashMarkHourOnly">Hour Only</string>
+        <string id="hashMarkNone">None</string>
+        
         <!-- Data Field Settings -->
         <string id="messageFieldTitle">Bottom Field</string>
         <string id="dateFieldTitle">Top Field</string>
