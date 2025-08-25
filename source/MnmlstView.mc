@@ -93,7 +93,7 @@ class MnmlstView extends WatchUi.WatchFace {
       :batteryLeft => (width * 0.25).toNumber(), // 25% from left edge, ensure integer
       :batteryRight => (width * 0.75).toNumber(), // 75% from left edge, ensure integer
       :batteryHeight => height * 0.67, // 67% from top
-      :batteryBarHeight => (11 * scaleFactor).toNumber(),
+      :batteryBarHeight => (10 * scaleFactor).toNumber(),
 
       // Text positioning
       :dateOffsetRatio => 0.25, // 25% from top
@@ -387,7 +387,7 @@ class MnmlstView extends WatchUi.WatchFace {
   }
 
   // Draws the clock tick marks around the outside edges of the screen.
-  function drawHashMarks(dc, one, two, length) {
+  function drawHashMarks(dc, totalMarks, length) {
     var width = dc.getWidth();
 
     // Set pen width to 2 pixels for thicker segment lines
@@ -397,20 +397,15 @@ class MnmlstView extends WatchUi.WatchFace {
     var eX, eY;
     var outerRad = width / 2;
     var innerRad = outerRad - length;
-    // Loop through each 15 minute block and draw tick marks.
-    for (var i = Math.PI; i <= one * Math.PI; i += Math.PI) {
-      // Partially unrolled loop to draw two tickmarks in 15 minute block.
-      sY = outerRad + innerRad * Math.sin(i);
-      eY = outerRad + outerRad * Math.sin(i);
-      sX = outerRad + innerRad * Math.cos(i);
-      eX = outerRad + outerRad * Math.cos(i);
-      dc.drawLine(sX, sY, eX, eY);
-
-      i += Math.PI / two;
-      sY = outerRad + innerRad * Math.sin(i);
-      eY = outerRad + outerRad * Math.sin(i);
-      sX = outerRad + innerRad * Math.cos(i);
-      eX = outerRad + outerRad * Math.cos(i);
+    var angleStep = 2 * Math.PI / totalMarks;
+    
+    // Draw single line at each position
+    for (var i = 0; i < totalMarks; i++) {
+      var angle = i * angleStep;
+      sX = outerRad + innerRad * Math.cos(angle);
+      sY = outerRad + innerRad * Math.sin(angle);
+      eX = outerRad + outerRad * Math.cos(angle);
+      eY = outerRad + outerRad * Math.sin(angle);
       dc.drawLine(sX, sY, eX, eY);
     }
 
@@ -827,10 +822,10 @@ class MnmlstView extends WatchUi.WatchFace {
     // Draw Hour and Minute Ticks
     var hourHashColor = getHourHashColor();
     targetDc.setColor(hourHashColor, hourHashColor);
-    drawHashMarks(targetDc, 12, 6, layoutConfig[:hourHashLength]);
+    drawHashMarks(targetDc, 12, layoutConfig[:hourHashLength]);
     var minuteHashColor = getMinuteHashColor();
     targetDc.setColor(minuteHashColor, minuteHashColor);
-    drawHashMarks(targetDc, 31, 30, layoutConfig[:minuteHashLength]);
+    drawHashMarks(targetDc, 60, layoutConfig[:minuteHashLength]);
 
     if (showMiddleGauge == 1) {
       drawBattery(targetDc, width, height);
