@@ -130,12 +130,12 @@ class MnmlstView extends WatchUi.WatchFace {
         configColorScheme = 1; // Test white theme
         configCalorieGoalOverall = 2400;
         configCalorieGoalActive = 750;
-        configHashMarkDisplay = 1; // Test hour-only hash marks
+        configHashMarkDisplay = 0; // Test all hash marks
         // Test visibility settings
         showTopField = 1;
-        showMiddleGauge = 0; // Test hidden gauge
+        showMiddleGauge = 1; // Show gauge
         showBottomField = 1;
-        showMinuteHand = 1;
+        showMinuteHand = 1; // Ensure minute hand is visible
         System.println(
           "Test config - Battery: " +
             configBatteryDisplayMode +
@@ -246,16 +246,16 @@ class MnmlstView extends WatchUi.WatchFace {
 
   // Validate configuration values are within expected ranges
   function validateConfiguration() {
-    if (configBatteryDisplayMode < 0 || configBatteryDisplayMode > 5) {
+    if (configBatteryDisplayMode < 0 || configBatteryDisplayMode > 6) {
       configBatteryDisplayMode = 0;
     }
     if (configHourHandBehavior < 0 || configHourHandBehavior > 1) {
       configHourHandBehavior = 0;
     }
-    if (configMessageFieldType < 0 || configMessageFieldType > 5) {
+    if (configMessageFieldType < 0 || configMessageFieldType > 11) {
       configMessageFieldType = 0;
     }
-    if (configDateFieldType < 0 || configDateFieldType > 5) {
+    if (configDateFieldType < 0 || configDateFieldType > 11) {
       configDateFieldType = 0;
     }
     if (configColorScheme < 0 || configColorScheme > 1) {
@@ -423,6 +423,35 @@ class MnmlstView extends WatchUi.WatchFace {
     // Reset pen width to default for other drawing operations
     dc.setPenWidth(1);
   }
+  
+  // Draws minute marks that skip the hour positions (48 marks instead of 60)
+  function drawMinuteHashMarks(dc, length) {
+    var width = dc.getWidth();
+
+    // Set pen width to 2 pixels for thicker segment lines
+    dc.setPenWidth(2);
+
+    var sX, sY;
+    var eX, eY;
+    var outerRad = width / 2;
+    var innerRad = outerRad - length;
+    var angleStep = 2 * Math.PI / 60; // Still based on 60 positions
+    
+    // Draw minute marks but skip hour positions (every 5th mark: 0, 5, 10, 15, ...)
+    for (var i = 0; i < 60; i++) {
+      if (i % 5 != 0) { // Skip positions 0, 5, 10, 15, 20... (hour positions)
+        var angle = i * angleStep;
+        sX = outerRad + innerRad * Math.cos(angle);
+        sY = outerRad + innerRad * Math.sin(angle);
+        eX = outerRad + outerRad * Math.cos(angle);
+        eY = outerRad + outerRad * Math.sin(angle);
+        dc.drawLine(sX, sY, eX, eY);
+      }
+    }
+
+    // Reset pen width to default for other drawing operations
+    dc.setPenWidth(1);
+  }
 
   function drawBattery(targetDc, width, height) {
     // All modes now use the same gauge visual with different data sources
@@ -453,9 +482,13 @@ class MnmlstView extends WatchUi.WatchFace {
       // Calories progress - single green
       percentage = getCaloriesProgress();
       useMultiColor = false;
-    } else {
-      // Active calories progress - single green (mode 5)
+    } else if (configBatteryDisplayMode == 5) {
+      // Active calories progress - single green 
       percentage = getActiveCaloriesProgress();
+      useMultiColor = false;
+    } else {
+      // Body Battery progress - custom coloring (mode 6)
+      percentage = getBodyBatteryProgress();
       useMultiColor = false;
     }
 
@@ -508,8 +541,19 @@ class MnmlstView extends WatchUi.WatchFace {
       } else {
         indicatorColor = getGreenColor();
       }
+    } else if (configBatteryDisplayMode == 6) {
+      // Body Battery mode - custom coloring (reverse scale)
+      if (percentage >= 76) {
+        indicatorColor = getBlueColor();
+      } else if (percentage >= 51) {
+        indicatorColor = getGreenColor();
+      } else if (percentage >= 26) {
+        indicatorColor = getYellowColor();
+      } else {
+        indicatorColor = getRedColor();
+      }
     } else {
-      // All progress modes - theme-aware green color
+      // All other progress modes - theme-aware green color
       indicatorColor = getGreenColor();
     }
 
@@ -607,6 +651,15 @@ class MnmlstView extends WatchUi.WatchFace {
     return 0;
   }
 
+  function getBodyBatteryProgress() {
+    var info = ActivityMonitor.getInfo();
+    if (info has :bodyBatteryStatus && info.bodyBatteryStatus != null) {
+      // Return current body battery level (0-100, no conversion needed)
+      return info.bodyBatteryStatus.toNumber();
+    }
+    return 0;
+  }
+
   // Theme-aware color helper functions
   function getBackgroundColor() {
     return configColorScheme == 1 ? Graphics.COLOR_WHITE : Graphics.COLOR_BLACK;
@@ -634,9 +687,7 @@ class MnmlstView extends WatchUi.WatchFace {
   }
 
   function getMinuteHashColor() {
-    return configColorScheme == 1
-      ? Graphics.COLOR_DK_GRAY
-      : Graphics.COLOR_LT_GRAY;
+    return configColorScheme == 1 ? Graphics.COLOR_BLACK : Graphics.COLOR_WHITE;
   }
 
   function getBatteryGaugeColor() {
@@ -725,6 +776,49 @@ class MnmlstView extends WatchUi.WatchFace {
         displayValue = info.caloriesActive;
         displayStr = displayValue.toString();
       }
+    } else if (configMessageFieldType == 6) {
+      // Stress Score
+      var info = ActivityMonitor.getInfo();
+      if (info has :stressScore && info.stressScore != null) {
+        displayValue = info.stressScore;
+        displayStr = displayValue.toString();
+      }
+    } else if (configMessageFieldType == 7) {
+      // Body Battery
+      var info = ActivityMonitor.getInfo();
+      if (info has :bodyBatteryStatus && info.bodyBatteryStatus != null) {
+        displayValue = info.bodyBatteryStatus;
+        displayStr = displayValue.toString();
+      }
+    } else if (configMessageFieldType == 8) {
+      // Day of Week
+      var info = Gregorian.info(Time.now(), Time.FORMAT_LONG);
+      displayValue = info.day_of_week;
+      displayStr = displayValue.toString();
+    } else if (configMessageFieldType == 9) {
+      // Month
+      var info = Gregorian.info(Time.now(), Time.FORMAT_LONG);
+      displayValue = info.month;
+      displayStr = displayValue.toString();
+    } else if (configMessageFieldType == 10) {
+      // Hour
+      var clockTime = System.getClockTime();
+      var deviceSettings = System.getDeviceSettings();
+      var hour = clockTime.hour;
+      if (!deviceSettings.is24Hour) {
+        if (hour > 12) {
+          hour = hour - 12;
+        } else if (hour == 0) {
+          hour = 12;
+        }
+      }
+      displayValue = hour;
+      displayStr = displayValue.toString();
+    } else if (configMessageFieldType == 11) {
+      // Minute
+      var clockTime = System.getClockTime();
+      displayValue = clockTime.min;
+      displayStr = displayValue.toString();
     } else {
       // Default: Notifications (0)
       var notificationCount = System.getDeviceSettings().notificationCount;
@@ -832,13 +926,11 @@ class MnmlstView extends WatchUi.WatchFace {
 
     // Draw Hash Marks based on configuration
     if (configHashMarkDisplay == 0) {
-      // All marks - both hour and minute
-      var hourHashColor = getHourHashColor();
-      targetDc.setColor(hourHashColor, hourHashColor);
+      // All marks - both hour and minute (no overlap)
+      var hashColor = getHourHashColor(); // Use same color for both
+      targetDc.setColor(hashColor, hashColor);
       drawHashMarks(targetDc, 12, layoutConfig[:hourHashLength]);
-      var minuteHashColor = getMinuteHashColor();
-      targetDc.setColor(minuteHashColor, minuteHashColor);
-      drawHashMarks(targetDc, 60, layoutConfig[:minuteHashLength]);
+      drawMinuteHashMarks(targetDc, layoutConfig[:minuteHashLength]);
     } else if (configHashMarkDisplay == 1) {
       // Hour only
       var hourHashColor = getHourHashColor();
@@ -939,6 +1031,43 @@ class MnmlstView extends WatchUi.WatchFace {
       if (info has :caloriesActive && info.caloriesActive != null) {
         displayStr = info.caloriesActive.toString();
       }
+    } else if (configDateFieldType == 6) {
+      // Stress Score
+      var info = ActivityMonitor.getInfo();
+      if (info has :stressScore && info.stressScore != null) {
+        displayStr = info.stressScore.toString();
+      }
+    } else if (configDateFieldType == 7) {
+      // Body Battery
+      var info = ActivityMonitor.getInfo();
+      if (info has :bodyBatteryStatus && info.bodyBatteryStatus != null) {
+        displayStr = info.bodyBatteryStatus.toString();
+      }
+    } else if (configDateFieldType == 8) {
+      // Day of Week
+      var info = Gregorian.info(Time.now(), Time.FORMAT_LONG);
+      displayStr = info.day_of_week.toString();
+    } else if (configDateFieldType == 9) {
+      // Month
+      var info = Gregorian.info(Time.now(), Time.FORMAT_LONG);
+      displayStr = info.month.toString();
+    } else if (configDateFieldType == 10) {
+      // Hour
+      var clockTime = System.getClockTime();
+      var deviceSettings = System.getDeviceSettings();
+      var hour = clockTime.hour;
+      if (!deviceSettings.is24Hour) {
+        if (hour > 12) {
+          hour = hour - 12;
+        } else if (hour == 0) {
+          hour = 12;
+        }
+      }
+      displayStr = hour.toString();
+    } else if (configDateFieldType == 11) {
+      // Minute
+      var clockTime = System.getClockTime();
+      displayStr = clockTime.min.toString();
     } else {
       // Default: Date (0)
       var info = Gregorian.info(Time.now(), Time.FORMAT_LONG);

@@ -23,6 +23,7 @@
         <string id="stairsProgress">Stairs Progress</string>
         <string id="caloriesProgress">Calories Progress</string>
         <string id="activeCaloriesProgress">Active Calories Progress</string>
+        <string id="bodyBatteryProgress">Body Battery</string>
         
         <!-- Color Scheme Settings -->
         <string id="colorSchemeTitle">Color Scheme</string>
@@ -48,6 +49,12 @@
         <string id="fieldBatteryPercent">Battery %</string>
         <string id="fieldCalories">Calories</string>
         <string id="fieldActiveCalories">Active Calories</string>
+        <string id="fieldStressScore">Stress Score</string>
+        <string id="fieldBodyBattery">Body Battery</string>
+        <string id="fieldDayOfWeek">Day of Week</string>
+        <string id="fieldMonth">Month</string>
+        <string id="fieldHour">Hour</string>
+        <string id="fieldMinute">Minute</string>
         
         <!-- Goal Settings -->
         <string id="calorieGoalOverallTitle">Overall Calorie Goal</string>

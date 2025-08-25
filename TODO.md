@@ -46,4 +46,16 @@
   - [X] double diameter of arbor
   - [] write tests
   - [] do comprehensive code review
+- [X] Add new data field options
+  - [X] Top/Bottom Fields - Health Metrics:
+    - [X] Stress Score (Plan → Implement → Test → Review)
+    - [] Sleep Score (SKIPPED - API complexity)  
+    - [X] Body Battery (Plan → Implement → Test → Review)
+  - [X] Top/Bottom Fields - Time/Date Variants:
+    - [X] Day of Week (Plan → Implement → Test → Review)
+    - [] Week of Year (REMOVED - user request)
+    - [X] Month (Plan → Implement → Test → Review)
+    - [X] Hour with user format (Plan → Implement → Test → Review)
+  - [X] Battery Gauge Options:
+    - [X] Body Battery Progress with reverse scale & custom coloring (Plan → Implement → Test → Review)
 ## Bugs

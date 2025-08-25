@@ -38,6 +38,12 @@
                 <listEntry value="3">@Strings.fieldBatteryPercent</listEntry>
                 <listEntry value="4">@Strings.fieldCalories</listEntry>
                 <listEntry value="5">@Strings.fieldActiveCalories</listEntry>
+                <listEntry value="6">@Strings.fieldStressScore</listEntry>
+                <listEntry value="7">@Strings.fieldBodyBattery</listEntry>
+                <listEntry value="8">@Strings.fieldDayOfWeek</listEntry>
+                <listEntry value="9">@Strings.fieldMonth</listEntry>
+                <listEntry value="10">@Strings.fieldHour</listEntry>
+                <listEntry value="11">@Strings.fieldMinute</listEntry>
             </settingConfig>
         </setting>
         
@@ -49,6 +55,7 @@
                 <listEntry value="3">@Strings.stairsProgress</listEntry>
                 <listEntry value="4">@Strings.caloriesProgress</listEntry>
                 <listEntry value="5">@Strings.activeCaloriesProgress</listEntry>
+                <listEntry value="6">@Strings.bodyBatteryProgress</listEntry>
             </settingConfig>
         </setting>
         
@@ -60,6 +67,12 @@
                 <listEntry value="3">@Strings.fieldBatteryPercent</listEntry>
                 <listEntry value="4">@Strings.fieldCalories</listEntry>
                 <listEntry value="5">@Strings.fieldActiveCalories</listEntry>
+                <listEntry value="6">@Strings.fieldStressScore</listEntry>
+                <listEntry value="7">@Strings.fieldBodyBattery</listEntry>
+                <listEntry value="8">@Strings.fieldDayOfWeek</listEntry>
+                <listEntry value="9">@Strings.fieldMonth</listEntry>
+                <listEntry value="10">@Strings.fieldHour</listEntry>
+                <listEntry value="11">@Strings.fieldMinute</listEntry>
             </settingConfig>
         </setting>
     </group>
