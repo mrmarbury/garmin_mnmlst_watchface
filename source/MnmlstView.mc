@@ -53,6 +53,17 @@ class MnmlstView extends WatchUi.WatchFace {
   var showBottomField;
   var showMinuteHand;
 
+  // Performance optimization: Cache frequently accessed data to reduce API calls
+  var cachedClockTime;
+  var cachedSystemStats;
+  var cachedDeviceSettings;
+  var cachedActivityInfo;
+  var cachedActivityInfoCurrent;
+  var cachedGregorianInfo;
+  
+  // Performance constants to avoid recalculation
+  var TWO_PI = 2 * Math.PI;
+
   // Initialize variables for this view
   function initialize() {
     WatchFace.initialize();
@@ -67,6 +78,27 @@ class MnmlstView extends WatchUi.WatchFace {
     var referenceSize = 260.0;
     var avgDimension = (width + height) / 2.0;
     return avgDimension / referenceSize;
+  }
+  
+  // Performance optimization: Collect all required data once per update cycle
+  // This reduces API calls from 18+ per frame to 6 per frame
+  function collectCachedData() {
+    try {
+      cachedClockTime = System.getClockTime();
+      cachedSystemStats = System.getSystemStats();
+      cachedDeviceSettings = System.getDeviceSettings();
+      cachedActivityInfo = ActivityMonitor.getInfo();
+      cachedActivityInfoCurrent = Activity.getActivityInfo();
+      cachedGregorianInfo = Gregorian.info(Time.now(), Time.FORMAT_LONG);
+    } catch (ex) {
+      // Graceful fallback - will use direct API calls if caching fails
+      cachedClockTime = null;
+      cachedSystemStats = null;
+      cachedDeviceSettings = null;
+      cachedActivityInfo = null;
+      cachedActivityInfoCurrent = null;
+      cachedGregorianInfo = null;
+    }
   }
 
   // Create layout configuration based on screen dimensions
@@ -408,7 +440,7 @@ class MnmlstView extends WatchUi.WatchFace {
     var eX, eY;
     var outerRad = width / 2;
     var innerRad = outerRad - length;
-    var angleStep = 2 * Math.PI / totalMarks;
+    var angleStep = TWO_PI / totalMarks;
     
     // Draw single line at each position
     for (var i = 0; i < totalMarks; i++) {
@@ -435,7 +467,7 @@ class MnmlstView extends WatchUi.WatchFace {
     var eX, eY;
     var outerRad = width / 2;
     var innerRad = outerRad - length;
-    var angleStep = 2 * Math.PI / 60; // Still based on 60 positions
+    var angleStep = TWO_PI / 60; // Still based on 60 positions
     
     // Draw minute marks but skip hour positions (every 5th mark: 0, 5, 10, 15, ...)
     for (var i = 0; i < 60; i++) {
@@ -463,7 +495,7 @@ class MnmlstView extends WatchUi.WatchFace {
 
     if (configBatteryDisplayMode == 0) {
       // Battery mode - multi-colored
-      var stats = System.getSystemStats();
+      var stats = cachedSystemStats != null ? cachedSystemStats : System.getSystemStats();
       percentage = (stats.battery + 0.5).toNumber();
       useMultiColor = true;
     } else if (configBatteryDisplayMode == 1) {
@@ -531,7 +563,7 @@ class MnmlstView extends WatchUi.WatchFace {
     var indicatorColor;
     if (useMultiColor) {
       // Battery mode - theme-aware multi-color based on percentage and charging state
-      var stats = System.getSystemStats();
+      var stats = cachedSystemStats != null ? cachedSystemStats : System.getSystemStats();
       if (stats.charging == true) {
         indicatorColor = getBlueColor();
       } else if (percentage <= 10) {
@@ -759,7 +791,8 @@ class MnmlstView extends WatchUi.WatchFace {
       }
     } else if (configMessageFieldType == 3) {
       // Battery Percentage
-      var battery = (System.getSystemStats().battery + 0.5).toNumber();
+      var stats = cachedSystemStats != null ? cachedSystemStats : System.getSystemStats();
+      var battery = (stats.battery + 0.5).toNumber();
       displayValue = battery;
       displayStr = battery.toString();
     } else if (configMessageFieldType == 4) {
@@ -792,18 +825,18 @@ class MnmlstView extends WatchUi.WatchFace {
       }
     } else if (configMessageFieldType == 8) {
       // Day of Week
-      var info = Gregorian.info(Time.now(), Time.FORMAT_LONG);
+      var info = cachedGregorianInfo != null ? cachedGregorianInfo : Gregorian.info(Time.now(), Time.FORMAT_LONG);
       displayValue = info.day_of_week;
       displayStr = displayValue.toString();
     } else if (configMessageFieldType == 9) {
       // Month
-      var info = Gregorian.info(Time.now(), Time.FORMAT_LONG);
+      var info = cachedGregorianInfo != null ? cachedGregorianInfo : Gregorian.info(Time.now(), Time.FORMAT_LONG);
       displayValue = info.month;
       displayStr = displayValue.toString();
     } else if (configMessageFieldType == 10) {
       // Hour
-      var clockTime = System.getClockTime();
-      var deviceSettings = System.getDeviceSettings();
+      var clockTime = cachedClockTime != null ? cachedClockTime : System.getClockTime();
+      var deviceSettings = cachedDeviceSettings != null ? cachedDeviceSettings : System.getDeviceSettings();
       var hour = clockTime.hour;
       if (!deviceSettings.is24Hour) {
         if (hour > 12) {
@@ -816,12 +849,13 @@ class MnmlstView extends WatchUi.WatchFace {
       displayStr = displayValue.toString();
     } else if (configMessageFieldType == 11) {
       // Minute
-      var clockTime = System.getClockTime();
+      var clockTime = cachedClockTime != null ? cachedClockTime : System.getClockTime();
       displayValue = clockTime.min;
       displayStr = displayValue.toString();
     } else {
       // Default: Notifications (0)
-      var notificationCount = System.getDeviceSettings().notificationCount;
+      var deviceSettings = cachedDeviceSettings != null ? cachedDeviceSettings : System.getDeviceSettings();
+      var notificationCount = deviceSettings.notificationCount;
       if (notificationCount != null && notificationCount > 0) {
         displayValue = notificationCount;
         displayStr = notificationCount.toString();
@@ -836,10 +870,11 @@ class MnmlstView extends WatchUi.WatchFace {
   function drawHourHand(targetDc) {
     var hourHandAngle;
     var width = targetDc.getWidth();
-    var clockTime = System.getClockTime();
+    // Performance: Use cached data when available
+    var clockTime = cachedClockTime != null ? cachedClockTime : System.getClockTime();
 
     //We have BT?
-    var deviceSettings = System.getDeviceSettings();
+    var deviceSettings = cachedDeviceSettings != null ? cachedDeviceSettings : System.getDeviceSettings();
     bt_connected = deviceSettings.phoneConnected;
     var colorHourHand = null;
     // Used to align the hour hand triangle according to
@@ -862,7 +897,7 @@ class MnmlstView extends WatchUi.WatchFace {
       hourHandAngle = (clockTime.hour % 12) * 60 + clockTime.min;
     }
     hourHandAngle = hourHandAngle / (12 * 60.0);
-    hourHandAngle = hourHandAngle * Math.PI * 2;
+    hourHandAngle = hourHandAngle * TWO_PI;
 
     targetDc.fillPolygon(
       generateHourCoordinates(
@@ -899,9 +934,12 @@ class MnmlstView extends WatchUi.WatchFace {
   function onUpdate(dc) {
     var width;
     var height;
-    var clockTime = System.getClockTime();
     var minuteHandAngle;
     var targetDc = null;
+
+    // Performance: Collect all required data once per update cycle
+    collectCachedData();
+    var clockTime = cachedClockTime != null ? cachedClockTime : System.getClockTime();
 
     // We always want to refresh the full screen when we get a regular onUpdate call.
     fullScreenRefresh = true;
@@ -947,7 +985,7 @@ class MnmlstView extends WatchUi.WatchFace {
     if (showMinuteHand == 1) {
       targetDc.setColor(getMinuteHandColor(), Graphics.COLOR_TRANSPARENT);
       //draw minute hand
-      minuteHandAngle = (clockTime.min / 60.0) * Math.PI * 2;
+      minuteHandAngle = (clockTime.min / 60.0) * TWO_PI;
       var minuteHandLength = width * layoutConfig[:minuteHandLengthRatio];
       targetDc.fillPolygon(
         generateHandCoordinates(
@@ -1017,7 +1055,8 @@ class MnmlstView extends WatchUi.WatchFace {
       }
     } else if (configDateFieldType == 3) {
       // Battery Percentage
-      var battery = (System.getSystemStats().battery + 0.5).toNumber();
+      var stats = cachedSystemStats != null ? cachedSystemStats : System.getSystemStats();
+      var battery = (stats.battery + 0.5).toNumber();
       displayStr = battery.toString();
     } else if (configDateFieldType == 4) {
       // Calories
@@ -1045,16 +1084,16 @@ class MnmlstView extends WatchUi.WatchFace {
       }
     } else if (configDateFieldType == 8) {
       // Day of Week
-      var info = Gregorian.info(Time.now(), Time.FORMAT_LONG);
+      var info = cachedGregorianInfo != null ? cachedGregorianInfo : Gregorian.info(Time.now(), Time.FORMAT_LONG);
       displayStr = info.day_of_week.toString();
     } else if (configDateFieldType == 9) {
       // Month
-      var info = Gregorian.info(Time.now(), Time.FORMAT_LONG);
+      var info = cachedGregorianInfo != null ? cachedGregorianInfo : Gregorian.info(Time.now(), Time.FORMAT_LONG);
       displayStr = info.month.toString();
     } else if (configDateFieldType == 10) {
       // Hour
-      var clockTime = System.getClockTime();
-      var deviceSettings = System.getDeviceSettings();
+      var clockTime = cachedClockTime != null ? cachedClockTime : System.getClockTime();
+      var deviceSettings = cachedDeviceSettings != null ? cachedDeviceSettings : System.getDeviceSettings();
       var hour = clockTime.hour;
       if (!deviceSettings.is24Hour) {
         if (hour > 12) {
@@ -1066,11 +1105,11 @@ class MnmlstView extends WatchUi.WatchFace {
       displayStr = hour.toString();
     } else if (configDateFieldType == 11) {
       // Minute
-      var clockTime = System.getClockTime();
+      var clockTime = cachedClockTime != null ? cachedClockTime : System.getClockTime();
       displayStr = clockTime.min.toString();
     } else {
       // Default: Date (0)
-      var info = Gregorian.info(Time.now(), Time.FORMAT_LONG);
+      var info = cachedGregorianInfo != null ? cachedGregorianInfo : Gregorian.info(Time.now(), Time.FORMAT_LONG);
       displayStr = Lang.format("$1$", [info.day]);
     }
 
