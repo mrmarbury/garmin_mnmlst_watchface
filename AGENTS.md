@@ -1,4 +1,4 @@
-# CLAUDE.md - Garmin Connect IQ MonkeyC Development Guide
+# AGENTS.md - Garmin Connect IQ MonkeyC Development Guide
 
 ## Project Overview
 
@@ -743,7 +743,7 @@ All hardcoded pixel values replaced with proportional calculations:
 
 **SDK Path Configuration**
 ```bash
-export PATH="/Users/bsu/Library/Application Support/Garmin/ConnectIQ/Sdks/connectiq-sdk-mac-8.2.3-2025-08-11-cac5b3b21/bin:$PATH"
+export PATH="/Users/bsu/Library/Application Support/Garmin/ConnectIQ/Sdks/connectiq-sdk-mac-9.2.0-2026-06-09-92a1605b2/bin:$PATH"
 ```
 
 **Build Commands**
@@ -1293,7 +1293,7 @@ monkeyc -r -e -f monkey.jungle -o bin/MNMLST_v2.0.4_Release.iq -y "developer_key
 **Testing Commands for Release Process**:
 ```bash
 # Pre-release test execution
-export PATH="/Users/bsu/Library/Application Support/Garmin/ConnectIQ/Sdks/connectiq-sdk-mac-8.2.3-2025-08-11-cac5b3b21/bin:$PATH"
+export PATH="/Users/bsu/Library/Application Support/Garmin/ConnectIQ/Sdks/connectiq-sdk-mac-9.2.0-2026-06-09-92a1605b2/bin:$PATH"
 connectiq test --device fenix7
 
 # Multi-device validation

@@ -4,6 +4,7 @@
   <iq:application entry="Mnmlst" id="54d5454e8ce840139e0ce472bf3026fd" launcherIcon="@Drawables.LauncherIcon" minSdkVersion="3.0.0" name="@Strings.AppName" type="watchface" version="3.0.4">
     <iq:products>
       <iq:product id="enduro"/>
+      <iq:product id="enduro3"/>
       <iq:product id="epix2"/>
       <iq:product id="epix2pro42mm"/>
       <iq:product id="epix2pro47mm"/>
@@ -29,12 +30,28 @@
       <iq:product id="fenix7xpronowifi"/>
       <iq:product id="fenix843mm"/>
       <iq:product id="fenix847mm"/>
+      <iq:product id="fenix8pro47mm"/>
       <iq:product id="fenix8solar47mm"/>
       <iq:product id="fenix8solar51mm"/>
       <iq:product id="fenixchronos"/>
       <iq:product id="fenixe"/>
+      <iq:product id="fr165"/>
+      <iq:product id="fr165m"/>
+      <iq:product id="fr170"/>
+      <iq:product id="fr170m"/>
+      <iq:product id="fr265"/>
+      <iq:product id="fr265s"/>
+      <iq:product id="fr57042mm"/>
+      <iq:product id="fr57047mm"/>
+      <iq:product id="fr745"/>
+      <iq:product id="fr955"/>
       <iq:product id="fr965"/>
       <iq:product id="fr970"/>
+      <iq:product id="instinct2"/>
+      <iq:product id="instinct2s"/>
+      <iq:product id="instinct2x"/>
+      <iq:product id="instinct3amoled45mm"/>
+      <iq:product id="instinct3amoled50mm"/>
       <iq:product id="marq2"/>
       <iq:product id="marq2aviator"/>
       <iq:product id="marqadventurer"/>
@@ -51,6 +68,8 @@
       <iq:product id="venu2s"/>
       <iq:product id="venu3"/>
       <iq:product id="venu3s"/>
+      <iq:product id="venu441mm"/>
+      <iq:product id="venu445mm"/>
       <iq:product id="venud"/>
       <iq:product id="vivoactive3"/>
       <iq:product id="vivoactive3d"/>
